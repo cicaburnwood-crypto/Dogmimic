@@ -1,0 +1,583 @@
+{
+  "cases": 96,
+  "trials_per_case": 64,
+  "total_trials": 6144,
+  "conditions": [
+    {
+      "kg": 0,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 0,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 0,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 5,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 5,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 10,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 10,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 0.4,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 0.4,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 0.4,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 0.7,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 0.7,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 0.7,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 1.0,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 1.0,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 1.0,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 1.3,
+      "mass_scale": 0.9,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 1.3,
+      "mass_scale": 1.0,
+      "asymmetric": true
+    },
+    {
+      "kg": 15,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": false
+    },
+    {
+      "kg": 15,
+      "friction": 1.3,
+      "mass_scale": 1.1,
+      "asymmetric": true
+    }
+  ]
+}

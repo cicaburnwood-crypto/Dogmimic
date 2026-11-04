@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "source_actor_identity_max_error": 0.0,
+  "max_joint_correction_verified_rad": 0.03999999910593033,
+  "frozen_policy_normalizers": true,
+  "real_imagined_reward_max_error": 0.0,
+  "anchor_capture_max_error": 0.0,
+  "reset_local_anchor_memory_verified": true,
+  "actual_stationary_foothold_penalty": 0.0,
+  "bounded_penalties_and_gradients_verified": true
+}

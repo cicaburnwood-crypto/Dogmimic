@@ -1,0 +1,140 @@
+{
+  "skill": "tilt_locomotion",
+  "label": "B2 tilted locomotion v2 \u00b7 best 12000",
+  "iteration": 12000,
+  "checkpoint_iteration": 12000,
+  "checkpoint_sha256": "96dbb589f9fafb39e7d25dea3e4566d9a13e32788ef39ab685489d1617b9ecb4",
+  "weights_sha256": "a4a2f84f243020cfe2730c483087811da67076ac8b1046bdf5f4f1ff1c522673",
+  "backend": "supermimic-vibe",
+  "obs_dim": 420,
+  "goal_dim": 16,
+  "history": 10,
+  "dt": 0.02,
+  "q0": [
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7
+  ],
+  "action_scale": [
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1
+  ],
+  "policy_to_sdk": [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2,
+    9,
+    10,
+    11,
+    6,
+    7,
+    8
+  ],
+  "joint_limits": [
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ]
+  ],
+  "kp": 250.0,
+  "kd": 8.0,
+  "torque_limits": [
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0
+  ],
+  "physical_eval_passed": false,
+  "hardware_validated": false,
+  "simulation_strict_passed": 914,
+  "simulation_strict_total": 1312,
+  "source_checkpoint": "runs/b2_tilt_locomotion_repair_v2_20261104_025740/best.pt",
+  "observation_order": "q-q0, qd, body gyro, projected gravity, previous action; oldest-first 10 frames",
+  "command_order": [
+    "vx",
+    "vy",
+    "yaw_rate",
+    "roll",
+    "pitch"
+  ],
+  "tilt_limit_degrees": 20.0,
+  "dpad_rate_degrees_s": 5.0,
+  "goal_normalization_clip": null,
+  "obs_normalization_clip": 10.0,
+  "source_task_hash": "9ba26eebb633b537d52b9ad968c73f2c61314313d7955287126039d1a1e371ba",
+  "source_contract_hash": "31205c1e97224633f769e6977e528a532c1c952e097ff7fa1861c6bb740cc1e6"
+}

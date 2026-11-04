@@ -1,0 +1,167 @@
+{
+  "skill": "attitude",
+  "task": "b2_attitude_v1",
+  "label": "B2 四足姿态",
+  "backend": "vibe",
+  "iteration": 10000,
+  "checkpoint_iteration": 10000,
+  "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_attitude_vibe_20261103_161320/best.pt",
+  "checkpoint_sha256": "746fef2b973f8f590ff1d5c89b55923e3e776a5d3e8316942f17be14e8b58bd3",
+  "weights_sha256": "04942ab5e7ce93acbc0888871fb0b7ca84bdd93291216294543e3d317734e874",
+  "obs_dim": 420,
+  "goal_dim": 6,
+  "history": 10,
+  "obs_per_frame": 42,
+  "policy_dt": 0.02,
+  "q0": [
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7
+  ],
+  "action_scale": [
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1
+  ],
+  "policy_to_sdk": [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2,
+    9,
+    10,
+    11,
+    6,
+    7,
+    8
+  ],
+  "policy_joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint"
+  ],
+  "joint_limits": [
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ]
+  ],
+  "torque_limits": [
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0
+  ],
+  "kp": 250.0,
+  "kd": 8.0,
+  "physical_eval_passed": false,
+  "hardware_validated": false,
+  "official_policy": false,
+  "simulation_strict_passed": 117,
+  "simulation_strict_total": 1056,
+  "gravity_m_s2": 9.81,
+  "training_friction": [
+    0.4,
+    1.3
+  ],
+  "root_position_required": false,
+  "goal_order": [
+    "desired_roll",
+    "desired_pitch",
+    "desired_roll_rate",
+    "desired_pitch_rate",
+    "requested_roll",
+    "requested_pitch"
+  ],
+  "angle_units": "radians",
+  "max_angle_degrees": 30,
+  "command_omega": 5.0,
+  "command_rate_degrees_s": 30.0,
+  "command_acceleration_degrees_s2": 90.0,
+  "goal_normalizer_clip": null,
+  "notes": [
+    "Frozen iteration 10000 Actor. No policy or training parameter changes.",
+    "Simulation foot-displacement criterion not met. Export parity is not physical acceptance."
+  ]
+}

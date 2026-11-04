@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scope": "B2 real networks on synthetic observation path; not physical validation",
+  "results": {
+    "detached": -1.8247134685516357,
+    "corrected": 0.00694030849263072,
+    "finite_differences": {
+      "0.01": 0.007009971886873245,
+      "0.003": 0.006746190134435892,
+      "0.001": 0.007064081262797117
+    },
+    "corrected_error": 0.00019411835819482803,
+    "detached_error": 1.8314596586860716,
+    "anchor_parameter_gradients_absent": true
+  }
+}

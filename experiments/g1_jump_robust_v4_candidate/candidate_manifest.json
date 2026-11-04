@@ -1,0 +1,80 @@
+{
+  "status": "training_launched",
+  "source": "experiments/g1_jump_robust_v3",
+  "changes": [
+    "Preserve state gradient through frozen anchor; parameters remain frozen.",
+    "Log anchor loss and RMS joint-target deviation explicitly."
+  ],
+  "validation": [
+    "CPU finite difference derivative audit passed.",
+    "Real checkpoint networks finite difference audit passed; frozen anchor parameter gradients absent."
+  ],
+  "remaining": [
+    "Real network gradient audit",
+    "Training smoke on freed GPUs",
+    "Independent unchanged full physical evaluation"
+  ],
+  "evaluator_sha256": "333379431a2dd84a49a786517b379a5ff9157c36f1ba379c26afce54357db2a6",
+  "smoke_run": "runs/g1_anchor_gradient_smoke",
+  "smoke_pid": 3961367,
+  "launch": {
+    "out": "/home/liudiwen/projects/supermimic_vibe/runs/g1_jump_robust_v4_20261101_193010",
+    "started": 1793532610.0856621,
+    "started_iso": "2026-11-01T19:30:10.085662+08:00",
+    "train_pid": 3964941,
+    "eval_pid": 3964942,
+    "train_gpus": [
+      4,
+      5
+    ],
+    "eval_gpu": 6,
+    "iterations": 40000,
+    "training_hours_limit": 6,
+    "command": [
+      "/home/liudiwen/projects/supermimic_vibe/.venv/bin/python",
+      "-m",
+      "torch.distributed.run",
+      "--standalone",
+      "--nproc_per_node=2",
+      "/home/liudiwen/projects/supermimic_vibe/experiments/g1_jump_robust_v4_candidate/train.py",
+      "--motions",
+      "data/processed/g1_standing_jump_060m.npz",
+      "--out",
+      "/home/liudiwen/projects/supermimic_vibe/runs/g1_jump_robust_v4_20261101_193010",
+      "--num-envs",
+      "1024",
+      "--buffer-steps",
+      "512",
+      "--warmup-steps",
+      "128",
+      "--iterations",
+      "40000",
+      "--wall-hours",
+      "6",
+      "--lr",
+      "0.0001",
+      "--use-critic",
+      "false",
+      "--lr-decay-iters",
+      "40000",
+      "--wm-batch",
+      "1024",
+      "--pi-batch",
+      "2048",
+      "--log-every",
+      "100",
+      "--ckpt-every",
+      "1000",
+      "--eval-every",
+      "1000"
+    ],
+    "source_sha256": "9136e3735264624b38fa4c19dd8bb67edd74ce395e1719c85614e66d99eeb295"
+  },
+  "smoke": {
+    "passed": true,
+    "updates": 1,
+    "context_dim": 304,
+    "frozen_anchor_unchanged": true,
+    "actor_updated": true
+  }
+}

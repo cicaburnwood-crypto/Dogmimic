@@ -1,0 +1,19 @@
+{
+  "robot": "Unitree B2",
+  "target_pitch_deg": 82,
+  "initial_hold_s": 0.8,
+  "rise_s": 2.5,
+  "final_hold_s": 6.0,
+  "hind_foot_max_drift_m": 2.2887833992611187e-16,
+  "minimum_front_foot_clearance_m": -2.7755575615628914e-17,
+  "final_com_support_error_m": 8.110739857514204e-11,
+  "joint_count": 12,
+  "model_source_commit": "1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d",
+  "name": "b2_hindstand",
+  "frames": 466,
+  "duration_s": 9.3,
+  "source": "original procedural target",
+  "pretrained_policy": false,
+  "reference_motion": true,
+  "max_joint_velocity": 1.095018885904414
+}

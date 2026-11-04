@@ -1,0 +1,295 @@
+{
+  "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_phase_recovery_v5_20261031_001759/evaluated_0000500.pt",
+  "mode": "return_only",
+  "conditions": [
+    {
+      "trials": 64,
+      "success_rate": 1.0,
+      "nominal_success": true,
+      "completion_rate": 1.0,
+      "cycle_success_rate": 1.0,
+      "stable_hindstand_rate": 1.0,
+      "stable_return_rate": 1.0,
+      "mean_norm_return": 0.7759444713592529,
+      "stand_metrics_completed_trials": {
+        "com_acc_rms": 0.0455486997961998,
+        "center_acc_rms": 0.052976883947849274,
+        "com_acc_peak": 0.1510264277458191,
+        "center_acc_peak": 0.1634610891342163,
+        "com_acc_rms_xyz": [
+          0.03490874916315079,
+          0.02570890635251999,
+          0.011793207377195358
+        ],
+        "center_acc_rms_xyz": [
+          0.04163404181599617,
+          0.026500845327973366,
+          0.01750379242002964
+        ],
+        "com_speed_rms": 0.00453213881701231,
+        "center_speed_rms": 0.004595673643052578,
+        "angular_speed_rms": 0.008169361390173435,
+        "com_position_std_norm": 0.0012001160066574812,
+        "body_inclination_std_deg": 0.033208444714546204
+      },
+      "return_metrics_completed_trials": {
+        "com_acc_rms": 0.052617527544498444,
+        "center_acc_rms": 0.055165208876132965,
+        "com_acc_peak": 0.15444456040859222,
+        "center_acc_peak": 0.16115021705627441,
+        "com_acc_rms_xyz": [
+          0.0322728268802166,
+          0.029183389618992805,
+          0.027847442775964737
+        ],
+        "center_acc_rms_xyz": [
+          0.03375675156712532,
+          0.030273612588644028,
+          0.029653368517756462
+        ],
+        "com_speed_rms": 0.007771841716021299,
+        "center_speed_rms": 0.008091486990451813,
+        "angular_speed_rms": 0.010286476463079453,
+        "com_position_std_norm": 0.0042028650641441345,
+        "body_inclination_std_deg": 0.27132272720336914
+      },
+      "criteria": {
+        "com_acc_rms_max": 1.5,
+        "center_acc_rms_max": 2.0,
+        "com_acc_peak_max": 8.0,
+        "center_acc_peak_max": 10.0,
+        "com_speed_rms_max": 0.1,
+        "center_speed_rms_max": 0.12,
+        "angular_speed_rms_max": 0.25,
+        "com_position_std_norm_max": 0.015,
+        "body_inclination_std_deg_max": 1.5,
+        "foot_xy_drift_max": 0.04,
+        "hold_pose_fraction_min": 0.95,
+        "return_pose_fraction_min": 0.95
+      },
+      "failure_reason_counts": {},
+      "payload_kg": 0
+    },
+    {
+      "trials": 64,
+      "success_rate": 0.984375,
+      "nominal_success": true,
+      "completion_rate": 1.0,
+      "cycle_success_rate": 1.0,
+      "stable_hindstand_rate": 0.984375,
+      "stable_return_rate": 1.0,
+      "mean_norm_return": 0.7770593762397766,
+      "stand_metrics_completed_trials": {
+        "com_acc_rms": 0.056127093732357025,
+        "center_acc_rms": 0.061984382569789886,
+        "com_acc_peak": 0.25506865978240967,
+        "center_acc_peak": 0.2665427327156067,
+        "com_acc_rms_xyz": [
+          0.037781938910484314,
+          0.03192096948623657,
+          0.01876724697649479
+        ],
+        "center_acc_rms_xyz": [
+          0.043946072459220886,
+          0.032201554626226425,
+          0.022840429097414017
+        ],
+        "com_speed_rms": 0.006007574498653412,
+        "center_speed_rms": 0.006094031501561403,
+        "angular_speed_rms": 0.011101782321929932,
+        "com_position_std_norm": 0.0018015522509813309,
+        "body_inclination_std_deg": 0.048104822635650635
+      },
+      "return_metrics_completed_trials": {
+        "com_acc_rms": 0.05410333350300789,
+        "center_acc_rms": 0.05625779181718826,
+        "com_acc_peak": 0.1616324931383133,
+        "center_acc_peak": 0.16773894429206848,
+        "com_acc_rms_xyz": [
+          0.03543483093380928,
+          0.029481904581189156,
+          0.026983365416526794
+        ],
+        "center_acc_rms_xyz": [
+          0.03673956170678139,
+          0.030176065862178802,
+          0.02872355841100216
+        ],
+        "com_speed_rms": 0.009402104653418064,
+        "center_speed_rms": 0.009672844782471657,
+        "angular_speed_rms": 0.011404057033360004,
+        "com_position_std_norm": 0.0054724193178117275,
+        "body_inclination_std_deg": 0.3072028160095215
+      },
+      "criteria": {
+        "com_acc_rms_max": 1.5,
+        "center_acc_rms_max": 2.0,
+        "com_acc_peak_max": 8.0,
+        "center_acc_peak_max": 10.0,
+        "com_speed_rms_max": 0.1,
+        "center_speed_rms_max": 0.12,
+        "angular_speed_rms_max": 0.25,
+        "com_position_std_norm_max": 0.015,
+        "body_inclination_std_deg_max": 1.5,
+        "foot_xy_drift_max": 0.04,
+        "hold_pose_fraction_min": 0.95,
+        "return_pose_fraction_min": 0.95
+      },
+      "failure_reason_counts": {
+        "hind_foot_drift": 1,
+        "stand_com_position_std_norm": 1
+      },
+      "payload_kg": 5
+    },
+    {
+      "trials": 64,
+      "success_rate": 0.953125,
+      "nominal_success": true,
+      "completion_rate": 1.0,
+      "cycle_success_rate": 1.0,
+      "stable_hindstand_rate": 0.953125,
+      "stable_return_rate": 1.0,
+      "mean_norm_return": 0.7751561403274536,
+      "stand_metrics_completed_trials": {
+        "com_acc_rms": 0.05006217956542969,
+        "center_acc_rms": 0.056410856544971466,
+        "com_acc_peak": 0.18276925384998322,
+        "center_acc_peak": 0.19572854042053223,
+        "com_acc_rms_xyz": [
+          0.035558827221393585,
+          0.031172774732112885,
+          0.013181802816689014
+        ],
+        "center_acc_rms_xyz": [
+          0.04169140011072159,
+          0.031932953745126724,
+          0.01774321310222149
+        ],
+        "com_speed_rms": 0.007422202732414007,
+        "center_speed_rms": 0.007502426393330097,
+        "angular_speed_rms": 0.011749424040317535,
+        "com_position_std_norm": 0.0021639461629092693,
+        "body_inclination_std_deg": 0.07293836772441864
+      },
+      "return_metrics_completed_trials": {
+        "com_acc_rms": 0.05026381462812424,
+        "center_acc_rms": 0.051791489124298096,
+        "com_acc_peak": 0.14948371052742004,
+        "center_acc_peak": 0.15405553579330444,
+        "com_acc_rms_xyz": [
+          0.03457306697964668,
+          0.02624218724668026,
+          0.02347511425614357
+        ],
+        "center_acc_rms_xyz": [
+          0.03550085797905922,
+          0.0266499575227499,
+          0.02483493834733963
+        ],
+        "com_speed_rms": 0.014858893118798733,
+        "center_speed_rms": 0.015104465186595917,
+        "angular_speed_rms": 0.012127317488193512,
+        "com_position_std_norm": 0.00878717191517353,
+        "body_inclination_std_deg": 0.3192635178565979
+      },
+      "criteria": {
+        "com_acc_rms_max": 1.5,
+        "center_acc_rms_max": 2.0,
+        "com_acc_peak_max": 8.0,
+        "center_acc_peak_max": 10.0,
+        "com_speed_rms_max": 0.1,
+        "center_speed_rms_max": 0.12,
+        "angular_speed_rms_max": 0.25,
+        "com_position_std_norm_max": 0.015,
+        "body_inclination_std_deg_max": 1.5,
+        "foot_xy_drift_max": 0.04,
+        "hold_pose_fraction_min": 0.95,
+        "return_pose_fraction_min": 0.95
+      },
+      "failure_reason_counts": {
+        "hind_foot_drift": 3
+      },
+      "payload_kg": 10
+    },
+    {
+      "trials": 64,
+      "success_rate": 0.296875,
+      "nominal_success": true,
+      "completion_rate": 1.0,
+      "cycle_success_rate": 0.921875,
+      "stable_hindstand_rate": 0.390625,
+      "stable_return_rate": 0.734375,
+      "mean_norm_return": 0.7264647483825684,
+      "stand_metrics_completed_trials": {
+        "com_acc_rms": 0.2294490486383438,
+        "center_acc_rms": 0.23663364350795746,
+        "com_acc_peak": 1.6752097606658936,
+        "center_acc_peak": 1.709187626838684,
+        "com_acc_rms_xyz": [
+          0.10334914922714233,
+          0.14804252982139587,
+          0.12467698007822037
+        ],
+        "center_acc_rms_xyz": [
+          0.11947140097618103,
+          0.14602182805538177,
+          0.1265856921672821
+        ],
+        "com_speed_rms": 0.0369560569524765,
+        "center_speed_rms": 0.03763345628976822,
+        "angular_speed_rms": 0.07200117409229279,
+        "com_position_std_norm": 0.012323081493377686,
+        "body_inclination_std_deg": 0.3852465748786926
+      },
+      "return_metrics_completed_trials": {
+        "com_acc_rms": 0.05978117510676384,
+        "center_acc_rms": 0.061208225786685944,
+        "com_acc_peak": 0.17347674071788788,
+        "center_acc_peak": 0.1791883409023285,
+        "com_acc_rms_xyz": [
+          0.044798508286476135,
+          0.027288272976875305,
+          0.026272544637322426
+        ],
+        "center_acc_rms_xyz": [
+          0.04565965384244919,
+          0.027540912851691246,
+          0.027777614071965218
+        ],
+        "com_speed_rms": 0.024145541712641716,
+        "center_speed_rms": 0.0244571715593338,
+        "angular_speed_rms": 0.020297793671488762,
+        "com_position_std_norm": 0.012003451585769653,
+        "body_inclination_std_deg": 0.43143951892852783
+      },
+      "criteria": {
+        "com_acc_rms_max": 1.5,
+        "center_acc_rms_max": 2.0,
+        "com_acc_peak_max": 8.0,
+        "center_acc_peak_max": 10.0,
+        "com_speed_rms_max": 0.1,
+        "center_speed_rms_max": 0.12,
+        "angular_speed_rms_max": 0.25,
+        "com_position_std_norm_max": 0.015,
+        "body_inclination_std_deg_max": 1.5,
+        "foot_xy_drift_max": 0.04,
+        "hold_pose_fraction_min": 0.95,
+        "return_pose_fraction_min": 0.95
+      },
+      "failure_reason_counts": {
+        "hind_foot_drift": 38,
+        "stand_com_position_std_norm": 18,
+        "returned_com_position_std_norm": 17,
+        "returned_pose": 1,
+        "returned_body_inclination_std_deg": 1,
+        "hindstand_pose": 4,
+        "stand_com_speed_rms": 5,
+        "stand_center_speed_rms": 3,
+        "stand_angular_speed_rms": 4,
+        "stand_body_inclination_std_deg": 1
+      },
+      "payload_kg": 15
+    }
+  ],
+  "elapsed_seconds": 33.1029098033905
+}

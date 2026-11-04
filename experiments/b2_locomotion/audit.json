@@ -1,0 +1,141 @@
+{
+  "no_motion_library": true,
+  "fresh_policy_and_world_model": true,
+  "standard_pose": true,
+  "initial_velocity_exactly_zero": true,
+  "actor_observation": "joint q/dq, body gyro, projected gravity, previous action, 10 frames; command xyz",
+  "actor_obs_dim": 420,
+  "ground_truth_velocity_actor_input": false,
+  "policy_gradient_through_world_model": 0.012292777213076533,
+  "command_samples": 100000,
+  "xy_norm_max": 2,
+  "abs_y_max": 0.6,
+  "yaw_command_not_clipped": true,
+  "per_step_delay_context_verified": true,
+  "physical_mass_scale": [
+    0.8175897598266602,
+    1.1969375610351562
+  ],
+  "control_delay_ms": [
+    0.0,
+    10.0
+  ],
+  "baseline_1p28s_terminations": 0,
+  "baseline_final_height_m": 0.452333927154541,
+  "model": {
+    "source": "/home/liudiwen/projects/supermimic_vibe/experiments/three_skills/vendor/unitree_mujoco/unitree_robots/b2/b2.xml",
+    "source_sha256": "ed6b51d00fb8593dd1c0e2360d10e06c5b86e422ec4583e92add0343ad24c9d8",
+    "source_use": "geometry, mass, joint limits only; no policy or motion files",
+    "model_sha256": "705e58ef3e5bf151559fe76f54586e536a93c03202c2708c98e296ca5dfaa59d",
+    "mass_kg": 83.49829199999999,
+    "standing_height_m": 0.5911472109675505,
+    "q0": [
+      0.0,
+      0.67,
+      -1.3,
+      0.0,
+      0.67,
+      -1.3,
+      0.0,
+      0.67,
+      -1.3,
+      0.0,
+      0.67,
+      -1.3
+    ],
+    "joint_names": [
+      "FL_hip_joint",
+      "FL_thigh_joint",
+      "FL_calf_joint",
+      "FR_hip_joint",
+      "FR_thigh_joint",
+      "FR_calf_joint",
+      "RL_hip_joint",
+      "RL_thigh_joint",
+      "RL_calf_joint",
+      "RR_hip_joint",
+      "RR_thigh_joint",
+      "RR_calf_joint"
+    ],
+    "policy_to_sdk": [
+      3,
+      4,
+      5,
+      0,
+      1,
+      2,
+      9,
+      10,
+      11,
+      6,
+      7,
+      8
+    ],
+    "joint_limits": [
+      [
+        -0.87,
+        0.87
+      ],
+      [
+        -0.94,
+        4.69
+      ],
+      [
+        -2.82,
+        -0.43
+      ],
+      [
+        -0.87,
+        0.87
+      ],
+      [
+        -0.94,
+        4.69
+      ],
+      [
+        -2.82,
+        -0.43
+      ],
+      [
+        -0.87,
+        0.87
+      ],
+      [
+        -0.94,
+        4.69
+      ],
+      [
+        -2.82,
+        -0.43
+      ],
+      [
+        -0.87,
+        0.87
+      ],
+      [
+        -0.94,
+        4.69
+      ],
+      [
+        -2.82,
+        -0.43
+      ]
+    ],
+    "torque_limits": [
+      200.0,
+      200.0,
+      300.0,
+      200.0,
+      200.0,
+      300.0,
+      200.0,
+      200.0,
+      300.0,
+      200.0,
+      200.0,
+      300.0
+    ],
+    "kp": 250.0,
+    "kd": 8.0
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_wtw_smoke_20261101_043708",
+  "iterations": 1000,
+  "train_returncode": 0,
+  "eval_returncode": 0,
+  "latest_core": 16,
+  "latest_it": 1000,
+  "best_core": 16,
+  "best_it": 1000,
+  "finite_all_models": true,
+  "all_four_networks_updated": {
+    "policy": 9243386.139108405,
+    "wm": 2614177.617285289,
+    "physics_head": 2670712.5865525305,
+    "critic": 54067874.981236175
+  },
+  "fresh_initial_checkpoint": true,
+  "no_references_or_teacher": true,
+  "independent_eval_trials": 752,
+  "deploy_cpu_error": 0.0,
+  "stable_iteration_seconds": 0.09288077473640441,
+  "pipeline_seconds": 311.9100806713104,
+  "purpose": "technical smoke only, not a successful locomotion claim",
+  "learned_weight_changes_l1": {
+    "policy": 2242.192683443427,
+    "wm": 57862.33521556854,
+    "physics_head": 7523.337201029062,
+    "critic": 505.9590670578182
+  }
+}

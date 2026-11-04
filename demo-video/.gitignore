@@ -1,0 +1,7 @@
+.venv/
+.tts-local/
+models/
+render/
+source/
+audio/
+__pycache__/

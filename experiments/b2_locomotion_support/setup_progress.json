@@ -1,0 +1,16 @@
+{
+  "setup_stage": "formal training verified and detached; 20-minute monitor active",
+  "formal_run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_support_fresh_20261101_025759",
+  "train_pid": 3092061,
+  "eval_pid": 3092062,
+  "supervisor_pid": 3092060,
+  "source_checkpoint": null,
+  "physical_criteria_unchanged": true,
+  "short_smoke_iterations": 1000,
+  "short_smoke_exit_codes": [
+    0,
+    0
+  ],
+  "next": "independent read-only physical effect monitoring",
+  "iteration_at_detach": 600
+}

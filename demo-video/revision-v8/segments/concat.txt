@@ -1,0 +1,16 @@
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/redaction/manual-v2/segments/01-clip-1.mp4'
+duration 7.583333333
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/replacement-v3/segments/02-clip-2.mp4'
+duration 70.116666667
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/redaction/manual-v2/segments/03-before-3.mp4'
+duration 3.000000000
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/revision-v6/segments/04-clip-3.mp4'
+duration 78.266666667
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/redaction/manual-v2/segments/05-before-4.mp4'
+duration 3.000000000
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/revision-v8/segments/06-clip-4.mp4'
+duration 34.966666667
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/redaction/manual-v2/segments/07-before-5.mp4'
+duration 3.000000000
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/redaction/manual-v2/segments/08-clip-5.mp4'
+duration 42.600000000

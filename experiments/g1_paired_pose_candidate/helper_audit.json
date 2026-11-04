@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "samples": 1000,
+  "scope": "quaternion helper algebra only"
+}

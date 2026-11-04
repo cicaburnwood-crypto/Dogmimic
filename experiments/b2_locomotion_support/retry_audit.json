@@ -1,0 +1,45 @@
+{
+  "acceptance_unchanged": true,
+  "gait_sha256": "313f70df52183586eb346ceceb012846895d22865d621ba0ae288bf56de853e3",
+  "fixed_cases_and_physical_evaluation_ast_unchanged": true,
+  "command_count": 102400,
+  "xy_max": 1.9999970197677612,
+  "abs_y_max": 0.6000000238418579,
+  "angular_samples_max": 6.099301815032959,
+  "sample_fraction_above_1p4m_s": 0.31486326456069946,
+  "physical_support_calibration": {
+    "even_cases": {
+      "old": {
+        "precision": 0.7524420619010925,
+        "recall": 1.0,
+        "predicted_count": 2.7027342319488525,
+        "actual_count": 2.106250047683716,
+        "unloaded_mean_proxy": 0.34050917625427246
+      },
+      "new": {
+        "precision": 0.959531843662262,
+        "recall": 0.9304895997047424,
+        "predicted_count": 2.0289363861083984,
+        "actual_count": 2.106250047683716,
+        "unloaded_mean_proxy": 0.04631883651018143
+      }
+    },
+    "odd_cases": {
+      "old": {
+        "precision": 0.7286030650138855,
+        "recall": 1.0,
+        "predicted_count": 2.6608195304870605,
+        "actual_count": 1.9916000366210938,
+        "unloaded_mean_proxy": 0.350352019071579
+      },
+      "new": {
+        "precision": 0.9475045800209045,
+        "recall": 0.9379895329475403,
+        "predicted_count": 1.9711366891860962,
+        "actual_count": 1.9916000366210938,
+        "unloaded_mean_proxy": 0.054363660514354706
+      }
+    }
+  },
+  "calibration_only_no_policy_or_replay_initialization": true
+}

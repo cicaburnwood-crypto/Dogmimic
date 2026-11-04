@@ -1,0 +1,21 @@
+{
+  "it": 700,
+  "updates": 280,
+  "wm_err1": 0.04338229475542903,
+  "wm_errk": 0.2641028441488743,
+  "pi_loss": 0.01637282102019526,
+  "pi_gnorm": 1.3794487938284874,
+  "load_min_kg": 5.004622077941894,
+  "load_max_kg": 14.99812297821045,
+  "load_mean_kg": 9.93992772102356,
+  "pushed_transitions": 106077.35,
+  "iter_s": 0.10071460962295532,
+  "mem_gb": 3.818009088,
+  "pid": 2145546,
+  "gpu": 6,
+  "out": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_stable_cycle_v3_20261030_232447",
+  "ppid": 1,
+  "session": 2145546,
+  "stdin": "/dev/null",
+  "checked_unix": 1793374170.0762007
+}

@@ -1,0 +1,58 @@
+{
+  "repository": "https://github.com/Improbable-AI/walk-these-ways",
+  "commit": "0e7236bdc81ce855cbe3d70345a7899452bdeb1c",
+  "commit_date": "2024-06-16T22:12:25Z",
+  "files": {
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/LICENSE",
+      "sha256": "7dc66e1919dbcc2b49af464ceac3518b230e0e253d57988d418e23f01ef675b9",
+      "bytes": 1265
+    },
+    "LICENSES/legged_gym/LICENSE": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/LICENSES/legged_gym/LICENSE",
+      "sha256": "d5b70bfeae0eb84295cff9dd7daf71e28a809eae4a1953762d491cb256dafeb6",
+      "bytes": 1730
+    },
+    "README.md": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/README.md",
+      "sha256": "d65c228ec45945721efc1a17b52d7bc1a18f5383078b52544477041659eb75d3",
+      "bytes": 11808
+    },
+    "scripts/train.py": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/scripts/train.py",
+      "sha256": "99c846c689a65e70f59b11ad38cc99b8d78cc1673c90743c9356d3ec8ed42020",
+      "bytes": 10489
+    },
+    "go1_gym/envs/rewards/corl_rewards.py": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/go1_gym/envs/rewards/corl_rewards.py",
+      "sha256": "d18dad6903069e942ae127dc48658281c720d37e98813902e42070c92bd3c694",
+      "bytes": 10324
+    },
+    "go1_gym/envs/base/legged_robot.py": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/go1_gym/envs/base/legged_robot.py",
+      "sha256": "76a2a6471b19776f1be9b12ce332653d6e4a2e963aa5f61adb52681d5d12e9d1",
+      "bytes": 107009
+    },
+    "go1_gym/envs/base/legged_robot_config.py": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/go1_gym/envs/base/legged_robot_config.py",
+      "sha256": "2f8106d704c88c6e2e78d7d8f8fca8d772d4c891052e88901eb8e318ebcfe1b2",
+      "bytes": 15911
+    },
+    "go1_gym/envs/go1/go1_config.py": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/go1_gym/envs/go1/go1_config.py",
+      "sha256": "e27c69976979839efe70a329f1dd9bc07b88444dac294e4f6dab03045cd7c4d5",
+      "bytes": 3074
+    },
+    "go1_gym/utils/math_utils.py": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/go1_gym/utils/math_utils.py",
+      "sha256": "497d7c4274bb8f24fd7e32cb52f6ea56db5efc70b9122c052ea5a23fca912985",
+      "bytes": 957
+    },
+    "go1_gym_deploy/scripts/deploy_policy.py": {
+      "url": "https://raw.githubusercontent.com/Improbable-AI/walk-these-ways/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/go1_gym_deploy/scripts/deploy_policy.py",
+      "sha256": "80e9e2f7fe989a32a95f378138e914d06a649ad00ceaa3eae9c8d2de47bdfee6",
+      "bytes": 2510
+    }
+  },
+  "no_policy_weights_downloaded": true
+}

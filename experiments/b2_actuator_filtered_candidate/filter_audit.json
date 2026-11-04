@@ -1,0 +1,1 @@
+{"passed": true, "context_dim": 43, "physical_imagined_filter_parity_steps": 16, "hidden_state_required": true, "gradient_check_passed": true, "command_power_bound_passed": true, "scope": "CPU component audit only; no integration/physical acceptance/deployment"}

@@ -1,0 +1,285 @@
+{
+  "request": "Retrain normal grounded B2 quadruped locomotion with all-four-airborne penalty; no official policies or motion references",
+  "previous_model_preserved": true,
+  "initialization": "random actor, world model, critic and empty replay",
+  "xy_norm_max": 2.0,
+  "abs_y_max": 0.6,
+  "x_component_limit": null,
+  "yaw_command_clip": null,
+  "hardware_scope": "simulation only",
+  "smoke_run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_walk_smoke_20261101_011233",
+  "smoke_train_returncode": 0,
+  "smoke_eval_returncode": 0,
+  "formal_run": "runs/b2_locomotion_walk_fresh_20261101_011622",
+  "baseline": {
+    "trials_per_case": 16,
+    "initial_velocity_exactly_zero": true,
+    "initial_pose": "standard standing",
+    "seed": 20261121,
+    "duration_seconds": 17.0,
+    "reference_motion": false,
+    "official_policy": false,
+    "physics": "MuJoCo Warp",
+    "sequence": [
+      [
+        "stand",
+        0,
+        1.5
+      ],
+      [
+        "command",
+        1.5,
+        5.5
+      ],
+      [
+        "stop",
+        5.5,
+        8.5
+      ],
+      [
+        "opposite_command",
+        8.5,
+        12.5
+      ],
+      [
+        "stop",
+        12.5,
+        17
+      ]
+    ],
+    "core_passed": 16,
+    "core_total": 720,
+    "completion_count": 752,
+    "trial_total": 752,
+    "gait_criteria": {
+      "contact_force_n": 5.0,
+      "geometry_clearance_m": 0.002,
+      "ignored_initial_seconds": 0.5,
+      "max_unloaded_fraction": 0.01,
+      "max_unloaded_interval_s": 0.025,
+      "max_airborne_fraction": 0.005,
+      "max_airborne_interval_s": 0.02,
+      "min_two_support_fraction": 0.9,
+      "min_front_and_rear_support_fraction": 0.9,
+      "max_vertical_velocity_rms_m_s": 0.2,
+      "max_nonfoot_contact_fraction": 0.01,
+      "moving_foot_contact_duty_min": 0.05,
+      "moving_foot_contact_duty_max": 0.98
+    },
+    "contact_sampling_hz": 200,
+    "core_gait_passed": 16,
+    "core_legacy_passed": 720,
+    "mean_airborne_fraction": 0.1311073500967118,
+    "max_airborne_interval_s": 0.135,
+    "all_core_95": false,
+    "quality": 116.24317804696116,
+    "it": 34115,
+    "checkpoint": "runs/b2_locomotion_fresh_20261031_234839/best.pt",
+    "checkpoint_sha256": "c97b5949c6a285ed49cc099ad3cabdffd6275aa33f6db189b24b8a72d9d3b924",
+    "train_seconds": 2341.012517929077,
+    "launch_wall_seconds": 2364.0870938301086,
+    "evaluated_unix": 1793466979.9004562,
+    "eval_seconds": 7.6729772090911865
+  },
+  "gait_audit": {
+    "penalty_order": [
+      "stand",
+      "one_swing",
+      "diagonal_swing",
+      "front_pair_swing",
+      "all_air_8cm",
+      "all_air_16cm"
+    ],
+    "penalties": [
+      0.023542581126093864,
+      0.1135050430893898,
+      0.24756215512752533,
+      0.8682048916816711,
+      15.96660041809082,
+      45.662601470947266
+    ],
+    "airborne_downward_gradient": [
+      124.80000305175781,
+      124.80000305175781,
+      124.80000305175781,
+      124.80000305175781
+    ],
+    "compiled_reward_and_gradient_match": true,
+    "static_cpu_foot_force_n": [
+      66.51684940195894,
+      65.51889590086542,
+      259.72789706488226,
+      258.04910609010994
+    ],
+    "static_gpu_foot_force_n": [
+      66.49468994140625,
+      65.73086547851562,
+      259.7622375488281,
+      258.010009765625
+    ],
+    "expected_weight_n": 819.11824452,
+    "static_cpu_nonfoot_force_n": 169.23952555527535,
+    "static_gpu_nonfoot_force_n": 169.19723510742188,
+    "lifted_pose_zero_contact_verified": true,
+    "synthetic_100ms_flight_rejected": true,
+    "continuous_four_foot_drag_rejected": true,
+    "synthetic_diagonal_support_accepted": true,
+    "criteria": {
+      "contact_force_n": 5.0,
+      "geometry_clearance_m": 0.002,
+      "ignored_initial_seconds": 0.5,
+      "max_unloaded_fraction": 0.01,
+      "max_unloaded_interval_s": 0.025,
+      "max_airborne_fraction": 0.005,
+      "max_airborne_interval_s": 0.02,
+      "min_two_support_fraction": 0.9,
+      "min_front_and_rear_support_fraction": 0.9,
+      "max_vertical_velocity_rms_m_s": 0.2,
+      "max_nonfoot_contact_fraction": 0.01,
+      "moving_foot_contact_duty_min": 0.05,
+      "moving_foot_contact_duty_max": 0.98
+    }
+  },
+  "contract_audit": {
+    "no_motion_library": true,
+    "fresh_policy_and_world_model": true,
+    "standard_pose": true,
+    "initial_velocity_exactly_zero": true,
+    "actor_observation": "joint q/dq, body gyro, projected gravity, previous action, 10 frames; command xyz",
+    "actor_obs_dim": 420,
+    "ground_truth_velocity_actor_input": false,
+    "policy_gradient_through_world_model": 0.012300013978006064,
+    "command_samples": 100000,
+    "xy_norm_max": 2,
+    "abs_y_max": 0.6,
+    "yaw_command_not_clipped": true,
+    "per_step_delay_context_verified": true,
+    "physical_mass_scale": [
+      0.8175897598266602,
+      1.1969375610351562
+    ],
+    "control_delay_ms": [
+      0.0,
+      10.0
+    ],
+    "baseline_1p28s_terminations": 0,
+    "baseline_final_height_m": 0.4523330628871918,
+    "model": {
+      "source": "/home/liudiwen/projects/supermimic_vibe/experiments/three_skills/vendor/unitree_mujoco/unitree_robots/b2/b2.xml",
+      "source_sha256": "ed6b51d00fb8593dd1c0e2360d10e06c5b86e422ec4583e92add0343ad24c9d8",
+      "source_use": "geometry, mass, joint limits only; no policy or motion files",
+      "model_sha256": "705e58ef3e5bf151559fe76f54586e536a93c03202c2708c98e296ca5dfaa59d",
+      "mass_kg": 83.49829199999999,
+      "standing_height_m": 0.5911472109675505,
+      "q0": [
+        0.0,
+        0.67,
+        -1.3,
+        0.0,
+        0.67,
+        -1.3,
+        0.0,
+        0.67,
+        -1.3,
+        0.0,
+        0.67,
+        -1.3
+      ],
+      "joint_names": [
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint"
+      ],
+      "policy_to_sdk": [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2,
+        9,
+        10,
+        11,
+        6,
+        7,
+        8
+      ],
+      "joint_limits": [
+        [
+          -0.87,
+          0.87
+        ],
+        [
+          -0.94,
+          4.69
+        ],
+        [
+          -2.82,
+          -0.43
+        ],
+        [
+          -0.87,
+          0.87
+        ],
+        [
+          -0.94,
+          4.69
+        ],
+        [
+          -2.82,
+          -0.43
+        ],
+        [
+          -0.87,
+          0.87
+        ],
+        [
+          -0.94,
+          4.69
+        ],
+        [
+          -2.82,
+          -0.43
+        ],
+        [
+          -0.87,
+          0.87
+        ],
+        [
+          -0.94,
+          4.69
+        ],
+        [
+          -2.82,
+          -0.43
+        ]
+      ],
+      "torque_limits": [
+        200.0,
+        200.0,
+        300.0,
+        200.0,
+        200.0,
+        300.0,
+        200.0,
+        200.0,
+        300.0,
+        200.0,
+        200.0,
+        300.0
+      ],
+      "kp": 250.0,
+      "kd": 8.0
+    }
+  },
+  "created_unix": 1793466982.2893693
+}

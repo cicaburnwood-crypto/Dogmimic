@@ -1,0 +1,11 @@
+{
+  "status": "actual_adapter_cpu_cuda_h16_smoke_passed_not_launched",
+  "change": "World model observes analytically filtered effective action instead of raw action; preserve actual physics, reward and acceptance",
+  "initialization": "fresh WM required due changed action semantics",
+  "pending": [
+    "Existing filtered probe final physical evaluation",
+    "Bounded effective-action training comparison",
+    "Full unchanged acceptance"
+  ],
+  "active_training_changed": false
+}

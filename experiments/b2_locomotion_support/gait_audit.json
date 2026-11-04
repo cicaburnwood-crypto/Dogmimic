@@ -1,0 +1,65 @@
+{
+  "penalty_order": [
+    "stand",
+    "one_swing",
+    "diagonal_swing",
+    "front_pair_swing",
+    "all_air_8cm",
+    "all_air_16cm"
+  ],
+  "penalties": [
+    4.460533142089844,
+    6.31468391418457,
+    8.612777709960938,
+    8.721271514892578,
+    34.70824432373047,
+    67.82583618164062
+  ],
+  "airborne_downward_gradient": [
+    124.80000305175781,
+    155.83218383789062,
+    124.80000305175781,
+    124.80000305175781
+  ],
+  "compiled_reward_and_gradient_match": true,
+  "static_cpu_foot_force_n": [
+    66.50464653420119,
+    65.52300242585298,
+    259.729808507277,
+    258.0506360908689
+  ],
+  "planted_hovering_liftoff_cost": [
+    0.017993701621890068,
+    3.0752322673797607,
+    3.0752322673797607
+  ],
+  "hovering_and_liftoff_gradients_verified": true,
+  "static_gpu_foot_force_n": [
+    66.37294006347656,
+    65.44345092773438,
+    259.77734375,
+    258.0988464355469
+  ],
+  "expected_weight_n": 819.11824452,
+  "static_cpu_nonfoot_force_n": 169.29254860050287,
+  "static_gpu_nonfoot_force_n": 169.2718505859375,
+  "lifted_pose_zero_contact_verified": true,
+  "synthetic_100ms_flight_rejected": true,
+  "continuous_four_foot_drag_rejected": true,
+  "synthetic_diagonal_support_accepted": true,
+  "criteria": {
+    "contact_force_n": 5.0,
+    "geometry_clearance_m": 0.002,
+    "ignored_initial_seconds": 0.5,
+    "max_unloaded_fraction": 0.01,
+    "max_unloaded_interval_s": 0.025,
+    "max_airborne_fraction": 0.005,
+    "max_airborne_interval_s": 0.02,
+    "min_two_support_fraction": 0.9,
+    "min_front_and_rear_support_fraction": 0.9,
+    "max_vertical_velocity_rms_m_s": 0.2,
+    "max_nonfoot_contact_fraction": 0.01,
+    "moving_foot_contact_duty_min": 0.05,
+    "moving_foot_contact_duty_max": 0.98
+  }
+}

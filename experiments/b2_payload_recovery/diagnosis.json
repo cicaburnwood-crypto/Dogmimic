@@ -1,0 +1,140 @@
+{
+  "source_checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_stable_cycle_v2_20261030_214533/best.pt",
+  "failed_run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_stable_cycle_v3_20261030_232447",
+  "reference_conflict": [
+    {
+      "kg": 0,
+      "mean_absolute_hind_reference_error_m": 0.10861409455537796,
+      "mean_hind_reference_offset_xy": [
+        [
+          0.16268500685691833,
+          -0.025970805436372757
+        ],
+        [
+          -0.03716850280761719,
+          -0.03651272505521774
+        ]
+      ],
+      "max_positive_reward_rate": 11.5,
+      "hold_reward_rates": {
+        "com_acceleration": -7.70222904975526e-05,
+        "hold_com_velocity": -7.131277379812673e-05,
+        "hind_foot_anchor": -27.98222541809082,
+        "hind_foot_speed": -0.002036475809291005
+      },
+      "measured_mean_hind_drift_m": 0.0027228609951635008
+    },
+    {
+      "kg": 5,
+      "mean_absolute_hind_reference_error_m": 0.10159295052289963,
+      "mean_hind_reference_offset_xy": [
+        [
+          0.13539104163646698,
+          -0.03281570225954056
+        ],
+        [
+          -0.04557345062494278,
+          -0.042796652764081955
+        ]
+      ],
+      "max_positive_reward_rate": 11.5,
+      "hold_reward_rates": {
+        "com_acceleration": -0.000616241421084851,
+        "hold_com_velocity": -0.0010423802305012941,
+        "hind_foot_anchor": -25.667282104492188,
+        "hind_foot_speed": -0.1278667002916336
+      },
+      "measured_mean_hind_drift_m": 0.00901345381862484
+    },
+    {
+      "kg": 10,
+      "mean_absolute_hind_reference_error_m": 0.0819254070520401,
+      "mean_hind_reference_offset_xy": [
+        [
+          0.10952147841453552,
+          -0.02537734992802143
+        ],
+        [
+          -0.03517893701791763,
+          -0.03167916461825371
+        ]
+      ],
+      "max_positive_reward_rate": 11.5,
+      "hold_reward_rates": {
+        "com_acceleration": -0.0011354844318702817,
+        "hold_com_velocity": -0.0013205595314502716,
+        "hind_foot_anchor": -19.739707946777344,
+        "hind_foot_speed": -0.10166889429092407
+      },
+      "measured_mean_hind_drift_m": 0.012453730636480032
+    },
+    {
+      "kg": 15,
+      "mean_absolute_hind_reference_error_m": 0.14916305243968964,
+      "mean_hind_reference_offset_xy": [
+        [
+          0.10012469440698624,
+          -0.11859562247991562
+        ],
+        [
+          -0.04126871004700661,
+          -0.12361554801464081
+        ]
+      ],
+      "max_positive_reward_rate": 11.5,
+      "hold_reward_rates": {
+        "com_acceleration": -0.003997331485152245,
+        "hold_com_velocity": -0.008187009952962399,
+        "hind_foot_anchor": -40.51877212524414,
+        "hind_foot_speed": -0.8693211078643799
+      },
+      "measured_mean_hind_drift_m": 0.06610147560422774
+    }
+  ],
+  "other_env_state_preserved_through_mass_recompute": true,
+  "dynamic_physics_baseline": [
+    {
+      "kg": 0,
+      "completed": 32,
+      "cycle": 32,
+      "strict": 32,
+      "trials": 32
+    },
+    {
+      "kg": 5,
+      "completed": 32,
+      "cycle": 31,
+      "strict": 28,
+      "trials": 32
+    },
+    {
+      "kg": 10,
+      "completed": 32,
+      "cycle": 32,
+      "strict": 0,
+      "trials": 32
+    },
+    {
+      "kg": 15,
+      "completed": 32,
+      "cycle": 28,
+      "strict": 1,
+      "trials": 32
+    }
+  ],
+  "actor_drift": [
+    {
+      "it": 1000,
+      "joint_command_rms_difference_rad": 0.32045912742614746,
+      "joint_command_max_difference_rad": 1.4656249284744263,
+      "with_original_normalizers_rms_rad": 0.32323649525642395
+    },
+    {
+      "it": 2000,
+      "joint_command_rms_difference_rad": 0.3053794503211975,
+      "joint_command_max_difference_rad": 1.7575194835662842,
+      "with_original_normalizers_rms_rad": 0.31926777958869934
+    }
+  ],
+  "interpretation": "Large absolute reference-foothold penalty conflicts with an already stationary stance; unconstrained actor updates lose rise/return skill. Model-bias contribution not isolated."
+}

@@ -1,0 +1,4 @@
+{
+  "passed": true,
+  "scope": "Evaluation method AST identical after removing progress-file writes; thresholds/cases/selection unchanged"
+}

@@ -1,0 +1,97 @@
+{
+  "user_request": "Use an established public validated locomotion reward, replacing bespoke rewards; SuperMimic remains training algorithm. Other-dog motion references permitted but not used.",
+  "upstream": {
+    "project": "MIT Walk These Ways (CoRL 2022)",
+    "repository": "https://github.com/Improbable-AI/walk-these-ways",
+    "commit": "0e7236bdc81ce855cbe3d70345a7899452bdeb1c",
+    "hardware_validation_scope": "upstream Go1, not our B2 policy",
+    "reward_terms": 19,
+    "weights_unchanged": true,
+    "composition": "multiply scales by dt=.02; positive_sum * exp(negative_sum/.02)",
+    "formula_parity_audit": "reward_parity_audit.json",
+    "licenses": "vendor/walk_these_ways/LICENSE and LICENSES/legged_gym/LICENSE"
+  },
+  "algorithm": {
+    "training": "SuperMimic learned dynamics + 32-step BPTT actor update + critic",
+    "ppo": false,
+    "actor": "random",
+    "world_model": "random",
+    "critic": "random",
+    "physics_head": "random",
+    "replay": "empty",
+    "pretrained_policy": false,
+    "source_checkpoint": null,
+    "motion_data": false,
+    "teacher": false
+  },
+  "adaptations": {
+    "morphology": [
+      "B2 standard height",
+      "B2 standing stance width/length",
+      "B2 .032 m foot radius instead of .02 m",
+      "B2 joint limits, PD control, action scales and solver geometry"
+    ],
+    "gait_preset": {
+      "name": "published diagonal trot",
+      "frequency_hz": 2.0,
+      "duration": 0.5,
+      "phase_offsets_FL_FR_RL_RR": [
+        0.5,
+        0,
+        0,
+        0.5
+      ],
+      "footswing_height_m": 0.09
+    },
+    "stop_command": "freeze all feet at phase .25; all four contact targets near 1",
+    "actor_input": "420 proprioceptive history + velocity command3 + internally generated gait clock4",
+    "world_model_aux": "real applied torques, real solver foot forces, thigh/calf collision flags; supervised prediction, no extra locomotion penalties",
+    "retained": [
+      "standard standing and zero velocity resets",
+      "all previous dynamics/noise/PD/delay randomization",
+      "command curriculum and 25% low-speed rehearsal",
+      "original physical termination and six-hour budget protection"
+    ],
+    "measured_morphology": {
+      "height": 0.5911472109675505,
+      "width": 0.3832859992980957,
+      "length": 0.6570000648498535,
+      "foot_radius": 0.032
+    }
+  },
+  "constraints": {
+    "norm_xy_max": 2.0,
+    "abs_y_max": 0.6,
+    "additional_vx_limit": null,
+    "wz_hard_clip": null,
+    "scope": "simulation only; hardware configuration later"
+  },
+  "acceptance": {
+    "unchanged": true,
+    "core_cases": 45,
+    "trials_per_case": 16,
+    "extra_spin_cases": 2,
+    "total_trials": 752,
+    "contact_sample_hz": 200,
+    "gait_sha256": "313f70df52183586eb346ceceb012846895d22865d621ba0ae288bf56de853e3",
+    "sequence": "stand -> move -> stop -> reverse -> stop",
+    "success": "two full evaluations, every core case >=95% and nominal pass"
+  },
+  "budget": {
+    "iterations": 80000,
+    "wall_hours": 6,
+    "train_gpus": [
+      4,
+      5
+    ],
+    "eval_gpu": 6
+  },
+  "created_unix": 1793478995.6901324,
+  "validation": {
+    "reward_parity": true,
+    "physics_adapter": true,
+    "terms": 19,
+    "max_abs_reward_term_error": 1.554312234475219e-14,
+    "max_abs_gradient_error": 4.121147867408581e-13
+  }
+}

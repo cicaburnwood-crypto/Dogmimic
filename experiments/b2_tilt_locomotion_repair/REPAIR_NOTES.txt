@@ -1,0 +1,59 @@
+B2 tilt locomotion — boundary repair v2 — 2026-11-04
+
+User authorization: try optimization and train again. One finite offline
+continuation on GPU6, detached; no robot connection or periodic automation.
+
+Evidence and source
+v1 completed 80000 iterations. Basic best20000=797/1312; final80000=662/1312.
+The curriculum stayed at1m/s,10degrees because lateral1m/s cases failed only
+the actual-speed boundary. Only20% random full-domain exposure remained.
+Final4m/s,+/-20degree video: reverse pitch mean-16.47degrees, worst7.06degree
+error and loaded-foot-center velocity RMS1.01m/s. This metric is the unchanged
+foot-center proxy, not a complete identification of contact-surface slip.
+
+Continue own v1 best20000 Actor and world model, including their normalizers.
+SHA256 01f539fc64850b28f48140dd13c83925a966b597b33bd2d3ed0f63de84b7f0c7.
+Original best/last/checkpoints/results remain in their original run unchanged.
+New replay and optimizers; new critic because the reward changed. First1000
+iterations update WM/critic only; Actor parameters AND normalizers stay fixed.
+Then Actor learns at initial lr5e-5, cosine decay over40000 iterations.
+New iteration counts are continuation-local, not original cumulative counts.
+
+Changes limited to task rewards, training commands and run management
+1. Fixed30% easy,30% continuous full-domain,40% boundary sampling. Boundaries
+   cover3-4m/s and simultaneous15-20degree roll/pitch, all signs, longitudinal,
+   diagonal/turning, lateral1m/s and spin2rad/s. No evaluation cases or seeds
+   imported by training. Arbitrary decimal commands remain covered; no gate.
+2. Hold requests8-10seconds. Half the episodes explicitly reverse then stop;
+   the others stream arbitrary requests. Initial2seconds and final4seconds
+   neutral. Original request smoothing unchanged; no joint-target slew/filter.
+3. Attitude exponential scale8->4degrees and normalized Huber error at2degrees.
+   Non-saturating desired-stance foot-speed and height-gated Huber foot-speed
+   cost at0.2m/s. No new contact or force prediction head.
+4. Soft penalty begins at planar3.9m/s and lateral0.95m/s to leave room below
+   actual-speed acceptance. Requests still reach4m/s and1m/s. This is a loss
+   margin, not a reduction of the domain or an interface/action speed clamp.
+
+Preserved
+Vibe learning engine, online learned WM/k8/H32 BPTT/GAE critic/UTD0.4.
+No PPO, NJU, teacher policy, motion data or reference Actor penalty.
+XML, masses/inertias, gravity-9.81,200/200/300Nm limits per leg,PD250/8,
+5ms physics/20ms control, command interface and yaw definition unchanged.
+Friction0.4-1.3 on floor AND feet; mass0.9-1.1,COM offsets,PD multipliers,
+encoder/sensor noise,0-10ms delay and asymmetric initial joints unchanged.
+No added payload. Real actuator power/speed qualification remains unresolved;
+simulated task acceptance does not mean hardware approval.
+
+Validation and run
+CPU command/FK/gradient checks; exact source loading; sampler coverage;
+unchanged physical-step/reset code and acceptance hashes; actual H32 updates;
+frozen-Actor prefit;1024-env compiled smoke; export equivalence; original
+41-condition source baseline. These implementation checks do not prove skill
+improvement.40000 iterations or6hours,1024envs,GPU6 only,eval every2000.
+Initial Actor is a best candidate; first trained checkpoint cannot overwrite
+a better source baseline. Two consecutive basic evaluations over10percentage
+points worse than best in strict pass or completion stop training, then final
+eval runs. No auto restart. Training guard, not a robot operation lock.
+Final228conditions and two holdout seeds required for accepted. All acceptance
+files and thresholds byte-identical to v1: actual4/1m/s limits,2degree attitude
+RMS,5degree peak,0.2m/s foot slip and every other criterion unchanged.

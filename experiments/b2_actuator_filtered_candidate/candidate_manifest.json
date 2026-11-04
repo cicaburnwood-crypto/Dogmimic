@@ -1,0 +1,24 @@
+{
+  "status": "bounded_training_probe_launched",
+  "parent": "b2_actuator_robust_v3",
+  "candidate_command_rate_rad_s": 4,
+  "command_power_w": 1200,
+  "acceptance_speed_rad_s": 6,
+  "acceptance_power_w": 1501,
+  "context_dim": 43,
+  "context_extra": "previous filtered joint target12",
+  "audit": "filter_audit.json",
+  "pending": [
+    "Probe physical evaluation trend",
+    "Unchanged full physical validation including crossed conditions"
+  ],
+  "active_training_modified": false,
+  "deployment_allowed": false,
+  "world_model_initialization": "fresh",
+  "initial_baseline_success_counts": [
+    58,
+    39,
+    0,
+    0
+  ]
+}

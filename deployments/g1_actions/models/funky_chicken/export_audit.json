@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "cases": 128,
+  "actor_max_error": 1.1920928955078125e-06,
+  "goal_cases": 65,
+  "goal_max_error": 0.0,
+  "oracle": "Original CPU float32 training Policy and Task.goal"
+}

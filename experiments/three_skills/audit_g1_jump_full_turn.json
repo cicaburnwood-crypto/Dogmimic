@@ -1,0 +1,14 @@
+{
+  "task": "g1_jump_full_turn",
+  "joints": 29,
+  "state_dim": 71,
+  "delta_dim": 70,
+  "obs_dim": 93,
+  "goal_dim": 365,
+  "fk_max_abs_error_m": 1.1596224536170041e-07,
+  "finite_world_model_loss": 0.3322417736053467,
+  "gradient_path_verified": true,
+  "invalid_physics": 0,
+  "zero_action_terminated_transitions": 33,
+  "actuator_joint_mapping_verified": true
+}

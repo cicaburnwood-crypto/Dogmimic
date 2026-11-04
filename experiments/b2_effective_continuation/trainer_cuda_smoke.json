@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "device": "cuda",
+  "source_sha256": "f5aae854c90fe26f15ccc484505b7a303c43f630466164bfb9d25fb42d19d4ad",
+  "anchor_sha256": "24f489e37949788dcef81f1af0f68de6556886685b6b9ca17803c2a430b37a85",
+  "actor_wm_exact_load": true,
+  "anchor_preserved": true,
+  "updates": 3,
+  "horizon": 16,
+  "scope": "small-batch implementation smoke, not physical acceptance"
+}

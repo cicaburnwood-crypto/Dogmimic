@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-01T19:21:38.918563+08:00",
+  "run": "runs/g1_jump_robust_v3_20261101_190925",
+  "initial_iteration": 0,
+  "compared_iteration": 1000,
+  "policy_tensors": 26,
+  "exact_equal": true,
+  "differences": [],
+  "interpretation": "No policy tensor changed during warmup. Initial vs iteration1000 physical score variation is not learned policy improvement; precise numerical source not established."
+}

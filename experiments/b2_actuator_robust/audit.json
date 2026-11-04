@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "random_samples": 10000,
+  "torque_power_envelope": true,
+  "braking_preserved": true,
+  "finite_gradients": true,
+  "original_evaluator_sha256": "5e9612aaae20e7c5611f6a8a1d3aaa0e5d5e7c930ec03baf11c593a9301a99bd",
+  "experimental_not_vendor_limits": true
+}

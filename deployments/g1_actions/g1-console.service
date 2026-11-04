@@ -1,0 +1,13 @@
+[Unit]
+Description=G1 SuperMimic action console
+After=network-online.target
+[Service]
+Type=simple
+WorkingDirectory=/home/unitree/supermimic_g1_actions_20261101
+Environment=G1_INTERFACE=eth0
+Environment=G1_PYTHON=/usr/bin/python3
+ExecStart=/bin/bash /home/unitree/supermimic_g1_actions_20261101/deployments/g1_actions/start_console.sh
+Restart=on-failure
+RestartSec=3
+[Install]
+WantedBy=default.target

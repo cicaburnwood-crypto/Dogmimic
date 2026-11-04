@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "all_nine_delays_exact": true,
+  "substep_order_exact": true,
+  "current_action_jacobian_matches_consumed_substeps": true,
+  "delay20_to40ms_no_immediate_action_effect": true,
+  "scope": "Algebra and queue simulation only; not physical acceptance"
+}

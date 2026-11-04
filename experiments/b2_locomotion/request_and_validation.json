@@ -1,0 +1,27 @@
+{
+  "request": "B2 reference-free omnidirectional quadruped locomotion from standard stand through motion and back to stand",
+  "translation_norm_max_m_s": 2,
+  "lateral_abs_max_m_s": 0.6,
+  "additional_x_limit": null,
+  "yaw_hard_limit": null,
+  "official_policy_or_reference": false,
+  "random_actor_and_world_model": true,
+  "latest_user_scope": "training and simulation only; hardware configuration to be supplied later",
+  "hardware_connected": false,
+  "scheduled_chat_monitor_created": true,
+  "run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_fresh_20261031_234839",
+  "preparation_checks": [
+    "no MotionLibrary instantiated",
+    "zero initial root and joint velocities",
+    "100000 random command bounds",
+    "real physics with dynamics and delay randomization",
+    "gradient through fresh world model into fresh actor",
+    "two-GPU 25-iteration smoke",
+    "47-case physical evaluation pipeline",
+    "CPU TorchScript export numerical parity"
+  ],
+  "smoke_weights_reused": false,
+  "compile_cache_reused": true,
+  "monitor_automation_id": "b2-20",
+  "monitor_interval_minutes": 20
+}

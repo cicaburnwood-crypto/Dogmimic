@@ -1,0 +1,118 @@
+{
+  "checked_hk": "2026-11-03T15:36:16.437132+08:00",
+  "reason": "user_requested_stop_all_training_and_evaluation",
+  "sigkill_fallback": [],
+  "periodic_automation": false,
+  "runs": {
+    "B2": {
+      "out": "/home/liudiwen/projects/supermimic_vibe/runs/nju_b2_test_20261103_143343",
+      "launch_pid": 1629124,
+      "status": {
+        "robot": "B2",
+        "iteration": 20000,
+        "updates": 7984,
+        "budget": 20000,
+        "elapsed_seconds": 3291.012547492981,
+        "physical_eval_seconds": 370.38376021385193,
+        "updated": 1793690922.8716466,
+        "pid": 1629124
+      },
+      "stopped_by_user": true,
+      "artifacts": {
+        "best.pt": {
+          "iteration": 10000,
+          "size": 190762770,
+          "sha256": "c6180f11ce5961a1db968499ede4b40e78096c1d3ac621b903531edef99429cc",
+          "readable": true
+        },
+        "ckpt_latest.pt": {
+          "iteration": 20000,
+          "size": 190762597,
+          "sha256": "258858105bf1fdf6a383100bd6bedb2ac28ed444758dd066f4e7487a5585f7c6",
+          "readable": true
+        }
+      },
+      "best_eval": {
+        "it": 10000,
+        "passed": 128,
+        "total": 128,
+        "completed": 128,
+        "all_passed": false,
+        "best_sha256": "c6180f11ce5961a1db968499ede4b40e78096c1d3ac621b903531edef99429cc"
+      },
+      "latest_eval": {
+        "it": 20000,
+        "passed": 0,
+        "total": 128,
+        "completed": 128,
+        "all_passed": false,
+        "full": false
+      },
+      "accepted_exists": false,
+      "eval_done": false,
+      "done": {
+        "iteration": 20000,
+        "reason": "budget",
+        "time": 1793690922.872137
+      },
+      "best_hash_matches": true,
+      "remaining_known_processes": []
+    },
+    "G1": {
+      "out": "/home/liudiwen/projects/supermimic_vibe/runs/nju_g1_test_20261103_143343",
+      "launch_pid": 1629125,
+      "status": {
+        "robot": "G1",
+        "iteration": 14000,
+        "updates": 5584,
+        "budget": 20000,
+        "elapsed_seconds": 3642.7302811145782,
+        "physical_eval_seconds": 325.64338207244873,
+        "updated": 1793691276.9377222,
+        "pid": 1629200
+      },
+      "stopped_by_user": true,
+      "artifacts": {
+        "best.pt": {
+          "iteration": 10000,
+          "size": 215362578,
+          "sha256": "e74ffbf6fc17694badb4671974dec50d934fc182d045414006869a55a332ff09",
+          "readable": true
+        },
+        "ckpt_latest.pt": {
+          "iteration": 14000,
+          "size": 215362405,
+          "sha256": "ec1cb3b6b7e2f8c0235cc98fefc1405208f35f4d37ec043290c9f5d6e38226ae",
+          "readable": true
+        }
+      },
+      "best_eval": {
+        "it": 10000,
+        "passed": 0,
+        "total": 672,
+        "completed": 640,
+        "all_passed": false,
+        "best_sha256": "e74ffbf6fc17694badb4671974dec50d934fc182d045414006869a55a332ff09"
+      },
+      "latest_eval": {
+        "it": 12000,
+        "passed": 0,
+        "total": 672,
+        "completed": 638,
+        "all_passed": false,
+        "full": false
+      },
+      "accepted_exists": false,
+      "eval_done": false,
+      "done": null,
+      "best_hash_matches": true,
+      "remaining_known_processes": []
+    }
+  },
+  "remaining_project_processes": [],
+  "gpu_compute_processes": [
+    "1961478, GPU-9b492930-44e4-c870-e6b8-da4d682770da, 11439 MiB"
+  ],
+  "gpu_query_error": "",
+  "all_target_processes_stopped": true
+}

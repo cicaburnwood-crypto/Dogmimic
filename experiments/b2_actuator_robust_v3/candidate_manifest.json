@@ -1,0 +1,8 @@
+{
+  "status": "staged_not_launched",
+  "parent": "b2_actuator_robust_v2",
+  "fix": "Preserve state derivatives through frozen anchor",
+  "initialization": "Own v2 best Actor and final WM, new replay and optimizers",
+  "criteria": "unchanged",
+  "validation": "CPU real-network finite-difference audit passed; smoke still required"
+}

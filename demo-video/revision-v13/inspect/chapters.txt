@@ -1,0 +1,57 @@
+;FFMETADATA1
+title=EchoNav - Full Research Demo
+[CHAPTER]
+TIMEBASE=1/60000
+START=0
+END=300000
+title=Paper title
+[CHAPTER]
+TIMEBASE=1/60000
+START=300000
+END=1200000
+title=Visual memory and hidden space prediction
+[CHAPTER]
+TIMEBASE=1/60000
+START=1200000
+END=2100000
+title=Selective visual memory
+[CHAPTER]
+TIMEBASE=1/60000
+START=2100000
+END=2700000
+title=Predict space behind obstacles
+[CHAPTER]
+TIMEBASE=1/60000
+START=2700000
+END=3420000
+title=Simulation and real-robot validation
+[CHAPTER]
+TIMEBASE=1/60000
+START=3420000
+END=3496000
+title=wheeled robot test cases
+[CHAPTER]
+TIMEBASE=1/60000
+START=3496000
+END=7012000
+title=wheeled robot test cases
+[CHAPTER]
+TIMEBASE=1/60000
+START=7012000
+END=7078000
+title=humanoid test cases
+[CHAPTER]
+TIMEBASE=1/60000
+START=7078000
+END=8555000
+title=humanoid test cases
+[CHAPTER]
+TIMEBASE=1/60000
+START=8555000
+END=8616000
+title=Quadruped Test Case
+[CHAPTER]
+TIMEBASE=1/60000
+START=8616000
+END=10932000
+title=Quadruped Test Case

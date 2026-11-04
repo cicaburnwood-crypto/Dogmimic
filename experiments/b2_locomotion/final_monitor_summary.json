@@ -1,0 +1,96 @@
+{
+  "best_iteration": 34115,
+  "latest_iteration": 34115,
+  "best_equals_latest_hash": true,
+  "best_checkpoint_verified": true,
+  "core_passed": 720,
+  "core_total": 720,
+  "all_passed": 752,
+  "all_total": 752,
+  "all_completed": 752,
+  "all_core_95": true,
+  "train_returncode": 0,
+  "eval_returncode": 0,
+  "train_process_wall_s": 2370.1077716350555,
+  "full_pipeline_wall_s": 2381.610796689987,
+  "finished_hkt": "2026-11-01T00:28:21.329543+08:00",
+  "stop_mean_velocity_m_s": 0.006685100065078586,
+  "stop_mean_drift_m": 0.013010946993826008,
+  "stop_mean_foot_speed_m_s": 0.008844499248920733,
+  "four_feet_contact_fraction": 1.0,
+  "selected": [
+    {
+      "name": "x-2",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.06841551815159619,
+      "yaw_rmse_rad_s": 0.0718440543860197,
+      "stop_mean_m_s": 0.006149366497993469,
+      "stop_drift_m_mean": 0.009526203182758763
+    },
+    {
+      "name": "x+2",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.06396363372914493,
+      "yaw_rmse_rad_s": 0.07439693855121732,
+      "stop_mean_m_s": 0.007451730663888156,
+      "stop_drift_m_mean": 0.014961999462684616
+    },
+    {
+      "name": "diagonal+1_+1_2",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.0870030929800123,
+      "yaw_rmse_rad_s": 0.09614403545856476,
+      "stop_mean_m_s": 0.007695046835578978,
+      "stop_drift_m_mean": 0.013771217090834398
+    },
+    {
+      "name": "y-0.6",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.05471029016189277,
+      "yaw_rmse_rad_s": 0.04092741897329688,
+      "stop_mean_m_s": 0.007663488358957693,
+      "stop_drift_m_mean": 0.020381048147100955
+    },
+    {
+      "name": "y+0.6",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.05432667024433613,
+      "yaw_rmse_rad_s": 0.04128958564251661,
+      "stop_mean_m_s": 0.006803408177802339,
+      "stop_drift_m_mean": 0.013723678304813802
+    },
+    {
+      "name": "spin-3",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.054475331446155906,
+      "yaw_rmse_rad_s": 0.09200715413317084,
+      "stop_mean_m_s": 0.0070169889368116856,
+      "stop_drift_m_mean": 0.012667875533225015
+    },
+    {
+      "name": "spin+3",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.050848545506596565,
+      "yaw_rmse_rad_s": 0.0920495823957026,
+      "stop_mean_m_s": 0.007261253282194957,
+      "stop_drift_m_mean": 0.015272095508407801
+    },
+    {
+      "name": "combined_1.9_+1",
+      "passed": 16,
+      "velocity_rmse_m_s": 0.1575998766347766,
+      "yaw_rmse_rad_s": 0.161140201613307,
+      "stop_mean_m_s": 0.007311017805477604,
+      "stop_drift_m_mean": 0.012255188514245674
+    }
+  ],
+  "export": {
+    "iteration": 34115,
+    "checkpoint_sha256": "c97b5949c6a285ed49cc099ad3cabdffd6275aa33f6db189b24b8a72d9d3b924",
+    "policy_sha256": "c442f43f7f92a44d2daa50255d6bf83a7c59085de9a0701391b99eac9791053e",
+    "cpu_export_max_error": 0.0,
+    "physical_eval_passed": true,
+    "hardware_validated": false
+  },
+  "run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_fresh_20261031_234839"
+}

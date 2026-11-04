@@ -1,0 +1,45 @@
+{
+  "release": "20261103_attitude_recovery_180643",
+  "created_at": "2026-11-03T18:06:43.549947+08:00",
+  "files": {
+    "start_console.sh": "b500f87fb6a7a0adf4da68dc2e99ac10de0506cb8bd3e076a41f95ffa68ececb",
+    "README.md": "9737481433d01a0be36798c68e9d8949c95259b24c656c3249f8777470c57e06",
+    "pd_adapter.py": "0eb48b65e26a2e10a72c2bdd40d97a5c2d561402b12f2add5bfeaf66c5de9d52",
+    "backend.py": "9e940554c479cf178982a2ee5581f5bfcbe2a1091e62e4d3647a2458e8b7e272",
+    "control.py": "cf33b67e1349d6697c52b292ddee5853c9e79949dbeb115df9e2e0a881be03e8",
+    "attitude_plan.py": "5b7f5a94184a6b722ecec3cd808fc0c6dd70b14ed3ca9c0d3bf6ce9d32611e6e",
+    "server.py": "86feb8377caade11f88dc6ce42a089813f144b2d04cc14e647ad689a2ff1c66d",
+    "b2-console.service": "7fb78b80ad86baf441fde9c3e89b1a1778330fa46dd30c601144b64f5ee91eea",
+    "standing_geometry.py": "93a104f5e5403a5b4f6442d445a3bfc8907dba870601f621298ad862cf5c3e50",
+    "tests/test_pd_adapter.py": "c2e0d741f480e0d5d6440be8035b4459f46444b717e1753f1cbc1cdf1f754011",
+    "tests/browser_check.mjs": "05037f920a707b8b0526782549bdb4f2ed6f692fa78494b9fe4b19166c45bd97",
+    "tests/test_control.py": "269a92f7cedc6fc3e7861d19dcaf9e4b9235a8886eaef225e9e155a8c75e34c4",
+    "tests/shadow_inputs.py": "2577d321d606b6bc3b78b06b820e8af948c248849060011f606fa7d38b3428df",
+    "tests/test_attitude.py": "50ce550d28e9df74ec235b7cbb91d3325e40e2153a3c4e63340b55aa0697359a",
+    "web/robot.svg": "3894f6689749e1b13aeaeb1f4e399408911e11baf47c68eb5564b151cc030dab",
+    "web/favicon.svg": "6038b3466be1a05348e57ee9090503c0729f005ae65c77808fbfe5a1129eaa9b",
+    "web/app.js": "30405b08aafe423eef39ebacc996e8d54dcb7e22881644dd1e82ae55fcbf61f4",
+    "web/style.css": "5b8f7804ab59293d1a70f627b072d674086712b9149bbba77badaf438d465ad9",
+    "web/index.html": "ab8c870df37ad1f885842e8114fdadb54bffc092cd2d18bcfe47a910d50e3947"
+  },
+  "motion_conditions": {
+    "select": "standing",
+    "hindstand": "stable_standing",
+    "classic_entry": "double_R1",
+    "attitude": "stable_standing_then_confirm_plan"
+  },
+  "commissioning_gate": false,
+  "permanent_fault_latch": false,
+  "dwell_seconds": 0,
+  "neutral_stick_gate": false,
+  "learned_actuation_enabled_on_explicit_operator_action": true,
+  "model_hardware_validation_unchanged": true,
+  "changes": [
+    "Keep frozen Actor and zero-angle recovery output unchanged",
+    "Recognize standing leg geometry derived from existing pose tolerance",
+    "Recreate sport RPC endpoints; read-only readiness then native ClassicWalk(True)",
+    "Only report native restored after RPC and ownership confirmation",
+    "Record native handover samples at 50 Hz"
+  ],
+  "robot_deployment_performed": false
+}

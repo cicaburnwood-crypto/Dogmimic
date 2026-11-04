@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "horizon": 32,
+  "updates": 3,
+  "environments": 4,
+  "context_dim": 304,
+  "anchor_unchanged": true,
+  "stance_slip_gradient_verified": true,
+  "airborne_not_penalized": true,
+  "actual_wm_delay_equivalence": true,
+  "delay_action_gradient_verified": true,
+  "wm_updated": true,
+  "actor_updated": true,
+  "source_iteration": 33000,
+  "source_sha256": "c8aa01ba79daa5fad3e7c3c9220ce97d7907f6fc7b12a8034e85192dd26505fb",
+  "rows": [
+    {
+      "wm": {
+        "wm_loss": 0.014030493795871735,
+        "wm_err1": 0.005204056389629841,
+        "wm_errk": 0.008826437406241894
+      },
+      "actor": {
+        "pi_J": 5.008288383483887,
+        "pi_loss": -0.15650901198387146,
+        "pi_gnorm": 0.1400105506181717,
+        "img_survival": 0.9997631311416626,
+        "anchor_loss": 0.0,
+        "anchor_target_rms_rad": 0.0,
+        "img_r_body_pos": 0.9816719889640808,
+        "img_r_body_ori": 0.8707215785980225,
+        "img_r_body_lin": 0.9214362502098083,
+        "img_r_body_ang": 0.8779787421226501,
+        "img_r_root_pos": 1.403931736946106,
+        "img_r_root_ori": 0.4911588728427887,
+        "img_r_action_rate": -0.05378267914056778,
+        "img_r_joint_limit": -0.010997981764376163,
+        "img_r_feet_position": 1.732447862625122,
+        "img_r_feet_height": 1.9531761407852173,
+        "img_r_contact_slip": -0.03187837079167366
+      }
+    },
+    {
+      "wm": {
+        "wm_loss": 0.13031436502933502,
+        "wm_err1": 0.03210479021072388,
+        "wm_errk": 0.09820957481861115
+      },
+      "actor": {
+        "pi_J": 4.646600246429443,
+        "pi_loss": -0.14077001810073853,
+        "pi_gnorm": 0.8148975372314453,
+        "img_survival": 0.9997730255126953,
+        "anchor_loss": 0.1478748321533203,
+        "anchor_target_rms_rad": 0.019227248430252076,
+        "img_r_body_pos": 0.9719782471656799,
+        "img_r_body_ori": 0.8337166905403137,
+        "img_r_body_lin": 0.8726240396499634,
+        "img_r_body_ang": 0.8166465759277344,
+        "img_r_root_pos": 1.3261054754257202,
+        "img_r_root_ori": 0.4885112941265106,
+        "img_r_action_rate": -0.09127605706453323,
+        "img_r_joint_limit": -0.02607627958059311,
+        "img_r_feet_position": 1.4259706735610962,
+        "img_r_feet_height": 1.9440339803695679,
+        "img_r_contact_slip": -0.06002696976065636
+      }
+    },
+    {
+      "wm": {
+        "wm_loss": 0.07499589771032333,
+        "wm_err1": 0.0304819718003273,
+        "wm_errk": 0.04451392963528633
+      },
+      "actor": {
+        "pi_J": 4.664680480957031,
+        "pi_loss": -0.14315371215343475,
+        "pi_gnorm": 0.714539647102356,
+        "img_survival": 0.9997369647026062,
+        "anchor_loss": 0.08725180476903915,
+        "anchor_target_rms_rad": 0.014769208431243897,
+        "img_r_body_pos": 0.9650553464889526,
+        "img_r_body_ori": 0.7789099216461182,
+        "img_r_body_lin": 0.8488961458206177,
+        "img_r_body_ang": 0.8069955706596375,
+        "img_r_root_pos": 1.332676649093628,
+        "img_r_root_ori": 0.48895078897476196,
+        "img_r_action_rate": -0.0779929906129837,
+        "img_r_joint_limit": -0.01466288510710001,
+        "img_r_feet_position": 1.4942649602890015,
+        "img_r_feet_height": 1.9396182298660278,
+        "img_r_contact_slip": -0.04872060567140579
+      }
+    }
+  ],
+  "scope": "Small-batch actual trainer smoke; no physical skill acceptance"
+}

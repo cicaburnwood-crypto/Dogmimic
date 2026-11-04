@@ -1,0 +1,22 @@
+{
+  "changed_env_methods": [
+    "make_env",
+    "_randomize"
+  ],
+  "reward_control_physics_identical": true,
+  "payloads_kg": [
+    0,
+    5
+  ],
+  "training_distribution": [
+    0.5,
+    0.5
+  ],
+  "dropped_payloads_kg": [
+    10,
+    15
+  ],
+  "full_conditions": 48,
+  "unchanged_evaluator_sha256": "5e9612aaae20e7c5611f6a8a1d3aaa0e5d5e7c930ec03baf11c593a9301a99bd",
+  "source_selection": "own power-repair19000 maximizes minimum0/5kg task pass among saved evaluations;0kg62/64,5kg53/64; not actuator acceptance"
+}

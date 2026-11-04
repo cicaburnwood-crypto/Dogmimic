@@ -1,0 +1,9 @@
+{
+  "pid": 4000907,
+  "exec_session": 5228,
+  "gpu": 6,
+  "report": "runs/b2_filtered_cuda_training_audit_h16/report.json",
+  "log": "/tmp/b2_filtered_cuda_h16.log",
+  "status": "completed_pass",
+  "passed_unverified": false
+}

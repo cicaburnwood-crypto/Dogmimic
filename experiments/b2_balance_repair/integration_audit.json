@@ -1,0 +1,9 @@
+{
+  "changed_environment_methods": [
+    "transition_analytics"
+  ],
+  "reset_randomization_push_physical_step_unchanged": true,
+  "criterion_sha256": "5e9612aaae20e7c5611f6a8a1d3aaa0e5d5e7c930ec03baf11c593a9301a99bd",
+  "physical_envelope": "same torque_envelope; artificial target slew removed; actual acceptance6rad/s1501W unchanged",
+  "limitation": "Endpoint speed penalty still cannot represent all substep peaks; separate peak head was rejected. All substep peaks remain measured by physical acceptance."
+}

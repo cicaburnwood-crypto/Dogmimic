@@ -1,0 +1,852 @@
+{
+  "version": "3.0",
+  "status": "planned_not_executed",
+  "batch_seed_derivation": "int.from_bytes(SHA256(UTF8(supermimic_v3|{robot}|{set_base}|{case_id}|batch0))[0:4],big) modulo 2**31",
+  "sets": {
+    "DEV-A": 2202601,
+    "DEV-B": 2202602,
+    "HOLD-A": 3202601,
+    "HOLD-B": 3202602
+  },
+  "training_seeds": [
+    1202601,
+    1202602
+  ],
+  "cases": {
+    "B2": [
+      {
+        "case_id": "b2_00",
+        "nominal_load_kg": 0.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_01",
+        "nominal_load_kg": 5.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_02",
+        "nominal_load_kg": 0.0,
+        "friction": 0.4,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_03",
+        "nominal_load_kg": 0.0,
+        "friction": 0.4,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_04",
+        "nominal_load_kg": 0.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_05",
+        "nominal_load_kg": 0.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_06",
+        "nominal_load_kg": 0.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_07",
+        "nominal_load_kg": 0.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_08",
+        "nominal_load_kg": 0.0,
+        "friction": 0.7,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_09",
+        "nominal_load_kg": 0.0,
+        "friction": 0.7,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_10",
+        "nominal_load_kg": 0.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_11",
+        "nominal_load_kg": 0.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_12",
+        "nominal_load_kg": 0.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_13",
+        "nominal_load_kg": 0.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_14",
+        "nominal_load_kg": 0.0,
+        "friction": 1.0,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_15",
+        "nominal_load_kg": 0.0,
+        "friction": 1.0,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_16",
+        "nominal_load_kg": 0.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_17",
+        "nominal_load_kg": 0.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_18",
+        "nominal_load_kg": 0.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_19",
+        "nominal_load_kg": 0.0,
+        "friction": 1.3,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_20",
+        "nominal_load_kg": 0.0,
+        "friction": 1.3,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_21",
+        "nominal_load_kg": 0.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_22",
+        "nominal_load_kg": 0.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_23",
+        "nominal_load_kg": 0.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_24",
+        "nominal_load_kg": 0.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_25",
+        "nominal_load_kg": 5.0,
+        "friction": 0.4,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_26",
+        "nominal_load_kg": 5.0,
+        "friction": 0.4,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_27",
+        "nominal_load_kg": 5.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_28",
+        "nominal_load_kg": 5.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_29",
+        "nominal_load_kg": 5.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_30",
+        "nominal_load_kg": 5.0,
+        "friction": 0.4,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_31",
+        "nominal_load_kg": 5.0,
+        "friction": 0.7,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_32",
+        "nominal_load_kg": 5.0,
+        "friction": 0.7,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_33",
+        "nominal_load_kg": 5.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_34",
+        "nominal_load_kg": 5.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_35",
+        "nominal_load_kg": 5.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_36",
+        "nominal_load_kg": 5.0,
+        "friction": 0.7,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_37",
+        "nominal_load_kg": 5.0,
+        "friction": 1.0,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_38",
+        "nominal_load_kg": 5.0,
+        "friction": 1.0,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_39",
+        "nominal_load_kg": 5.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_40",
+        "nominal_load_kg": 5.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_41",
+        "nominal_load_kg": 5.0,
+        "friction": 1.0,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_42",
+        "nominal_load_kg": 5.0,
+        "friction": 1.3,
+        "mass_multiplier": 0.9,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_43",
+        "nominal_load_kg": 5.0,
+        "friction": 1.3,
+        "mass_multiplier": 0.9,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_44",
+        "nominal_load_kg": 5.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.0,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_45",
+        "nominal_load_kg": 5.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.0,
+        "asymmetric": true
+      },
+      {
+        "case_id": "b2_46",
+        "nominal_load_kg": 5.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.1,
+        "asymmetric": false
+      },
+      {
+        "case_id": "b2_47",
+        "nominal_load_kg": 5.0,
+        "friction": 1.3,
+        "mass_multiplier": 1.1,
+        "asymmetric": true
+      }
+    ],
+    "G1": [
+      {
+        "case_id": "nominal",
+        "parameters": {
+          "name": "nominal",
+          "friction": 0.8
+        }
+      },
+      {
+        "case_id": "mu_0.15",
+        "parameters": {
+          "name": "mu_0.15",
+          "friction": 0.15
+        }
+      },
+      {
+        "case_id": "mu_0.2",
+        "parameters": {
+          "name": "mu_0.2",
+          "friction": 0.2
+        }
+      },
+      {
+        "case_id": "mu_0.3",
+        "parameters": {
+          "name": "mu_0.3",
+          "friction": 0.3
+        }
+      },
+      {
+        "case_id": "mu_0.4",
+        "parameters": {
+          "name": "mu_0.4",
+          "friction": 0.4
+        }
+      },
+      {
+        "case_id": "mu_0.6",
+        "parameters": {
+          "name": "mu_0.6",
+          "friction": 0.6
+        }
+      },
+      {
+        "case_id": "mu_1.0",
+        "parameters": {
+          "name": "mu_1.0",
+          "friction": 1.0
+        }
+      },
+      {
+        "case_id": "mu_1.5",
+        "parameters": {
+          "name": "mu_1.5",
+          "friction": 1.5
+        }
+      },
+      {
+        "case_id": "native_start",
+        "parameters": {
+          "name": "native_start",
+          "measured": true
+        }
+      },
+      {
+        "case_id": "delay40",
+        "parameters": {
+          "name": "delay40",
+          "delay_ms": 40
+        }
+      },
+      {
+        "case_id": "mass125",
+        "parameters": {
+          "name": "mass125",
+          "mass": 1.25
+        }
+      },
+      {
+        "case_id": "weak_motors",
+        "parameters": {
+          "name": "weak_motors",
+          "effort": 0.7,
+          "kp": 0.8,
+          "kd": 0.7
+        }
+      },
+      {
+        "case_id": "stiff_motors",
+        "parameters": {
+          "name": "stiff_motors",
+          "kp": 1.2,
+          "kd": 1.3
+        }
+      },
+      {
+        "case_id": "asymmetric",
+        "parameters": {
+          "name": "asymmetric",
+          "friction": 0.4,
+          "asym": 0.3
+        }
+      },
+      {
+        "case_id": "pitch_plus",
+        "parameters": {
+          "name": "pitch_plus",
+          "tilt": 0.06
+        }
+      },
+      {
+        "case_id": "pitch_minus",
+        "parameters": {
+          "name": "pitch_minus",
+          "tilt": -0.06
+        }
+      },
+      {
+        "case_id": "push_forward",
+        "parameters": {
+          "name": "push_forward",
+          "force": [
+            25,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "case_id": "push_back",
+        "parameters": {
+          "name": "push_back",
+          "force": [
+            -25,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "case_id": "push_side",
+        "parameters": {
+          "name": "push_side",
+          "force": [
+            0,
+            25,
+            0
+          ]
+        }
+      },
+      {
+        "case_id": "combined_low",
+        "parameters": {
+          "name": "combined_low",
+          "friction": 0.2,
+          "measured": true,
+          "delay_ms": 20,
+          "mass": 1.15,
+          "effort": 0.85,
+          "force": [
+            0,
+            15,
+            0
+          ]
+        }
+      },
+      {
+        "case_id": "combined_high",
+        "parameters": {
+          "name": "combined_high",
+          "friction": 1.5,
+          "measured": true,
+          "delay_ms": 40,
+          "mass": 1.25,
+          "kp": 0.8,
+          "kd": 1.3
+        }
+      }
+    ]
+  },
+  "trials_per_case": {
+    "B2": 64,
+    "G1": 32
+  },
+  "total_trials_per_full_batch": {
+    "B2": 3072,
+    "G1": 672
+  },
+  "batch_seeds": {
+    "B2": {
+      "DEV-A": {
+        "b2_00": 972398549,
+        "b2_01": 360225633,
+        "b2_02": 1802015012,
+        "b2_03": 842041930,
+        "b2_04": 1258241744,
+        "b2_05": 752414435,
+        "b2_06": 2084889002,
+        "b2_07": 1963714475,
+        "b2_08": 1246300956,
+        "b2_09": 2048640383,
+        "b2_10": 196976114,
+        "b2_11": 1489631590,
+        "b2_12": 1515872959,
+        "b2_13": 277034254,
+        "b2_14": 1242987936,
+        "b2_15": 725754442,
+        "b2_16": 1387364933,
+        "b2_17": 2062412619,
+        "b2_18": 1223555156,
+        "b2_19": 1657751824,
+        "b2_20": 1853174780,
+        "b2_21": 222720805,
+        "b2_22": 875173614,
+        "b2_23": 440697908,
+        "b2_24": 527828733,
+        "b2_25": 242118751,
+        "b2_26": 1436728251,
+        "b2_27": 180227404,
+        "b2_28": 45726580,
+        "b2_29": 182096794,
+        "b2_30": 645093798,
+        "b2_31": 1192160756,
+        "b2_32": 1577975806,
+        "b2_33": 1075813099,
+        "b2_34": 647444129,
+        "b2_35": 1211447308,
+        "b2_36": 1922613985,
+        "b2_37": 1559736865,
+        "b2_38": 461409442,
+        "b2_39": 1714100230,
+        "b2_40": 1952456110,
+        "b2_41": 125783197,
+        "b2_42": 1032253355,
+        "b2_43": 289356099,
+        "b2_44": 603759561,
+        "b2_45": 2127781873,
+        "b2_46": 135736532,
+        "b2_47": 528758082
+      },
+      "DEV-B": {
+        "b2_00": 1776791851,
+        "b2_01": 758169395,
+        "b2_02": 738733532,
+        "b2_03": 843091704,
+        "b2_04": 1436810952,
+        "b2_05": 219453550,
+        "b2_06": 220441322,
+        "b2_07": 518229280,
+        "b2_08": 981285975,
+        "b2_09": 35295654,
+        "b2_10": 126526654,
+        "b2_11": 1721928812,
+        "b2_12": 827360537,
+        "b2_13": 60434032,
+        "b2_14": 1704910392,
+        "b2_15": 317396627,
+        "b2_16": 1796769119,
+        "b2_17": 597502539,
+        "b2_18": 394328797,
+        "b2_19": 1809578178,
+        "b2_20": 1906437837,
+        "b2_21": 1819458204,
+        "b2_22": 92124415,
+        "b2_23": 866603207,
+        "b2_24": 265722928,
+        "b2_25": 1247159815,
+        "b2_26": 490593337,
+        "b2_27": 1482335596,
+        "b2_28": 2018764820,
+        "b2_29": 592633128,
+        "b2_30": 49893297,
+        "b2_31": 1970227230,
+        "b2_32": 1877188047,
+        "b2_33": 1591705838,
+        "b2_34": 1955657115,
+        "b2_35": 421985861,
+        "b2_36": 1542087757,
+        "b2_37": 395667311,
+        "b2_38": 270469603,
+        "b2_39": 1648778062,
+        "b2_40": 100050655,
+        "b2_41": 1565138935,
+        "b2_42": 956440692,
+        "b2_43": 59366224,
+        "b2_44": 92678206,
+        "b2_45": 91505452,
+        "b2_46": 844711514,
+        "b2_47": 1673661554
+      },
+      "HOLD-A": {
+        "b2_00": 2042394626,
+        "b2_01": 453835445,
+        "b2_02": 800463305,
+        "b2_03": 940288090,
+        "b2_04": 1090320142,
+        "b2_05": 993215980,
+        "b2_06": 1185298405,
+        "b2_07": 1307338502,
+        "b2_08": 1275075410,
+        "b2_09": 2129030370,
+        "b2_10": 1556167205,
+        "b2_11": 342772764,
+        "b2_12": 1136109148,
+        "b2_13": 1026248289,
+        "b2_14": 1505755455,
+        "b2_15": 1634263188,
+        "b2_16": 53676081,
+        "b2_17": 1682928146,
+        "b2_18": 1224008005,
+        "b2_19": 409512800,
+        "b2_20": 434071963,
+        "b2_21": 904682164,
+        "b2_22": 567911641,
+        "b2_23": 1552624728,
+        "b2_24": 1594649025,
+        "b2_25": 211901751,
+        "b2_26": 2116687703,
+        "b2_27": 1961490038,
+        "b2_28": 1585219708,
+        "b2_29": 688229246,
+        "b2_30": 1618721998,
+        "b2_31": 885654971,
+        "b2_32": 1010796553,
+        "b2_33": 1656311971,
+        "b2_34": 934297305,
+        "b2_35": 1297882704,
+        "b2_36": 616192762,
+        "b2_37": 2392367,
+        "b2_38": 1538008060,
+        "b2_39": 306350405,
+        "b2_40": 2038098081,
+        "b2_41": 1641628732,
+        "b2_42": 651276864,
+        "b2_43": 733132522,
+        "b2_44": 381754037,
+        "b2_45": 1103210525,
+        "b2_46": 273765228,
+        "b2_47": 674126792
+      },
+      "HOLD-B": {
+        "b2_00": 1360159507,
+        "b2_01": 86639547,
+        "b2_02": 1785822421,
+        "b2_03": 1949062783,
+        "b2_04": 280478720,
+        "b2_05": 468446507,
+        "b2_06": 678157359,
+        "b2_07": 743008269,
+        "b2_08": 220019231,
+        "b2_09": 172129060,
+        "b2_10": 2008086036,
+        "b2_11": 46360962,
+        "b2_12": 1695340683,
+        "b2_13": 1807022828,
+        "b2_14": 1043738147,
+        "b2_15": 2110152625,
+        "b2_16": 920097096,
+        "b2_17": 365872483,
+        "b2_18": 185148996,
+        "b2_19": 1532137843,
+        "b2_20": 1775891927,
+        "b2_21": 1727033454,
+        "b2_22": 695004051,
+        "b2_23": 247562058,
+        "b2_24": 1699491377,
+        "b2_25": 939557204,
+        "b2_26": 1477820439,
+        "b2_27": 568254190,
+        "b2_28": 1665850190,
+        "b2_29": 2033821776,
+        "b2_30": 145295072,
+        "b2_31": 1594575693,
+        "b2_32": 211088137,
+        "b2_33": 929771349,
+        "b2_34": 651748533,
+        "b2_35": 557283823,
+        "b2_36": 934002319,
+        "b2_37": 1475861980,
+        "b2_38": 1544228923,
+        "b2_39": 1363438886,
+        "b2_40": 102768098,
+        "b2_41": 1139460035,
+        "b2_42": 1936657726,
+        "b2_43": 1313573836,
+        "b2_44": 940831397,
+        "b2_45": 1989756150,
+        "b2_46": 1403046598,
+        "b2_47": 1305544209
+      }
+    },
+    "G1": {
+      "DEV-A": {
+        "nominal": 1992684919,
+        "mu_0.15": 565379705,
+        "mu_0.2": 879148541,
+        "mu_0.3": 512968033,
+        "mu_0.4": 515683307,
+        "mu_0.6": 234066926,
+        "mu_1.0": 616026054,
+        "mu_1.5": 1490067236,
+        "native_start": 1782065238,
+        "delay40": 1990002758,
+        "mass125": 826692896,
+        "weak_motors": 833670378,
+        "stiff_motors": 1242273953,
+        "asymmetric": 1135520740,
+        "pitch_plus": 1555862494,
+        "pitch_minus": 125589326,
+        "push_forward": 1965891707,
+        "push_back": 1843851992,
+        "push_side": 983849523,
+        "combined_low": 533128904,
+        "combined_high": 792781438
+      },
+      "DEV-B": {
+        "nominal": 1173843017,
+        "mu_0.15": 1302525120,
+        "mu_0.2": 654279259,
+        "mu_0.3": 1170907004,
+        "mu_0.4": 193868664,
+        "mu_0.6": 327265374,
+        "mu_1.0": 1355454985,
+        "mu_1.5": 1958127468,
+        "native_start": 1858974474,
+        "delay40": 1708048907,
+        "mass125": 169311149,
+        "weak_motors": 1934256991,
+        "stiff_motors": 1881616752,
+        "asymmetric": 203759460,
+        "pitch_plus": 1567293072,
+        "pitch_minus": 924115081,
+        "push_forward": 1875760614,
+        "push_back": 911966855,
+        "push_side": 200054533,
+        "combined_low": 1860170064,
+        "combined_high": 2051398838
+      },
+      "HOLD-A": {
+        "nominal": 1196028905,
+        "mu_0.15": 1268702841,
+        "mu_0.2": 899620702,
+        "mu_0.3": 1503185275,
+        "mu_0.4": 1073149758,
+        "mu_0.6": 1246751567,
+        "mu_1.0": 1554241381,
+        "mu_1.5": 1683957505,
+        "native_start": 1244964968,
+        "delay40": 924990322,
+        "mass125": 1066318783,
+        "weak_motors": 559777622,
+        "stiff_motors": 269908777,
+        "asymmetric": 1559619619,
+        "pitch_plus": 2111637162,
+        "pitch_minus": 1114731127,
+        "push_forward": 1224713048,
+        "push_back": 1476588328,
+        "push_side": 1753501001,
+        "combined_low": 251980082,
+        "combined_high": 1888183298
+      },
+      "HOLD-B": {
+        "nominal": 1780078066,
+        "mu_0.15": 1487264617,
+        "mu_0.2": 910386685,
+        "mu_0.3": 2090268078,
+        "mu_0.4": 426003976,
+        "mu_0.6": 1209820691,
+        "mu_1.0": 1090570023,
+        "mu_1.5": 695976376,
+        "native_start": 1220241120,
+        "delay40": 1031923446,
+        "mass125": 540898678,
+        "weak_motors": 1435426390,
+        "stiff_motors": 1311236160,
+        "asymmetric": 1727495886,
+        "pitch_plus": 721741652,
+        "pitch_minus": 127041629,
+        "push_forward": 1773372904,
+        "push_back": 290617297,
+        "push_side": 1170324459,
+        "combined_low": 182565774,
+        "combined_high": 1486824926
+      }
+    }
+  },
+  "seed_semantics": "one seed per vectorized condition batch; trial0 fixed nominal, remaining trials generated by unchanged evaluator; reset arrays and RNG must be saved at execution",
+  "holdout_usage": "same frozen candidate, 2 complete batches; unused for tuning; initial Actor evaluated as explanatory comparator only",
+  "historical_seeds": {
+    "B2": 20261103,
+    "G1": "20261101+10000*case_index"
+  },
+  "accepted_operator_details": {
+    "B2": "each case >=61/64 motion and nominal_success, all trials all 5ms substeps speed<=6 and mechanical power<=1501",
+    "G1": "each case >=31/32 and standard condition nominal_success; landing error<=0.10; final error<0.10; other predicates unchanged"
+  },
+  "case_defaults": "inherit unchanged current RobustEnv defaults; record fully resolved values at execution, do not replace missing parameters with zeros",
+  "source_case_file_sha256": "53ca9e40c0af56471d009c202e2792e98b18c07f1e581a6e36f4aff8737932ca"
+}

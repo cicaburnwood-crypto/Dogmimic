@@ -1,0 +1,73 @@
+{
+  "status": "training_launched",
+  "source": "g1_jump_robust_v4_candidate",
+  "fix": "Episode constant XY coordinate origin at actual initial feet; no physical qpos changes",
+  "audit": "alignment_audit.txt",
+  "physical_validation": false,
+  "acceptance_unchanged": true,
+  "pending": [
+    "GPU rollout and training smoke",
+    "Independent unchanged672-trial physical evaluation",
+    "Runtime/export alignment before any deployment"
+  ],
+  "launch": {
+    "out": "/home/liudiwen/projects/supermimic_vibe/runs/g1_jump_robust_v5_20261101_195039",
+    "started": 1793533839.2611113,
+    "started_iso": "2026-11-01T19:50:39.261111+08:00",
+    "train_pid": 3979390,
+    "eval_pid": 3979391,
+    "train_gpus": [
+      4,
+      5
+    ],
+    "eval_gpu": 6,
+    "iterations": 40000,
+    "training_hours_limit": 6,
+    "command": [
+      "/home/liudiwen/projects/supermimic_vibe/.venv/bin/python",
+      "-m",
+      "torch.distributed.run",
+      "--standalone",
+      "--nproc_per_node=2",
+      "/home/liudiwen/projects/supermimic_vibe/experiments/g1_jump_robust_v5_candidate/train.py",
+      "--motions",
+      "data/processed/g1_standing_jump_060m.npz",
+      "--out",
+      "/home/liudiwen/projects/supermimic_vibe/runs/g1_jump_robust_v5_20261101_195039",
+      "--num-envs",
+      "1024",
+      "--buffer-steps",
+      "512",
+      "--warmup-steps",
+      "128",
+      "--iterations",
+      "40000",
+      "--wall-hours",
+      "6",
+      "--lr",
+      "0.0001",
+      "--use-critic",
+      "false",
+      "--lr-decay-iters",
+      "40000",
+      "--wm-batch",
+      "1024",
+      "--pi-batch",
+      "2048",
+      "--log-every",
+      "100",
+      "--ckpt-every",
+      "1000",
+      "--eval-every",
+      "1000"
+    ],
+    "source_sha256": "21f0e9071eda2eac648f973dc8969fe3907e25218f54727925139b6359fef498"
+  },
+  "smoke": {
+    "passed": true,
+    "updates": 3,
+    "context_dim": 304,
+    "frozen_anchor_unchanged": true,
+    "actor_updated": true
+  }
+}

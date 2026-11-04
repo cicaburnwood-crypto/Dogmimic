@@ -1,0 +1,21 @@
+{
+  "source": "lvhaidong/LAFAN1_Retargeting_Dataset:g1/jumps1_subject1.csv",
+  "processed_source_frames": [
+    318,
+    374
+  ],
+  "target_distance_m": 0.6,
+  "reference_foot_displacement_m": 0.5999999999999714,
+  "forward_scale": 0.7868464152639875,
+  "frames": 187,
+  "duration_s": 3.72,
+  "initial_hold_s": 0.5,
+  "recovery_s": 0.9,
+  "final_hold_s": 1.2,
+  "max_ik_position_error_m": 2.613237369606235e-10,
+  "minimum_foot_clearance_m": -0.0010000004683572083,
+  "max_both_foot_clearance_m": 0.06899999999661044,
+  "airtime_above_025_s": 0.26,
+  "takeoff_reference_frame": 58,
+  "landing_reference_frame": 76
+}

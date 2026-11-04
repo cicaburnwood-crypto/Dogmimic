@@ -1,0 +1,17 @@
+{
+  "run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_walk_fresh_20261101_011622",
+  "user_stop_reason": "User requested modified strategy and reward functions then retry",
+  "iterations": 60105,
+  "best_iteration": 54000,
+  "best_core_passed": 321,
+  "best_core_total": 720,
+  "best_completion_count": 747,
+  "best_sha256": "99996815e8aed678ee37e79ad97e42f92aefcbe7a33fce37b136143f261cbc15",
+  "latest_iteration": 60105,
+  "latest_core_passed": 314,
+  "latest_completion_count": 751,
+  "train_returncode": 0,
+  "eval_returncode": 0,
+  "train_process_wall_seconds": 4124.055702447891,
+  "full_pipeline_wall_seconds": 4155.270618200302
+}

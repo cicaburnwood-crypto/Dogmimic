@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "source_sha256": "1a88bfd02add3b5b7a7ebbfb567cfee09eef2fbbd42f62cd664e5934ffa6b877",
+  "actor_exact_load": true,
+  "continued_world_model": true,
+  "power_penalty_nonzero_gradient": true,
+  "anchor_preserved": true,
+  "updates": 3,
+  "horizon": 32,
+  "worst_joint_gradient_verified": true,
+  "physical_torque_identical": true,
+  "acceptance_speed_rad_s": 6,
+  "acceptance_power_w": 1501,
+  "payload_sample_counts": {
+    "0": 242,
+    "5": 270
+  },
+  "full_conditions": 48,
+  "only0and5kg": true,
+  "pushes_preserved": true,
+  "scope": "small-batch implementation and actual reset sampling; not physical acceptance"
+}

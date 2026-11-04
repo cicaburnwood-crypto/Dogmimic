@@ -1,0 +1,14 @@
+{
+  "source_sha256": "96dbb589f9fafb39e7d25dea3e4566d9a13e32788ef39ab685489d1617b9ecb4",
+  "iteration": 12000,
+  "samples": 512,
+  "actor_max_abs_error": 4.76837158203125e-07,
+  "command_steps": 2000,
+  "context_max_abs_error": 2.8312206268310547e-07,
+  "goal_max_abs_error": 1.341104507446289e-06,
+  "full_runtime_steps": 300,
+  "target_max_abs_error": 6.407499313354492e-07,
+  "physical_acceptance": false,
+  "runtime_sha256": "767ea8aedd717fce9f647b48d9d3216692d0383e426cd58bf0a44ccf0de18cae",
+  "weights_sha256": "a4a2f84f243020cfe2730c483087811da67076ac8b1046bdf5f4f1ff1c522673"
+}

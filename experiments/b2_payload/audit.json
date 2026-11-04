@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "mass_and_derived_constants_verified": true,
+  "centroid_position_max_error_m": 1.1066851279828427e-07,
+  "centroid_velocity_max_error_m_s": 4.1572522868627004e-08,
+  "inertia_max_error_kg_m2": 7.751855601867419e-08,
+  "impulse_max_error_m_s": 3.3986870371835974e-06,
+  "all_xyz_acceleration_penalties_verified": true,
+  "real_imagined_reward_parity": true,
+  "foot_and_return_gradients": {
+    "200": {
+      "position_gradient_norm": 739.008544921875,
+      "velocity_gradient_norm": 232.49525451660156
+    },
+    "700": {
+      "position_gradient_norm": 1175.755126953125,
+      "velocity_gradient_norm": 668.5494995117188
+    }
+  },
+  "loads_resampled_each_reset": true,
+  "load_min": 5.184040546417236,
+  "load_max": 14.9580717086792,
+  "force_min_n": 8.048713684082031,
+  "force_max_n": 15.989188194274902,
+  "timed_force_replay_verified": true,
+  "transient_imagined_push_expiry_verified": true,
+  "heading_frame_force_context_verified": true
+}

@@ -1,0 +1,14 @@
+{
+  "task": "b2_hindstand",
+  "joints": 12,
+  "state_dim": 37,
+  "delta_dim": 36,
+  "obs_dim": 42,
+  "goal_dim": 195,
+  "fk_max_abs_error_m": 1.0757187207666163e-07,
+  "finite_world_model_loss": 12.957280158996582,
+  "gradient_path_verified": true,
+  "invalid_physics": 0,
+  "zero_action_terminated_transitions": 32,
+  "actuator_joint_mapping_verified": true
+}

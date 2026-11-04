@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "phase_limits_and_identity": [
+    {
+      "frame": 0,
+      "initial_error": 0.0,
+      "max_delta_rad": 0.03999999910593033
+    },
+    {
+      "frame": 200,
+      "initial_error": 0.0,
+      "max_delta_rad": 0.008000016212463379
+    },
+    {
+      "frame": 650,
+      "initial_error": 0.0,
+      "max_delta_rad": 0.03999999910593033
+    }
+  ],
+  "submilliradian_correction_verified_rad": 7.000172627158463e-05,
+  "frozen_teacher_features": true,
+  "independent_head_gradients_verified": true,
+  "moving_reference_correction_attenuation": 1.889526356535498e-05
+}

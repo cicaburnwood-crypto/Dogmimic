@@ -1,0 +1,12 @@
+{
+  "passed_implementation_check": true,
+  "trials": 16,
+  "success_rate": 0.875,
+  "completion_rate": 0.9375,
+  "peak_speed": 9.00765323638916,
+  "peak_power": 1836.9317626953125,
+  "source": "own v3 actor",
+  "load_kg": 15,
+  "pushes": true,
+  "scope": "Candidate environment loaded-cycle diagnostic only; thresholds and physical evaluator unchanged. Not deployment acceptance."
+}

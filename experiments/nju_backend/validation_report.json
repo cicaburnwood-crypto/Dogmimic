@@ -1,0 +1,287 @@
+{
+  "checked": 1793687714.4775224,
+  "backend_commit": "f8f60d7bbdba68468c050ef100af02d752ca238e",
+  "G1_upstream_parity": {
+    "canonical": 0.0,
+    "integrate": 0.0,
+    "error": 0.0,
+    "obs": 0.0,
+    "history": 0.0,
+    "action": 0.0,
+    "value": 0.0,
+    "dynamics": 0.0,
+    "policy_gradient": 0.0,
+    "critic_gradient": 0.0
+  },
+  "validation": {
+    "B2": {
+      "training_smoke": {
+        "robot": "B2",
+        "iteration": 48,
+        "updates": 3,
+        "horizon": 32,
+        "wm_window": 8,
+        "critic": true,
+        "initial_hashes": {
+          "wm": "7d059c67789a1eaad8b7cfff2d692b73b5ea4e6154b56625f7f4d4d93c0c8159",
+          "policy": "44857ac8d77e0500ca44206b1c7530119fbcf5fd58a1d96ea870504d15ae18a8",
+          "critic": "55b50a2fa75d156afe917ad3e4d31f976a39f10d42305f5057f6dd6017e52825"
+        },
+        "final_hashes": {
+          "wm": "dac2e5317640d6dc1fcc4d2c8e7f147caf05e1d00f9058d3556d3748b9c561d0",
+          "policy": "61a30a094ed18edf931080678a657cbf851cb98772eeabf65429309eb927f79d",
+          "critic": "054abc976e23c6a5557a1d290044cc1b331cc4204d082407da42e74b5e86f6e2"
+        },
+        "export_error": 0.0,
+        "seconds": 112.6648325920105
+      },
+      "adapter_checks": {
+        "reward_max_errors": {
+          "motion_global_root_pos": 1.7881393432617188e-07,
+          "motion_global_root_ori": 2.086162567138672e-07,
+          "motion_body_pos": 8.940696716308594e-07,
+          "motion_body_ori": 4.172325134277344e-07,
+          "motion_body_lin_vel": 7.748603820800781e-07,
+          "motion_body_ang_vel": 2.086162567138672e-07,
+          "action_rate_l2": 2.3283064365386963e-10,
+          "joint_limit": 0.0
+        },
+        "observation_noise_excess": 0.0,
+        "goal_alignment": true,
+        "joint_action_order": [
+          "FL_hip_joint",
+          "FL_thigh_joint",
+          "FL_calf_joint",
+          "FR_hip_joint",
+          "FR_thigh_joint",
+          "FR_calf_joint",
+          "RL_hip_joint",
+          "RL_thigh_joint",
+          "RL_calf_joint",
+          "RR_hip_joint",
+          "RR_thigh_joint",
+          "RR_calf_joint"
+        ],
+        "window_shape": [
+          9,
+          64,
+          37
+        ],
+        "context_dim": 18,
+        "payload_counts": {
+          "0.0": 70,
+          "5.0": 58
+        },
+        "mass_scale_range": [
+          0.9002719521522522,
+          1.0996602773666382
+        ]
+      },
+      "reference": {
+        "robot": "B2",
+        "source": "/home/liudiwen/projects/supermimic_vibe/experiments/b2_cycle/b2_full_cycle.npz",
+        "source_sha256": "2cd20993005a089c0f4397c44a735e3abe94309042a882620470abb913a9aad0",
+        "frames": 776,
+        "seconds": 15.5,
+        "unchanged_qpos_qvel": true,
+        "fk_max_errors": [
+          1.3426546396910766e-07,
+          7.660016609900566e-08,
+          9.642127807296674e-08,
+          1.6651370060571935e-07
+        ],
+        "converted_sha256": "f75f612a4e6abd48cb980baf84c5c80fc694a475bd2c4c57c2af4f1b01bf4aff"
+      },
+      "strict_interface_probe": {
+        "it": 48,
+        "passed": 0,
+        "total": 16,
+        "completed": 0,
+        "all_passed": false,
+        "evaluator_sha256": "5e9612aaae20e7c5611f6a8a1d3aaa0e5d5e7c930ec03baf11c593a9301a99bd",
+        "source_checkpoint_sha256": "0f77edc0c7c4564403454eb1153c9bc9b78db450f1895bed4ec887ae76d646ca"
+      }
+    },
+    "G1": {
+      "training_smoke": {
+        "robot": "G1",
+        "iteration": 48,
+        "updates": 3,
+        "horizon": 32,
+        "wm_window": 8,
+        "critic": true,
+        "initial_hashes": {
+          "wm": "491f4df2d2e82696b40014e219a57c86ebcc901a70b43be1fc8b82b0721de744",
+          "policy": "aa43f7517fe28d3b6b2bdc85b4921732da278a45ad403cb57cb8a9217cec1ace",
+          "critic": "26953f01937605100507a3c2e52ee33fcdfd555e910ee644ae04595e2760bc3c"
+        },
+        "final_hashes": {
+          "wm": "2219183cffa2ea231a0ddb143afa57a2d99f45102b0711a666ab136180286a3d",
+          "policy": "385d4154f2f7753484680f129a4e213a5733d91e0dcdf8ac4a073de5ba6d0a20",
+          "critic": "d226492065899bbaf1ca3ec761612f22f3530f0afd44f1cf5b06ad96cea967c4"
+        },
+        "export_error": 0.0,
+        "seconds": 213.5065484046936
+      },
+      "adapter_checks": {
+        "reward_max_errors": {
+          "motion_global_root_pos": 1.1026859283447266e-06,
+          "motion_global_root_ori": 7.748603820800781e-07,
+          "motion_body_pos": 2.1457672119140625e-06,
+          "motion_body_ori": 8.344650268554688e-07,
+          "motion_body_lin_vel": 1.2516975402832031e-06,
+          "motion_body_ang_vel": 3.129243850708008e-07,
+          "action_rate_l2": 4.656612873077393e-10,
+          "joint_limit": 2.9802322387695312e-08
+        },
+        "observation_noise_excess": 0.0,
+        "goal_alignment": true,
+        "joint_action_order": [
+          "left_hip_pitch_joint",
+          "left_hip_roll_joint",
+          "left_hip_yaw_joint",
+          "left_knee_joint",
+          "left_ankle_pitch_joint",
+          "left_ankle_roll_joint",
+          "right_hip_pitch_joint",
+          "right_hip_roll_joint",
+          "right_hip_yaw_joint",
+          "right_knee_joint",
+          "right_ankle_pitch_joint",
+          "right_ankle_roll_joint",
+          "waist_yaw_joint",
+          "waist_roll_joint",
+          "waist_pitch_joint",
+          "left_shoulder_pitch_joint",
+          "left_shoulder_roll_joint",
+          "left_shoulder_yaw_joint",
+          "left_elbow_joint",
+          "left_wrist_roll_joint",
+          "left_wrist_pitch_joint",
+          "left_wrist_yaw_joint",
+          "right_shoulder_pitch_joint",
+          "right_shoulder_roll_joint",
+          "right_shoulder_yaw_joint",
+          "right_elbow_joint",
+          "right_wrist_roll_joint",
+          "right_wrist_pitch_joint",
+          "right_wrist_yaw_joint"
+        ],
+        "window_shape": [
+          9,
+          64,
+          71
+        ],
+        "context_dim": 33
+      },
+      "reference": {
+        "robot": "G1",
+        "source": "/home/liudiwen/projects/supermimic_vibe/data/processed/g1_standing_jump_060m.npz",
+        "source_sha256": "ff50976a079d42b9f2419646de0f9893c63f12436516fb2026b1d8f1ab08a004",
+        "frames": 187,
+        "seconds": 3.72,
+        "unchanged_qpos_qvel": true,
+        "fk_max_errors": [
+          3.3397539161983403e-07,
+          2.98023217215615e-07,
+          6.906709195675376e-07,
+          3.6004409564860396e-06
+        ],
+        "converted_sha256": "44aba5ae683014e26cbf5e2f3fee55d2776eb935f10f5bd1a0a89d88e1c3df73"
+      },
+      "strict_interface_probe": {
+        "it": 48,
+        "passed": 0,
+        "total": 8,
+        "completed": 0,
+        "all_passed": false,
+        "evaluator_sha256": "333379431a2dd84a49a786517b379a5ff9157c36f1ba379c26afce54357db2a6",
+        "source_checkpoint_sha256": "487e0753be13642854eb590f2b812d9afb7aeea4b6de58a16ba90bd019052192"
+      }
+    }
+  },
+  "formal_launch": {
+    "B2": {
+      "out": "/home/liudiwen/projects/supermimic_vibe/runs/nju_b2_test_20261103_143343",
+      "pid": 1629124,
+      "session_id": 1629124,
+      "gpus": "6",
+      "cmd": [
+        "/home/liudiwen/projects/supermimic_nju/.venv/bin/python",
+        "/home/liudiwen/projects/supermimic_vibe/experiments/nju_backend/train.py",
+        "--robot",
+        "B2",
+        "--out",
+        "/home/liudiwen/projects/supermimic_vibe/runs/nju_b2_test_20261103_143343",
+        "--envs",
+        "1024",
+        "--batch",
+        "512",
+        "--iterations",
+        "20000",
+        "--max-hours",
+        "6"
+      ],
+      "cwd": "/home/liudiwen/projects/supermimic_vibe",
+      "budget": 20000,
+      "validation_file": "/home/liudiwen/projects/supermimic_vibe/runs/nju_b2_smoke_20261103_142800/VALIDATED.json"
+    },
+    "G1": {
+      "out": "/home/liudiwen/projects/supermimic_vibe/runs/nju_g1_test_20261103_143343",
+      "pid": 1629125,
+      "session_id": 1629125,
+      "gpus": "4,5",
+      "cmd": [
+        "/home/liudiwen/projects/supermimic_nju/.venv/bin/python",
+        "-m",
+        "torch.distributed.run",
+        "--standalone",
+        "--nproc_per_node=2",
+        "/home/liudiwen/projects/supermimic_vibe/experiments/nju_backend/train.py",
+        "--robot",
+        "G1",
+        "--out",
+        "/home/liudiwen/projects/supermimic_vibe/runs/nju_g1_test_20261103_143343",
+        "--envs",
+        "1024",
+        "--batch",
+        "512",
+        "--iterations",
+        "20000",
+        "--max-hours",
+        "6"
+      ],
+      "cwd": "/home/liudiwen/projects/supermimic_vibe",
+      "budget": 20000,
+      "validation_file": "/home/liudiwen/projects/supermimic_vibe/runs/nju_g1_smoke_20261103_142800/VALIDATED.json"
+    }
+  },
+  "note": "Integration and gradient checks only; no skill acceptance claimed.",
+  "verified_gpu_processes": [
+    {
+      "pid": 1629200,
+      "physical_gpu": 4,
+      "memory": "4088 MiB"
+    },
+    {
+      "pid": 1629201,
+      "physical_gpu": 5,
+      "memory": "4088 MiB"
+    },
+    {
+      "pid": 1629124,
+      "physical_gpu": 6,
+      "memory": "3528 MiB"
+    }
+  ],
+  "started_and_updating": {
+    "B2": {
+      "iteration": 550,
+      "updates": 204
+    },
+    "G1": {
+      "iteration": 400,
+      "updates": 144
+    }
+  }
+}

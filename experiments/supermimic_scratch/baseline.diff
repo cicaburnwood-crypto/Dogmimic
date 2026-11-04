@@ -1,0 +1,144 @@
+--- baseline/task.py
++++ scratch/task.py
+@@ -36,10 +36,14 @@
+   "right_wrist_yaw_link",
+ )
+ 
+-NJ = 29
++import os
++NJ = 12 if os.environ.get("SM_RESET_ROBOT") == "B2" else 29
++if NJ == 12:
++  TRACKED_BODIES = ("base_link", "FL_hip", "FL_thigh", "FL_calf", "FR_hip", "FR_thigh", "FR_calf",
++                    "RL_hip", "RL_thigh", "RL_calf", "RR_hip", "RR_thigh", "RR_calf")
+ OBS_DIM = NJ + NJ + 3 + 3 + NJ  # 93
+ GOAL_FRAME_DIM = 3 + 6 + NJ + NJ + 3 + 3  # 73
+-XI_DIM = 1 + NJ + 3
++XI_DIM = 44 if NJ == 12 else 1 + NJ + 3
+ 
+ 
+ @dataclass
+@@ -84,10 +88,10 @@
+   return {
+     "pos": x[..., 0:3],
+     "rot": quat_to_mat(x[..., 3:7]),
+-    "q": x[..., 7:36],
+-    "v": x[..., 36:39],
+-    "w": x[..., 39:42],
+-    "qd": x[..., 42:71],
++    "q": x[..., 7:7+NJ],
++    "v": x[..., 7+NJ:10+NJ],
++    "w": x[..., 10+NJ:13+NJ],
++    "qd": x[..., 13+NJ:13+2*NJ],
+   }
+ 
+ 
+@@ -96,6 +100,25 @@
+ 
+ 
+ class Task:
++  def model_context(self, s, xi):
++    """Express known B2 push vectors in the same heading frame as WM features."""
++    if NJ == 12:
++      schedule = xi[..., 18:43].reshape(*xi.shape[:-1], 5, 5)
++      force = mtv(heading_mat(s['rot']).unsqueeze(-3), schedule[..., 2:5])
++      schedule = torch.cat([schedule[..., :2], force], -1).flatten(-2)
++      return torch.cat([xi[..., :18], schedule, xi[..., 43:]], -1)
++    return xi
++
++  def advance_context(self, xi):
++    """B2 only: advance the clock of its known external-force schedule.
++
++    The 25 schedule coordinates, payload, mass and DR values are constant
++    within an episode. G1 has the unchanged paper context.
++    """
++    if NJ == 12:
++      return torch.cat([xi[..., :-1], xi[..., -1:] + self.cfg.dt], -1)
++    return xi
++
+   def __init__(self, kin: TreeKinematics, q0, soft_limits, action_scale, cfg: TaskCfg, device, compile_sizes=()):
+     self.kin = kin
+     self.compile_sizes = set(compile_sizes)
+--- baseline/replay.py
++++ scratch/replay.py
+@@ -11,7 +11,7 @@
+ 
+ from .task import NJ, flat_to_state
+ 
+-SDIM = 71
++SDIM = 13 + 2 * NJ
+ 
+ 
+ class ReplayBuffer:
+--- baseline/train.py
++++ scratch/train.py
+@@ -265,12 +265,14 @@
+         # Normalizer statistics from the true transitions of valid windows.
+         with torch.no_grad():
+           true_prev = s
++          true_xi = xi
+           xs, ds = [], []
+           for j in range(cfg.k):
+             t1 = flat_to_state(S1[:, j])
+-            xs.append(wm.inputs(true_prev, A[:, j], xi)[mask])
++            xs.append(wm.inputs(true_prev, A[:, j], true_xi)[mask])
+             ds.append(state_delta_c(true_prev, t1)[mask])
+             true_prev = t1
++            true_xi = task.advance_context(true_xi)
+           wm.in_norm.update(torch.cat(xs))
+           wm.out_norm.update(torch.cat(ds))
+       loss, err1, errk = self._wm_loss(s0, A, S1, xi, m)
+@@ -294,6 +296,7 @@
+     errs = []
+     for j in range(self.cfg.k):
+       s = wm.step(s, A[:, j], xi)
++      xi = self.task.advance_context(xi)
+       e = (state_error(s, flat_to_state(S1[:, j])) / std).pow(2).mean(-1)
+       loss = loss + e
+       errs.append(e.detach())
+@@ -332,6 +335,9 @@
+ 
+     for p in wm.net.parameters():
+       p.requires_grad_(False)
++    # Freeze value weights while retaining dV/ds in the actor bootstrap.
++    for p in self.critic.parameters():
++      p.requires_grad_(False)
+     s = flat_to_state(s0)
+     hist = obs_hist + task.sample_obs_noise((B, self.tcfg.history))
+     an = task.analytics_fast(s, ref_at(0), ref_kin_at(0), ref_future(0), a_prev, a_prev, bias)
+@@ -344,7 +350,7 @@
+       goal, feats = an["goal"], an["feats"]
+       rec["x"].append(self.critic_input(feats, goal, xi, rem_all[:, t]).detach())
+       a = self.policy(hist.flatten(1), goal)
+-      dlt = run_mlp(wm.net, wm.in_norm(torch.cat([feats, a, xi], dim=-1))) * std + mean
++      dlt = run_mlp(wm.net, wm.in_norm(torch.cat([feats, a, task.model_context(s, xi)], dim=-1))) * std + mean
+       s1 = apply_delta_c(s, dlt)
+       an = task.analytics_fast(s1, ref_at(t + 1), ref_kin_at(t + 1), ref_future(t + 1), a, a_prev, bias)
+       r, d = an["r"], an["soft"]
+@@ -360,6 +366,7 @@
+       o1 = an["obs"] + task.sample_obs_noise((B,))
+       hist = torch.cat([hist[:, 1:], o1.unsqueeze(1)], dim=1)
+       s, a_prev = s1, a
++      xi = task.advance_context(xi)
+     xH = self.critic_input(an["feats"], an["goal"], xi, rem_all[:, H])
+     if cfg.use_critic:
+       vH = self.critic(xH) * valid[:, H]
+@@ -375,6 +382,8 @@
+     for p in wm.net.parameters():
+       p.requires_grad_(True)
+     self.critic.zero_grad(set_to_none=True)
++    for p in self.critic.parameters():
++      p.requires_grad_(True)
+     stats = {"pi_J": J.mean().item(), "pi_loss": loss_pi.item(), "pi_gnorm": gnorm.item(), "img_survival": c.mean().item()}
+     stats.update({f"img_r_{k}": v.item() for k, v in rew_terms.items()})
+     if cfg.use_critic:
+--- baseline/networks.py
++++ scratch/networks.py
+@@ -117,7 +117,7 @@
+   def inputs(self, s, a, xi, feats=None):
+     if feats is None:
+       feats = self.task.features_fast(s)
+-    return torch.cat([feats, a, xi], dim=-1)
++    return torch.cat([feats, a, self.task.model_context(s, xi)], dim=-1)
+ 
+   def step(self, s, a, xi, feats=None):
+     x = self.inputs(s, a, xi, feats)

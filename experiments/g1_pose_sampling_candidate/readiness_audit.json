@@ -1,0 +1,8 @@
+{
+  "engine_identical": true,
+  "evaluator_identical": true,
+  "changed_behavior": "reset blending only; metadata and watcher module path updated",
+  "evaluator_sha256": "333379431a2dd84a49a786517b379a5ff9157c36f1ba379c26afce54357db2a6",
+  "cpu_smoke": true,
+  "gpu_smoke": true
+}

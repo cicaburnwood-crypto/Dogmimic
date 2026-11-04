@@ -1,0 +1,13 @@
+监视本聊天中 super_5090 的 B2 Walk These Ways 公开奖励 + SuperMimic 训练，每20分钟检查直到训练与最终评测结束。工作目录 /home/wolfie/Documents/ChatGPT/Supermimic，远程 /home/liudiwen/projects/supermimic_vibe。唯一目标轮次 {RUN}，启动香港时间 {START_HKT}；GPU4、5训练，GPU6独立评测；训练主进程 {TRAIN_PID}、评测 {EVAL_PID}、监督 {SUPERVISOR_PID}。先读本地 experiments/b2_locomotion_wtw/monitor_state.json，再核对远程同目录 latest_launch.json 与 /proc 的命令行及 cwd。监督进程相对 --out 应结合 cwd 解析。不得混入 WTW smoke、已停止的 support/walk 旧轮、后腿直立、负载或 G1 任务。
+
+用一次或少量短 SSH 调用运行 .venv/bin/python experiments/b2_locomotion_wtw/status.py，并读取本轮 latest_eval.json、best_eval.json、curriculum.json、eval.jsonl 最近记录、训练/评测日志末尾与修改时间、DONE/STOP/GUARD_STOP.json/TARGET_MET.json/EVAL_DONE.json、timing/launch_timing/supervisor_timing。必要时读最近两次 eval/it_*.json 的逐案例结果。只写本地 monitor_state.json 和快照，记录进程身份、迭代、最新与最佳、课程、连接失败次数和最近报告基准。一次 SSH 失败记连接未知，连续两次才提醒，不能判断训练已失败。
+
+用户要求使用公开、常用、有实机验证的 locomotion 奖励，只将训练器换成 SuperMimic。本轮采用 MIT Walk These Ways CoRL2022，固定源码 0e7236bdc81ce855cbe3d70345a7899452bdeb1c；19个有效奖励项、权重、dt缩放及 positive*exp(negative/.02) 组合通过原源码数值及梯度对照，记录在 reward_parity_audit.json。原项目实机验证针对 Go1，不能说本 B2 已实机验证。B2 仅适配标准高度、站宽/站长、.032m脚半径、关节/力矩/控制映射；公开对角步态2Hz、占空比.5、抬脚.09m，零指令冻结四脚站立目标。奖励已移除之前自行设计的第二脚高度、支撑概率等项。MuJoCo 真实接触力/施加力矩驱动采样奖励，SuperMimic 仅在想象中用监督学习的物理预测头。所有网络、critic、物理预测头和 replay 从零开始，不加载旧策略/官方策略/教师/动作数据。用户允许其他狗动作参考，但本轮未使用；公开接触步态时钟须如实说明，不能称完全无步态先验。不要把奖励、世界模型误差或想象回报当真实效果。
+
+物理验收保持与前轮完全相同：47案例×16=752次完整标准站立—运动—停止—反向—停止测试；核心45案例720次，额外±3rad/s旋转分开。core_passed包含速度、启停和步态；core_legacy_passed仅速度启停，core_gait_passed仅步态。以200Hz实际接触力和几何高度报告腾空比例/最长腾空和无承重时间、至少两脚/前后腿同时支撑、每脚承重与交替抬脚、垂直速度RMS、非脚触地、速度/偏航RMSE及停车漂移和脚速。重点看前后、侧向、斜向、平移旋转叠加与启停。零指令站稳或移动时不动不能冒充 locomotion。gait.py SHA256 313f70df52183586eb346ceceb012846895d22865d621ba0ae288bf56de853e3；原判据不放宽。上一轮 support 最终最佳55140次严格608/720、步态688/720、完成752/752，只是历史基线，不是本轮能力，也未用于初始化。
+
+约束保持：标准站姿零初速，合成XY<=2m/s、|vy|<=.6、vx无额外单轴限制、wz不硬裁剪；有限旋转测试不能称任意转速可跟踪。Actor仅本体关节/IMU/动作历史、速度指令和内部步态时钟，不用真实线速度或接触力作Actor输入；质量、摩擦、COM、PD、噪声和延迟随机化保留。只训练仿真，不连接实机。预算80000次、6小时保护，连续两次每个核心案例>=95%且名义案例通过才达成目标。课程仅是采样范围。ETA按近期稳定迭代吞吐估算预算，不保证收敛。
+
+正常推进无重要变化保持安静。只在课程扩大、相较最近已报告最佳核心严格通过增加>=72/720、关键方向首次连续两次>=15/16、全部核心达标、连续两次核心下降>=72/720、保护停止、进程异常退出、日志及迭代超过10分钟不推进、最终完成或需要用户操作时中文通知。少量随机波动不称退化。给出实际分子/分母、对应迭代/耗时、支撑/腾空和剩余问题，区分最新候选和保存的best.pt。
+
+此为效果监视，不修改代码、奖励、课程、验收或活跃训练，不重启、不新增训练/评测、不占用其他GPU。用户要求继续执行且不要问问题；可读诊断并报告异常，不因监控自行更改方案。训练已停而评测正常收尾时继续监视。全部结束或保护停止后，核对best.pt哈希与best_eval、最终latest_eval、训练和流水线总耗时，报告最好与最新及未达标项，然后通过automation_update暂停本监视；不归档聊天。

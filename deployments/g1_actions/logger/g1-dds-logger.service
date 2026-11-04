@@ -1,0 +1,15 @@
+[Unit]
+Description=G1 passive full-field DDS logger
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/unitree/supermimic_g1_actions_20261101
+ExecStart=/usr/bin/python3 /home/unitree/supermimic_g1_actions_20261101/deployments/g1_actions/logger/record.py --interface eth0
+Restart=on-failure
+RestartSec=5
+Nice=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

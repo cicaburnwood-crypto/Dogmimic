@@ -1,0 +1,128 @@
+# SuperMimic, re-implemented
+
+An unofficial reproduction of *SuperMimic: Scaling Humanoid Whole-Body Control with One
+Differentiable World Model* (arXiv 2610.28480, CoRL 2026). The authors released no code; this
+repository re-implements the method from the paper alone and re-runs its experiments on the
+Unitree G1 in mjlab / MuJoCo Warp.
+
+SuperMimic fits one MLP world model to replayed simulator transitions and trains a
+motion-tracking policy by backpropagating through 32 imagined steps of that frozen model,
+with a small critic bootstrapping the tail of each imagined rollout.
+
+## Results so far (one RTX A6000; the paper used one H100)
+
+Benchmark: every LAFAN1 clip played once from its first frame, friction 1.0, no randomization
+or noise; normalized return = reward sum / maximum possible; a clip fails on termination.
+Hours are training wall-clock with evaluation excluded, as in the paper.
+
+| Claim (paper ref.) | Paper | Ours | Status |
+| --- | --- | --- | --- |
+| SuperMimic reaches 0.82 on LAFAN1 within 1.2 h on one GPU (Fig. 3a) | 0.82 in 1.2 h; 0.866 at 3 h | 0.833 at 1.34 h; 0.946, 0/40 failed at 12 h | reproduced |
+| PPO-Sim on one GPU stays far below (Fig. 3a) | 0.60 after 18 h | 0.52-0.55 at 17-17.5 h | reproduced (final pending) |
+| Without the critic, H <= 16 fails (Fig. 3b) | H=16: 0.25 | H=16: best 0.035, 40/40 failed | reproduced |
+| With the critic, H=16 matches critic-free H=32 (Fig. 3b) | 0.843 vs 0.84 | 0.905 vs 0.899 | reproduced |
+| H=32 is fastest to 0.82; long horizons cost more (Fig. 3c) | 0.88 h / 1.70 h / 4.62 h (H=32/64/128) | 1.34 h / 3.31 h / not yet (H=32/64/128) | partly reproduced |
+| World-model rollouts beat MuJoCo Warp (Fig. 4a) | 11-26x at 2k-16k envs | 15-22x at 2k-16k envs | reproduced (32k+ envs exceed host RAM here) |
+| BPTT needs far fewer imagined steps than PPO on the same world model (Fig. 4b) | 64x at return 0.84 | 27x at PPO-WM's best return (0.33) | partly reproduced |
+| The critic policy recovers from 0.5-4 m/s pushes (Sec. 5.3) | settles in 0.5-2.4 s | 6/64 falls vs 19/64 without critic | partly reproduced |
+| RL velocity encoder beats distillation in a step test (Sec. 5.5) | 650 of 672 commands | 659 of 672 (smoke run, final pending) | in progress |
+| 129,514 BONES-SEED motions vs SONIC (Fig. 2, Table A.4) | 25 vs 179 failed | — | blocked: dataset is license-gated |
+| Real-robot transfer (Sec. 5.4) | 4 motions | — | out of scope |
+
+The running log with every number, date and caveat is [`notes/RESULTS.md`](notes/RESULTS.md);
+every place where the implementation follows the paper, fills a gap, or deviates is listed in
+[`notes/IMPLEMENTATION.md`](notes/IMPLEMENTATION.md). The audit tables behind these rows are
+in `results/audit/*.json` (rebuilt by `code/scripts/export_audit.py`).
+
+## Layout
+
+| Path | What |
+| --- | --- |
+| `code/supermimic/` | the package: kinematics, motion library, task (reward/obs/termination), simulator env, networks, replay, SuperMimic trainer, PPO-Sim, PPO-WM, velocity interface, evaluation |
+| `code/scripts/` | data preparation, push and step tests, rollout benchmark, run status, plots, audit export |
+| `code/scripts/dev/` | sanity checks (FK vs MuJoCo) and profilers |
+| `slurm/` | batch scripts for every experiment |
+| `results/` | small result files |
+| `notes/` | implementation notes, results log, SONIC evaluation notes |
+
+Data (`data/`), runs and checkpoints (`runs/`) and the paper source (`paper/`) are not in git.
+
+## Setup
+
+Python 3.11 and one CUDA GPU.
+
+```bash
+pip install -r requirements.txt   # or, inside a Slurm job: source setup_local_env.sh
+source env.sh                     # from the repository root: PYTHONPATH and caches
+```
+
+`setup_local_env.sh` builds a node-local uv virtualenv from `requirements.txt` (once per node)
+and sets `$SMIMIC_PY`; every Slurm script sources it, so the cluster needs no pre-built env.
+
+### Motion data
+
+LAFAN1 retargeted to the G1 (the 40 `g1/*.csv` clips of the Hugging Face dataset
+`lvhaidong/LAFAN1_Retargeting_Dataset`) is not redistributed here. Put the CSVs in
+`data/raw/lafan1_g1/` and build the 50 Hz motion library:
+
+```bash
+$SMIMIC_PY code/scripts/prepare_motions.py --format lafan --fps-in 30 \
+  --input data/raw/lafan1_g1 --output data/processed/lafan1_50hz.npz
+```
+
+BONES-SEED needs a Hugging Face account that accepted its license:
+`HF_TOKEN=... sbatch slurm/download_bones.slurm`, then `code/scripts/filter_bones.py`.
+
+## Running the experiments
+
+Submit from the repository root (logs go to `slurm/logs/`). The scripts request one A6000 on
+the `pci` account/partition; change the `#SBATCH` lines for another cluster. Training scripts
+resume from `<out>/last.pt` when it exists.
+
+```bash
+# Fig. 3a: SuperMimic and PPO-Sim on LAFAN1, one GPU
+sbatch slurm/train_supermimic.slurm --out runs/smimic_lafan1_1gpu --wall-hours 12 --eval-every 4000 --ckpt-every 4000
+sbatch slurm/train_ppo.slurm --out runs/ppo_lafan1_1gpu --wall-hours 18 --iterations 1000000 --eval-every-hours 0.5 --ckpt-every 500
+
+# Fig. 3b,c: horizon x critic ablation (6 h each)
+bash slurm/submit_horizon_ablation.sh
+sbatch --export=ALL,PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True slurm/train_supermimic.slurm \
+  --out runs/abl_H128_critic_true --horizon 128 --use-critic true --wall-hours 6 --eval-every 8000 --ckpt-every 8000
+
+# Data parallel on 2 GPUs
+sbatch slurm/train_supermimic_ddp.slurm --out runs/smimic_lafan1_2gpu --wall-hours 6 --eval-every 4000 --ckpt-every 4000
+
+# Fig. 4a: rollout speed
+sbatch slurm/bench_rollout.slurm
+
+# Fig. 4b: BPTT vs PPO on the world model, walk/run/sprint clips
+sbatch slurm/train_supermimic.slurm --out runs/f4b_smimic_wrs --clip-prefixes walk,run,sprint --wall-hours 5 --eval-every 8000 --ckpt-every 8000
+sbatch slurm/train_ppowm.slurm --out runs/f4b_ppowm_16kx32 --clip-prefixes walk,run,sprint --ppo-rollouts 16384 --ppo-steps 32 --wall-hours 5 --eval-every 8000 --ckpt-every 8000
+
+# Sec. 5.5: velocity interface, RL vs distillation, then the step test
+sbatch slurm/train_velocity.slurm --out runs/vel_rl --vel-mode rl --clip-prefixes walk,run,sprint --iterations 100000 --eval-every 8000 --ckpt-every 8000
+sbatch slurm/train_velocity.slurm --out runs/vel_distill --vel-mode distill --clip-prefixes walk,run,sprint --iterations 100000 --eval-every 8000 --ckpt-every 8000
+sbatch slurm/step_test.slurm results/step_test.json runs/vel_rl/last.pt runs/vel_distill/last.pt
+```
+
+Evaluation and tests:
+
+```bash
+$SMIMIC_PY -m supermimic.evaluate --run runs/smimic_lafan1_1gpu            # benchmark protocol
+$SMIMIC_PY code/scripts/push_test.py results/push_test.json runs/smimic_lafan1_1gpu/ckpt_0048000.pt runs/abl_H32_critic_false/ckpt_0072000.pt
+$SMIMIC_PY code/scripts/status.py                                         # one line per run
+```
+
+These need a GPU; on a cluster, run them inside a job.
+
+## Hardware note
+
+On the A6000 MuJoCo Warp runs about as fast as the paper's H100 numbers at 4096 envs, while
+the MLP-heavy SuperMimic update is about 2.7x slower per iteration (0.28 s vs 0.105 s), so
+wall-clock comparisons here are tilted toward PPO-Sim. MLPs run in bf16 autocast (paper: TF32).
+
+## Acknowledgements
+
+Built on [mjlab](https://github.com/mujocolab/mjlab), MuJoCo Warp and the BeyondMimic
+motion-tracking setup. All credit for the method goes to the SuperMimic authors; errors in this
+re-implementation are ours.

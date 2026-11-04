@@ -1,0 +1,17 @@
+{
+  "run": "runs/b2_locomotion_support_fresh_20261101_025759",
+  "stop_reason": "user requested public validated locomotion reward replacing bespoke reward",
+  "iterations": 55140,
+  "best_iteration": 55140,
+  "best_core_passed": 608,
+  "core_total": 720,
+  "completion_count": 752,
+  "trial_total": 752,
+  "best_gait_passed": 688,
+  "best_sha256": "4af40a33ad884ddd9058b67988df1a56a3c8998d61c57e9f37368f2b019b297f",
+  "pipeline_seconds": 5099.1423836,
+  "train_process_seconds": 5073.429796218872,
+  "train_returncode": 0,
+  "eval_returncode": 0,
+  "used_for_new_initialization": false
+}

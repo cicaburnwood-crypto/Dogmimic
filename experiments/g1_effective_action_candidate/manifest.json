@@ -1,0 +1,20 @@
+{
+  "status": "actual_environment_parity_and_cpu_h32_trainer_passed_gpu_running",
+  "proposal": "WM input consumed four 5ms targets plus physical parameters, no direct rawaction path; maintain full queue for imagined future updates",
+  "raw_context_dim": 304,
+  "new_wm_control_dim": 116,
+  "new_wm_physical_context_dim": 43,
+  "requires_fresh_wm": true,
+  "preserve": [
+    "actual dynamics",
+    "reward",
+    "actor inputs",
+    "full acceptance",
+    "304dim real and imagined queue"
+  ],
+  "pending": [
+    "GPU compiled smoke log/tmp/g1_effective_cuda_smoke.log",
+    "Current G1 physical outcome before switch"
+  ],
+  "active_training_changed": false
+}

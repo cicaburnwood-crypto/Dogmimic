@@ -1,0 +1,12 @@
+{
+  "B2": [
+    "transition_analytics"
+  ],
+  "G1": [
+    "__init__"
+  ],
+  "unchanged_acceptance": {
+    "B2": "5e9612aaae20e7c5611f6a8a1d3aaa0e5d5e7c930ec03baf11c593a9301a99bd",
+    "G1": "333379431a2dd84a49a786517b379a5ff9157c36f1ba379c26afce54357db2a6"
+  }
+}

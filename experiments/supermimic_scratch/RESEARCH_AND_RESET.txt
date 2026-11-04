@@ -1,0 +1,59 @@
+2026-11-03：撤出实机测试后的训练分支，从随机权重重新验证 SuperMimic
+
+研究目的
+验证 SuperMimic 的在线世界模型 + 短视野可微策略优化 + critic。不是验证继续叠加任务专用奖励之后的混合方法。
+本轮同时训练 B2 完整后腿站立/恢复（0 kg、5 kg 各半）和 G1 立定跳远 0.60 m。
+
+公开依据与选用
+1. SuperMimic 原论文 https://arxiv.org/pdf/2610.28480
+   项目与实机演示 https://supermimic.github.io/
+   表 A.2：身体位置/姿态/线速度/角速度各权重 1；根位置/姿态各 0.5；动作差分 -0.1；关节限位 -2。
+   六个跟踪核均为 exp(-平方误差/尺度平方)，尺度依次 .3/.4/1/3.14/.3/.4；最终乘控制步长 .02。
+   直接采用这套定义，不另加脚滑、COM、速度、功率惩罚或教师约束。
+   世界模型用 k=8 自回归归一化状态预测误差；Actor 用 H=32、gamma=.99 的可微回报和终端价值；critic 用 lambda=.95 的固定回归目标。
+2. BeyondMimic https://beyondmimic.github.io/
+   官方奖励源码 https://github.com/HybridRobotics/whole_body_tracking/blob/main/source/whole_body_tracking/whole_body_tracking/tasks/tracking/mdp/rewards.py
+   官方配置 https://github.com/HybridRobotics/whole_body_tracking/blob/main/source/whole_body_tracking/whole_body_tracking/tasks/tracking/tracking_env_cfg.py
+   支持六项跟踪奖励的来源追溯。采用 SuperMimic 论文已经披露的关节限位权重及去自碰撞项版本，不混用 BeyondMimic 的 PPO 更新。
+3. Learning Agile Robotic Locomotion Skills by Imitating Animals (RSS 2020)
+   论文 https://xbpeng.github.io/projects/Robotic_Imitation/Robotic_Imitation_2020.pdf
+   官方实现 https://github.com/erwincoumans/motion_imitation/tree/paper
+   五项四足跟踪奖励：关节姿态/速度、脚位置、根姿态/速度，权重 .5/.05/.2/.15/.1。
+   有真实 Laikago 结果，是可选对照。本轮不把它与 SuperMimic 奖励拼接，避免同时更换算法和多套目标。
+以上实机证据属于原作者的机器人、动作和整个系统；不表示该公式已经验证了我们的 B2 后腿站立或 G1 60 cm 任务。
+
+实际回退方式
+本地根目录没有可回退的 git 提交，因此不使用 reset，也不覆盖历史实验。
+旧训练代码归档在 diagnostics/scratch_reset_20261103/superseded_training_code.tar.gz，逐文件 SHA256 在 preserved_files.json。
+旧模型/评测/实机日志保留在原路径。旧 core_v3 管线已经结束；本轮入口不再使用它。
+新训练引擎独立复制自社区复现 dhmbb2/supermimic_vibe，固定提交 072f0910dadc9d95c720e625b546120e9ce917c9（2026-10-22，早于首次实机测试）。这不是原作者官方源码。
+不导入 repair/robust/boundary/core 的训练类；不加载任何历史 Actor、WM、critic、归一化器或优化器。
+取消后续加入的冻结自身教师、残差/分阶段 Actor、关节目标 slew、功率 envelope 训练、附加滑动/执行器奖励、实测姿态混合、延迟队列 WM、早期 D0 阈值晋级阻断。
+新 Actor、WM、critic 全随机初始化，replay、归一化器统计、三个优化器为空；initial.pt 和 initialization.json 记录实际张量哈希。
+保留任务原有的程序生成参考轨迹；参考轨迹不是预训练权重。无官方策略或外部教师。
+
+最小适配及与论文的差异（必须披露）
+G1：保留原跳远参考与原始机器人模型/PD，论文基础摩擦 .3–1.2、编码偏置、COM 随机化及噪声；沿用首次实机前的小初姿扰动和 25% 从动作开头训练。
+B2：仅把关节/身体名称和维数映射到 B2，使用同一表 A.2 奖励；历史根姿态/脚位置/稳定性特制奖励全部不参与本轮。
+B2 采用首次实机前的模型与 PD 250/8、原模型力矩范围 200/200/300 Nm 每腿；不再用后续训练的 160/160/240 Nm 和 1200 W envelope。
+B2 保留用户指定的 0/5 kg 负载、质量 .9–1.1、摩擦 .4–1.3 和五段 8–16 N 推力脉冲；负载由质量/质心/惯量的物理合成实现。保留原小初姿噪声，撤出实测初姿替换。
+B2 WM/critic 的额外 context 仅含负载、质量、完整已知推力时间表与时钟；Actor 无这些特权输入。时钟在每个预测步推进，避免把有时限的推力误当恒力。
+两机器人都修正了地面/足部的 MuJoCo 摩擦混合，使声明的摩擦系数真实生效；不以复原为由恢复这个已知实现错误。
+Actor 更新时冻结 critic 权重但保留 dV/ds，随后单独回归 critic；其目标函数不变。
+网络宽度沿用社区论文复现；每卡并行环境/更新批量按 32 GB 5090 容量缩小，不声称复现论文 H100 训练效率。
+
+验收与回退训练隔离
+原严格验收不修改。G1 保留 21×32，包括低摩擦 .15/.2、旧 native_start、延迟/弱执行器/推力压力条件；每项至少 31/32 且名义案例通过。
+B2 保留 0/5 kg 的 48×64 交叉条件、完整起立/站立/下降/恢复、原 COM/加速度/后脚漂移，以及逐 5 ms 的速度 <=6 rad/s、功率 <=1501 W；每项至少 61/64 且名义案例通过。
+B2 严格压力评测仍采用既有保守 actuator envelope。这和恢复后的训练物理模型是不同测试域，结果明确分开，不能用训练回报替代通过。
+既有旧 native_start 的关节与机身姿态组合仍作为原压力案例保留，不再用它制造训练初姿。
+严格评测在单独进程读取不可变 checkpoint，输入适配器重建本轮的 10 帧历史和未来目标，不使用旧训练奖励来更新模型。
+best 仅为训练中物理表现最佳；initial 不进入 trained best。全量通过后还需两组独立 HOLD-A/HOLD-B 全量通过才 accepted。
+未 accepted 不部署，不连接实机。已经删除的定时任务不重建。
+
+执行
+先做 CPU 奖励数值/梯度一致性、CUDA H32 实际三更新、G1 双卡同步、正式批量编译更新和严格评测接口检查。
+这些是实现检查，不是动作验收。通过后从另一组全新随机初始化正式启动，不继承 smoke 更新。
+每个机器人预算 80000 次/6 小时，达到任一上限后保存最后权重并做最终物理评测；没有自动循环重训。
+G1 GPU 4/5；B2 GPU 6。评测使用本任务的 rank-0 GPU，在该任务训练等待时执行；不占其他 GPU。
+启动后独立 session detach。训练程序写状态/日志，不创建聊天定时监控。

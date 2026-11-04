@@ -1,0 +1,25 @@
+{
+  "scope": "repair continuation, not a new from-scratch speed benchmark",
+  "parent_checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_wtw_fresh_20261101_044355/last.pt",
+  "parent_sha256": "5bbce8a92699603385af82d396ed7bb605a375bb0474238ab59ba7ec3be5c59f",
+  "probe": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_wtw_repair_probe_20261101_105708",
+  "changes": [
+    "public WTW additive reward branch",
+    "B2 effort-limit normalization and weight-scaled contact kernel",
+    "published base vertical/angular velocity and stance-velocity settings",
+    "public gait-duration parameter .65; swing height .06 m",
+    "fresh critic for changed reward, explicit warm-start provenance",
+    "10% full-speed-domain exposure; physical curriculum advancement unchanged",
+    "initialized model excluded from trained-best; accepted models require full unchanged core acceptance"
+  ],
+  "unmodified": [
+    "standard-pose zero-velocity reset",
+    "proprioceptive actor",
+    "physical randomization",
+    "XY norm <= 2 and |vy| <= .6; no extra vx cap or wz hard clip",
+    "47x16 physical acceptance and 200 Hz sampling"
+  ],
+  "external_policy": false,
+  "motion_reference": false,
+  "calibration_controller_used_as_teacher": false
+}

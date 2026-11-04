@@ -1,0 +1,15 @@
+{
+  "run": "runs/b2_locomotion_support_smoke_log_20261101_024540",
+  "iterations": 1000,
+  "updates": 400,
+  "finite_logs": true,
+  "train_returncode": 0,
+  "eval_returncode": 0,
+  "full_pipeline_seconds": 181.04698204994202,
+  "median_iter_s": 0.09408540487289428,
+  "physical_core_passed": 0,
+  "physical_core_total": 720,
+  "physical_completion_count": 752,
+  "meaning": "Runtime/gradient/physics pipeline validation only; short smoke not a learned locomotion model",
+  "source_checkpoint_used_for_formal": null
+}

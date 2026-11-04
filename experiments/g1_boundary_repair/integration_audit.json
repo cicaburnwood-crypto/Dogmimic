@@ -1,0 +1,10 @@
+{
+  "environment_methods_changed": [
+    "__init__",
+    "_randomize",
+    "reset_envs"
+  ],
+  "reward_training_algorithm_and_acceptance_unchanged": true,
+  "evaluator_sha256": "333379431a2dd84a49a786517b379a5ff9157c36f1ba379c26afce54357db2a6",
+  "scope": "Training domain/initial-pose coverage repair only; full21-condition evaluation and all numerical criteria remain unchanged."
+}

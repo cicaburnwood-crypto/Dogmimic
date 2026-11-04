@@ -1,0 +1,15 @@
+{
+  "robot": "B2",
+  "source": "/home/liudiwen/projects/supermimic_vibe/experiments/b2_cycle/b2_full_cycle.npz",
+  "source_sha256": "2cd20993005a089c0f4397c44a735e3abe94309042a882620470abb913a9aad0",
+  "frames": 776,
+  "seconds": 15.5,
+  "unchanged_qpos_qvel": true,
+  "fk_max_errors": [
+    1.3426546396910766e-07,
+    7.660016609900566e-08,
+    9.642127807296674e-08,
+    1.6651370060571935e-07
+  ],
+  "converted_sha256": "f75f612a4e6abd48cb980baf84c5c80fc694a475bd2c4c57c2af4f1b01bf4aff"
+}

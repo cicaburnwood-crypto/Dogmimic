@@ -1,0 +1,18 @@
+{
+  "status": "cpu_trainer_passed_gpu_smoke_running",
+  "proposed_frame_zero_distribution": {
+    "measured_endpoint": 0.25,
+    "reference_endpoint": 0.25,
+    "continuous_blend": 0.5
+  },
+  "preserve": [
+    "friction/mass/actuator/delay randomization",
+    "initial joint perturbations",
+    "unchanged full evaluation"
+  ],
+  "active_training_changed": false,
+  "pending": [
+    "CUDA compiled smoke PID4009592 session8682 log/tmp/g1_pose_sampling_cuda_smoke.log",
+    "Training launch decision based on v5 evaluations"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "centroid_position_max_error_m": 6.319222045636508e-08,
+  "centroid_velocity_max_error_m_s": 3.0831289132837725e-08,
+  "all_six_axis_directions_penalized": true,
+  "acceleration_gradient_verified": true,
+  "isotropic_axis_costs": [
+    -0.05409252643585205,
+    -0.05409252643585205,
+    -0.05409252643585205,
+    -0.05409252643585205,
+    -0.05409252643585205,
+    -0.05409252643585205
+  ],
+  "constant_velocity_zero_acceleration": true,
+  "real_imagined_reward_parity": true,
+  "finite_real_physics": true,
+  "complete_return_reference": true,
+  "frames": 776,
+  "duration_s": 15.5
+}

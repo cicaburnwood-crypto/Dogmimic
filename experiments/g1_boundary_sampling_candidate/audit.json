@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "samples": 100000,
+  "counts": {
+    "nominal": 24945,
+    "continuous": 54827,
+    "isolated_weak": 10039,
+    "crossed_weak": 10189
+  },
+  "scope": "CPU sampling only, not integrated or physically validated",
+  "active_training_changed": false
+}

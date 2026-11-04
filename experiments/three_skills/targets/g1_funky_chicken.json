@@ -1,0 +1,14 @@
+{
+  "robot": "G1",
+  "style": "Funky Chicken inspired original choreography",
+  "beat_bpm": 96,
+  "max_foot_ik_error_m": 1.162103660092215e-09,
+  "official_clip_reproduction": false,
+  "name": "g1_funky_chicken",
+  "frames": 451,
+  "duration_s": 9.0,
+  "source": "original procedural target",
+  "pretrained_policy": false,
+  "reference_motion": true,
+  "max_joint_velocity": 2.707485493383904
+}

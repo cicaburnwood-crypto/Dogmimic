@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "only_changed_method": "_randomize",
+  "evaluation_branch_ast_unchanged": true,
+  "other_methods_ast_unchanged": true,
+  "status": "candidate not launched"
+}

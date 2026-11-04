@@ -1,0 +1,25 @@
+{
+  "repo": "dhmbb2/supermimic_vibe",
+  "commit": "072f0910dadc9d95c720e625b546120e9ce917c9",
+  "original_hashes": {
+    "evaluate.py": "126589ccf20a06bfc9de5df8ff2dbd6419bb477c3bef14447653d77c2cd1f38c",
+    "rotations.py": "3e0ceeeac245678f93ca9e91ddde33b8784ec7f45bdeb103c8afabb4e7f5baba",
+    "task.py": "f1386770b345087041cdfedf3aa4cf42756aa6a99b643383294cef300518f5ac",
+    "ppo_wm.py": "83d1e5ae6b2ff3ebe8d7d1d190308260dc47e618dfc08bbc09519188df32caf6",
+    "motion_lib.py": "c532b289357e163f802019484f76e02355bc6c382c394376ac1bf7900a66a464",
+    "ppo.py": "27a2bf85b66485243e5ef74f0c050a6fc6148c6857e590d978f8f22fe295a34e",
+    "replay.py": "90604a8a78a62dd5aeb3b47f1932057c623e388686ef4fe4ffcfce32ca496d92",
+    "kinematics.py": "73330d839020731c5de71fc6f7a032aaec0c6b8b4726e536887b9ef7fcab471e",
+    "train.py": "4fd0635ee9f31865cfb15fdfeceafa0577768158fb04b7c88ae97ce78d150504",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "velocity.py": "e73358fe6616266aba1638bb6c4dcefe3b574257015df713f9d5b945b686b256",
+    "sim_env.py": "29af09bf32a34109876bc69639da7f00bb65563ce6fe5d697f0df3db8b49df53",
+    "networks.py": "f23ad4eb6a79e4f352a0715738eca59a24375b9eccc915362c932298c8f039e5"
+  },
+  "engine_changes": {
+    "task.py": "B2 body names, NJ=12 and dimension-generic flat state slices only",
+    "replay.py": "SDIM=13+2*NJ only"
+  },
+  "NJU_used": false,
+  "algorithm": "online learned world model, k8 autoregression, H32 BPTT, GAE critic; new command task adapter"
+}

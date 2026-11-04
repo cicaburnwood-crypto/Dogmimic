@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "moving_prior_loss": 0.0,
+  "frozen_anchor_loss": 0.0001000000411295332,
+  "frozen_anchor_has_no_grad": true
+}

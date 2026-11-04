@@ -1,0 +1,17 @@
+{
+  "robot": "G1",
+  "target_turn_deg": 360,
+  "planned_takeoff_s": 1.6,
+  "planned_landing_s": 2.2600000000000002,
+  "flight_s": 0.66,
+  "target_root_rise_m": 0.5341545000000001,
+  "max_foot_ik_error_m": 5.270904831617328e-09,
+  "official_clip_reproduction": false,
+  "name": "g1_jump_full_turn",
+  "frames": 231,
+  "duration_s": 4.6000000000000005,
+  "source": "original procedural target",
+  "pretrained_policy": false,
+  "reference_motion": true,
+  "max_joint_velocity": 15.986025213320879
+}

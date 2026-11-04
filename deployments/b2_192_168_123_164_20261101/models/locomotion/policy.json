@@ -1,0 +1,161 @@
+{
+  "skill": "locomotion",
+  "task": "b2_proprioceptive_locomotion_wtw_repair_v5",
+  "iteration": 78000,
+  "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_wtw_repair_20261101_110346/best.pt",
+  "checkpoint_sha256": "1bd416935f6e33606396c5f934ddcb3a02332121ea933a26f0702ec8d542dfb6",
+  "weights_sha256": "664792d4b5563e31ced85535aec49fd12a536ca98cfcfb1d1db303473e811f49",
+  "obs_dim": 420,
+  "goal_dim": 7,
+  "history": 10,
+  "policy_dt": 0.02,
+  "obs_per_frame": 42,
+  "q0": [
+    0.0,
+    0.67,
+    -1.3,
+    0.0,
+    0.67,
+    -1.3,
+    0.0,
+    0.67,
+    -1.3,
+    0.0,
+    0.67,
+    -1.3
+  ],
+  "action_scale": [
+    0.45,
+    0.8,
+    0.8,
+    0.45,
+    0.8,
+    0.8,
+    0.45,
+    0.8,
+    0.8,
+    0.45,
+    0.8,
+    0.8
+  ],
+  "policy_to_sdk": [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2,
+    9,
+    10,
+    11,
+    6,
+    7,
+    8
+  ],
+  "policy_joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint"
+  ],
+  "joint_limits": [
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ]
+  ],
+  "torque_limits": [
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0
+  ],
+  "kp": 250.0,
+  "kd": 8.0,
+  "motor_mode": 10,
+  "official_policy": false,
+  "hardware_validated": false,
+  "physical_eval_passed": false,
+  "actuation_enabled": false,
+  "source_checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_wtw_repair_probe_20261101_105708/best.pt",
+  "source_sha256": "b9500b95ea4d7c058505a392ed06619f0d18585cee0d7c356658ce8f18399a93",
+  "notes": [
+    "Shadow deployment only. No motor-command publisher.",
+    "Simulation selection is not hardware validation."
+  ],
+  "exported_unix": 1793512243.565837,
+  "command": {
+    "max_norm_xy": 2.0,
+    "max_abs_y": 0.6,
+    "yaw_cap": null
+  },
+  "linear_acceleration": 1.5,
+  "angular_acceleration": 3.0,
+  "gait_frequency_hz": 2.0,
+  "gait_duty": 0.65,
+  "swing_height_m": 0.06,
+  "root_position_required": false,
+  "prior_iterations": 82000,
+  "simulation_strict_passed": 673,
+  "simulation_strict_total": 720
+}

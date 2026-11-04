@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/HybridRobotics/whole_body_tracking/9db915838b17785c6fec90c91fe80b95b147e1bd/source/whole_body_tracking/whole_body_tracking/tasks/tracking/mdp/rewards.py",
+    "revision": "9db915838b17785c6fec90c91fe80b95b147e1bd",
+    "path": "sources/whole_body_tracking_rewards.py",
+    "sha256": "b323de7a120e8ac45d3dfc9f7d85d8d8633ec42e5af3162653d1b7804cc90f4b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/HybridRobotics/whole_body_tracking/9db915838b17785c6fec90c91fe80b95b147e1bd/source/whole_body_tracking/whole_body_tracking/tasks/tracking/tracking_env_cfg.py",
+    "revision": "9db915838b17785c6fec90c91fe80b95b147e1bd",
+    "path": "sources/whole_body_tracking_tracking_env_cfg.py",
+    "sha256": "30a4c688bacf1bb411f1516121c21630880bb64b7889ca2ae56f738375f856c8"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/erwincoumans/motion_imitation/2f206abb963c5b9f7d747c41cdde82b39bf6a3ec/motion_imitation/envs/env_wrappers/imitation_task.py",
+    "revision": "2f206abb963c5b9f7d747c41cdde82b39bf6a3ec",
+    "path": "sources/motion_imitation_imitation_task.py",
+    "sha256": "b3e3346ca3507ee865fd90a37c73eb5070149769f43b9553c223d7b7d0520bb9"
+  }
+]

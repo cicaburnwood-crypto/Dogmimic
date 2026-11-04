@@ -1,0 +1,15 @@
+{
+  "robot": "G1",
+  "source": "/home/liudiwen/projects/supermimic_vibe/data/processed/g1_standing_jump_060m.npz",
+  "source_sha256": "ff50976a079d42b9f2419646de0f9893c63f12436516fb2026b1d8f1ab08a004",
+  "frames": 187,
+  "seconds": 3.72,
+  "unchanged_qpos_qvel": true,
+  "fk_max_errors": [
+    3.3397539161983403e-07,
+    2.98023217215615e-07,
+    6.906709195675376e-07,
+    3.6004409564860396e-06
+  ],
+  "converted_sha256": "44aba5ae683014e26cbf5e2f3fee55d2776eb935f10f5bd1a0a89d88e1c3df73"
+}

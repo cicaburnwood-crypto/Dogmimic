@@ -1,0 +1,476 @@
+--- world_model/state_spec.py
++++ world_model/state_spec.py
+@@ -23,6 +23,7 @@
+ """
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ from dataclasses import dataclass, field
+ 
+@@ -40,10 +41,10 @@
+     rotvec_from_quat,
+ )
+ 
+-STATE_DIM = 71
+-FEAT_DIM = 71
+-DELTA_DIM = 70
+-NJ = 29
++STATE_DIM = SD
++FEAT_DIM = SD
++DELTA_DIM = DD
++# NJ imported from task layout
+ 
+ 
+ @dataclass
+@@ -57,8 +58,8 @@
+     in_scale: tuple[float, ...] = (1.0, 1.0, 1.0, 2.0, 1.0, 5.0)
+     explicit_integration: bool = True
+     # xi normalisation: (offset, scale) for friction, encoder bias, com offset.
+-    xi_offset: tuple[float, ...] = field(default_factory=lambda: (0.75,) + (0.0,) * 29 + (0.0,) * 3)
+-    xi_scale: tuple[float, ...] = field(default_factory=lambda: (0.45,) + (0.01,) * 29 + (0.05,) * 3)
++    xi_offset: tuple[float, ...] = field(default_factory=lambda: (0.75,) + (0.0,) * NJ + (0.0,) * 3 + ((0.5, 1.0) if NJ == 12 else ()))
++    xi_scale: tuple[float, ...] = field(default_factory=lambda: (0.45,) + (0.01,) * NJ + (0.05,) * 3 + ((0.5, 0.1) if NJ == 12 else ()))
+     locked_joints: tuple[int, ...] = ()
+ 
+ 
+@@ -87,7 +88,7 @@
+ 
+     @staticmethod
+     def split(s: torch.Tensor):
+-        return s[..., 0:3], s[..., 3:7], s[..., 7:36], s[..., 36:39], s[..., 39:42], s[..., 42:71]
++        return s[..., 0:3], s[..., 3:7], s[..., 7:NQ], s[..., NQ:NQ+3], s[..., NQ+3:NQ+6], s[..., NQ+6:SD]
+ 
+     def canonical(self, s: torch.Tensor) -> torch.Tensor:
+         """Heading-invariant, scaled network input features (…, 71)."""
+@@ -107,7 +108,7 @@
+     def integrate(self, s: torch.Tensor, delta: torch.Tensor) -> torch.Tensor:
+         """Apply the (unscaled) network output ``delta`` (…, 70) to state ``s`` (…, 71)."""
+         d = delta * self.out_scale
+-        dv_h, dw_b, dqd, dp_h, dth_b, dq = d[..., 0:3], d[..., 3:6], d[..., 6:35], d[..., 35:38], d[..., 38:41], d[..., 41:70]
++        dv_h, dw_b, dqd, dp_h, dth_b, dq = d[..., 0:3], d[..., 3:6], d[..., 6:6+NJ], d[..., 6+NJ:9+NJ], d[..., 9+NJ:12+NJ], d[..., 12+NJ:DD]
+         p, q, qj, v, w, qd = self.split(s)
+         q = quat_normalize(q)
+         hq = heading_quat(q)
+
+--- world_model/dynamics.py
++++ world_model/dynamics.py
+@@ -1,6 +1,7 @@
+ """Dynamics MLP f_omega (paper Table A.4: MLP (2048, 2048, 2048))."""
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ import torch
+ import torch.nn as nn
+@@ -31,7 +32,7 @@
+ class DynamicsMLP(nn.Module):
+     """delta = f(canonical(s), a, xi_norm) -> (…, 70). Zero-initialised last layer (identity dynamics at init)."""
+ 
+-    def __init__(self, feat_dim: int = 71, act_dim: int = 29, xi_dim: int = 33, hidden=(2048, 2048, 2048), out_dim: int = 70):
++    def __init__(self, feat_dim: int = SD, act_dim: int = NJ, xi_dim: int = XD, hidden=(2048, 2048, 2048), out_dim: int = DD):
+         super().__init__()
+         self.mlp = MLP(feat_dim + act_dim + xi_dim, tuple(hidden), out_dim, zero_last=True)
+ 
+
+--- world_model/heads.py
++++ world_model/heads.py
+@@ -8,6 +8,7 @@
+ """
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ from dataclasses import dataclass
+ 
+@@ -17,14 +18,14 @@
+ from supermimic.kinematics.g1_fk import G1Kinematics
+ from supermimic.kinematics.rotations import projected_gravity, quat_apply_inverse
+ 
+-OBS_DIM = 93
++OBS_DIM = OD
+ # Term layout of the ``policy`` observation group (order matters: term-major history).
+-OBS_TERMS = (("joint_pos", 29), ("joint_vel", 29), ("base_ang_vel", 3), ("projected_gravity", 3), ("actions", 29))
++OBS_TERMS = (("joint_pos", NJ), ("joint_vel", NJ), ("base_ang_vel", 3), ("projected_gravity", 3), ("actions", NJ))
+ 
+ 
+ def split_state(s: torch.Tensor):
+     """-> root_pos (…,3), root_quat (…,4), joint_pos (…,29), root_lin_vel_w (…,3), root_ang_vel_b (…,3), joint_vel (…,29)."""
+-    return s[..., 0:3], s[..., 3:7], s[..., 7:36], s[..., 36:39], s[..., 39:42], s[..., 42:71]
++    return s[..., 0:3], s[..., 3:7], s[..., 7:NQ], s[..., NQ:NQ+3], s[..., NQ+3:NQ+6], s[..., NQ+6:SD]
+ 
+ 
+ def analytic_observation(
+@@ -32,10 +33,10 @@
+ ) -> torch.Tensor:
+     """Noise-free 93-d proprioceptive observation (paper Table A.1) from state + context.
+ 
+-    xi[..., 1:30] is the encoder bias: observed joint positions are ``q + bias - q0``.
++    xi[..., 1:1+NJ] is the encoder bias: observed joint positions are ``q + bias - q0``.
+     """
+     _, root_quat, q, _, ang_b, qd = split_state(s)
+-    bias = xi[..., 1:30]
++    bias = xi[..., 1:1+NJ]
+     return torch.cat([q + bias - default_joint_pos, qd, ang_b, projected_gravity(root_quat), prev_action], dim=-1)
+ 
+ 
+@@ -101,7 +102,7 @@
+         self.pd = pd  # PD constants of the joint-torque term (only used when reward_cfg.w_joint_torque != 0)
+ 
+     def robot_bodies(self, s: torch.Tensor) -> dict[str, torch.Tensor]:
+-        out = self.fk(s[..., :36], s[..., 36:])
++        out = self.fk(s[..., :NQ], s[..., NQ:])
+         idx = self.tracked_idx
+         return {
+             "pos": out["pos"][..., idx, :],
+@@ -127,14 +128,14 @@
+             anchor_index=self.anchor_index,
+             action=action,
+             prev_action=prev_action,
+-            joint_pos=s_next[..., 7:36],
++            joint_pos=s_next[..., 7:NQ],
+             soft_limits=self.soft_limits,
+             cfg=self.reward_cfg,
+             robot_root_quat_w=b["root_quat"],
+             ref_root_quat_w=ref.root_quat_w,
+             pd=self.pd,
+-            joint_vel=s_next[..., 42:71],
+-            root_ang_vel_b=s_next[..., 39:42],
++            joint_vel=s_next[..., NQ+6:SD],
++            root_ang_vel_b=s_next[..., NQ+3:NQ+6],
+         )
+ 
+     @staticmethod
+
+--- policy/nets.py
++++ policy/nets.py
+@@ -1,6 +1,7 @@
+ """Policy (goal encoder + shared decoder) and critic (paper Table A.4)."""
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ from dataclasses import dataclass, field
+ 
+@@ -10,9 +11,9 @@
+ from supermimic.world_model.dynamics import MLP
+ from supermimic.world_model.heads import OBS_TERMS
+ 
+-GOAL_DIM = 680
++GOAL_DIM = 10 * GF
+ LATENT_DIM = 32
+-ACT_DIM = 29
++ACT_DIM = NJ
+ 
+ 
+ @dataclass
+@@ -42,9 +43,9 @@
+ 
+ 
+ def _goal_scale_vector(cfg: PolicyCfg, goal_dim: int) -> torch.Tensor:
+-    sizes = (29, 29, 3, 3, 3, 1)
++    sizes = (NJ, NJ, 3, 3, 3, 1)
+     per_frame = torch.cat([torch.full((n,), 1.0 / s) for n, s in zip(sizes, cfg.goal_term_scale)])
+-    k, extra = divmod(goal_dim, 68)
++    k, extra = divmod(goal_dim, GF)
+     return torch.cat([per_frame.repeat(k), torch.ones(extra)])
+ 
+ 
+@@ -60,7 +61,7 @@
+ 
+ 
+ class Decoder(nn.Module):
+-    def __init__(self, cfg: PolicyCfg, obs_dim: int = 930):
++    def __init__(self, cfg: PolicyCfg, obs_dim: int = 10 * OD):
+         super().__init__()
+         self.mlp = MLP(cfg.latent_dim + obs_dim, cfg.decoder_hidden, ACT_DIM, last_gain=cfg.decoder_last_gain)
+         self.register_buffer("scale", _obs_scale_vector(cfg))
+@@ -85,7 +86,7 @@
+ class Critic(nn.Module):
+     """V(canonical state 71, goal 680, xi 33, root error 4) -> scalar (one per interface)."""
+ 
+-    def __init__(self, cfg: CriticCfg, feat_dim: int = 71, goal_dim: int | None = None, xi_dim: int = 33, pcfg: PolicyCfg | None = None):
++    def __init__(self, cfg: CriticCfg, feat_dim: int = SD, goal_dim: int | None = None, xi_dim: int = XD, pcfg: PolicyCfg | None = None):
+         super().__init__()
+         pcfg = pcfg or PolicyCfg()
+         goal_dim = goal_dim or pcfg.goal_dim
+
+--- envs/mdp/motion_library.py
++++ envs/mdp/motion_library.py
+@@ -25,6 +25,7 @@
+ """
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ from dataclasses import dataclass
+ from pathlib import Path
+@@ -34,8 +35,8 @@
+ 
+ from supermimic.kinematics.rotations import projected_gravity, quat_apply_inverse, yaw_quat
+ 
+-GOAL_FEAT_DIM = 68
+-REF_DIM = 71
++GOAL_FEAT_DIM = GF
++REF_DIM = SD
+ 
+ 
+ @dataclass
+@@ -121,7 +122,7 @@
+                 if body_idx is None:
+                     names = [str(n) for n in d["body_names"]]
+                     body_idx = np.array([names.index(n) for n in self.body_names])
+-                    root_idx = names.index("pelvis")
++                    root_idx = names.index(ROOT_NAME)
+                 n = int(d["joint_pos"].shape[0])
+                 bp, bq, blv, bav = d["body_pos_w"], d["body_quat_w"], d["body_lin_vel_w"], d["body_ang_vel_w"]
+                 ref = np.concatenate(
+@@ -197,7 +198,7 @@
+ 
+     @staticmethod
+     def _split(r: torch.Tensor) -> RefState:
+-        return RefState(r[..., 0:3], r[..., 3:7], r[..., 7:36], r[..., 36:39], r[..., 39:42], r[..., 42:71])
++        return RefState(r[..., 0:3], r[..., 3:7], r[..., 7:NQ], r[..., NQ:NQ+3], r[..., NQ+3:NQ+6], r[..., NQ+6:SD])
+ 
+     def ref(self, frame: torch.Tensor) -> RefState:
+         return self._split(self._ref[frame].to(self.dtype))
+@@ -226,19 +227,19 @@
+ 
+     @property
+     def joint_pos(self) -> torch.Tensor:
+-        return self._ref[:, 7:36].to(self.dtype)
++        return self._ref[:, 7:NQ].to(self.dtype)
+ 
+     @property
+     def root_lin_vel_w(self) -> torch.Tensor:
+-        return self._ref[:, 36:39].to(self.dtype)
++        return self._ref[:, NQ:NQ+3].to(self.dtype)
+ 
+     @property
+     def root_ang_vel_w(self) -> torch.Tensor:
+-        return self._ref[:, 39:42].to(self.dtype)
++        return self._ref[:, NQ+3:NQ+6].to(self.dtype)
+ 
+     @property
+     def joint_vel(self) -> torch.Tensor:
+-        return self._ref[:, 42:71].to(self.dtype)
++        return self._ref[:, NQ+6:SD].to(self.dtype)
+ 
+     # ------------------------------------------------------------------ queries
+ 
+@@ -277,8 +278,8 @@
+ 
+ 
+ def zero_joint_columns(joints: tuple[int, ...]) -> list[int]:
+-    """Columns of the 71-d reference row holding these joints' angle (7 + j) and rate (42 + j)."""
+-    return [7 + j for j in joints] + [42 + j for j in joints]
++    """Columns of the 71-d reference row holding these joints' angle (7 + j) and rate (NQ + 6 + j)."""
++    return [7 + j for j in joints] + [NQ + 6 + j for j in joints]
+ 
+ 
+ def discover_npz(directory: str | Path, limit: int | None = None, names: list[str] | None = None, manifest: str | Path | None = None) -> list[Path]:
+
+--- envs/state_io.py
++++ envs/state_io.py
+@@ -5,12 +5,12 @@
+ """
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ import torch
+ 
+-STATE_DIM = 36 + 35
+-NQ = 36
+-NV = 35
++STATE_DIM = SD
++# NQ and NV imported from task layout
+ 
+ 
+ class StateIO:
+
+--- envs/sim_context.py
++++ envs/sim_context.py
+@@ -1,11 +1,12 @@
+ """Per-environment simulation context xi (plan: 33-d = foot friction 1 + encoder bias 29 + torso COM offset 3)."""
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ import numpy as np
+ import torch
+ 
+-XI_DIM = 33
++XI_DIM = XD
+ 
+ 
+ class SimContext:
+@@ -18,7 +19,7 @@
+         self.foot_geom_global = int(self.robot.indexing.geom_ids[local_ids[0]].item())
+         self.com_body_global = int(self.robot.indexing.body_ids[self.robot.body_names.index(com_body_name)].item())
+         self.bias_slots = None
+-        if len(self.robot.joint_names) != 29:  # waist-locked robot: no encoder (bias 0) at the locked joints
++        if len(self.robot.joint_names) != NJ:  # waist-locked robot: no encoder (bias 0) at the locked joints
+             from supermimic.envs.lock_waist import joint_slots
+ 
+             self.bias_slots = torch.tensor(joint_slots(self.robot.joint_names), dtype=torch.long, device=env.device)
+@@ -45,5 +46,7 @@
+ 
+             bias = expand_joints(bias, self.bias_slots, 0.0)
+         xi = torch.cat([friction.reshape(n, 1), bias, com], dim=-1)
++        if NJ == 12:
++            xi = torch.cat([xi, self.env.b2_load[:, None] / 5., self.env.b2_mass_scale[:, None]], dim=-1)
+         assert xi.shape == (n, XI_DIM)
+         return xi.clone()
+
+--- data/recorder.py
++++ data/recorder.py
+@@ -11,6 +11,7 @@
+ """
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ from dataclasses import dataclass, field
+ from typing import TYPE_CHECKING
+@@ -35,7 +36,7 @@
+         self.command_name = p.get("command_name", "motion")
+         self.action_name = p.get("action_name", "joint_pos")
+         n = env.num_envs
+-        self.buffer = ReplayBuffer(n, int(p["capacity"]), STATE_DIM, 29, XI_DIM, env.device)
++        self.buffer = ReplayBuffer(n, int(p["capacity"]), STATE_DIM, NJ, XI_DIM, env.device)
+         self.prev_s = torch.zeros(n, STATE_DIM, device=env.device)
+         self.prev_xi = torch.zeros(n, XI_DIM, device=env.device)
+         self.prev_frame = torch.zeros(n, dtype=torch.long, device=env.device)
+@@ -91,7 +92,7 @@
+         # Terminal row: the state reached by the last action (no transition out of it).
+         cmd = self.command
+         s_next = self.state_io.read()[env_ids]
+-        zeros_a = torch.zeros(env_ids.numel(), 29, device=env.device)
++        zeros_a = torch.zeros(env_ids.numel(), NJ, device=env.device)
+         self.buffer.add(
+             env_ids,
+             s=s_next,
+
+--- imagination/rollout.py
++++ imagination/rollout.py
+@@ -1,6 +1,7 @@
+ """Imagined rollouts through the world model (paper §3.3)."""
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ from dataclasses import dataclass
+ 
+@@ -17,7 +18,7 @@
+ from supermimic.world_model.world_model import WorldModel
+ 
+ # Paper Table A.1 sensor noise (uniform half-widths) in the 93-d observation order.
+-OBS_NOISE_HALF = torch.tensor([0.01] * 29 + [0.5] * 29 + [0.2] * 3 + [0.05] * 3 + [0.0] * 29)
++OBS_NOISE_HALF = torch.tensor([0.01] * NJ + [0.5] * NJ + [0.2] * 3 + [0.05] * 3 + [0.0] * NJ)
+ ANCHOR_NOISE_HALF = torch.tensor([0.25] * 3 + [0.05] * 6)
+ 
+ 
+@@ -55,7 +56,7 @@
+         noise_half = noise_half.clone()
+         for j in wm.spec.locked_joints:
+             noise_half[j] = 0.0
+-            noise_half[29 + j] = 0.0
++            noise_half[NJ + j] = 0.0
+     anchor_noise_half = ANCHOR_NOISE_HALF.to(device)
+     ai = wm.heads.anchor_index
+ 
+@@ -90,7 +91,7 @@
+             if first:
+                 g_est = random_tilt(g_true, imu.init_tilt_deg)
+             else:
+-                g_est = imu_gravity_step(g_est, s_t[..., 39:42], g_true, imu_k, imu.gyro_limit, dt)
++                g_est = imu_gravity_step(g_est, s_t[..., NQ+3:NQ+6], g_true, imu_k, imu.gyro_limit, dt)
+             return imu_observation(o, g_est, imu_flag, imu.gyro_limit), g_est
+ 
+     # Initial observation history from the logged states/actions (noise re-sampled per frame).
+
+--- envs/lock_waist.py
++++ envs/lock_waist.py
+@@ -101,7 +101,7 @@
+     """
+     q0 = robot.data.default_joint_pos[0].detach().clone()
+     soft = robot.data.soft_joint_pos_limits[0].detach().clone()
+-    if not is_locked_entity(robot):
++    if len(robot.joint_names) == 12 or not is_locked_entity(robot):
+         return q0, soft
+     from supermimic.data.motion_convert import load_g1_model
+ 
+
+--- training/loop.py
++++ training/loop.py
+@@ -1,6 +1,8 @@
+ """SuperMimic training loop (paper Algorithm A.1): collect -> fit world model -> improve policy."""
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
++from task_adapter import load_task_model
+ 
+ import json
+ import time
+@@ -30,7 +32,7 @@
+ class Trainer:
+     def __init__(self, cfg: TrainConfig):
+         self.cfg = cfg
+-        cfg.policy.goal_dim = cfg.env.future_frames * 68 + (9 if cfg.env.anchor_obs else 0)
++        cfg.policy.goal_dim = cfg.env.future_frames * GF + (9 if cfg.env.anchor_obs else 0)
+         cfg.policy_trainer.anchor_obs = cfg.env.anchor_obs
+         cfg.policy_trainer.imu_sat_prob = cfg.env.imu_sat_prob
+         cfg.policy_trainer.imu_gyro_limit = cfg.env.imu_gyro_limit
+@@ -143,7 +145,7 @@
+         self.buffer = self.recorder.buffer
+         robot = env.scene["robot"]
+ 
+-        fk = G1Kinematics(load_g1_model(), device=self.device)
++        fk = G1Kinematics(load_task_model(), device=self.device)
+         # 29-joint constants (identical to robot.data for the unlocked robot; locked joints filled in otherwise).
+         q0_full, soft_full = full_joint_constants(robot)
+         reward_cfg = TrackingRewardCfg(
+@@ -282,6 +284,10 @@
+         last_log = time.time()
+ 
+         while self.iteration < sch.total_iterations:
++            if (self.log_dir / "STOP").exists():
++                if self.is_main:
++                    print("[INFO] requested STOP", flush=True)
++                break
+             # ---------------- (1) collect one vectorised env step
+             t0 = time.perf_counter()
+             action = self.act(obs)
+
+--- envs/tracking_env_cfg.py
++++ envs/tracking_env_cfg.py
+@@ -14,6 +14,7 @@
+ """
+ 
+ from __future__ import annotations
++from supermimic.robot_layout import NJ, NQ, NV, SD, DD, GF, OD, XD, ROOT_NAME
+ 
+ from dataclasses import dataclass, field
+ 
+@@ -69,6 +70,10 @@
+ ANCHOR_BODY = "torso_link"
+ ROOT_BODY = "pelvis"
+ FOOT_GEOM_REGEX = r"^(left|right)_foot[1-7]_collision$"
++if ROOT_NAME == "base_link":
++    TRACKED_BODIES = ("base_link", "FL_hip", "FL_thigh", "FL_calf", "FR_hip", "FR_thigh", "FR_calf", "RL_hip", "RL_thigh", "RL_calf", "RR_hip", "RR_thigh", "RR_calf")
++    ANCHOR_BODY = ROOT_BODY = ROOT_NAME
++    FOOT_GEOM_REGEX = r"^(FL|FR|RL|RR)_foot_collision$"
+ 
+ 
+ @dataclass
+@@ -361,7 +366,8 @@
+         episode_length_s=a.episode_length_s,
+         seed=a.seed,
+     )
+-    return cfg
++    from task_adapter import adapt_env_cfg
++    return adapt_env_cfg(cfg, a)
+ 
+ 
+ def robot_cfg(lock_waist: bool = False, waist_coupling: tuple[float, float] | None = None, waist_roll_range: float | None = None):

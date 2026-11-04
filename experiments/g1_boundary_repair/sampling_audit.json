@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "samples": 100000,
+  "targeted_counts": {
+    "mu015": 4890,
+    "mu020": 4870,
+    "mu030": 5028,
+    "back_push": 5112,
+    "native_stress": 4914,
+    "combined_low": 4980,
+    "combined_high": 5137,
+    "forward_push": 5006
+  },
+  "old_isolated_low_counts": {
+    "0.15": 0,
+    "0.2": 0,
+    "0.3": 0
+  },
+  "old_pure_back_push": 0,
+  "continuous_samples": 30127,
+  "scope": "Domain-coverage audit only; not physical skill evaluation or convergence"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "skill": "jump_60cm",
+    "label": "G1 v11",
+    "iteration": 13000,
+    "duration_s": 3.72,
+    "checkpoint_sha256": "55d47be9ead36fc6a0863d79c64701ea7c86d04b2f66595182eec7432c854a7b",
+    "weights_sha256": "594248d8ae832ab3ae35a36a1a1bdb2785a726ba8cb62f918dee773ad8dc2244",
+    "hardware_validated": false,
+    "physical_eval_passed": false
+  },
+  {
+    "skill": "funky_chicken",
+    "label": null,
+    "iteration": 8000,
+    "duration_s": 9.0,
+    "checkpoint_sha256": "1d9fc183c87e455b7a439c9598796c417fdb802a0fecd2a55cfd7e93554525f6",
+    "weights_sha256": "288c3eb2c43a88655728216f564cd71f5e50818eadd4306db7d893184ae2659e",
+    "hardware_validated": false,
+    "physical_eval_passed": null
+  }
+]

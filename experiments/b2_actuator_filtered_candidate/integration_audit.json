@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "actual_task_preserves_filter_memory": true,
+  "actual_reward_target_matches_imagined_filter": true,
+  "actual_wm_context_dim": 34,
+  "scope": "Actual extracted task and WM adapter methods on CPU mocks; physical env reset/step and GPU trainer smoke still pending"
+}

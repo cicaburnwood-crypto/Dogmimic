@@ -1,0 +1,8 @@
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/revision-v15/segments/title-final.mp4'
+duration 5.000000000000
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/revision-v16/segments/pages-1-3.mp4'
+duration 40.000000000000
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/revision-v16/segments/page-4.mp4'
+duration 12.000000000000
+file '/home/wolfie/Documents/ChatGPT/Supermimic/demo-video/revision-v15/segments/experiments.mp4'
+duration 120.783333333333

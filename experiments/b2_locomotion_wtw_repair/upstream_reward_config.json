@@ -1,0 +1,1023 @@
+{
+  "source_commit": "0e7236bdc81ce855cbe3d70345a7899452bdeb1c",
+  "reward_scales": {
+    "tracking_lin_vel": 1.0,
+    "tracking_ang_vel": 0.5,
+    "lin_vel_z": -2.0,
+    "ang_vel_xy": -0.05,
+    "torques": -0.0001,
+    "dof_vel": -0.0001,
+    "dof_acc": -2.5e-07,
+    "collision": -5.0,
+    "action_rate": -0.01,
+    "tracking_contacts_shaped_force": 4.0,
+    "tracking_contacts_shaped_vel": 4.0,
+    "jump": 10.0,
+    "dof_pos_limits": -10.0,
+    "feet_slip": -0.04,
+    "feet_clearance_cmd_linear": -30.0,
+    "action_smoothness_1": -0.1,
+    "action_smoothness_2": -0.1,
+    "raibert_heuristic": -10.0,
+    "orientation_control": -5.0
+  },
+  "rewards": {
+    "only_positive_rewards": false,
+    "only_positive_rewards_ji22_style": false,
+    "sigma_rew_neg": 0.02,
+    "reward_container_name": "CoRLRewards",
+    "tracking_sigma": 0.25,
+    "tracking_sigma_lat": 0.25,
+    "tracking_sigma_long": 0.25,
+    "tracking_sigma_yaw": 0.25,
+    "soft_dof_pos_limit": 0.9,
+    "soft_dof_vel_limit": 1.0,
+    "soft_torque_limit": 1.0,
+    "base_height_target": 0.3,
+    "max_contact_force": 100.0,
+    "use_terminal_body_height": true,
+    "terminal_body_height": 0.05,
+    "use_terminal_foot_height": false,
+    "terminal_foot_height": -0.005,
+    "use_terminal_roll_pitch": true,
+    "terminal_body_ori": 1.6,
+    "kappa_gait_probs": 0.07,
+    "gait_force_sigma": 5450.4855947409715,
+    "gait_vel_sigma": 0.5,
+    "footswing_height": 0.09
+  },
+  "commands": {
+    "command_curriculum": true,
+    "max_reverse_curriculum": 1.0,
+    "max_forward_curriculum": 1.0,
+    "yaw_command_curriculum": false,
+    "max_yaw_curriculum": 1.0,
+    "exclusive_command_sampling": false,
+    "num_commands": 15,
+    "resampling_time": 10,
+    "subsample_gait": false,
+    "gait_interval_s": 10.0,
+    "vel_interval_s": 10.0,
+    "jump_interval_s": 20.0,
+    "jump_duration_s": 0.1,
+    "jump_height": 0.3,
+    "heading_command": false,
+    "global_reference": false,
+    "observe_accel": false,
+    "distributional_commands": true,
+    "curriculum_type": "RewardThresholdCurriculum",
+    "lipschitz_threshold": 0.9,
+    "num_lin_vel_bins": 30,
+    "lin_vel_step": 0.3,
+    "num_ang_vel_bins": 30,
+    "ang_vel_step": 0.3,
+    "distribution_update_extension_distance": 1,
+    "curriculum_seed": 100,
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -0.6,
+      0.6
+    ],
+    "ang_vel_yaw": [
+      -1.0,
+      1.0
+    ],
+    "body_height_cmd": [
+      -0.25,
+      0.15
+    ],
+    "impulse_height_commands": false,
+    "limit_vel_x": [
+      -5.0,
+      5.0
+    ],
+    "limit_vel_y": [
+      -0.6,
+      0.6
+    ],
+    "limit_vel_yaw": [
+      -5.0,
+      5.0
+    ],
+    "limit_body_height": [
+      -0.25,
+      0.15
+    ],
+    "limit_gait_phase": [
+      0.0,
+      1.0
+    ],
+    "limit_gait_offset": [
+      0.0,
+      1.0
+    ],
+    "limit_gait_bound": [
+      0.0,
+      1.0
+    ],
+    "limit_gait_frequency": [
+      2.0,
+      4.0
+    ],
+    "limit_gait_duration": [
+      0.5,
+      0.5
+    ],
+    "limit_footswing_height": [
+      0.03,
+      0.35
+    ],
+    "limit_body_pitch": [
+      -0.4,
+      0.4
+    ],
+    "limit_body_roll": [
+      -0.0,
+      0.0
+    ],
+    "limit_aux_reward_coef": [
+      0.0,
+      0.01
+    ],
+    "limit_compliance": [
+      0.0,
+      0.01
+    ],
+    "limit_stance_width": [
+      0.1,
+      0.45
+    ],
+    "limit_stance_length": [
+      0.35,
+      0.45
+    ],
+    "num_bins_vel_x": 21,
+    "num_bins_vel_y": 1,
+    "num_bins_vel_yaw": 21,
+    "num_bins_body_height": 1,
+    "num_bins_gait_frequency": 1,
+    "num_bins_gait_phase": 1,
+    "num_bins_gait_offset": 1,
+    "num_bins_gait_bound": 1,
+    "num_bins_gait_duration": 1,
+    "num_bins_footswing_height": 1,
+    "num_bins_body_pitch": 1,
+    "num_bins_body_roll": 1,
+    "num_bins_aux_reward_coef": 1,
+    "num_bins_compliance": 1,
+    "num_bins_stance_width": 1,
+    "num_bins_stance_length": 1,
+    "heading": [
+      -3.14,
+      3.14
+    ],
+    "gait_phase_cmd_range": [
+      0.0,
+      1.0
+    ],
+    "gait_offset_cmd_range": [
+      0.0,
+      1.0
+    ],
+    "gait_bound_cmd_range": [
+      0.0,
+      1.0
+    ],
+    "gait_frequency_cmd_range": [
+      2.0,
+      4.0
+    ],
+    "gait_duration_cmd_range": [
+      0.5,
+      0.5
+    ],
+    "footswing_height_range": [
+      0.03,
+      0.35
+    ],
+    "body_pitch_range": [
+      -0.4,
+      0.4
+    ],
+    "body_roll_range": [
+      -0.0,
+      0.0
+    ],
+    "aux_reward_coef_range": [
+      0.0,
+      0.01
+    ],
+    "compliance_range": [
+      0.0,
+      0.01
+    ],
+    "stance_width_range": [
+      0.1,
+      0.45
+    ],
+    "stance_length_range": [
+      0.35,
+      0.45
+    ],
+    "exclusive_phase_offset": false,
+    "binary_phases": true,
+    "pacing_offset": false,
+    "balance_gait_distribution": true,
+    "gaitwise_curricula": true
+  },
+  "provenance": {
+    "rewards.only_positive_rewards": {
+      "file": "scripts/train.py",
+      "line": 147
+    },
+    "rewards.only_positive_rewards_ji22_style": {
+      "file": "scripts/train.py",
+      "line": 148
+    },
+    "rewards.sigma_rew_neg": {
+      "file": "scripts/train.py",
+      "line": 149
+    },
+    "rewards.reward_container_name": {
+      "file": "scripts/train.py",
+      "line": 146
+    },
+    "rewards.tracking_sigma": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 277
+    },
+    "rewards.tracking_sigma_lat": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 278
+    },
+    "rewards.tracking_sigma_long": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 279
+    },
+    "rewards.tracking_sigma_yaw": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 280
+    },
+    "rewards.soft_dof_pos_limit": {
+      "file": "go1_gym/envs/go1/go1_config.py",
+      "line": 49
+    },
+    "rewards.soft_dof_vel_limit": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 282
+    },
+    "rewards.soft_torque_limit": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 283
+    },
+    "rewards.base_height_target": {
+      "file": "scripts/train.py",
+      "line": 124
+    },
+    "rewards.max_contact_force": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 285
+    },
+    "rewards.use_terminal_body_height": {
+      "file": "scripts/train.py",
+      "line": 110
+    },
+    "rewards.terminal_body_height": {
+      "file": "scripts/train.py",
+      "line": 111
+    },
+    "rewards.use_terminal_foot_height": {
+      "file": "scripts/train.py",
+      "line": 109
+    },
+    "rewards.terminal_foot_height": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 289
+    },
+    "rewards.use_terminal_roll_pitch": {
+      "file": "scripts/train.py",
+      "line": 112
+    },
+    "rewards.terminal_body_ori": {
+      "file": "scripts/train.py",
+      "line": 113
+    },
+    "rewards.kappa_gait_probs": {
+      "file": "scripts/train.py",
+      "line": 139
+    },
+    "rewards.gait_force_sigma": {
+      "file": "scripts/train.py",
+      "line": 140
+    },
+    "rewards.gait_vel_sigma": {
+      "file": "scripts/train.py",
+      "line": 141
+    },
+    "rewards.footswing_height": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 295
+    },
+    "reward_scales.termination": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 298
+    },
+    "reward_scales.tracking_lin_vel": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 299
+    },
+    "reward_scales.tracking_ang_vel": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 300
+    },
+    "reward_scales.lin_vel_z": {
+      "file": "scripts/train.py",
+      "line": 135
+    },
+    "reward_scales.ang_vel_xy": {
+      "file": "scripts/train.py",
+      "line": 136
+    },
+    "reward_scales.orientation": {
+      "file": "scripts/train.py",
+      "line": 131
+    },
+    "reward_scales.torques": {
+      "file": "go1_gym/envs/go1/go1_config.py",
+      "line": 53
+    },
+    "reward_scales.dof_vel": {
+      "file": "scripts/train.py",
+      "line": 120
+    },
+    "reward_scales.dof_acc": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 306
+    },
+    "reward_scales.base_height": {
+      "file": "scripts/train.py",
+      "line": 123
+    },
+    "reward_scales.feet_air_time": {
+      "file": "scripts/train.py",
+      "line": 137
+    },
+    "reward_scales.collision": {
+      "file": "scripts/train.py",
+      "line": 144
+    },
+    "reward_scales.feet_stumble": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 310
+    },
+    "reward_scales.action_rate": {
+      "file": "go1_gym/envs/go1/go1_config.py",
+      "line": 54
+    },
+    "reward_scales.stand_still": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 312
+    },
+    "reward_scales.tracking_lin_vel_lat": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 313
+    },
+    "reward_scales.tracking_lin_vel_long": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 314
+    },
+    "reward_scales.tracking_contacts": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 315
+    },
+    "reward_scales.tracking_contacts_shaped": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 316
+    },
+    "reward_scales.tracking_contacts_shaped_force": {
+      "file": "scripts/train.py",
+      "line": 142
+    },
+    "reward_scales.tracking_contacts_shaped_vel": {
+      "file": "scripts/train.py",
+      "line": 143
+    },
+    "reward_scales.jump": {
+      "file": "scripts/train.py",
+      "line": 122
+    },
+    "reward_scales.energy": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 320
+    },
+    "reward_scales.energy_expenditure": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 321
+    },
+    "reward_scales.survival": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 322
+    },
+    "reward_scales.dof_pos_limits": {
+      "file": "go1_gym/envs/go1/go1_config.py",
+      "line": 55
+    },
+    "reward_scales.feet_contact_forces": {
+      "file": "scripts/train.py",
+      "line": 80
+    },
+    "reward_scales.feet_slip": {
+      "file": "scripts/train.py",
+      "line": 117
+    },
+    "reward_scales.feet_clearance_cmd_linear": {
+      "file": "scripts/train.py",
+      "line": 130
+    },
+    "reward_scales.dof_pos": {
+      "file": "scripts/train.py",
+      "line": 121
+    },
+    "reward_scales.action_smoothness_1": {
+      "file": "scripts/train.py",
+      "line": 118
+    },
+    "reward_scales.action_smoothness_2": {
+      "file": "scripts/train.py",
+      "line": 119
+    },
+    "reward_scales.base_motion": {
+      "file": "go1_gym/envs/base/legged_robot_config.py",
+      "line": 330
+    },
+    "reward_scales.feet_impact_vel": {
+      "file": "scripts/train.py",
+      "line": 127
+    },
+    "reward_scales.raibert_heuristic": {
+      "file": "scripts/train.py",
+      "line": 126
+    },
+    "reward_scales.estimation_bonus": {
+      "file": "scripts/train.py",
+      "line": 125
+    },
+    "reward_scales.feet_clearance": {
+      "file": "scripts/train.py",
+      "line": 128
+    },
+    "reward_scales.feet_clearance_cmd": {
+      "file": "scripts/train.py",
+      "line": 129
+    },
+    "reward_scales.orientation_control": {
+      "file": "scripts/train.py",
+      "line": 132
+    },
+    "reward_scales.tracking_stance_width": {
+      "file": "scripts/train.py",
+      "line": 133
+    },
+    "reward_scales.tracking_stance_length": {
+      "file": "scripts/train.py",
+      "line": 134
+    },
+    "reward_scales.hop_symmetry": {
+      "file": "scripts/train.py",
+      "line": 138
+    }
+  },
+  "extraction": "Base Cfg then config_go1 then train_go1 literal overrides, preserving all nonzero upstream reward terms",
+  "original_published_training_config": {
+    "source_commit": "0e7236bdc81ce855cbe3d70345a7899452bdeb1c",
+    "reward_scales": {
+      "tracking_lin_vel": 1.0,
+      "tracking_ang_vel": 0.5,
+      "lin_vel_z": -0.02,
+      "ang_vel_xy": -0.001,
+      "torques": -0.0001,
+      "dof_vel": -0.0001,
+      "dof_acc": -2.5e-07,
+      "collision": -5.0,
+      "action_rate": -0.01,
+      "tracking_contacts_shaped_force": 4.0,
+      "tracking_contacts_shaped_vel": 4.0,
+      "jump": 10.0,
+      "dof_pos_limits": -10.0,
+      "feet_slip": -0.04,
+      "feet_clearance_cmd_linear": -30.0,
+      "action_smoothness_1": -0.1,
+      "action_smoothness_2": -0.1,
+      "raibert_heuristic": -10.0,
+      "orientation_control": -5.0
+    },
+    "rewards": {
+      "only_positive_rewards": false,
+      "only_positive_rewards_ji22_style": true,
+      "sigma_rew_neg": 0.02,
+      "reward_container_name": "CoRLRewards",
+      "tracking_sigma": 0.25,
+      "tracking_sigma_lat": 0.25,
+      "tracking_sigma_long": 0.25,
+      "tracking_sigma_yaw": 0.25,
+      "soft_dof_pos_limit": 0.9,
+      "soft_dof_vel_limit": 1.0,
+      "soft_torque_limit": 1.0,
+      "base_height_target": 0.3,
+      "max_contact_force": 100.0,
+      "use_terminal_body_height": true,
+      "terminal_body_height": 0.05,
+      "use_terminal_foot_height": false,
+      "terminal_foot_height": -0.005,
+      "use_terminal_roll_pitch": true,
+      "terminal_body_ori": 1.6,
+      "kappa_gait_probs": 0.07,
+      "gait_force_sigma": 100.0,
+      "gait_vel_sigma": 10.0,
+      "footswing_height": 0.09
+    },
+    "commands": {
+      "command_curriculum": true,
+      "max_reverse_curriculum": 1.0,
+      "max_forward_curriculum": 1.0,
+      "yaw_command_curriculum": false,
+      "max_yaw_curriculum": 1.0,
+      "exclusive_command_sampling": false,
+      "num_commands": 15,
+      "resampling_time": 10,
+      "subsample_gait": false,
+      "gait_interval_s": 10.0,
+      "vel_interval_s": 10.0,
+      "jump_interval_s": 20.0,
+      "jump_duration_s": 0.1,
+      "jump_height": 0.3,
+      "heading_command": false,
+      "global_reference": false,
+      "observe_accel": false,
+      "distributional_commands": true,
+      "curriculum_type": "RewardThresholdCurriculum",
+      "lipschitz_threshold": 0.9,
+      "num_lin_vel_bins": 30,
+      "lin_vel_step": 0.3,
+      "num_ang_vel_bins": 30,
+      "ang_vel_step": 0.3,
+      "distribution_update_extension_distance": 1,
+      "curriculum_seed": 100,
+      "lin_vel_x": [
+        -1.0,
+        1.0
+      ],
+      "lin_vel_y": [
+        -0.6,
+        0.6
+      ],
+      "ang_vel_yaw": [
+        -1.0,
+        1.0
+      ],
+      "body_height_cmd": [
+        -0.25,
+        0.15
+      ],
+      "impulse_height_commands": false,
+      "limit_vel_x": [
+        -5.0,
+        5.0
+      ],
+      "limit_vel_y": [
+        -0.6,
+        0.6
+      ],
+      "limit_vel_yaw": [
+        -5.0,
+        5.0
+      ],
+      "limit_body_height": [
+        -0.25,
+        0.15
+      ],
+      "limit_gait_phase": [
+        0.0,
+        1.0
+      ],
+      "limit_gait_offset": [
+        0.0,
+        1.0
+      ],
+      "limit_gait_bound": [
+        0.0,
+        1.0
+      ],
+      "limit_gait_frequency": [
+        2.0,
+        4.0
+      ],
+      "limit_gait_duration": [
+        0.5,
+        0.5
+      ],
+      "limit_footswing_height": [
+        0.03,
+        0.35
+      ],
+      "limit_body_pitch": [
+        -0.4,
+        0.4
+      ],
+      "limit_body_roll": [
+        -0.0,
+        0.0
+      ],
+      "limit_aux_reward_coef": [
+        0.0,
+        0.01
+      ],
+      "limit_compliance": [
+        0.0,
+        0.01
+      ],
+      "limit_stance_width": [
+        0.1,
+        0.45
+      ],
+      "limit_stance_length": [
+        0.35,
+        0.45
+      ],
+      "num_bins_vel_x": 21,
+      "num_bins_vel_y": 1,
+      "num_bins_vel_yaw": 21,
+      "num_bins_body_height": 1,
+      "num_bins_gait_frequency": 1,
+      "num_bins_gait_phase": 1,
+      "num_bins_gait_offset": 1,
+      "num_bins_gait_bound": 1,
+      "num_bins_gait_duration": 1,
+      "num_bins_footswing_height": 1,
+      "num_bins_body_pitch": 1,
+      "num_bins_body_roll": 1,
+      "num_bins_aux_reward_coef": 1,
+      "num_bins_compliance": 1,
+      "num_bins_stance_width": 1,
+      "num_bins_stance_length": 1,
+      "heading": [
+        -3.14,
+        3.14
+      ],
+      "gait_phase_cmd_range": [
+        0.0,
+        1.0
+      ],
+      "gait_offset_cmd_range": [
+        0.0,
+        1.0
+      ],
+      "gait_bound_cmd_range": [
+        0.0,
+        1.0
+      ],
+      "gait_frequency_cmd_range": [
+        2.0,
+        4.0
+      ],
+      "gait_duration_cmd_range": [
+        0.5,
+        0.5
+      ],
+      "footswing_height_range": [
+        0.03,
+        0.35
+      ],
+      "body_pitch_range": [
+        -0.4,
+        0.4
+      ],
+      "body_roll_range": [
+        -0.0,
+        0.0
+      ],
+      "aux_reward_coef_range": [
+        0.0,
+        0.01
+      ],
+      "compliance_range": [
+        0.0,
+        0.01
+      ],
+      "stance_width_range": [
+        0.1,
+        0.45
+      ],
+      "stance_length_range": [
+        0.35,
+        0.45
+      ],
+      "exclusive_phase_offset": false,
+      "binary_phases": true,
+      "pacing_offset": false,
+      "balance_gait_distribution": true,
+      "gaitwise_curricula": true
+    },
+    "provenance": {
+      "rewards.only_positive_rewards": {
+        "file": "scripts/train.py",
+        "line": 147
+      },
+      "rewards.only_positive_rewards_ji22_style": {
+        "file": "scripts/train.py",
+        "line": 148
+      },
+      "rewards.sigma_rew_neg": {
+        "file": "scripts/train.py",
+        "line": 149
+      },
+      "rewards.reward_container_name": {
+        "file": "scripts/train.py",
+        "line": 146
+      },
+      "rewards.tracking_sigma": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 277
+      },
+      "rewards.tracking_sigma_lat": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 278
+      },
+      "rewards.tracking_sigma_long": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 279
+      },
+      "rewards.tracking_sigma_yaw": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 280
+      },
+      "rewards.soft_dof_pos_limit": {
+        "file": "go1_gym/envs/go1/go1_config.py",
+        "line": 49
+      },
+      "rewards.soft_dof_vel_limit": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 282
+      },
+      "rewards.soft_torque_limit": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 283
+      },
+      "rewards.base_height_target": {
+        "file": "scripts/train.py",
+        "line": 124
+      },
+      "rewards.max_contact_force": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 285
+      },
+      "rewards.use_terminal_body_height": {
+        "file": "scripts/train.py",
+        "line": 110
+      },
+      "rewards.terminal_body_height": {
+        "file": "scripts/train.py",
+        "line": 111
+      },
+      "rewards.use_terminal_foot_height": {
+        "file": "scripts/train.py",
+        "line": 109
+      },
+      "rewards.terminal_foot_height": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 289
+      },
+      "rewards.use_terminal_roll_pitch": {
+        "file": "scripts/train.py",
+        "line": 112
+      },
+      "rewards.terminal_body_ori": {
+        "file": "scripts/train.py",
+        "line": 113
+      },
+      "rewards.kappa_gait_probs": {
+        "file": "scripts/train.py",
+        "line": 139
+      },
+      "rewards.gait_force_sigma": {
+        "file": "scripts/train.py",
+        "line": 140
+      },
+      "rewards.gait_vel_sigma": {
+        "file": "scripts/train.py",
+        "line": 141
+      },
+      "rewards.footswing_height": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 295
+      },
+      "reward_scales.termination": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 298
+      },
+      "reward_scales.tracking_lin_vel": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 299
+      },
+      "reward_scales.tracking_ang_vel": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 300
+      },
+      "reward_scales.lin_vel_z": {
+        "file": "scripts/train.py",
+        "line": 135
+      },
+      "reward_scales.ang_vel_xy": {
+        "file": "scripts/train.py",
+        "line": 136
+      },
+      "reward_scales.orientation": {
+        "file": "scripts/train.py",
+        "line": 131
+      },
+      "reward_scales.torques": {
+        "file": "go1_gym/envs/go1/go1_config.py",
+        "line": 53
+      },
+      "reward_scales.dof_vel": {
+        "file": "scripts/train.py",
+        "line": 120
+      },
+      "reward_scales.dof_acc": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 306
+      },
+      "reward_scales.base_height": {
+        "file": "scripts/train.py",
+        "line": 123
+      },
+      "reward_scales.feet_air_time": {
+        "file": "scripts/train.py",
+        "line": 137
+      },
+      "reward_scales.collision": {
+        "file": "scripts/train.py",
+        "line": 144
+      },
+      "reward_scales.feet_stumble": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 310
+      },
+      "reward_scales.action_rate": {
+        "file": "go1_gym/envs/go1/go1_config.py",
+        "line": 54
+      },
+      "reward_scales.stand_still": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 312
+      },
+      "reward_scales.tracking_lin_vel_lat": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 313
+      },
+      "reward_scales.tracking_lin_vel_long": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 314
+      },
+      "reward_scales.tracking_contacts": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 315
+      },
+      "reward_scales.tracking_contacts_shaped": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 316
+      },
+      "reward_scales.tracking_contacts_shaped_force": {
+        "file": "scripts/train.py",
+        "line": 142
+      },
+      "reward_scales.tracking_contacts_shaped_vel": {
+        "file": "scripts/train.py",
+        "line": 143
+      },
+      "reward_scales.jump": {
+        "file": "scripts/train.py",
+        "line": 122
+      },
+      "reward_scales.energy": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 320
+      },
+      "reward_scales.energy_expenditure": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 321
+      },
+      "reward_scales.survival": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 322
+      },
+      "reward_scales.dof_pos_limits": {
+        "file": "go1_gym/envs/go1/go1_config.py",
+        "line": 55
+      },
+      "reward_scales.feet_contact_forces": {
+        "file": "scripts/train.py",
+        "line": 80
+      },
+      "reward_scales.feet_slip": {
+        "file": "scripts/train.py",
+        "line": 117
+      },
+      "reward_scales.feet_clearance_cmd_linear": {
+        "file": "scripts/train.py",
+        "line": 130
+      },
+      "reward_scales.dof_pos": {
+        "file": "scripts/train.py",
+        "line": 121
+      },
+      "reward_scales.action_smoothness_1": {
+        "file": "scripts/train.py",
+        "line": 118
+      },
+      "reward_scales.action_smoothness_2": {
+        "file": "scripts/train.py",
+        "line": 119
+      },
+      "reward_scales.base_motion": {
+        "file": "go1_gym/envs/base/legged_robot_config.py",
+        "line": 330
+      },
+      "reward_scales.feet_impact_vel": {
+        "file": "scripts/train.py",
+        "line": 127
+      },
+      "reward_scales.raibert_heuristic": {
+        "file": "scripts/train.py",
+        "line": 126
+      },
+      "reward_scales.estimation_bonus": {
+        "file": "scripts/train.py",
+        "line": 125
+      },
+      "reward_scales.feet_clearance": {
+        "file": "scripts/train.py",
+        "line": 128
+      },
+      "reward_scales.feet_clearance_cmd": {
+        "file": "scripts/train.py",
+        "line": 129
+      },
+      "reward_scales.orientation_control": {
+        "file": "scripts/train.py",
+        "line": 132
+      },
+      "reward_scales.tracking_stance_width": {
+        "file": "scripts/train.py",
+        "line": 133
+      },
+      "reward_scales.tracking_stance_length": {
+        "file": "scripts/train.py",
+        "line": 134
+      },
+      "reward_scales.hop_symmetry": {
+        "file": "scripts/train.py",
+        "line": 138
+      }
+    },
+    "extraction": "Base Cfg then config_go1 then train_go1 literal overrides, preserving all nonzero upstream reward terms"
+  },
+  "b2_scale_adapter": {
+    "go1_mass_kg": 11.309932,
+    "b2_model_mass_kg": 83.49829199999999,
+    "torque_to_go1_equivalent": [
+      0.1675,
+      0.1675,
+      0.11166666666666666,
+      0.1675,
+      0.1675,
+      0.11166666666666666,
+      0.1675,
+      0.1675,
+      0.11166666666666666,
+      0.1675,
+      0.1675,
+      0.11166666666666666
+    ],
+    "force_mass_ratio": 7.38274040904932,
+    "source_urdf_sha256": "837e62ccebd38bec024f22e8ea82e103165807892e5d2092cd1341ef55b57dfa"
+  },
+  "b2_gait": {
+    "duration": 0.65,
+    "frequency": 2.0,
+    "footswing_height": 0.06,
+    "source": "WTW _step_contact_targets parameterization; B2 tuned duty duration; .06 m is the public base config swing height"
+  },
+  "repair_provenance": {
+    "combination": "Pinned WTW legged_robot.py compute_reward, both only_positive flags False: additive, without clipping or exponential gating",
+    "lin_vel_z": "Pinned WTW base legged_robot_config.py reward_scales.lin_vel_z=-2.0",
+    "ang_vel_xy": "Pinned WTW base config ang_vel_xy=-0.05",
+    "gait_vel_sigma": "Pinned WTW base config gait_vel_sigma=0.5",
+    "torque_scaling": "Public raw squared torque formula evaluated at equal fraction of Go1/B2 effort limits",
+    "force_scaling": "Public force exponential kernel at equal force/body-weight ratio",
+    "acceptance": "Unchanged; these are disclosed training adaptations, not an unchanged validated B2 recipe"
+  }
+}

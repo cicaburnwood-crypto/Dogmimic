@@ -1,0 +1,7 @@
+{
+  "exec_session": 59142,
+  "gpu": 4,
+  "status": "completed_pass",
+  "log": "/tmp/g1_effective_cuda_smoke.log",
+  "report": "runs/g1_effective_action_cuda_smoke/report.json"
+}

@@ -1,0 +1,12 @@
+{
+  "actor_cases": 256,
+  "batch_max_abs_error": 6.556510925292969e-07,
+  "single_max_abs_error": 5.066394805908203e-07,
+  "tolerance": 2e-05,
+  "oracle": "Original checkpoint policy in CPU float32; no retraining or policy conversion approximation",
+  "clock_cases": 512,
+  "clock_max_abs_error": 5.960464477539063e-08,
+  "command_max_abs_error": 2.384185791015625e-07,
+  "slew_max_abs_error": 1.4901161193847656e-08,
+  "passed": true
+}

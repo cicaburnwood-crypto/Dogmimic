@@ -1,0 +1,16 @@
+{
+  "stage": "formal_training_running_detached",
+  "updated_unix": 1793479559.556934,
+  "run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_locomotion_wtw_fresh_20261101_044355",
+  "train_pid": 3233261,
+  "eval_pid": 3233262,
+  "supervisor_pid": 3233260,
+  "iteration": 1000,
+  "reward_parity_passed": true,
+  "physics_adapter_passed": true,
+  "two_gpu_smoke_passed": true,
+  "formal_training_started": true,
+  "automation_status": "ACTIVE every 20 minutes",
+  "source_hashes_verified": 45,
+  "fresh_initial_checkpoint_verified": true
+}

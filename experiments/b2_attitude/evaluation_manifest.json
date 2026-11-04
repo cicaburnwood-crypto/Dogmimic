@@ -1,0 +1,4183 @@
+{
+  "criteria": {
+    "hold_rmse_deg": 2.0,
+    "small_angle_relative_rmse": 0.1,
+    "small_angle_rmse_floor_deg": 0.25,
+    "hold_peak_error_deg": 5.0,
+    "tracking_rmse_deg": 4.0,
+    "max_overshoot_deg": 5.0,
+    "neutral_peak_deg": 2.0,
+    "hold_angular_rate_rms": 0.15,
+    "neutral_speed_rms": 0.08,
+    "max_foot_drift_m": 0.05,
+    "max_body_drift_m": 0.08,
+    "min_four_support_fraction": 0.95,
+    "min_three_support_fraction": 0.99,
+    "max_nonfoot_contact_fraction": 0.0,
+    "joint_speed_rad_s": 6.0,
+    "mechanical_power_w": 1501.0,
+    "min_case_success": 0.95,
+    "initial_stable_seconds": 0.5,
+    "settling_window_starts_after_command_s": 3.0
+  },
+  "duration": 27.0,
+  "basic_cases": [
+    {
+      "name": "neutral",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -22.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -15.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -7.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -1.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -0.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            7.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            15.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            22.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -22.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -15.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -7.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -0.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            7.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            22.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_reversal",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            13.7,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            -8.3,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_reversal",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            18.6
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            -4.2
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "cross_axis",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "cross_axis_reverse",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "queued_return_roll_pitch",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "queued_return_pitch_roll",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "random_sequence_0",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            10.70054078340987,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -10.637450129909826
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.13620268156812187,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            27.611521825463555,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            17.90253928124008
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "random_sequence_1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            26.666567204571024
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -25.21254453663852,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            21.68936184665069
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            3.2833046175716873
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            -8.481711623165506,
+            0.0
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    }
+  ],
+  "full_cases": [
+    {
+      "name": "neutral",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -22.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -15.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -7.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -1.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_-0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -0.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            7.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            15.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            22.5,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -22.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -15.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -7.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_-0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -0.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+0.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+7.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            7.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+15",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+22.5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            22.5
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "roll_reversal",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            13.7,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            -8.3,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "pitch_reversal",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            18.6
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            -4.2
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "cross_axis",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "cross_axis_reverse",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "queued_return_roll_pitch",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "queued_return_pitch_roll",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "random_sequence_0",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            10.70054078340987,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -10.637450129909826
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.13620268156812187,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            27.611521825463555,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            17.90253928124008
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "random_sequence_1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            26.666567204571024
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -25.21254453663852,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            21.68936184665069
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            3.2833046175716873
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            -8.481711623165506,
+            0.0
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": true
+    },
+    {
+      "name": "random_sequence_2",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.8236462565578648,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -0.8985911886037314
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            20.9499216638971
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            -25.803596426187628,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            27.835490265949915,
+            0.0
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "random_sequence_3",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -7.868475411161569
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -9.178571696377912,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -12.88248291441148
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            -29.959868977346453
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            25.00826952089755
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "random_sequence_4",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -23.458112274756207,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -21.254313448310924
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            -16.875376903247272,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            -17.358824484590954,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            5.398889126471701,
+            0.0
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "random_sequence_5",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -6.371170906123538
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            12.561661765915538,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            -17.13767493605124,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            25.845664159200084
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            -11.213544195059335,
+            0.0
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "random_sequence_6",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -2.94877353712144
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -20.727690418526706,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -26.900570593519156
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            7.5959315050276786,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            -29.11715549822672
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "random_sequence_7",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            19.829433957063316
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            3.868126660632953
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -24.95348357902047
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            -11.550072760831153
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            -29.15658413836597
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "random_sequence_8",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            22.274011186423756,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -16.053986865890558,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            20.64320518812982,
+            0.0
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            0.0,
+            -2.8949311098060164
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            -10.440263965131887
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "random_sequence_9",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -15.446790210649347,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -0.44837500823963694
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            -0.7691670404464226
+          ]
+        },
+        {
+          "time": 14.0,
+          "target_degrees": [
+            15.906371648082448,
+            0.0
+          ]
+        },
+        {
+          "time": 18.0,
+          "target_degrees": [
+            0.0,
+            17.288782077598626
+          ]
+        },
+        {
+          "time": 22.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "mu04_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4
+      },
+      "basic": false
+    },
+    {
+      "name": "mu04_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4
+      },
+      "basic": false
+    },
+    {
+      "name": "mu04_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4
+      },
+      "basic": false
+    },
+    {
+      "name": "mu04_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4
+      },
+      "basic": false
+    },
+    {
+      "name": "mu13_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 1.3
+      },
+      "basic": false
+    },
+    {
+      "name": "mu13_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 1.3
+      },
+      "basic": false
+    },
+    {
+      "name": "mu13_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 1.3
+      },
+      "basic": false
+    },
+    {
+      "name": "mu13_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 1.3
+      },
+      "basic": false
+    },
+    {
+      "name": "mass09_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 0.9
+      },
+      "basic": false
+    },
+    {
+      "name": "mass09_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 0.9
+      },
+      "basic": false
+    },
+    {
+      "name": "mass09_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 0.9
+      },
+      "basic": false
+    },
+    {
+      "name": "mass09_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 0.9
+      },
+      "basic": false
+    },
+    {
+      "name": "mass11_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 1.1
+      },
+      "basic": false
+    },
+    {
+      "name": "mass11_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 1.1
+      },
+      "basic": false
+    },
+    {
+      "name": "mass11_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 1.1
+      },
+      "basic": false
+    },
+    {
+      "name": "mass11_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "mass_scale": 1.1
+      },
+      "basic": false
+    },
+    {
+      "name": "weak_pd_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 0.85,
+        "kd_scale": 0.8
+      },
+      "basic": false
+    },
+    {
+      "name": "weak_pd_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 0.85,
+        "kd_scale": 0.8
+      },
+      "basic": false
+    },
+    {
+      "name": "weak_pd_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 0.85,
+        "kd_scale": 0.8
+      },
+      "basic": false
+    },
+    {
+      "name": "weak_pd_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 0.85,
+        "kd_scale": 0.8
+      },
+      "basic": false
+    },
+    {
+      "name": "strong_pd_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 1.15,
+        "kd_scale": 1.2
+      },
+      "basic": false
+    },
+    {
+      "name": "strong_pd_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 1.15,
+        "kd_scale": 1.2
+      },
+      "basic": false
+    },
+    {
+      "name": "strong_pd_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 1.15,
+        "kd_scale": 1.2
+      },
+      "basic": false
+    },
+    {
+      "name": "strong_pd_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "kp_scale": 1.15,
+        "kd_scale": 1.2
+      },
+      "basic": false
+    },
+    {
+      "name": "delay10ms_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "delay10ms_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "delay10ms_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "delay10ms_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "combined_0_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4,
+        "mass_scale": 1.1,
+        "kp_scale": 0.85,
+        "kd_scale": 0.8,
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "combined_0_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4,
+        "mass_scale": 1.1,
+        "kp_scale": 0.85,
+        "kd_scale": 0.8,
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "combined_1_-30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4,
+        "mass_scale": 1.1,
+        "kp_scale": 0.85,
+        "kd_scale": 0.8,
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "combined_1_+30",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {
+        "friction": 0.4,
+        "mass_scale": 1.1,
+        "kp_scale": 0.85,
+        "kd_scale": 0.8,
+        "delay": 2
+      },
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_0_0",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_0_1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_0_2",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_0_3",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_1_0",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_1_1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_1_2",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_1_3",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_2_0",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_2_1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_2_2",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_2_3",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_3_0",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_3_1",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            -30.0,
+            0.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_3_2",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    },
+    {
+      "name": "ordered_pair_3_3",
+      "events": [
+        {
+          "time": 0.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "time": 2.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 6.0,
+          "target_degrees": [
+            0.0,
+            -30.0
+          ]
+        },
+        {
+          "time": 10.0,
+          "target_degrees": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "domain": {},
+      "basic": false
+    }
+  ],
+  "trials_per_case": 32,
+  "seeds": [
+    73129,
+    94157,
+    128903
+  ],
+  "accepted_requires": "full DEV plus two independent full holdout passes; >=31/32 and nominal passes in every condition"
+}

@@ -1,0 +1,9 @@
+监视本聊天中 super_5090 的 B2 正常四足步行重训，每 20 分钟检查，直到本轮训练及最终评测结束。工作目录 /home/wolfie/Documents/ChatGPT/Supermimic，远程项目 /home/liudiwen/projects/supermimic_vibe。唯一目标轮次 runs/b2_locomotion_walk_fresh_20261101_011622，2026-11-01 01:16:22 Asia/Hong_Kong 启动，训练 GPU 4、5，独立评测 GPU 6；训练主进程 3010457，评测 3010458，监督 3010456。先读本地 experiments/b2_locomotion_walk/monitor_state.json，再核对远程 experiments/b2_locomotion_walk/latest_launch.json 和实际 /proc 命令行。监督进程使用相对 --out，结合 /proc/PID/cwd 解析后核对完整轮次，不因相对路径误报进程丢失。不要混入旧 B2 跳跃式 locomotion、后腿站立、负载或 G1 任务。
+
+用一次或少量短 SSH 调用运行 .venv/bin/python experiments/b2_locomotion_walk/status.py，并读取本轮 latest_eval.json、best_eval.json、curriculum.json、eval.jsonl 末尾、训练及评测日志末尾和修改时间、DONE、STOP、GUARD_STOP.json、TARGET_MET.json、EVAL_DONE.json、timing/launch_timing/supervisor_timing。只写本地 monitor_state.json 和快照，记录检查时间、迭代、进程身份、课程、最新与最佳、连接失败次数、已报告基准。一次 SSH 失败记连接未知，不当训练失败；连续两次连接失败才提醒。
+
+重点检查真实 MuJoCo 独立评测的 47 案例 × 16 次 = 752 次完整站立—运动—停车—反向运动—停车过程。核心 45 案例 720 次，额外 ±3 rad/s 旋转分开。core_passed 已包含速度、启停、步态；core_legacy_passed 仅旧速度启停标准；core_gait_passed 是新增步态。以每 5ms 接触力及脚底几何高度检测：四脚腾空占比/总时长/最长连续腾空、四脚无承重时长、两脚支撑占比、前后腿同时支撑占比、各脚承重占比与交替抬脚、竖直速度 RMS、非脚部触地占比；并检查速度/角速度 RMSE、停车漂移及脚速。判据以运行中 gait.py 与评测 JSON 为准，不放宽。旧模型重测虽 core_legacy 720/720，但新步态核心只 16/720，整体几何腾空约13.11%、最长135ms；这是旧模型基线，不能当本轮结果。新模型原始站着不动也不能冒充走路能力。训练奖励和想象回报不得当真实效果。
+
+约束保持：随机初始化 Actor/世界模型/critic/空 replay；不用官方策略、旧策略权重、参考动作或教师；标准站姿零初速；合成 XY<=2m/s，|vy|<=.6m/s，vx 无额外限制，wz 指令不硬裁剪，有限旋转测试不能称任意转速跟踪。仅本体感知 Actor，保留质量、摩擦、COM、噪声、PD 和延迟随机化。只训练仿真，实机配置后补。预算80000迭代，6小时保护上限；连续两次全部核心案例>=95%且名义案例通过会提前结束。ETA 只按稳定吞吐估算预算，不保证收敛。
+
+正常推进无重要变化保持安静。只在课程扩大、核心严格通过比最近报告最佳增加至少72/720、关键方向连续两次至少15/16、全部核心达标、连续两次下降至少72/720、保护停止、异常退出、日志与迭代超过10分钟不推进、结束或需用户操作时中文通知。报告核心实际分子/分母、腾空与支撑指标、迭代和耗时、剩余问题，区分最新候选和保存的 best.pt。禁止因例行监控改代码/奖励/课程/阈值/活跃训练，禁止另开评测训练、重启或占用其他GPU，不连接实机。若训练停而评测仍收尾则继续监视。结束或保护停止后核对 best.pt SHA256 与 best_eval.json，以及最终最新评测和总耗时，报告结果和未满足项，再通过 automation_update 暂停本监视任务；不归档聊天。

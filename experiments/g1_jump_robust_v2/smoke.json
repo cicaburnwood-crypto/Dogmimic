@@ -1,0 +1,19 @@
+{
+  "success": 0.0,
+  "xi": [
+    32,
+    42
+  ],
+  "finite": true,
+  "case": {
+    "friction": 0.2,
+    "asym": 0.3,
+    "mass": 1.2,
+    "delay_ms": 20,
+    "force": [
+      20,
+      0,
+      0
+    ]
+  }
+}

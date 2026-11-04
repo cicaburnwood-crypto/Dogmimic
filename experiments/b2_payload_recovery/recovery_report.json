@@ -1,0 +1,249 @@
+{
+  "primary_diagnosis": "Absolute procedural hind-foot anchors penalized an actually stable learned foothold, exceeding the maximum positive reward.",
+  "fixes": [
+    "Use actual hind-foot positions captured at stance entry and actual loaded COM captured at return settling.",
+    "Bound added motion penalties; preserve XYZ COM and root acceleration penalties.",
+    "Freeze the previous best actor and its normalizers; train small FP32 correction heads.",
+    "Gate the return correction with the explicit reference phase so it cannot alter initial stance or rise."
+  ],
+  "secondary_diagnosis": "Four-foot corrections applied before rise changed the initial state for the later hindstand. Counterfactual phase gating restored low-load stability while preserving improved settling.",
+  "independent_physics_ablation": [
+    {
+      "mode": "no_hind",
+      "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_phase_recovery_v5_20261031_001759/evaluated_0000500.pt",
+      "counts": [
+        {
+          "kg": 0,
+          "strict": 63,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 5,
+          "strict": 18,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 10,
+          "strict": 52,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 15,
+          "strict": 0,
+          "complete": 64,
+          "trials": 64
+        }
+      ]
+    },
+    {
+      "mode": "no_quad",
+      "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_phase_recovery_v5_20261031_001759/evaluated_0000500.pt",
+      "counts": [
+        {
+          "kg": 0,
+          "strict": 64,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 5,
+          "strict": 55,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 10,
+          "strict": 1,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 15,
+          "strict": 2,
+          "complete": 64,
+          "trials": 64
+        }
+      ]
+    },
+    {
+      "mode": "return_only",
+      "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_phase_recovery_v5_20261031_001759/evaluated_0000500.pt",
+      "counts": [
+        {
+          "kg": 0,
+          "strict": 64,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 5,
+          "strict": 63,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 10,
+          "strict": 61,
+          "complete": 64,
+          "trials": 64
+        },
+        {
+          "kg": 15,
+          "strict": 19,
+          "complete": 64,
+          "trials": 64
+        }
+      ]
+    }
+  ],
+  "caution": "Counts use matched seeds and force schedules but GPU contact reductions are not bitwise reproducible; the return-only test is a gated candidate from v5, not the new v6 training result.",
+  "resumed_run": {
+    "gpu": 6,
+    "pid": 2198486,
+    "out": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_stage_recovery_v6_20261031_002818",
+    "launch_unix": 1793377698.823187,
+    "command": [
+      "bash",
+      "experiments/b2_payload_recovery/train.sh",
+      "--out",
+      "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_stage_recovery_v6_20261031_002818",
+      "--seed",
+      "20261115"
+    ],
+    "source_checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_stable_cycle_v2_20261030_214533/best.pt",
+    "source_sha256": "643e02a1a091ff85f724956dc45e41f6369a542dcea6e2ec52d0f090eff25f70",
+    "previous_failed_run": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_stable_cycle_v3_20261030_232447",
+    "detached": true,
+    "payload_range_kg": [
+      5,
+      15
+    ],
+    "force_range_n": [
+      8,
+      16
+    ],
+    "force_duration_s": [
+      0.12,
+      0.24
+    ],
+    "full_cycle_pushes": 5,
+    "max_joint_correction_rad": 0.04,
+    "actor_learning_rate": 1e-05,
+    "world_model_learning_rate": 0.0001,
+    "horizon": 8,
+    "eval_every_iterations": 500,
+    "checkpoint_every_iterations": 500,
+    "max_iterations": 30000,
+    "max_wall_hours": 3,
+    "automatic_rollback_on_movement_regression": true,
+    "max_rejected_updates": 4,
+    "code_sha256": {
+      "audit_phase.py": "8d65a2329d980a06bc0c7c6fe29d82fcee713f32214d752c43e48c5fbbaa0ab7",
+      "phase_policy.py": "7103f246b4df019a3db3b389670e53d4a7678243ce196cf75ae552102450cc73",
+      "launch.py": "bbd5bf32a4c6981672bcb5c9911821097c551604e93a3f51c04c60f89047e2b1",
+      "audit_stage.py": "a5f2e63b2d66d93b2bde341e13951314360124c3f77637b009fdaef6b38f2197",
+      "audit_recovery.py": "6a75b380f175bca9f5749eb3fef5d83ced96ffbee175a1ae7d72249fcbed1cc4",
+      "diagnose.py": "deeb38e9347cf317174c45c4b5017c744d05a20ba06e2a0c339ae850516d4dbe",
+      "ablate_phase.py": "5975057075dd91d8dfb296fb36fc9f0e8112a4392d7622d761ab8bf94d2e7cac",
+      "guarded_policy.py": "69918f7ac5c5534329e3a43ac59dfba04c4cfcfb9dd6306566a9a6de9cc85ba9",
+      "train_phase.py": "060e70d213d288b98a3ce687810c2f2a8c9f64cf2f0ea71ff80391de200c00fe",
+      "train.sh": "64cbc93696860890ca6321d2bab23484612211f1c283b781c2463ff18f40e3d5",
+      "stage_policy.py": "c1132b3a63f6585a997c257fa0fd467a0f06b2001080b8ebeb911bb36960bb66",
+      "train_stage.py": "7a06ab98125135cda04bac8a3b6b10d5f7287a63f02da5310a95b6021bfecbf2",
+      "recovery_env.py": "7a498831d0a6c77f9197981d0f517591c1e4d23e99267f1e3226756d509c543b",
+      "train_recovery.py": "85bf08d5d1929b1498ae0d3687d95800b7132759c8bb757ff0e8be3f281b5720",
+      "stage_env.py": "883128e877162e7c2747b77f252d11dbe25e870ccf14baaa618b62437246c6b0"
+    },
+    "variant": "v6",
+    "hind_joint_correction_rad": 0.008,
+    "hind_actor_learning_rate": 1e-06,
+    "separate_stance_heads": true,
+    "correction_precision": "FP32",
+    "teacher_features_frozen": true,
+    "previous_guarded_pilot": "/home/liudiwen/projects/supermimic_vibe/runs/b2_payload_phase_recovery_v5_20261031_001759",
+    "reference_phase_command": true,
+    "initial_stance_isolated_from_return_head": true
+  },
+  "unresolved": "15kg hind-foot drift and full-cycle strict stability still require learning; no claim of convergence.",
+  "verified_training_status": {
+    "checked_at": "2026-10-31T00:32:07.737882+08:00",
+    "running": true,
+    "pid": 2198486,
+    "gpu": 6,
+    "session_id": 2198486,
+    "stdin": "/dev/null",
+    "elapsed_seconds": 228.9147264957428,
+    "latest_eval": {
+      "it": 500,
+      "accepted": true,
+      "guard_reasons": [],
+      "quality": 386.36062259972095,
+      "guard_rollbacks": 0,
+      "loads": [
+        {
+          "kg": 0,
+          "trials": 64,
+          "strict": 64,
+          "complete": 64,
+          "stable_hindstand": 64,
+          "stable_return": 64,
+          "return_com_std_m": 0.003923714626580477,
+          "failure_reasons": {}
+        },
+        {
+          "kg": 5,
+          "trials": 64,
+          "strict": 61,
+          "complete": 64,
+          "stable_hindstand": 61,
+          "stable_return": 64,
+          "return_com_std_m": 0.004888792522251606,
+          "failure_reasons": {
+            "hind_foot_drift": 3,
+            "stand_com_position_std_norm": 2,
+            "hindstand_pose": 1
+          }
+        },
+        {
+          "kg": 10,
+          "trials": 64,
+          "strict": 60,
+          "complete": 64,
+          "stable_hindstand": 60,
+          "stable_return": 64,
+          "return_com_std_m": 0.007473596837371588,
+          "failure_reasons": {
+            "hind_foot_drift": 4,
+            "stand_com_position_std_norm": 1
+          }
+        },
+        {
+          "kg": 15,
+          "trials": 64,
+          "strict": 19,
+          "complete": 64,
+          "stable_hindstand": 24,
+          "stable_return": 54,
+          "return_com_std_m": 0.00997349712997675,
+          "failure_reasons": {
+            "hind_foot_drift": 40,
+            "stand_com_position_std_norm": 18,
+            "returned_pose": 2,
+            "returned_com_speed_rms": 1,
+            "returned_com_position_std_norm": 10,
+            "returned_body_inclination_std_deg": 1,
+            "hindstand_pose": 2,
+            "stand_com_speed_rms": 6,
+            "stand_center_speed_rms": 2,
+            "stand_angular_speed_rms": 3,
+            "stand_body_inclination_std_deg": 1
+          }
+        }
+      ]
+    }
+  },
+  "last_verified_iteration": 1000
+}

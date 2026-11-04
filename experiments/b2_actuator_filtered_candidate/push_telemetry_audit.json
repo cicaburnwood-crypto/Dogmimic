@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "physical_force_applied_all_four_substeps": true,
+  "force_norms_N": [
+    8.717265129089355,
+    15.426395416259766,
+    13.821090698242188,
+    14.821782112121582
+  ],
+  "reported_pushed_transitions": 0,
+  "counter_is_stale": true,
+  "scope": "Independent CPU simulation; actual live-run push coverage not measured"
+}

@@ -1,0 +1,1 @@
+{"passed": true, "scope": "CPU environment integration, no physical policy rollout", "offset_xy": [[-2.2351741790771484e-08, -3.725290298461914e-09], [-0.1603122502565384, -0.012566342949867249]], "aligned_foot_center_max_error": 1.7695128917694092e-08, "physical_qpos_unchanged": true, "partial_reset_preserves_other_episode": true}

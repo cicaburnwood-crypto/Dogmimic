@@ -1,0 +1,26 @@
+{
+  "decision": "prepare_replace_v5_after_cuda_smoke_pass_and_graceful_final_eval",
+  "evidence": {
+    "v5_best": 420,
+    "actor_training_pass_counts": [
+      397,
+      414,
+      403,
+      392,
+      401,
+      399,
+      384,
+      389
+    ],
+    "native_start_always": "0/32",
+    "weak_motors_initial": "21/32",
+    "weak_motors_latest": "6/32"
+  },
+  "change": "only reset pose sampling:25%measured,25%reference,50%continuous; preserve all physics randomization and evaluator",
+  "source": "own v5 best.pt, fresh WM/replay/optimizers as v5",
+  "pending": [
+    "CUDA smoke completion",
+    "graceful stop and final evaluation",
+    "launch and update monitor"
+  ]
+}

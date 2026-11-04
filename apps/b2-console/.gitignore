@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+logs/
+run/
+results/chrome-profile/
+*.tar.gz

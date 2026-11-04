@@ -1,0 +1,13 @@
+# Large or third-party content kept out of the repository.
+data/
+runs/
+paper/
+.cache/
+slurm/logs/*
+!slurm/logs/.gitkeep
+*.pt
+*.npz
+__pycache__/
+*.pyc
+# Notes for the private audit dashboard tooling.
+notes/AUDIT_DASHBOARD.md

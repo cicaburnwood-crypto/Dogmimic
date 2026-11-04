@@ -1,0 +1,30 @@
+{
+  "upstream_commit": "f8f60d7bbdba68468c050ef100af02d752ca238e",
+  "unchanged_learning_files": {
+    "world_model/world_model.py": "5a48d366f323f3b5240f0235e1014f6ba5766a909c263776331d51b65029759d",
+    "world_model/wm_trainer.py": "e5014cbe41325d2f5578e4b702dd6f562c76b9fae5daafce0f2e737fa749d2c2",
+    "imagination/policy_trainer.py": "3da7388319a273faca2c720d8af4dfe916b96f2feaa59c46d78bbca7474ef341",
+    "imagination/objective.py": "3c93ec24c0f26db7bd4d60c5da50bc4a4d711a70a72ba0c9dfc7b078f082f774",
+    "imagination/compiled.py": "1e76bed2d32215e3b972dd13134cca9196c98c846d7d13d36f7ae31781bdc0b9",
+    "data/replay_buffer.py": "561eb96e295d511b12a2db9e2dbb735a53c161f06f7af1372a2cd2edd02ea4cf",
+    "envs/mdp/rewards.py": "4d63fd4d3943c9fe994f4c0e26f8d13400c6f212ca78b12bb372aab211bb1d08",
+    "envs/mdp/commands.py": "c7b0d549a38e36b4f179e9be3f037d49601410abb22b68d98dd1b594bda04181",
+    "kinematics/g1_fk.py": "4635eea9db60cc1f0541a1ed480986392984dbf8e83802775bb3d53665a91657",
+    "training/schedule.py": "3848bc4432d6f87bc81d93660dff0cbe7491122f4f0413c42808be27cef6c2ee"
+  },
+  "modified_files": [
+    "world_model/state_spec.py",
+    "world_model/dynamics.py",
+    "world_model/heads.py",
+    "policy/nets.py",
+    "envs/mdp/motion_library.py",
+    "envs/state_io.py",
+    "envs/sim_context.py",
+    "data/recorder.py",
+    "imagination/rollout.py",
+    "envs/lock_waist.py",
+    "training/loop.py",
+    "envs/tracking_env_cfg.py"
+  ],
+  "initialization": "random; no checkpoint or teacher"
+}

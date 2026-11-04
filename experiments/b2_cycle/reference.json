@@ -1,0 +1,34 @@
+{
+  "source": "/home/liudiwen/projects/supermimic_vibe/experiments/three_skills/targets/b2_hindstand.npz",
+  "source_kind": "our original procedural reference",
+  "duration_s": 15.5,
+  "phases": [
+    {
+      "name": "four_leg_stand",
+      "start": 0,
+      "end": 1
+    },
+    {
+      "name": "rise",
+      "start": 1,
+      "end": 3.5
+    },
+    {
+      "name": "hind_stand",
+      "start": 3.5,
+      "end": 9.5
+    },
+    {
+      "name": "return_to_four",
+      "start": 9.5,
+      "end": 12.5
+    },
+    {
+      "name": "four_leg_settle",
+      "start": 12.5,
+      "end": 15.5
+    }
+  ],
+  "reference_initial_final_max_difference": 0.0,
+  "max_joint_velocity_rad_s": 1.0950207710266113
+}

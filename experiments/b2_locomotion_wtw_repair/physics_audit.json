@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "no_motion_library": true,
+  "standard_pose_zero_velocity": true,
+  "actor_observation_dim": 420,
+  "goal_dim": 7,
+  "actor_inputs": "joint q/dq, IMU gyro/gravity, action history, XYZ command, internally generated gait clock",
+  "no_ground_truth_velocity_or_contact_actor_input": true,
+  "static_cpu_force_xyz": [
+    [
+      2.782742464290573,
+      -3.794600903797326,
+      66.5345990987818
+    ],
+    [
+      1.9146417269112028,
+      3.134123316828365,
+      65.54816650293847
+    ],
+    [
+      -1.4157193037772515,
+      -25.59999174520604,
+      259.743089878486
+    ],
+    [
+      -0.4855784569638786,
+      26.471829352984926,
+      258.06251334047886
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -1.6405121857267488,
+      -18.567692879030187,
+      86.26315176472458
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.8047047202872264,
+      18.346898835000005,
+      82.98255834490561
+    ]
+  ],
+  "static_gpu_force_xyz": [
+    [
+      2.7992639541625977,
+      -3.8030223846435547,
+      66.62429809570312
+    ],
+    [
+      1.9247798919677734,
+      3.1388158798217773,
+      65.57298278808594
+    ],
+    [
+      -1.429534912109375,
+      -25.625381469726562,
+      259.8542785644531
+    ],
+    [
+      -0.4974365234375,
+      26.502357482910156,
+      258.14495849609375
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -1.6532745361328125,
+      -18.58494758605957,
+      86.25885009765625
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.8159980773925781,
+      18.362356185913086,
+      82.97550964355469
+    ]
+  ],
+  "torque_policy_order_verified": true,
+  "expected_weight_n": 819.11824452,
+  "zero_action_calf_collisions": 2,
+  "zero_action_is_not_a_passing_policy": true,
+  "airborne_zero_force": true,
+  "acceptance_force_consistency": true,
+  "replay_action_context_pass": true,
+  "finite_auxiliary_targets": true,
+  "policy_gradient_through_world_model": 0.011652465341171592,
+  "compiled_public_reward_matches": true,
+  "randomization_preserved": true,
+  "b2_morphology": {
+    "height": 0.5911472109675505,
+    "width": 0.3832859992980957,
+    "length": 0.6570000648498535,
+    "foot_radius": 0.032
+  }
+}

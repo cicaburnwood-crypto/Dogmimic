@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "source_sha256": "5f99e59307296f9e234cb16c60a2175b80346b7c274d0f934a31b0607f9aa643",
+  "actor_exact_load": true,
+  "continued_world_model": true,
+  "power_penalty_nonzero_gradient": true,
+  "anchor_preserved": true,
+  "updates": 3,
+  "horizon": 32,
+  "worst_joint_gradient_verified": true,
+  "physical_torque_identical": true,
+  "acceptance_speed_rad_s": 6,
+  "acceptance_power_w": 1501,
+  "scope": "small-batch implementation smoke, not physical acceptance"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "cpu_cuda_passed_launched",
+  "session_id": 55507,
+  "report": "runs/g1_paired_pose_cpu_smoke/report.json",
+  "gpu_smoke_pending": false,
+  "launch_pending": false
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "source_identity_and_limits": [
+    {
+      "frame": 0,
+      "initial_error": 0.0,
+      "max_delta_rad": 0.0
+    },
+    {
+      "frame": 200,
+      "initial_error": 0.0,
+      "max_delta_rad": 0.008000016212463379
+    },
+    {
+      "frame": 650,
+      "initial_error": 0.0,
+      "max_delta_rad": 0.03999999910593033
+    }
+  ],
+  "initial_stance_rise_and_hindstand_isolated_from_return_head": true,
+  "training_evaluation_command_parity": true,
+  "phase_command_source": "reference sequence, first future frame",
+  "frozen_teacher_and_normalizers": true,
+  "return_head_gradient_isolation": true
+}

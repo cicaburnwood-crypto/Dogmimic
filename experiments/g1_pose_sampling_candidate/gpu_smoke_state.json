@@ -1,0 +1,7 @@
+{
+  "pid": 4009592,
+  "exec_session": 8682,
+  "gpu": 4,
+  "status": "completed_pass",
+  "report": "runs/g1_pose_sampling_cuda_smoke/report.json"
+}

@@ -1,0 +1,304 @@
+"""SuperMimic dynamics/BPTT training with command rewards, entirely from scratch."""
+import os,time,json,dataclasses,argparse,math,shutil,subprocess,traceback
+from bootstrap import HERE,ROOT
+from common import write_json,sha256,tensor_hash
+from pathlib import Path
+import torch
+from supermimic import networks
+from supermimic.train import Trainer,TrainCfg
+from supermimic.networks import WorldModel,Policy,Critic,run_mlp,apply_delta_c
+from supermimic.task import NJ,flat_to_state,state_to_flat
+from supermimic.networks import state_delta_c,state_error
+from task import XI_DIM
+from contract import HISTORY,GOAL_DIM,advance_command,policy_goal,CURRICULUM
+from policy import make_policy
+from task import TiltLocomotionEnv,TiltLocomotionCfg,OBS
+from replay import CommandReplay
+START=time.time()
+
+@dataclasses.dataclass
+class Config(TrainCfg):
+    motions: str = ""
+    wm_width: int = 2048
+    iterations: int = 80000
+    wall_hours: float = 6.
+    lr_decay_iters: int = 80000
+    num_envs: int = 1024
+    buffer_steps: int = 512
+    wm_batch: int = 512
+    pi_batch: int = 1024
+    wm_batches: int = 10
+    critic_epochs: int = 5
+    horizon: int = 32
+    eval_every: int = 4000
+    ckpt_every: int = 2000
+    log_every: int = 100
+    seed: int = 2026110318
+    smoke: bool = False
+
+class CommandTrainer(Trainer):
+  def __init__(self, cfg: TrainCfg, device="cuda"):
+    self.cfg = cfg
+    self.world = int(os.environ.get("WORLD_SIZE", "1"))
+    self.rank = int(os.environ.get("RANK", "0"))
+    if self.world > 1:
+      import datetime
+
+      import torch.distributed as dist
+
+      local = int(os.environ.get("LOCAL_RANK", "0"))
+      torch.cuda.set_device(local)
+      device = f"cuda:{local}"
+      dist.init_process_group("nccl", timeout=datetime.timedelta(hours=2))
+      networks.DIST["world"] = self.world
+      if cfg.lr_sqrt_world:
+        # Paper: 2 GPUs use sqrt(2) x 2e-4.
+        cfg.lr = cfg.lr * math.sqrt(self.world)
+    self.device = device
+    torch.manual_seed(cfg.seed)
+    if cfg.tf32:
+      torch.backends.cuda.matmul.allow_tf32 = True
+      torch.backends.cudnn.allow_tf32 = True
+    networks.AMP["enabled"] = cfg.amp
+    if cfg.motions or cfg.clip_prefixes:
+      raise ValueError("This task never accepts motion data")
+    self.lib = None
+    self.started=time.time();self.best_score=None;self.eval_seconds=0.;self.last_eval_it=-1;self.curriculum_streak=0
+    self.env = TiltLocomotionEnv(device,cfg.num_envs,compile=cfg.compile_wm)
+    self.tcfg = self.env.tcfg
+    self.task = self.env.task
+    self.task.compile_sizes |= {cfg.wm_batch, cfg.pi_batch}
+    s = self.env.reset()
+    self.feat_dim = self.task.state_features(s).shape[-1]
+    self.obs_dim = OBS * self.tcfg.history
+    self.goal_dim = GOAL_DIM
+    self.wm = WorldModel(self.task, self.feat_dim, XI_DIM, hidden=(cfg.wm_width,)*3).to(device)
+    self.policy = make_policy().to(device)
+    self.critic_in = self.feat_dim + self.goal_dim + XI_DIM + 1
+    self.critic = Critic(self.critic_in).to(device)
+    self.opt_wm = torch.optim.Adam(self.wm.net.parameters(), lr=cfg.lr, fused=str(device).startswith("cuda"))
+    self.opt_pi = torch.optim.Adam(
+      list(self.policy.encoder.parameters()) + list(self.policy.decoder.parameters()), lr=cfg.lr, betas=(0.9, 0.95), fused=str(device).startswith("cuda")
+    )
+    self.opt_v = torch.optim.Adam(self.critic.net.parameters(), lr=cfg.lr, fused=str(device).startswith("cuda"))
+    if self.world > 1:
+      import torch.distributed as dist
+
+      for mod in (self.wm, self.policy, self.critic):
+        for t in list(mod.parameters()) + list(mod.buffers()):
+          dist.broadcast(t.data, 0)
+      torch.manual_seed(cfg.seed + 1000 * self.rank)
+    self.buf = CommandReplay(cfg.num_envs,cfg.buffer_steps,XI_DIM,device)
+    self._wm_loss = torch.compile(self.wm_window_loss, dynamic=False) if cfg.compile_wm else self.wm_window_loss
+    self.it = 0
+    self.updates = 0
+    self.env_steps = 0
+    self.train_time = 0.0
+    self.update_credit = 0.0
+    self.ep_returns = []
+    self.ep_norm_returns = []
+    self.ep_terms = []
+    self.ep_lens = []
+    self.ep_step_rewards = []
+    self.profile = bool(int(os.environ.get("SMIMIC_PROFILE", "0")))
+    self.prof = {}
+    os.makedirs(cfg.out, exist_ok=True)
+    self.log_f = open(os.path.join(cfg.out, "log.jsonl" if self.rank == 0 else f"log_rank{self.rank}.jsonl"), "a")
+    if cfg.resume:
+      raise ValueError('This launch is strictly from scratch; resume is disabled')
+
+  def _extra_state(self):
+    return dict(task_kind='b2_tilt_locomotion_v1',backend='vibe',robot='B2',no_motion_data=True,
+        source_checkpoint=None,initialization='random Actor/WM/critic, empty replay and optimizers',
+        teacher=False,official_policy=False,task_cfg=dataclasses.asdict(self.tcfg),
+        model_meta=self.env.model_meta,goal_dim=GOAL_DIM,xi_dim=XI_DIM,
+        command_contract='heading vx +/-4, vy +/-1, norm <=4 m/s; simultaneous roll/pitch +/-20 degrees; unbounded cumulative yaw',
+        curriculum_level=self.env.curriculum_level,
+        engine_provenance=json.loads((HERE/'engine_provenance.json').read_text()),
+        evaluation_manifest_sha256=sha256(HERE/'evaluation_manifest.json'))
+
+  def _should_stop(self):
+    return Path(self.cfg.out,'STOP').exists() or Path(self.cfg.out,'TARGET_MET.json').exists() or time.time()-self.started>=self.cfg.wall_hours*3600
+
+  def status(self,stage,**kw):
+    write_json(Path(self.cfg.out)/'status.json',dict(stage=stage,it=self.it,updates=self.updates,pid=os.getpid(),
+        updated=time.time(),wall_seconds=time.time()-self.started,train_seconds=self.train_time,**kw))
+
+  def physical_eval(self,checkpoint,full=False,seed=73129):
+    dest=Path(self.cfg.out)/'eval'/f'it_{self.it:07d}_{"full" if full else "basic"}_{seed}'
+    dest.mkdir(parents=True,exist_ok=True)
+    command=[str(ROOT/'.venv/bin/python'),'-u',str(HERE/'evaluate.py'),'--checkpoint',str(checkpoint),
+             '--out',str(dest),'--seed',str(seed),'--trials','32']
+    if full:command+=['--full']
+    self.status('physical_evaluation',evaluation=str(dest))
+    torch.cuda.empty_cache();start=time.time()
+    with (dest/'process.log').open('w') as log:
+      proc=subprocess.run(command,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,timeout=5400)
+    self.eval_seconds+=time.time()-start
+    if proc.returncode:raise RuntimeError(f'Physical evaluation failed: {dest}/process.log')
+    return json.loads((dest/'result.json').read_text())
+
+  def run_eval(self,full=False):
+    if self.cfg.smoke or Path(self.cfg.out,'STOP').exists():return
+    out=Path(self.cfg.out);cp=out/f'ckpt_{self.it:07d}.pt'
+    if not cp.exists():self.save(str(cp))
+    result=self.physical_eval(cp,full=full)
+    self.last_eval_it=self.it
+    if self.it==0:write_json(out/'initial_eval.json',result)
+    else:
+      basic=[x for x in result['cases'] if x['basic']]
+      score=(int(result['all_passed']),min(x['passed']/x['trials'] for x in basic),sum(x['passed'] for x in basic),
+             -sum(x['velocity_rmse_m_s_mean']+x['attitude_rmse_deg_mean']/10 for x in basic)/len(basic))
+      result['selection_rank']=score
+      if self.best_score is None or score>self.best_score:
+        self.best_score=score;shutil.copy2(cp,out/'best.pt');result['best_sha256']=sha256(out/'best.pt')
+        from export import export
+        export(out/'best.pt',out/'best_policy.pt')
+        write_json(out/'best_eval.json',result)
+      write_json(out/'latest_eval.json',result)
+    with (out/'eval.jsonl').open('a') as f:f.write(json.dumps(result)+'\n')
+    print('PHYSICAL_EVAL',self.it,result['passed'],result['total'],'all_passed',result['all_passed'],flush=True)
+    if self.it>0 and full and result['all_passed']:
+      a=self.physical_eval(cp,True,94157);b=self.physical_eval(cp,True,128903)
+      if a['all_passed'] and b['all_passed']:
+        shutil.copy2(cp,out/'accepted.pt')
+        write_json(out/'accepted_eval.json',dict(sha256=sha256(out/'accepted.pt'),dev=result,hold_a=a,hold_b=b))
+        write_json(out/'TARGET_MET.json',dict(it=self.it,time=time.time()))
+    if self.it>0 and not full:
+      eligible=[r for r in result['cases'] if r['level']==self.env.curriculum_level]
+      ok=bool(eligible) and all(r['passed']/r['trials']>=.875 and r['nominal_passed'] for r in eligible)
+      self.curriculum_streak=self.curriculum_streak+1 if ok else 0
+      if self.curriculum_streak>=2 and self.env.curriculum_level<len(CURRICULUM)-1:
+        self.env.curriculum_level+=1;self.curriculum_streak=0
+      write_json(out/'curriculum.json',dict(level=self.env.curriculum_level,stage=CURRICULUM[self.env.curriculum_level],streak=self.curriculum_streak,trigger_iteration=self.it,full_domain_exposure=.2))
+    self.status('training',curriculum_level=self.env.curriculum_level)
+
+  def run(self):
+    self.save(str(Path(self.cfg.out)/'initial.pt'))
+    write_json(Path(self.cfg.out)/'initialization.json',dict(actor='random',wm='random',critic='random',
+        replay_size=self.buf.size,optimizer_states=[len(x.state) for x in (self.opt_wm,self.opt_pi,self.opt_v)],
+        hashes={k:tensor_hash(getattr(self,k)) for k in ('policy','wm','critic')}))
+    if not self.cfg.smoke:self.run_eval()
+    super().run()
+    if not self.cfg.smoke and not Path(self.cfg.out,'STOP').exists():self.run_eval(full=True)
+    write_json(Path(self.cfg.out)/'EVAL_DONE.json',dict(it=self.it,time=time.time(),stopped_by_user=Path(self.cfg.out,'STOP').exists()))
+    self.status('stopped' if Path(self.cfg.out,'STOP').exists() else 'complete')
+
+  @torch.no_grad()
+  def collect(self,random=False):
+    env=self.env
+    env.prepare_commands()
+    obs,goal=env.policy_inputs();cmd=env.context.clone()
+    self.policy.obs_norm.update(obs);self.policy.goal_norm.update(goal)
+    a=(self.policy(obs,goal)+self.cfg.action_noise*torch.randn(env.num_envs,NJ,device=self.device)).clamp(-1.,1.)
+    s=state_to_flat(env.state);xi,ep=env.xi.clone(),env.ep_id.clone()
+    next_s,info=env.step(a)
+    ep[env.last_step_invalid]=-1
+    self.buf.add(s,a,state_to_flat(next_s),xi,cmd,ep)
+    self.env_steps+=env.num_envs
+    if self.it%self.cfg.log_every==0:self.status('training',curriculum_level=self.env.curriculum_level)
+    if 'done_ep_return' in info:
+      self.ep_returns.append(info['done_ep_return'].mean().item())
+      self.ep_norm_returns.append(info['done_norm_return'].mean().item())
+      self.ep_terms.append(info['done_terminated'].float().mean().item())
+      self.ep_lens.append(info['done_ep_len'].float().mean().item())
+      self.ep_step_rewards.append((info['done_ep_return']/(info['done_ep_len']*self.tcfg.max_step_reward)).mean().item())
+
+  def update_wm(self):
+    stats={'wm_loss':0.,'wm_err1':0.,'wm_errk':0.}
+    for bi in range(self.cfg.wm_batches):
+      s0,A,S1,X,mask=self.buf.sample_context_windows(self.cfg.wm_batch,self.cfg.k)
+      if bi==0 and self.updates % self.cfg.norm_update_every==0:
+        with torch.no_grad():
+          prev=flat_to_state(s0);xs=[];ds=[]
+          for j in range(self.cfg.k):
+            nxt=flat_to_state(S1[:,j]);xs.append(self.wm.inputs(prev,A[:,j],X[:,j])[mask]);ds.append(state_delta_c(prev,nxt)[mask]);prev=nxt
+          self.wm.in_norm.update(torch.cat(xs));self.wm.out_norm.update(torch.cat(ds))
+      loss,e1,ek=self._wm_loss(s0,A,S1,X,mask.float())
+      if not torch.isfinite(loss):raise FloatingPointError('Nonfinite world-model loss')
+      self.opt_wm.zero_grad(set_to_none=True);loss.backward()
+      self.sync_grads(list(self.wm.net.parameters()));torch.nn.utils.clip_grad_norm_(self.wm.net.parameters(),1.);self.opt_wm.step()
+      for k,v in zip(stats,(loss.detach(),e1,ek)):stats[k]+=float(v)/self.cfg.wm_batches
+    return stats
+
+  def wm_window_loss(self,s0,A,S1,X,mask):
+    s=flat_to_state(s0);errors=[]
+    for j in range(self.cfg.k):
+      s=self.wm.step(s,A[:,j],X[:,j]);errors.append((state_error(s,flat_to_state(S1[:,j]))/self.wm.out_norm.std).square().mean(-1))
+    denom=mask.sum().clamp_min(1.)
+    return (torch.stack(errors).sum(0)*mask).sum()/denom,(errors[0].detach()*mask).sum()/denom,(errors[-1].detach()*mask).sum()/denom
+
+  def update_policy(self):
+    cfg,task,wm=self.cfg,self.task,self.wm
+    B,H=cfg.pi_batch,cfg.horizon
+    s0,xi,cmd,hist,prev=self.buf.sample_starts(B,self.tcfg.history,task)
+    bias=xi[:,1:1+NJ]
+    for p in wm.net.parameters():p.requires_grad_(False)
+    s=flat_to_state(s0)
+    hist=hist+task.sample_obs_noise((B,self.tcfg.history))
+    an=task.command_fast(s,cmd,prev,prev,xi)
+    c=torch.ones(B,device=self.device);J=torch.zeros_like(c);rem=torch.ones_like(c)
+    valid=torch.ones(B,H+1,device=self.device)
+    rec={k:[] for k in ('x','r','d','m','c')};terms={}
+    std,mean=wm.out_norm.std,wm.out_norm.mean
+    for t in range(H):
+      feats=an['feats']
+      rec['x'].append(self.critic_input(feats,policy_goal(cmd),xi,rem).detach())
+      a=self.policy(hist.flatten(1),policy_goal(cmd))
+      delta=run_mlp(wm.net,wm.in_norm(torch.cat([feats,a,xi],-1)))*std+mean
+      s1=apply_delta_c(s,delta)
+      cmd=advance_command(cmd)
+      an=task.command_fast(s1,cmd,a,prev,xi)
+      r,d=an['r'],an['soft']
+      J=J+cfg.gamma**t*c*r
+      rec['r'].append(r.detach());rec['d'].append(d.detach())
+      rec['m'].append(rem);rec['c'].append(c.detach())
+      for k,v in an['terms'].items():terms[k]=terms.get(k,0.)+v.detach().mean()/H
+      c=c*(1-d)
+      obs=an['obs']+task.sample_obs_noise((B,))
+      hist=torch.cat([hist[:,1:],obs[:,None]],1)
+      xi=torch.cat([xi[:,:20],a],-1)
+      s,prev=s1,a
+    xH=self.critic_input(an['feats'],policy_goal(cmd),xi,rem)
+    if cfg.use_critic:J=J+cfg.gamma**H*c*self.critic(xH)
+    loss=-J.mean()/H
+    if not torch.isfinite(loss):raise FloatingPointError('Nonfinite actor loss')
+    self.opt_pi.zero_grad(set_to_none=True);loss.backward()
+    params=[p for g in self.opt_pi.param_groups for p in g['params']]
+    self.sync_grads(params)
+    gnorm=torch.nn.utils.clip_grad_norm_(params,1.)
+    torch.nn.utils.clip_grad_value_(params,.1);self.opt_pi.step()
+    for p in wm.net.parameters():p.requires_grad_(True)
+    self.critic.zero_grad(set_to_none=True)
+    st=dict(pi_J=J.mean().item(),pi_loss=loss.item(),pi_gnorm=gnorm.item(),img_survival=c.mean().item())
+    st.update({f'img_r_{k}':v.item() for k,v in terms.items()})
+    if cfg.use_critic:st.update(self.update_critic(rec,xH.detach(),valid))
+    return st
+
+def main():
+  physical=int(os.environ.get('CUDA_VISIBLE_DEVICES','0').split(',')[int(os.environ.get('LOCAL_RANK','0'))])
+  first=(0 if physical<4 else 16)+(physical%4)*4
+  os.sched_setaffinity(0,set(range(first,first+4)));torch.set_num_threads(2)
+  ap=argparse.ArgumentParser()
+  for f in dataclasses.fields(Config):
+    typ=f.type if not isinstance(f.type,str) else eval(f.type)
+    ap.add_argument('--'+f.name.replace('_','-'),type=(lambda x:x.lower() in ('1','true','yes')) if typ is bool else typ,default=f.default)
+  cfg=Config(**vars(ap.parse_args()));trainer=CommandTrainer(cfg)
+  if trainer.rank==0:
+    Path(cfg.out,'run_meta.json').write_text(json.dumps(dict(start_unix=START,gpus=os.environ.get('CUDA_VISIBLE_DEVICES'),cfg=dataclasses.asdict(cfg)),indent=2))
+  if trainer.rank==0:trainer.save(str(Path(cfg.out,'ckpt_0000000.pt')))
+  trainer.run()
+  if trainer.rank==0:
+    from export import export
+    export(Path(cfg.out)/'last.pt',Path(cfg.out)/'last_policy.pt')
+    Path(cfg.out,'timing.json').write_text(json.dumps(dict(start_unix=START,end_unix=time.time(),wall_seconds=time.time()-START,train_seconds=trainer.train_time,evaluation_seconds=trainer.eval_seconds,iterations=trainer.it,world=trainer.world),indent=2))
+  if trainer.world>1:
+    import torch.distributed as dist
+    dist.destroy_process_group()
+
+if __name__=='__main__':
+  try:main()
+  except BaseException as e:
+    if '--out' in __import__('sys').argv:
+      out=Path(__import__('sys').argv[__import__('sys').argv.index('--out')+1]);write_json(out/'ERROR.json',dict(error=repr(e),traceback=traceback.format_exc(),time=time.time()))
+    raise

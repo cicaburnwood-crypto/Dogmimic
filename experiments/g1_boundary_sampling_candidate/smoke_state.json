@@ -1,0 +1,9 @@
+{
+  "status": "cpu_passed",
+  "session_id": 37963,
+  "remote_pid": 4043991,
+  "command": "CUDA_VISIBLE_DEVICES=\"\" SM_ROBOT=g1 .venv/bin/python experiments/g1_boundary_sampling_candidate/audit_train.py --device cpu",
+  "checked": "2026-11-01T21:17:38.338988",
+  "output": "runs/g1_boundary_sampling_cpu_smoke/report.json",
+  "note": "No GPU occupied; first import failed missing jump_task, copied unchanged parent file then restarted smoke only. Current process confirmed live CPU active. No training run replacement."
+}

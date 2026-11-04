@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "real_simulator": true,
+  "transitions": 12,
+  "environments": 4,
+  "partial_reset": true,
+  "scope": "Integration only; no policy quality or full acceptance claim",
+  "source_sha256": {
+    "audit_physics.py": "623458720c39be67bd2679952ebd4d3e7c3bf1deaa47ade407800f7d8788ff2d",
+    "robust_env.py": "691e876544d83592f200a760857f78b942076e8cbdd5b629d96deb58e51278cc",
+    "actuator_filter.py": "242766d282758c52dedfec0809fe0f4ffa7419ad3430c93204be5c86d154f2a9",
+    "train_guarded.py": "5379f84256ae68adf01f5d43ef4de1ab22c073ac717d077d5f8ab1efff72f12f"
+  }
+}

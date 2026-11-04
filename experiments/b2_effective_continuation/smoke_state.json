@@ -1,0 +1,7 @@
+{
+  "status": "cpu_cuda_passed",
+  "session_id": 99208,
+  "report": "runs/b2_effective_continue_cpu_smoke/report.json",
+  "gpu_smoke_pending": false,
+  "launch_pending": false
+}

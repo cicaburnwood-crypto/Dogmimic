@@ -1,0 +1,7 @@
+G1 contact-slip repair
+
+Evidence: completed v9 initial and final417/672, best425/672. Existing reward tracks instantaneous pose and body velocities but does not directly penalize planted-foot horizontal velocity. Low friction/push cases show pre/post sliding. Supplemental CPU real-contact calibration found0m capsule-bottom threshold missed0/5484 nominal and0/5191 low-mu loaded samples; false labels1/468 and46/761 unloaded samples. Limited trajectories, not complete contact ground truth.
+
+Fix: analytic horizontal velocity penalty at seven collision-geometry centers per foot (including foot angular velocity), gated by actual capsule bottom and reference stance. Smooth gate sigmoid(-height/.0005), detached for the velocity optimization so lifting has no direct escape gradient. Weight reuses existing foot-position weight and body-linear velocity scale. Retain all previous rewards, initialization mixture, geometry alignment, delay control mapping and randomization. CPU/CUDA actual3-update smoke requires correct stance gradient and vanishing airborne cost. This is a targeted repair candidate, not verified skill improvement.
+
+Continue own v9 best33000 Actor and WM SHAc8aa01ba79daa5fad3e7c3c9220ce97d7907f6fc7b12a8034e85192dd26505fb; fresh optimizers/replay, frozen own source reference,500WM prefit,20000budget. Original21conditions and thresholds unchanged, including native_start stress and low-mu failures. No deployment before full original acceptance.

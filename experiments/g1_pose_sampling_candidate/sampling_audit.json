@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "start_samples": 50000,
+  "native_endpoint": 12697,
+  "reference_endpoint": 12484,
+  "nonstart_unchanged": true,
+  "parent_joint_noise_preserved": true,
+  "queue_matches_physical_pose": true,
+  "scope": "Actual candidate reset with tensor parent; physical rollout not tested"
+}

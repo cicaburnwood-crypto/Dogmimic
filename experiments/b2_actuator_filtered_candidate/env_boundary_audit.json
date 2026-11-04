@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "actual_partial_reset_memory": true,
+  "actual_step_pretransition_reward_context": true,
+  "physical_imagined_context_parity_steps": 12,
+  "nonidentity_actuator_mapping": true,
+  "scope": "Actual methods with CPU simulator double; real MuJoCo/GPU smoke and physical validation pending"
+}

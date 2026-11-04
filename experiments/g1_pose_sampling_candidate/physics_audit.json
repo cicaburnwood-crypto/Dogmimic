@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "real_simulator": true,
+  "steps": 8,
+  "environments": 4,
+  "initial_queue_parity": true,
+  "foot_frame_alignment": true,
+  "partial_reset_preserves_other_envs": true,
+  "scope": "Integration only; not skill acceptance"
+}
