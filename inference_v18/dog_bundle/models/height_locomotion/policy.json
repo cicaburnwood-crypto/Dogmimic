@@ -1,0 +1,203 @@
+{
+  "skill": "height_locomotion",
+  "label": "B2 高度行走 v1 · best 36000",
+  "iteration": 36000,
+  "checkpoint_iteration": 36000,
+  "checkpoint_sha256": "a7a482695663faf2cfbeeb1f797ec2bc96c647c5d04b037828d93ea2b5b6309d",
+  "weights_sha256": "cc020b78c76acc4cf89ae4c9db583d2511c2e26a815de29451aeed5129e2a34b",
+  "backend": "supermimic-vibe",
+  "obs_dim": 420,
+  "goal_dim": 20,
+  "history": 10,
+  "dt": 0.02,
+  "q0": [
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7
+  ],
+  "action_scale": [
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1
+  ],
+  "policy_to_sdk": [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2,
+    9,
+    10,
+    11,
+    6,
+    7,
+    8
+  ],
+  "joint_limits": [
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ]
+  ],
+  "kp": 250.0,
+  "kd": 8.0,
+  "torque_limits": [
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0
+  ],
+  "nominal_root_height_m": 0.4959882021,
+  "physical_eval_passed": false,
+  "hardware_validated": false,
+  "simulation_strict_passed": 821,
+  "simulation_strict_total": 832,
+  "simulation_evaluation_scope": "height stage0 <=0.5m/s only; 24/26 conditions pass, not full acceptance; legacy regression 435/1312",
+  "command_adapter": "height_gait_filter_v1",
+  "gait_transition_seconds": 0.4,
+  "joint_target_filter": {
+    "kind": "notch",
+    "center_hz": 11.0,
+    "quality_factor": 2.0,
+    "sample_hz": 50.0
+  },
+  "deployment_limits": {
+    "xy_max_m_s": 0.5,
+    "lateral_max_m_s": 0.3,
+    "yaw_max_rad_s": 0.5
+  },
+  "height_control": {
+    "min_m": -0.2,
+    "max_m": 0.05,
+    "button_rate_m_s": 0.05,
+    "tilt_knots": [
+      [
+        -0.2,
+        5.0
+      ],
+      [
+        -0.15,
+        10.0
+      ],
+      [
+        -0.1,
+        20.0
+      ],
+      [
+        0.05,
+        20.0
+      ]
+    ],
+    "xy_max_m_s": 0.5,
+    "lateral_max_m_s": 0.3,
+    "yaw_max_rad_s": 0.5
+  },
+  "source_checkpoint": "runs/b2_height_locomotion_v1_20261105_024246/best.pt",
+  "observation_order": "q-q0, qd, body gyro, projected gravity, previous raw action; oldest-first 10 frames",
+  "command_order": [
+    "vx",
+    "vy",
+    "yaw_rate",
+    "roll",
+    "pitch",
+    "height_delta_m"
+  ],
+  "goal_order": [
+    "vx",
+    "vy",
+    "yaw_rate",
+    "roll",
+    "pitch",
+    "roll_rate",
+    "pitch_rate",
+    "request_vx",
+    "request_vy",
+    "request_yaw_rate",
+    "request_roll",
+    "request_pitch",
+    "FL_clock",
+    "FR_clock",
+    "RL_clock",
+    "RR_clock",
+    "height_delta_m",
+    "height_rate_m_s",
+    "requested_height_m",
+    "gait_progress"
+  ],
+  "goal_normalization_clip": null,
+  "obs_normalization_clip": 10.0,
+  "source_task_hash": "c2cd33713ebd1186b39b8af7c36db1aa8409c3178b783d8164535a8f15fd7bae",
+  "source_contract_hash": "0cdc110fbfea78a8d3cfaba14dd74cbff14808c9ed9326dbb019c1c2ba97c235",
+  "source_actuation_hash": "a1323a6ffc332bf8922d494c806473f0717810e1584ea89397efaf40ab7120e5"
+}

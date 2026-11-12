@@ -69,3 +69,10 @@ network_setup.json
 *.csv
 # Small deterministic regression fixture; this contains no model weights.
 !deployments/b2_192_168_123_164_20261101/models/hindstand/envelope_inputs.npz
+
+# Explicit V18 release assets are versioned through Git LFS.
+!inference_v18/**/*.pt
+!inference_v18/**/*.npz
+inference_v18/**/.session-token
+inference_v18/docs/test-results/*.txt
+!inference_v18/docs/test-results/summary.txt

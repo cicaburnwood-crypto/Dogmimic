@@ -1,3 +1,7 @@
+# Inference_V18 分支
+
+本分支的完整 V18 推理工具包入口：[inference_v18/README.md](inference_v18/README.md)。包含 V18/P4 权重、仿真资产、实机和仿真控制台、使用说明；大文件请先执行 `git lfs pull`。以下为原仓库历史说明。
+
 # Dogmimic
 
 基于 **SuperMimic-vibe** 的 Unitree B2 / G1 运动学习、仿真评测和机器人控制代码。

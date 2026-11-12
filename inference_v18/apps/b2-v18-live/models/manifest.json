@@ -1,0 +1,12 @@
+{
+  "it": 24000,
+  "lower_sha256": "e0314388419456d6597e5b44502508dbac00da0019592da4e79bf3a6c992457b",
+  "model_sha256": "1879dee47d0aa026f0e355b1caea0243d8873516203624b43c8d287c94975f70",
+  "arm_contract_sha256": "af5b3361ae6a06858f4ace6adf125a7286a832eeb9caec805e67ab86331cddf8",
+  "mount_revision": "B02_B03_B10_B11_67.5mm",
+  "cumulative_iteration": 24500,
+  "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_joint_v18_mount_resume_20261111_220048/best.pt",
+  "checkpoint_sha256": "d5540cc2f1a8a283c38c9e644c9693d2b6317158d9beb2172f6d67c0594da703",
+  "manager_sha256": "00d1ee6f7634b2f0dc2007121433d870775403c311d148b80efc16e176b2fd57",
+  "accepted": false
+}

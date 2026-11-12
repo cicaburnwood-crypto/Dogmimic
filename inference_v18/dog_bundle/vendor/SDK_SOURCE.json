@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/unitreerobotics/unitree_sdk2_python",
+  "commit": "814556d15970dd2ecf1c9984e845ca02ab07e206",
+  "archive_sha256": "5224e774cf7a2ff784b957685225300f9e9627eb0b4fe5a76b8146a4fcbf4743",
+  "local_root": "/home/wolfie/Documents/ChatGPT/Supermimic/deployments/b2_192_168_123_164_20261101/vendor/unitree_sdk2_python-814556d15970dd2ecf1c9984e845ca02ab07e206",
+  "usage": "DDS transport and message definitions only; no official policy or motion controller executed"
+}

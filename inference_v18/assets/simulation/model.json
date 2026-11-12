@@ -1,0 +1,154 @@
+{
+  "source": "supplied B2 flathead+A3 URDF",
+  "urdf_sha256": "1b7ddad000d8dcefe832a42141d72536c4f1344740ff2cc5c2f9b508ed2b80d0",
+  "model_sha256": "1879dee47d0aa026f0e355b1caea0243d8873516203624b43c8d287c94975f70",
+  "mass_kg": 82.98104553168884,
+  "standing_height_m": 0.4959882021194876,
+  "foot_radius_m": 0.032,
+  "q0": [
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7
+  ],
+  "arm_home": [
+    0.0,
+    1.05,
+    -1.5,
+    0.0,
+    0.45,
+    0.0
+  ],
+  "joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint",
+    "a3_joint1",
+    "a3_joint2",
+    "a3_joint3",
+    "a3_joint4",
+    "a3_joint5",
+    "a3_joint6"
+  ],
+  "arm_body_ids": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "arm_collision_geom_ids": [
+    62,
+    64,
+    66,
+    68,
+    70,
+    73,
+    74,
+    76,
+    78
+  ],
+  "arm_offsets": [
+    [
+      0.16200000095369999,
+      0.0,
+      0.25401000010661
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.35,
+      0.0,
+      0.0
+    ],
+    [
+      0.079,
+      0.242,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.108,
+      0.0
+    ]
+  ],
+  "arm_quaternions": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -2.5973395554788478e-06,
+      -2.5973495554788476e-06,
+      0.7071082811816862,
+      0.7071052811786862
+    ],
+    [
+      0.7071052811829567,
+      0.0,
+      0.0,
+      0.7071082811869567
+    ],
+    [
+      -0.7071052811829567,
+      0.7071082811869567,
+      0.0,
+      0.0
+    ],
+    [
+      0.7071052811829567,
+      0.7071082811869567,
+      0.0,
+      0.0
+    ],
+    [
+      -0.7071052811829567,
+      0.7071082811869567,
+      0.0,
+      0.0
+    ]
+  ],
+  "assumptions": [
+    "Flathead inertia and mount pose are uncalibrated estimates supplied in the package",
+    "Gripper fixed at 18 mm; no grasped payload",
+    "Arm PD 120/8 plus gravity compensation is an experimental simulation controller, not a verified hardware driver; total torque uses original A3 caps",
+    "Rigid mounting surfaces are fused; nonadjacent arm/body/leg contacts remain enabled",
+    "B2 URDF calf 320 Nm is conservatively capped at previous 300 Nm",
+    "B2 rail datum x=.2585m and top z=.08801m retained from prior mesh-derived estimates, not newly surveyed.",
+    "A3 points forward as in prior model; the hole pattern alone also admits a 180deg mounting.",
+    "Plate material not specified: aluminum2700kg/m3 assumed, screws excluded.",
+    "Flathead base inertia retains prior uncalibrated estimate. No structural strength or real fit certification.",
+    "MuJoCo convex collision hulls fill mounting holes and slots.",
+    "Plate and approximate B2 visual mesh locally intersect; absolute mount height is uncalibrated.",
+    "No previous checkpoint has been evaluated on this changed mounting geometry."
+  ],
+  "mount_configuration": "../b2_a3_b02_b03_description/config/assembly_parameters.json"
+}

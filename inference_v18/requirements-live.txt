@@ -1,0 +1,5 @@
+# Verified local CPU inference environment; no ROS or Torch required.
+numpy==2.5.4
+scipy==1.18.1
+mujoco==4.0.0
+aiohttp==3.14.5

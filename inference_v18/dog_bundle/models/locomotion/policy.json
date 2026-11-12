@@ -1,0 +1,212 @@
+{
+  "skill": "height_locomotion",
+  "label": "B2-P4 · best 20000 · notch11 Q1",
+  "iteration": 20000,
+  "checkpoint_iteration": 20000,
+  "checkpoint_sha256": "e0314388419456d6597e5b44502508dbac00da0019592da4e79bf3a6c992457b",
+  "weights_sha256": "e7be320b2e2486f454dcfdb7a292d9349d4e1671c02a240efb4be40754f9462b",
+  "backend": "supermimic-vibe",
+  "obs_dim": 420,
+  "goal_dim": 20,
+  "history": 10,
+  "dt": 0.02,
+  "q0": [
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7,
+    0.0,
+    0.85,
+    -1.7
+  ],
+  "action_scale": [
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1,
+    0.7,
+    1.1,
+    1.1
+  ],
+  "policy_to_sdk": [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2,
+    9,
+    10,
+    11,
+    6,
+    7,
+    8
+  ],
+  "joint_limits": [
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ]
+  ],
+  "kp": 250.0,
+  "kd": 8.0,
+  "torque_limits": [
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0,
+    200.0,
+    200.0,
+    300.0
+  ],
+  "nominal_root_height_m": 0.4959882021,
+  "physical_eval_passed": false,
+  "hardware_validated": false,
+  "simulation_strict_passed": 6156,
+  "simulation_strict_total": 12672,
+  "simulation_evaluation_scope": "B2+A3 original arm envelope, training notch11 Q2; not bare robot or deployed Q1 qualification",
+  "command_adapter": "height_gait_filter_v1",
+  "gait_transition_seconds": 0.4,
+  "joint_target_filter": {
+    "kind": "notch",
+    "center_hz": 11.0,
+    "quality_factor": 1.0,
+    "sample_hz": 50.0
+  },
+  "deployment_limits": {
+    "xy_max_m_s": 2.0,
+    "lateral_max_m_s": 1.0,
+    "yaw_max_rad_s": 0.5
+  },
+  "height_control": {
+    "min_m": -0.2,
+    "max_m": 0.05,
+    "button_rate_m_s": 0.05,
+    "tilt_knots": [
+      [
+        -0.2,
+        5.0
+      ],
+      [
+        -0.15,
+        10.0
+      ],
+      [
+        -0.1,
+        20.0
+      ],
+      [
+        0.05,
+        20.0
+      ]
+    ],
+    "xy_max_m_s": 2.0,
+    "lateral_max_m_s": 1.0,
+    "yaw_max_rad_s": 0.5
+  },
+  "source_checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_a3_antivibration_armstrong_20261109_115548/formal/best.pt",
+  "observation_order": "q-q0, qd, body gyro, projected gravity, previous raw action; oldest-first 10 frames",
+  "command_order": [
+    "vx",
+    "vy",
+    "yaw_rate",
+    "roll",
+    "pitch",
+    "height_delta_m"
+  ],
+  "goal_order": [
+    "vx",
+    "vy",
+    "yaw_rate",
+    "roll",
+    "pitch",
+    "roll_rate",
+    "pitch_rate",
+    "request_vx",
+    "request_vy",
+    "request_yaw_rate",
+    "request_roll",
+    "request_pitch",
+    "FL_clock",
+    "FR_clock",
+    "RL_clock",
+    "RR_clock",
+    "height_delta_m",
+    "height_rate_m_s",
+    "requested_height_m",
+    "gait_progress"
+  ],
+  "goal_normalization_clip": null,
+  "obs_normalization_clip": 10.0,
+  "source_task_hash": "26367784bae4fa6f56fe0eaa30ace9cb499d2c48a02c2097af363baef38ba317",
+  "source_contract_hash": "803951ac4dbca3a83437a1616e006fb9a8961b963caf4ac4b6553488c81d7e51",
+  "source_actuation_hash": "e9b0eb5a6b9f2b8b8ce30faf131d3473fe898e03722c374d2381a8589abf0e2a",
+  "driver_reject_bits": 32,
+  "driver_reject_bits_note": "Observed incident state 4 -> 36. Conservative rejection of 0x20; no firmware error decoding asserted.",
+  "training_joint_target_filter": {
+    "kind": "notch",
+    "center_hz": 11.0,
+    "quality_factor": 2.0,
+    "sample_hz": 50.0
+  },
+  "deployment_filter_revision": "P4-notch11-Q1-output-guard"
+}

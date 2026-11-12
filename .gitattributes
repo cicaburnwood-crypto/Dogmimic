@@ -1,0 +1,4 @@
+inference_v18/assets/simulation/meshes/** filter=lfs diff=lfs merge=lfs -text
+inference_v18/**/*.npz filter=lfs diff=lfs merge=lfs -text
+inference_v18/checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text
+inference_v18/simulation/*.pt filter=lfs diff=lfs merge=lfs -text

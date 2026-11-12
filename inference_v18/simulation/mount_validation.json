@@ -1,0 +1,52 @@
+{
+  "urdf_tree_and_paths": true,
+  "original_step_unchanged": true,
+  "robot_hole_mapping": [
+    "B10",
+    "B11",
+    "B02",
+    "B03"
+  ],
+  "plate_mesh_watertight": true,
+  "plate_mesh_expected_frame_bounds_match": true,
+  "launch_and_build_python_syntax": true,
+  "b2_hole_axis_error_m": 1.3877787807814457e-17,
+  "a3_hole_axis_error_m": 1.7457432858752407e-09,
+  "bottom_counterbores_depth_mm": 7.5,
+  "a3_relative_fk_max_error_20_poses": 5.551115123125783e-17,
+  "b2_kinematics_max_error_20_poses": 0.0,
+  "mujoco_dimensions": [
+    25,
+    24,
+    18
+  ],
+  "urdf_total_mass_kg": 82.98104553169304,
+  "source_mjcf_mass_error_kg": -4.206412995699793e-12,
+  "saved_mjcf_mass_rounding_error_kg": 1.9468306959424808e-05,
+  "standing_contacts": [],
+  "caveat": "Registration uses user-confirmed relative dimensions; absolute B2 datum/support height remain prior estimates. No load-strength or policy validation.",
+  "static_visual_fit": [
+    {
+      "other_link": "adapter_plate",
+      "surface_intersection_detected": true,
+      "first_contact_bounds_m": [
+        0.21035337448120117,
+        0.21035337448120117,
+        0.08684662729501724,
+        0.08684662729501724,
+        0.08788961172103882,
+        0.08788961172103882
+      ]
+    },
+    {
+      "other_link": "a3_base_link",
+      "surface_intersection_detected": false,
+      "first_contact_bounds_m": null
+    },
+    {
+      "other_link": "a3_link1",
+      "surface_intersection_detected": false,
+      "first_contact_bounds_m": null
+    }
+  ]
+}

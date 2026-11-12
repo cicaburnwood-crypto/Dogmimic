@@ -1,0 +1,14 @@
+{
+  "name": "measured_folded_20261112",
+  "joints_rad": [
+    -0.026653289794921875,
+    0.0,
+    0.0,
+    -0.20695018768310547,
+    -0.00782012939453125,
+    0.24090099334716797
+  ],
+  "speed_percent": 5,
+  "source": "diagnostics/v18_remote_priority_20261112/fold_plan.json",
+  "verification": "Prior hardware fold_trace.json: reached within 0.0549 deg; distinct from training arm_home."
+}

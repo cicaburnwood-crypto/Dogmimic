@@ -1,0 +1,18 @@
+{
+  "source_sha256": "e0314388419456d6597e5b44502508dbac00da0019592da4e79bf3a6c992457b",
+  "iteration": 20000,
+  "actor_samples": 256,
+  "actor_max_abs_error": 5.662441253662109e-07,
+  "command_steps": 3000,
+  "context_max_abs_error": 1.5497207641601562e-06,
+  "goal_max_abs_error": 1.3113021850585938e-05,
+  "full_runtime_steps": 700,
+  "target_max_abs_error": 2.86102294921875e-06,
+  "step_goal_max_abs_error": 3.5762786865234375e-06,
+  "inference_p95_ms": 0.9519990067929022,
+  "physical_acceptance": false,
+  "hardware_validated": false,
+  "runtime_sha256": "2789451102db2252ca5f886d53a7fc9bf5a34318443bdca2fbd17ded3855357a",
+  "weights_sha256": "e7be320b2e2486f454dcfdb7a292d9349d4e1671c02a240efb4be40754f9462b",
+  "verification": "Numpy inference and height/gait contract versus original training Torch functions; exact training notch actuation at zero encoder bias"
+}

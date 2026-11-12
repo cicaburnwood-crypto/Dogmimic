@@ -1,0 +1,82 @@
+{
+  "task": "B2+A3 whole-body EE position and orientation reaching",
+  "phase": "formal training authorized by user",
+  "baseline": "Frozen B2-P4 locomotion",
+  "source_checkpoint": "runs/b2_joint_v17_formal_20261110_163550/best.pt",
+  "source_sha256": "69b01af85e63de94a061c1297048b8982c0ce270a4380f096c69177cfb39cb71",
+  "algorithm": "Differentiable learned world-model rollouts through frozen P4; joint manager and WM continue online updates",
+  "replay": "new",
+  "optimizers": "fresh for short mounting adaptation, then continue for formal",
+  "iterations": 40000,
+  "environments": 512,
+  "batch_size": 256,
+  "actor_horizon": 32,
+  "wm_multistep_horizon": 16,
+  "actor_lr": 0.0003,
+  "wm_lr": 2e-05,
+  "warmup_iterations": 200,
+  "training_goals": {
+    "near": 0.25,
+    "bridge": 0.5,
+    "far_full_range": 0.25,
+    "max_world_horizontal_radius_m": 3
+  },
+  "criteria": {
+    "position_m": 0.01,
+    "orientation_deg": 10,
+    "simultaneous_hold_s": 1,
+    "episode_s": 12
+  },
+  "preserved": [
+    "full physical arm joint-range goals",
+    "physical joint speed/acceleration/torque constraints",
+    "per-substep collision and ground checks",
+    "P4 leg action filter",
+    "randomized training physics",
+    "v16 full-arm WM normalization",
+    "v17 command boundary margins"
+  ],
+  "evaluation": {
+    "quick": {
+      "every": 1000,
+      "n_per_stratum": 16,
+      "seed": 411
+    },
+    "extended": {
+      "every": 2000,
+      "n_per_stratum": 64,
+      "seed": 93517,
+      "includes_known_collision_cases": true
+    },
+    "final_unseen": {
+      "n_per_stratum": 128,
+      "seed": 108317
+    },
+    "final_randomized": {
+      "n_per_stratum": 128,
+      "seed": 218317
+    }
+  },
+  "training_stopping_policy": {
+    "changed_from_short_test": true,
+    "no_single_5percent_progress_gate": true,
+    "confirmed_regression_count": 2,
+    "survival_decrease_fraction": 0.1,
+    "success_decrease_fraction": 0.25,
+    "near_error_multiplier": 1.5,
+    "nonfinite": "immediate error"
+  },
+  "best_selection": "Identical extended physical suite; minimum survival, minimum stratum success, total success, normalized pose error; best is not accepted",
+  "max_pipeline_hours": 12,
+  "final_eval_reserve_minutes": 30,
+  "robot_deployment": false,
+  "accepted": false,
+  "known_initial_failure": "unknown until new-model initial physical evaluation",
+  "revision": "v18 corrected physical mounting",
+  "short_iterations": 400,
+  "model_sha256": "1879dee47d0aa026f0e355b1caea0243d8873516203624b43c8d287c94975f70",
+  "arm_contract_sha256": "af5b3361ae6a06858f4ace6adf125a7286a832eeb9caec805e67ab86331cddf8",
+  "model_change": "Use user STEP and B02/B03/B10/B11 67.5mm pitch; A3 origin shifts -67.5mm X +0.5mm Z; new mass/COM/inertia and regenerated geometry proxies",
+  "known_model_limit": "plate/B2 visual surface locally intersects; fused static bodies; absolute datum/support height still estimated",
+  "evaluation_comparability": "same seeds and strict predicate, target witnesses recomputed in NEW geometry; compare within v18, not directly to old v17 rates"
+}

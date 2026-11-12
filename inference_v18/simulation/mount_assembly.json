@@ -1,0 +1,299 @@
+{
+  "source_step": "/home/wolfie/Documents/Codex/2026-11-05/https-github-com-cvte-robotics-carm/outputs/底板修订_M4通孔_删除QR_A沉孔7.5/连接插槽板_M4通孔_无QR_M6底面沉孔深7.5.STEP",
+  "source_step_sha256": "7e0fdb070378259535e2d22d631241f54f6153ae1615d2582e6c21743c4b75fa",
+  "packaged_step_sha256": "7e0fdb070378259535e2d22d631241f54f6153ae1615d2582e6c21743c4b75fa",
+  "source_unchanged": true,
+  "outer_hole_diameter_mm": 4.5,
+  "outer_pattern_mm": [
+    188.6,
+    67.5
+  ],
+  "hole_mapping": [
+    {
+      "robot_hole": "B10",
+      "plate_CAD_XZ_mm": [
+        -94.3,
+        134.5
+      ],
+      "plate_local_center_m": [
+        0.03375,
+        0.0943,
+        0.0
+      ],
+      "body_center_m": [
+        0.17450000000000002,
+        0.0943,
+        0.08801
+      ]
+    },
+    {
+      "robot_hole": "B11",
+      "plate_CAD_XZ_mm": [
+        -94.3,
+        202.0
+      ],
+      "plate_local_center_m": [
+        -0.03375,
+        0.0943,
+        0.0
+      ],
+      "body_center_m": [
+        0.10700000000000001,
+        0.0943,
+        0.08801
+      ]
+    },
+    {
+      "robot_hole": "B02",
+      "plate_CAD_XZ_mm": [
+        94.3,
+        134.5
+      ],
+      "plate_local_center_m": [
+        0.03375,
+        -0.0943,
+        0.0
+      ],
+      "body_center_m": [
+        0.17450000000000002,
+        -0.0943,
+        0.08801
+      ]
+    },
+    {
+      "robot_hole": "B03",
+      "plate_CAD_XZ_mm": [
+        94.3,
+        202.0
+      ],
+      "plate_local_center_m": [
+        -0.03375,
+        -0.0943,
+        0.0
+      ],
+      "body_center_m": [
+        0.10700000000000001,
+        -0.0943,
+        0.08801
+      ]
+    }
+  ],
+  "dimension_authority": "User confirmed actual robot fore/aft hole spacing 67.5 mm. STEP retained unmodified; annotated drawing 69.25 mm not used.",
+  "bottom_CAD_axis": "-Y, stepped face and diameter11 counterbores toward dog",
+  "top_CAD_axis": "+Y, planar face toward arm",
+  "support_CAD_Y_mm": 13.6,
+  "top_CAD_Y_mm": 22.500000000000004,
+  "top_above_rail_m": 0.008900000000000003,
+  "CAD_to_plate_formula_m": [
+    "(168.25 - CAD_Z)/1000",
+    "-CAD_X/1000",
+    "(CAD_Y - 13.6)/1000"
+  ],
+  "b2_to_plate_xyz_m": [
+    0.14075000000000001,
+    0.0,
+    0.08801
+  ],
+  "plate_to_a3_xyz_m": [
+    0.021250000953674315,
+    0.0,
+    0.009000000106613155
+  ],
+  "plate_to_a3_rpy_rad": [
+    0,
+    0,
+    0
+  ],
+  "b2_to_a3_xyz_m": [
+    0.16200000095367434,
+    0.0,
+    0.09701000010661316
+  ],
+  "old_b2_to_a3_xyz_m": [
+    0.2295,
+    0,
+    0.09651
+  ],
+  "a3_shift_from_old_m": [
+    -0.06749999904632567,
+    0.0,
+    0.0005000001066131632
+  ],
+  "inner_pattern_mm": [
+    100.0,
+    120.0
+  ],
+  "inner_through_diameter_mm": 6.5,
+  "inner_counterbore_diameter_mm": 11.0,
+  "counterbore_depth_mm": 7.5,
+  "counterbore_remaining_wall_mm": [
+    3.5,
+    1.75
+  ],
+  "arm_holes_from_mesh_m": [
+    [
+      -0.06149999983608723,
+      -0.05999999865889549
+    ],
+    [
+      0.038499997928738594,
+      -0.05999999865889549
+    ],
+    [
+      -0.06149999983608723,
+      0.05999999865889549
+    ],
+    [
+      0.038499997928738594,
+      0.05999999865889549
+    ]
+  ],
+  "plate_mass_kg": 0.7465319820899651,
+  "plate_density_assumed_kg_m3": 2700.0,
+  "plate_com_m": [
+    0.004436955234931978,
+    9.066609557929326e-14,
+    0.003929353383284831
+  ],
+  "plate_inertia_kg_m2": [
+    [
+      0.002789819399420998,
+      7.975950521122004e-16,
+      1.1242183909879454e-05
+    ],
+    [
+      7.975950521122004e-16,
+      0.001189505615337003,
+      3.190904981647121e-16
+    ],
+    [
+      1.1242183909879454e-05,
+      3.190904981647121e-16,
+      0.0039662846975322946
+    ]
+  ],
+  "all_relevant_cylinder_faces": [
+    {
+      "radius_mm": 2.25,
+      "center_CAD_XZ_mm": [
+        94.3,
+        202.0
+      ],
+      "y_min_mm": 13.6,
+      "y_max_mm": 22.5
+    },
+    {
+      "radius_mm": 5.5,
+      "center_CAD_XZ_mm": [
+        60.0,
+        208.5
+      ],
+      "y_min_mm": 13.25,
+      "y_max_mm": 20.75
+    },
+    {
+      "radius_mm": 5.5,
+      "center_CAD_XZ_mm": [
+        60.0,
+        108.5
+      ],
+      "y_min_mm": 11.5,
+      "y_max_mm": 19.0
+    },
+    {
+      "radius_mm": 5.5,
+      "center_CAD_XZ_mm": [
+        -60.0,
+        108.5
+      ],
+      "y_min_mm": 11.5,
+      "y_max_mm": 19.0
+    },
+    {
+      "radius_mm": 5.5,
+      "center_CAD_XZ_mm": [
+        -60.0,
+        208.5
+      ],
+      "y_min_mm": 13.25,
+      "y_max_mm": 20.75
+    },
+    {
+      "radius_mm": 3.25,
+      "center_CAD_XZ_mm": [
+        60.0,
+        208.5
+      ],
+      "y_min_mm": 20.75,
+      "y_max_mm": 22.5
+    },
+    {
+      "radius_mm": 3.25,
+      "center_CAD_XZ_mm": [
+        -60.0,
+        208.5
+      ],
+      "y_min_mm": 20.75,
+      "y_max_mm": 22.5
+    },
+    {
+      "radius_mm": 2.25,
+      "center_CAD_XZ_mm": [
+        -94.3,
+        202.0
+      ],
+      "y_min_mm": 13.6,
+      "y_max_mm": 22.5
+    },
+    {
+      "radius_mm": 2.25,
+      "center_CAD_XZ_mm": [
+        94.3,
+        134.5
+      ],
+      "y_min_mm": 13.6,
+      "y_max_mm": 22.5
+    },
+    {
+      "radius_mm": 3.25,
+      "center_CAD_XZ_mm": [
+        60.0,
+        108.5
+      ],
+      "y_min_mm": 19.0,
+      "y_max_mm": 22.5
+    },
+    {
+      "radius_mm": 2.25,
+      "center_CAD_XZ_mm": [
+        -94.3,
+        134.5
+      ],
+      "y_min_mm": 13.6,
+      "y_max_mm": 22.5
+    },
+    {
+      "radius_mm": 3.25,
+      "center_CAD_XZ_mm": [
+        -60.0,
+        108.5
+      ],
+      "y_min_mm": 19.0,
+      "y_max_mm": 22.5
+    }
+  ],
+  "assumptions": [
+    "B2 rail datum x=.2585m and top z=.08801m retained from prior mesh-derived estimates, not newly surveyed.",
+    "A3 points forward as in prior model; the hole pattern alone also admits a 180deg mounting.",
+    "Plate material not specified: aluminum2700kg/m3 assumed, screws excluded.",
+    "Flathead base inertia retains prior uncalibrated estimate. No structural strength or real fit certification."
+  ],
+  "mesh_tessellation": {
+    "native_units": "mm",
+    "linear_deflection_mm": 0.025,
+    "angular_deflection_rad": 0.06,
+    "repeated_vertex_degenerate_faces_removed": true,
+    "watertight": true,
+    "volume_error_fraction": 1.8440397486774174e-06
+  }
+}

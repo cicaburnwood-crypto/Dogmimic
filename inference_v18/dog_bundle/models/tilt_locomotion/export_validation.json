@@ -1,0 +1,23 @@
+{
+  "source_sha256": "96dbb589f9fafb39e7d25dea3e4566d9a13e32788ef39ab685489d1617b9ecb4",
+  "iteration": 12000,
+  "samples": 512,
+  "actor_max_abs_error": 4.76837158203125e-07,
+  "command_steps": 2000,
+  "context_max_abs_error": 2.8312206268310547e-07,
+  "goal_max_abs_error": 1.341104507446289e-06,
+  "full_runtime_steps": 300,
+  "target_max_abs_error": 4.76837158203125e-07,
+  "physical_acceptance": false,
+  "deployment_command_adapter": "continuous_gait_v1",
+  "gait_transition_seconds": 0.4,
+  "joint_target_filter": {
+    "kind": "notch",
+    "center_hz": 11.0,
+    "quality_factor": 2.0,
+    "sample_hz": 50.0
+  },
+  "parity_scope": "frozen Actor and original command functions; complete runtime separately compared with continuous-gait Torch reference",
+  "runtime_sha256": "6e8bfc3140ae9cb0d199f6e98f4682483f9a4c7456809e8bed334aaca5719d72",
+  "weights_sha256": "a4a2f84f243020cfe2730c483087811da67076ac8b1046bdf5f4f1ff1c522673"
+}

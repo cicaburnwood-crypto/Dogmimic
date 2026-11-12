@@ -1,0 +1,170 @@
+{
+  "skill": "hindstand",
+  "task": "b2_supermimic_core",
+  "iteration": 2000,
+  "checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/supermimic_core_v3_20261103_001524/B2/pair_1202601/C1/candidate_002000.pt",
+  "checkpoint_sha256": "52ee319da4b4b97b73467f376a6cf415cbeda7584b0c00e476b0a5b3199aa829",
+  "weights_sha256": "47e2a0ee384147c3682ce6c260d5d08985f8ea2e46fbdb358b5428e1ee91950c",
+  "obs_dim": 210,
+  "goal_dim": 196,
+  "history": 5,
+  "policy_dt": 0.02,
+  "obs_per_frame": 42,
+  "q0": [
+    0.0,
+    0.7,
+    -1.4,
+    0.0,
+    0.7,
+    -1.4,
+    0.0,
+    0.7,
+    -1.4,
+    0.0,
+    0.7,
+    -1.4
+  ],
+  "action_scale": [
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7
+  ],
+  "policy_to_sdk": [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2,
+    9,
+    10,
+    11,
+    6,
+    7,
+    8
+  ],
+  "policy_joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint"
+  ],
+  "joint_limits": [
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ],
+    [
+      -0.87,
+      0.87
+    ],
+    [
+      -0.94,
+      4.69
+    ],
+    [
+      -2.82,
+      -0.43
+    ]
+  ],
+  "torque_limits": [
+    160.0,
+    160.0,
+    240.0,
+    160.0,
+    160.0,
+    240.0,
+    160.0,
+    160.0,
+    240.0,
+    160.0,
+    160.0,
+    240.0
+  ],
+  "kp": 250.0,
+  "kd": 8.0,
+  "motor_mode": 10,
+  "official_policy": false,
+  "hardware_validated": false,
+  "physical_eval_passed": false,
+  "actuation_enabled": false,
+  "source_checkpoint": "/home/liudiwen/projects/supermimic_vibe/runs/b2_light_payload_20261102_161021/best.pt",
+  "source_sha256": "49df812e354a294aa604d6c74ad5d2b82673635a66461c0a5e308c7e748a733b",
+  "notes": [
+    "Selected C1 candidate; iteration excludes 500 WM-only prefit loops.",
+    "Training target clipping and torque envelope preserved; no target slew.",
+    "Actuator budgets are experimental, not manufacturer ratings.",
+    "Simulation task success does not mean physical acceptance or hardware validation."
+  ],
+  "exported_unix": 1793684298.7554011,
+  "label": "B2 C1",
+  "checkpoint_iteration": 2500,
+  "actor_iteration": 2000,
+  "actor_updates": 800,
+  "reference_sha256": "485d12553c0337051843d0f91c40126209fa597de360275e35ec456097d97bcc",
+  "original_reference_sha256": "2cd20993005a089c0f4397c44a735e3abe94309042a882620470abb913a9aad0",
+  "reference_frames": 776,
+  "reference_seconds": 15.5,
+  "reference_source": "Our procedural full stand-rise-hold-descend-recover motion",
+  "root_position_required": true,
+  "root_position_under_low_level_control_verified": false,
+  "target_clipping_added_for_deployment": false,
+  "payload_kg": [
+    0,
+    5
+  ],
+  "torque_envelope": {
+    "motoring_full_speed_rad_s": 6.0,
+    "motoring_zero_speed_rad_s": 10.0,
+    "command_power_w": 1200.0
+  }
+}

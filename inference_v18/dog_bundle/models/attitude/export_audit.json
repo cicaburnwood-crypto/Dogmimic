@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checkpoint_sha256": "746fef2b973f8f590ff1d5c89b55923e3e776a5d3e8316942f17be14e8b58bd3",
+  "iteration": 10000,
+  "actor_cases": 512,
+  "batch_max_abs_error": 4.76837158203125e-07,
+  "single_max_abs_error": 2.384185791015625e-07,
+  "sequence_frames": 1350,
+  "sequence_target_max_abs_error": 4.76837158203125e-07,
+  "observation_max_abs_error": 3.948807716369629e-07,
+  "context_max_abs_error": 0.0,
+  "physical_acceptance": false,
+  "hardware_motion_tested": false
+}
