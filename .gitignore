@@ -69,3 +69,6 @@ network_setup.json
 *.csv
 # Small deterministic regression fixture; this contains no model weights.
 !deployments/b2_192_168_123_164_20261101/models/hindstand/envelope_inputs.npz
+
+# B2+A3 source meshes are supplied separately for the current task.
+/experiments/b2_v24_dual_scratch/meshes/
