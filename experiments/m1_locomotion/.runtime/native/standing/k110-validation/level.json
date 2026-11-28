@@ -1,0 +1,1014 @@
+{
+  "suite": "final",
+  "baseline_sha256": "fe53c0fe605beedfd58b9536a8d1696db708f81d7af9c6be7d82063ed43cfa12",
+  "candidate_sha256": "3a27ea5132a1be524a1aa5d89f95f098a681c1df1ad64c00a5fcc8795a2da02a",
+  "summary": {
+    "before": {
+      "forward": {
+        "completed": 20,
+        "count": 20,
+        "com_range_m": 0.0543884131928639,
+        "com_vz_rms_mps": 0.03467924525974248,
+        "com_path_m": 0.09710988319078048,
+        "leg_velocity_rms_radps": 0.12855577113760067,
+        "leg_action_difference_rms": 0.03755728853866458,
+        "velocity_rmse_mps": 0.014510104278270975
+      },
+      "reverse": {
+        "completed": 20,
+        "count": 20,
+        "com_range_m": 0.013651666322948508,
+        "com_vz_rms_mps": 0.012651388095440164,
+        "com_path_m": 0.0203739227960237,
+        "leg_velocity_rms_radps": 0.12335853716333367,
+        "leg_action_difference_rms": 0.031450461503118275,
+        "velocity_rmse_mps": 0.030167698284813332
+      }
+    },
+    "after": {
+      "forward": {
+        "completed": 20,
+        "count": 20,
+        "com_range_m": 0.046861599659308126,
+        "com_vz_rms_mps": 0.018283801944576787,
+        "com_path_m": 0.05269439418541251,
+        "leg_velocity_rms_radps": 0.0724574723146342,
+        "leg_action_difference_rms": 0.020881888875737786,
+        "velocity_rmse_mps": 0.01044834457739454
+      },
+      "reverse": {
+        "completed": 20,
+        "count": 20,
+        "com_range_m": 0.011611693979942207,
+        "com_vz_rms_mps": 0.01011187330231163,
+        "com_path_m": 0.015501144984287202,
+        "leg_velocity_rms_radps": 0.11485162671609436,
+        "leg_action_difference_rms": 0.0207545630633831,
+        "velocity_rmse_mps": 0.025201220814586988
+      }
+    }
+  },
+  "records": [
+    {
+      "speed_mps": -0.16,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.016770299984109338,
+        "com_vz_rms_mps": 0.01341264885035273,
+        "com_path_m": 0.020279402011827874,
+        "leg_velocity_rms_radps": 0.08818513525746347,
+        "leg_action_difference_rms": 0.021782366558909416,
+        "velocity_mean_mps": -0.18400502331938903,
+        "velocity_rmse_mps": 0.024023055163188266
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.0022485762854924096,
+        "com_vz_rms_mps": 0.002830216324167162,
+        "com_path_m": 0.00573012992452171,
+        "leg_velocity_rms_radps": 0.07821067339236962,
+        "leg_action_difference_rms": 0.014713117852807045,
+        "velocity_mean_mps": -0.18555133782742994,
+        "velocity_rmse_mps": 0.025570075743136376
+      }
+    },
+    {
+      "speed_mps": 0.16,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.01511841601460373,
+        "com_vz_rms_mps": 0.011685333101983096,
+        "com_path_m": 0.020145336142197934,
+        "leg_velocity_rms_radps": 0.043288091340446345,
+        "leg_action_difference_rms": 0.023058760911226273,
+        "velocity_mean_mps": 0.17483034183794563,
+        "velocity_rmse_mps": 0.0148536252100355
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.020239409953641985,
+        "com_vz_rms_mps": 0.008941018688868787,
+        "com_path_m": 0.022175415304963864,
+        "leg_velocity_rms_radps": 0.034652450711513474,
+        "leg_action_difference_rms": 0.015085902996361256,
+        "velocity_mean_mps": 0.18082329960765012,
+        "velocity_rmse_mps": 0.021192067509255313
+      }
+    },
+    {
+      "speed_mps": -0.25,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.013639192493330454,
+        "com_vz_rms_mps": 0.010991073472941051,
+        "com_path_m": 0.016585712190378854,
+        "leg_velocity_rms_radps": 0.10419547615751057,
+        "leg_action_difference_rms": 0.030171427875757217,
+        "velocity_mean_mps": -0.2629875763656646,
+        "velocity_rmse_mps": 0.013026238408620014
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.004615903757042739,
+        "com_vz_rms_mps": 0.005161266319103927,
+        "com_path_m": 0.008542878478001281,
+        "leg_velocity_rms_radps": 0.09734868868998543,
+        "leg_action_difference_rms": 0.02009190246462822,
+        "velocity_mean_mps": -0.26796003158604087,
+        "velocity_rmse_mps": 0.017993991523952754
+      }
+    },
+    {
+      "speed_mps": 0.25,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.0484135838511609,
+        "com_vz_rms_mps": 0.024087577797812912,
+        "com_path_m": 0.053389194836365006,
+        "leg_velocity_rms_radps": 0.07692302866794705,
+        "leg_action_difference_rms": 0.02994617447257042,
+        "velocity_mean_mps": 0.2486769265393771,
+        "velocity_rmse_mps": 0.003871695509362844
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.0441779104290102,
+        "com_vz_rms_mps": 0.015243032019004333,
+        "com_path_m": 0.04802769218174907,
+        "leg_velocity_rms_radps": 0.050488201526000774,
+        "leg_action_difference_rms": 0.0187230221927166,
+        "velocity_mean_mps": 0.2524559647299792,
+        "velocity_rmse_mps": 0.007299869011992785
+      }
+    },
+    {
+      "speed_mps": -0.4,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.00951180528552159,
+        "com_vz_rms_mps": 0.011417322957685787,
+        "com_path_m": 0.01859266595315301,
+        "leg_velocity_rms_radps": 0.12907096496692752,
+        "leg_action_difference_rms": 0.036777760833501816,
+        "velocity_mean_mps": -0.3859075386360222,
+        "velocity_rmse_mps": 0.014128470275399948
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.012018629888307819,
+        "com_vz_rms_mps": 0.011637360996372522,
+        "com_path_m": 0.017165230838210366,
+        "leg_velocity_rms_radps": 0.1221086291188829,
+        "leg_action_difference_rms": 0.024816101416945457,
+        "velocity_mean_mps": -0.39357649400341466,
+        "velocity_rmse_mps": 0.006512354063468211
+      }
+    },
+    {
+      "speed_mps": 0.4,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.05769534264144843,
+        "com_vz_rms_mps": 0.029209916594754012,
+        "com_path_m": 0.06396227226743151,
+        "leg_velocity_rms_radps": 0.09729261699858442,
+        "leg_action_difference_rms": 0.03354061767458916,
+        "velocity_mean_mps": 0.3981207092029873,
+        "velocity_rmse_mps": 0.00743666676363875
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.053916059914637104,
+        "com_vz_rms_mps": 0.021459791204841382,
+        "com_path_m": 0.06177696333441396,
+        "leg_velocity_rms_radps": 0.0788965802176322,
+        "leg_action_difference_rms": 0.02297925390303135,
+        "velocity_mean_mps": 0.4022316594880048,
+        "velocity_rmse_mps": 0.008531011094584491
+      }
+    },
+    {
+      "speed_mps": -0.52,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.01233556985005868,
+        "com_vz_rms_mps": 0.013732141704870877,
+        "com_path_m": 0.02330713303784171,
+        "leg_velocity_rms_radps": 0.14561052410315342,
+        "leg_action_difference_rms": 0.03670378401875496,
+        "velocity_mean_mps": -0.47810149889132175,
+        "velocity_rmse_mps": 0.04191607420865365
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.01778220482944798,
+        "com_vz_rms_mps": 0.014931275819053673,
+        "com_path_m": 0.021428891102498182,
+        "leg_velocity_rms_radps": 0.13571897855819845,
+        "leg_action_difference_rms": 0.023724297061562538,
+        "velocity_mean_mps": -0.48836934253460373,
+        "velocity_rmse_mps": 0.03165860186055473
+      }
+    },
+    {
+      "speed_mps": 0.52,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.06395490832054573,
+        "com_vz_rms_mps": 0.03442987387361392,
+        "com_path_m": 0.07093594822689286,
+        "leg_velocity_rms_radps": 0.11328570858214533,
+        "leg_action_difference_rms": 0.03310520946979523,
+        "velocity_mean_mps": 0.5159411558664022,
+        "velocity_rmse_mps": 0.0070648090415287084
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05831490118236904,
+        "com_vz_rms_mps": 0.023417136521824585,
+        "com_path_m": 0.06687333009925167,
+        "leg_velocity_rms_radps": 0.0942477907542377,
+        "leg_action_difference_rms": 0.024030553176999092,
+        "velocity_mean_mps": 0.520495506368542,
+        "velocity_rmse_mps": 0.007454841907113923
+      }
+    },
+    {
+      "speed_mps": -0.6,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.01622820327127611,
+        "com_vz_rms_mps": 0.013965229211121451,
+        "com_path_m": 0.02412595240000165,
+        "leg_velocity_rms_radps": 0.15001051679937083,
+        "leg_action_difference_rms": 0.03326375409960747,
+        "velocity_mean_mps": -0.5424371243192528,
+        "velocity_rmse_mps": 0.05758600078653679
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.021402426536957453,
+        "com_vz_rms_mps": 0.016021448924430092,
+        "com_path_m": 0.024035774113672415,
+        "leg_velocity_rms_radps": 0.14041139938239355,
+        "leg_action_difference_rms": 0.021167922765016556,
+        "velocity_mean_mps": -0.5556287212254213,
+        "velocity_rmse_mps": 0.04440822705323841
+      }
+    },
+    {
+      "speed_mps": 0.6,
+      "seed": 98831,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.08884762101076382,
+        "com_vz_rms_mps": 0.07118709853275611,
+        "com_path_m": 0.2557354206415113,
+        "leg_velocity_rms_radps": 0.30743371854068796,
+        "leg_action_difference_rms": 0.06724811345338821,
+        "velocity_mean_mps": 0.5983820117065957,
+        "velocity_rmse_mps": 0.0384754927068657
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.058045778996692,
+        "com_vz_rms_mps": 0.022597152585030634,
+        "com_path_m": 0.06482345416611701,
+        "leg_velocity_rms_radps": 0.10527240163151844,
+        "leg_action_difference_rms": 0.022832904011011124,
+        "velocity_mean_mps": 0.5988913772760208,
+        "velocity_rmse_mps": 0.007501619032879264
+      }
+    },
+    {
+      "speed_mps": -0.16,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.01674695625555994,
+        "com_vz_rms_mps": 0.013259516329639606,
+        "com_path_m": 0.0201333868014551,
+        "leg_velocity_rms_radps": 0.0881155029167137,
+        "leg_action_difference_rms": 0.020524008199572563,
+        "velocity_mean_mps": -0.18384206837212086,
+        "velocity_rmse_mps": 0.023857746195211565
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.002484309275854246,
+        "com_vz_rms_mps": 0.0030839443748603467,
+        "com_path_m": 0.00664999826642132,
+        "leg_velocity_rms_radps": 0.078534743360019,
+        "leg_action_difference_rms": 0.01393367163836956,
+        "velocity_mean_mps": -0.18535646115851187,
+        "velocity_rmse_mps": 0.025373207521524214
+      }
+    },
+    {
+      "speed_mps": 0.16,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.015133983713172428,
+        "com_vz_rms_mps": 0.011600451492151454,
+        "com_path_m": 0.020425387140115936,
+        "leg_velocity_rms_radps": 0.043067337330365135,
+        "leg_action_difference_rms": 0.024043550714850426,
+        "velocity_mean_mps": 0.17485940635832944,
+        "velocity_rmse_mps": 0.014877762477623147
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.020198230875175083,
+        "com_vz_rms_mps": 0.00892160420568083,
+        "com_path_m": 0.022260572705590176,
+        "leg_velocity_rms_radps": 0.03456999219296854,
+        "leg_action_difference_rms": 0.015808938071131706,
+        "velocity_mean_mps": 0.1808250349456216,
+        "velocity_rmse_mps": 0.021201498289305745
+      }
+    },
+    {
+      "speed_mps": -0.25,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.013556651203136871,
+        "com_vz_rms_mps": 0.010805047637150332,
+        "com_path_m": 0.016209955678547328,
+        "leg_velocity_rms_radps": 0.10402957820774732,
+        "leg_action_difference_rms": 0.028993964195251465,
+        "velocity_mean_mps": -0.2628712792657113,
+        "velocity_rmse_mps": 0.012903360021143234
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.004682842091114137,
+        "com_vz_rms_mps": 0.005323100098391137,
+        "com_path_m": 0.00903450708803255,
+        "leg_velocity_rms_radps": 0.09757464586866033,
+        "leg_action_difference_rms": 0.019366586580872536,
+        "velocity_mean_mps": -0.26782028583145034,
+        "velocity_rmse_mps": 0.01784700127148026
+      }
+    },
+    {
+      "speed_mps": 0.25,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.04839026213570152,
+        "com_vz_rms_mps": 0.023978765727147366,
+        "com_path_m": 0.05339983684889732,
+        "leg_velocity_rms_radps": 0.0766264812609823,
+        "leg_action_difference_rms": 0.03090352937579155,
+        "velocity_mean_mps": 0.24866829703097101,
+        "velocity_rmse_mps": 0.003876495069322951
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.044185628673005795,
+        "com_vz_rms_mps": 0.015267475709149495,
+        "com_path_m": 0.048068783387972436,
+        "leg_velocity_rms_radps": 0.050662567076960825,
+        "leg_action_difference_rms": 0.019311940297484398,
+        "velocity_mean_mps": 0.25241710698174896,
+        "velocity_rmse_mps": 0.007269265240758372
+      }
+    },
+    {
+      "speed_mps": -0.4,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.009518285282179129,
+        "com_vz_rms_mps": 0.011405709077707145,
+        "com_path_m": 0.01815309164689871,
+        "leg_velocity_rms_radps": 0.1288507676086418,
+        "leg_action_difference_rms": 0.03592386841773987,
+        "velocity_mean_mps": -0.3857926466502366,
+        "velocity_rmse_mps": 0.014244784393522187
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.01199292854416878,
+        "com_vz_rms_mps": 0.01165971773947081,
+        "com_path_m": 0.017290126826341956,
+        "leg_velocity_rms_radps": 0.12219281791929112,
+        "leg_action_difference_rms": 0.024435868486762047,
+        "velocity_mean_mps": -0.393462652963084,
+        "velocity_rmse_mps": 0.006622432063951328
+      }
+    },
+    {
+      "speed_mps": 0.4,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.05782224638965666,
+        "com_vz_rms_mps": 0.02912624205546135,
+        "com_path_m": 0.06426392706565731,
+        "leg_velocity_rms_radps": 0.09709174658973034,
+        "leg_action_difference_rms": 0.033867813646793365,
+        "velocity_mean_mps": 0.3981241794334184,
+        "velocity_rmse_mps": 0.0074487499203227826
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05378928100096475,
+        "com_vz_rms_mps": 0.02138302095516114,
+        "com_path_m": 0.061616241331398924,
+        "leg_velocity_rms_radps": 0.07864996557606536,
+        "leg_action_difference_rms": 0.023211950436234474,
+        "velocity_mean_mps": 0.4022217153980101,
+        "velocity_rmse_mps": 0.008588448469344888
+      }
+    },
+    {
+      "speed_mps": -0.52,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.012176546814310574,
+        "com_vz_rms_mps": 0.013539169453407818,
+        "com_path_m": 0.02323505459451014,
+        "leg_velocity_rms_radps": 0.14517331388631258,
+        "leg_action_difference_rms": 0.03659580647945404,
+        "velocity_mean_mps": -0.4780063637980503,
+        "velocity_rmse_mps": 0.04201274160986222
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.017823508715056613,
+        "com_vz_rms_mps": 0.014907013737835722,
+        "com_path_m": 0.0218550067587987,
+        "leg_velocity_rms_radps": 0.13575766668853975,
+        "leg_action_difference_rms": 0.02379053272306919,
+        "velocity_mean_mps": -0.48826211244081386,
+        "velocity_rmse_mps": 0.03176782172475996
+      }
+    },
+    {
+      "speed_mps": 0.52,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.06389083156943554,
+        "com_vz_rms_mps": 0.03437511945100041,
+        "com_path_m": 0.0710792102868466,
+        "leg_velocity_rms_radps": 0.11311944749942957,
+        "leg_action_difference_rms": 0.03316568583250046,
+        "velocity_mean_mps": 0.5159720622259305,
+        "velocity_rmse_mps": 0.0071446183800703954
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05819509111940302,
+        "com_vz_rms_mps": 0.023354409762687496,
+        "com_path_m": 0.06671099452569534,
+        "leg_velocity_rms_radps": 0.09396205758179166,
+        "leg_action_difference_rms": 0.024198384955525398,
+        "velocity_mean_mps": 0.5204926541853971,
+        "velocity_rmse_mps": 0.007546668297601099
+      }
+    },
+    {
+      "speed_mps": -0.6,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.016156211856670044,
+        "com_vz_rms_mps": 0.013736939412339716,
+        "com_path_m": 0.024079684712995375,
+        "leg_velocity_rms_radps": 0.14954976694337602,
+        "leg_action_difference_rms": 0.0335528738796711,
+        "velocity_mean_mps": -0.5423354253446966,
+        "velocity_rmse_mps": 0.05768825398251222
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.02140245736398949,
+        "com_vz_rms_mps": 0.015972992278205565,
+        "com_path_m": 0.02415827766802764,
+        "leg_velocity_rms_radps": 0.14042248718269007,
+        "leg_action_difference_rms": 0.021499453112483025,
+        "velocity_mean_mps": -0.5555092265316615,
+        "velocity_rmse_mps": 0.04452710720629734
+      }
+    },
+    {
+      "speed_mps": 0.6,
+      "seed": 98993,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.08740791429382005,
+        "com_vz_rms_mps": 0.07308067453066878,
+        "com_path_m": 0.26771598580301903,
+        "leg_velocity_rms_radps": 0.3083558916541567,
+        "leg_action_difference_rms": 0.06678944826126099,
+        "velocity_mean_mps": 0.5974873991153652,
+        "velocity_rmse_mps": 0.03878160304507721
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05799749128817866,
+        "com_vz_rms_mps": 0.022571395719763538,
+        "com_path_m": 0.06501431988895756,
+        "leg_velocity_rms_radps": 0.10517177212464388,
+        "leg_action_difference_rms": 0.0228556077927351,
+        "velocity_mean_mps": 0.5988853546594239,
+        "velocity_rmse_mps": 0.0077086665045668305
+      }
+    },
+    {
+      "speed_mps": -0.16,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.016692780834132726,
+        "com_vz_rms_mps": 0.013376326550643754,
+        "com_path_m": 0.020022182919486153,
+        "leg_velocity_rms_radps": 0.08847400719783217,
+        "leg_action_difference_rms": 0.02135622128844261,
+        "velocity_mean_mps": -0.1837002069025919,
+        "velocity_rmse_mps": 0.023719497173483706
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.0022425074665599065,
+        "com_vz_rms_mps": 0.002883247932096862,
+        "com_path_m": 0.005933099965205524,
+        "leg_velocity_rms_radps": 0.07844792874631329,
+        "leg_action_difference_rms": 0.014395628124475479,
+        "velocity_mean_mps": -0.18521951531277286,
+        "velocity_rmse_mps": 0.02523966309072575
+      }
+    },
+    {
+      "speed_mps": 0.16,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.015150173626170993,
+        "com_vz_rms_mps": 0.011637789237563161,
+        "com_path_m": 0.020182785606074005,
+        "leg_velocity_rms_radps": 0.04309834615563576,
+        "leg_action_difference_rms": 0.023277752101421356,
+        "velocity_mean_mps": 0.17486262620490545,
+        "velocity_rmse_mps": 0.014887832284330967
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.02014122409593727,
+        "com_vz_rms_mps": 0.008874766612052172,
+        "com_path_m": 0.022262218688417434,
+        "leg_velocity_rms_radps": 0.03419415422738914,
+        "leg_action_difference_rms": 0.015142733231186867,
+        "velocity_mean_mps": 0.18082677044767873,
+        "velocity_rmse_mps": 0.021216335850563352
+      }
+    },
+    {
+      "speed_mps": -0.25,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.013570284643241948,
+        "com_vz_rms_mps": 0.010930335332129093,
+        "com_path_m": 0.01627581520424065,
+        "leg_velocity_rms_radps": 0.10436736351018207,
+        "leg_action_difference_rms": 0.029515743255615234,
+        "velocity_mean_mps": -0.2627006583639268,
+        "velocity_rmse_mps": 0.012730956442543791
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.004594083310511865,
+        "com_vz_rms_mps": 0.005150155797207838,
+        "com_path_m": 0.008668552885559233,
+        "leg_velocity_rms_radps": 0.09749779516834405,
+        "leg_action_difference_rms": 0.01962835155427456,
+        "velocity_mean_mps": -0.26764317498537565,
+        "velocity_rmse_mps": 0.017666248356131776
+      }
+    },
+    {
+      "speed_mps": 0.25,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.04845865772723995,
+        "com_vz_rms_mps": 0.024083340583582934,
+        "com_path_m": 0.05363205771949009,
+        "leg_velocity_rms_radps": 0.07687161340968497,
+        "leg_action_difference_rms": 0.030139504000544548,
+        "velocity_mean_mps": 0.248710159625086,
+        "velocity_rmse_mps": 0.0038422366077204687
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.044117988946983544,
+        "com_vz_rms_mps": 0.01518163527198512,
+        "com_path_m": 0.04803928440595695,
+        "leg_velocity_rms_radps": 0.05012244228577786,
+        "leg_action_difference_rms": 0.01875680312514305,
+        "velocity_mean_mps": 0.2524677981335054,
+        "velocity_rmse_mps": 0.007269136992326958
+      }
+    },
+    {
+      "speed_mps": -0.4,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.0095059195176872,
+        "com_vz_rms_mps": 0.011422668529200111,
+        "com_path_m": 0.018435091423744998,
+        "leg_velocity_rms_radps": 0.12943857564321667,
+        "leg_action_difference_rms": 0.036057546734809875,
+        "velocity_mean_mps": -0.3856195491522428,
+        "velocity_rmse_mps": 0.014414021899883394
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.011963761655357563,
+        "com_vz_rms_mps": 0.011576918534303017,
+        "com_path_m": 0.01732800417531105,
+        "leg_velocity_rms_radps": 0.12220268728945455,
+        "leg_action_difference_rms": 0.02435285598039627,
+        "velocity_mean_mps": -0.39327451876904557,
+        "velocity_rmse_mps": 0.006795737828261453
+      }
+    },
+    {
+      "speed_mps": 0.4,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.057787279111136014,
+        "com_vz_rms_mps": 0.029134305430773916,
+        "com_path_m": 0.06411074928580696,
+        "leg_velocity_rms_radps": 0.09693650115169943,
+        "leg_action_difference_rms": 0.03356204554438591,
+        "velocity_mean_mps": 0.3981392924971021,
+        "velocity_rmse_mps": 0.007421497983801109
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05397623541293678,
+        "com_vz_rms_mps": 0.021391544988774745,
+        "com_path_m": 0.06188794843722761,
+        "leg_velocity_rms_radps": 0.078512830994233,
+        "leg_action_difference_rms": 0.0230979286134243,
+        "velocity_mean_mps": 0.4022392093482893,
+        "velocity_rmse_mps": 0.008642748883073828
+      }
+    },
+    {
+      "speed_mps": -0.52,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.012345100508920681,
+        "com_vz_rms_mps": 0.013768787336446658,
+        "com_path_m": 0.0234575878280327,
+        "leg_velocity_rms_radps": 0.1460305337512064,
+        "leg_action_difference_rms": 0.03648470342159271,
+        "velocity_mean_mps": -0.4778220326036199,
+        "velocity_rmse_mps": 0.042192453435728895
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.017774087189870058,
+        "com_vz_rms_mps": 0.01489451925767081,
+        "com_path_m": 0.021666120396980793,
+        "leg_velocity_rms_radps": 0.135903625257255,
+        "leg_action_difference_rms": 0.02365204319357872,
+        "velocity_mean_mps": -0.4880572266740404,
+        "velocity_rmse_mps": 0.03196467825791298
+      }
+    },
+    {
+      "speed_mps": 0.52,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.06379726473008684,
+        "com_vz_rms_mps": 0.03435132598424191,
+        "com_path_m": 0.07103840394614441,
+        "leg_velocity_rms_radps": 0.11296658459627786,
+        "leg_action_difference_rms": 0.03316487744450569,
+        "velocity_mean_mps": 0.5159334246451196,
+        "velocity_rmse_mps": 0.00716927706042366
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.058148769241327225,
+        "com_vz_rms_mps": 0.02337349791205584,
+        "com_path_m": 0.06680426020241986,
+        "leg_velocity_rms_radps": 0.09399938709258866,
+        "leg_action_difference_rms": 0.024202687665820122,
+        "velocity_mean_mps": 0.5204937733305923,
+        "velocity_rmse_mps": 0.007614922687498598
+      }
+    },
+    {
+      "speed_mps": -0.6,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.016170501700766504,
+        "com_vz_rms_mps": 0.01390519920032972,
+        "com_path_m": 0.024126187060354798,
+        "leg_velocity_rms_radps": 0.1501692169281683,
+        "leg_action_difference_rms": 0.03332125395536423,
+        "velocity_mean_mps": -0.5421445077965775,
+        "velocity_rmse_mps": 0.05787554790183174
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.02137020687157587,
+        "com_vz_rms_mps": 0.015988273022580643,
+        "com_path_m": 0.023945702049823325,
+        "leg_velocity_rms_radps": 0.1406221828665272,
+        "leg_action_difference_rms": 0.02134065143764019,
+        "velocity_mean_mps": -0.555299440547269,
+        "velocity_rmse_mps": 0.04472986926041037
+      }
+    },
+    {
+      "speed_mps": 0.6,
+      "seed": 99067,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.0853857971430283,
+        "com_vz_rms_mps": 0.07625636884757213,
+        "com_path_m": 0.2892245888235204,
+        "leg_velocity_rms_radps": 0.31602015709218606,
+        "leg_action_difference_rms": 0.06666409969329834,
+        "velocity_mean_mps": 0.5976012819473955,
+        "velocity_rmse_mps": 0.03998672059089471
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.0580342257821615,
+        "com_vz_rms_mps": 0.02259336774509266,
+        "com_path_m": 0.0650853168601237,
+        "leg_velocity_rms_radps": 0.10527256964772014,
+        "leg_action_difference_rms": 0.022888513281941414,
+        "velocity_mean_mps": 0.5988780185956855,
+        "velocity_rmse_mps": 0.007724242292282752
+      }
+    },
+    {
+      "speed_mps": -0.16,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.016718726275521456,
+        "com_vz_rms_mps": 0.013417492044492644,
+        "com_path_m": 0.019376616270344094,
+        "leg_velocity_rms_radps": 0.08836291804266669,
+        "leg_action_difference_rms": 0.02158306911587715,
+        "velocity_mean_mps": -0.18362281424978275,
+        "velocity_rmse_mps": 0.02363697415763381
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.0022598369194737344,
+        "com_vz_rms_mps": 0.0027965061511431347,
+        "com_path_m": 0.0056770097459096225,
+        "leg_velocity_rms_radps": 0.07840964813850229,
+        "leg_action_difference_rms": 0.0145207978785038,
+        "velocity_mean_mps": -0.18518160019411029,
+        "velocity_rmse_mps": 0.02519382973291053
+      }
+    },
+    {
+      "speed_mps": 0.16,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.01511978595468666,
+        "com_vz_rms_mps": 0.011620353467058949,
+        "com_path_m": 0.02019424429124267,
+        "leg_velocity_rms_radps": 0.043190449291811386,
+        "leg_action_difference_rms": 0.023752804845571518,
+        "velocity_mean_mps": 0.1749651149352009,
+        "velocity_rmse_mps": 0.01498602765292005
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.02009893590758227,
+        "com_vz_rms_mps": 0.008839238943641699,
+        "com_path_m": 0.022050599225891254,
+        "leg_velocity_rms_radps": 0.0341672524079556,
+        "leg_action_difference_rms": 0.015468370169401169,
+        "velocity_mean_mps": 0.18093993419941373,
+        "velocity_rmse_mps": 0.021321871041425584
+      }
+    },
+    {
+      "speed_mps": -0.25,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.013588482084666731,
+        "com_vz_rms_mps": 0.01099022112101659,
+        "com_path_m": 0.016055832543481197,
+        "leg_velocity_rms_radps": 0.10423665821616096,
+        "leg_action_difference_rms": 0.02981521002948284,
+        "velocity_mean_mps": -0.2626173085676846,
+        "velocity_rmse_mps": 0.012646720070080848
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.004550943800271212,
+        "com_vz_rms_mps": 0.00509030737189408,
+        "com_path_m": 0.008579012928073448,
+        "leg_velocity_rms_radps": 0.09742933779684301,
+        "leg_action_difference_rms": 0.01981262117624283,
+        "velocity_mean_mps": -0.2676052729103287,
+        "velocity_rmse_mps": 0.01762614520588516
+      }
+    },
+    {
+      "speed_mps": 0.25,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.04832144179748227,
+        "com_vz_rms_mps": 0.024028105440870227,
+        "com_path_m": 0.05339408158200154,
+        "leg_velocity_rms_radps": 0.07672322083470816,
+        "leg_action_difference_rms": 0.030466536059975624,
+        "velocity_mean_mps": 0.24872575163659777,
+        "velocity_rmse_mps": 0.003796939664591665
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.044018641000237335,
+        "com_vz_rms_mps": 0.015146656304707424,
+        "com_path_m": 0.04786480684155958,
+        "leg_velocity_rms_radps": 0.05000189215948873,
+        "leg_action_difference_rms": 0.018921460956335068,
+        "velocity_mean_mps": 0.2524831220114497,
+        "velocity_rmse_mps": 0.007212893913039937
+      }
+    },
+    {
+      "speed_mps": -0.4,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.00956111882919447,
+        "com_vz_rms_mps": 0.011480808813065718,
+        "com_path_m": 0.01823591397897506,
+        "leg_velocity_rms_radps": 0.12869711001439013,
+        "leg_action_difference_rms": 0.03624488413333893,
+        "velocity_mean_mps": -0.38552132657198324,
+        "velocity_rmse_mps": 0.014506456524587319
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.011972787444013255,
+        "com_vz_rms_mps": 0.011547837510363968,
+        "com_path_m": 0.017169660751259863,
+        "leg_velocity_rms_radps": 0.12215325667554883,
+        "leg_action_difference_rms": 0.024499349296092987,
+        "velocity_mean_mps": -0.3944634521455095,
+        "velocity_rmse_mps": 0.005606897959971715
+      }
+    },
+    {
+      "speed_mps": 0.4,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.05761294038753789,
+        "com_vz_rms_mps": 0.029093284064540793,
+        "com_path_m": 0.06381536813637051,
+        "leg_velocity_rms_radps": 0.09683170035323012,
+        "leg_action_difference_rms": 0.0336681604385376,
+        "velocity_mean_mps": 0.3981387770885337,
+        "velocity_rmse_mps": 0.007380372995119703
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05379888347548223,
+        "com_vz_rms_mps": 0.02130599721274611,
+        "com_path_m": 0.061523998942228486,
+        "leg_velocity_rms_radps": 0.07805132837961878,
+        "leg_action_difference_rms": 0.023061642423272133,
+        "velocity_mean_mps": 0.40224094587814613,
+        "velocity_rmse_mps": 0.008556421882290952
+      }
+    },
+    {
+      "speed_mps": -0.52,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.012170060923325843,
+        "com_vz_rms_mps": 0.013634346059759411,
+        "com_path_m": 0.022937540932341738,
+        "leg_velocity_rms_radps": 0.1451846533364845,
+        "leg_action_difference_rms": 0.03671479597687721,
+        "velocity_mean_mps": -0.4777278046487624,
+        "velocity_rmse_mps": 0.042285084850461035
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.017745585871064784,
+        "com_vz_rms_mps": 0.014834586769334718,
+        "com_path_m": 0.021413650178317978,
+        "leg_velocity_rms_radps": 0.13569761370236014,
+        "leg_action_difference_rms": 0.023798868060112,
+        "velocity_mean_mps": -0.487946079850906,
+        "velocity_rmse_mps": 0.03207469140413582
+      }
+    },
+    {
+      "speed_mps": 0.52,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.06361432096434538,
+        "com_vz_rms_mps": 0.034342360528766935,
+        "com_path_m": 0.07041260531367333,
+        "leg_velocity_rms_radps": 0.11286400669653437,
+        "leg_action_difference_rms": 0.03321435675024986,
+        "velocity_mean_mps": 0.5159082481560829,
+        "velocity_rmse_mps": 0.007061356732576648
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05803405763510566,
+        "com_vz_rms_mps": 0.023307530074343448,
+        "com_path_m": 0.0663813502364417,
+        "leg_velocity_rms_radps": 0.0934720236427004,
+        "leg_action_difference_rms": 0.024139119312167168,
+        "velocity_mean_mps": 0.5204711145035443,
+        "velocity_rmse_mps": 0.00749033163996341
+      }
+    },
+    {
+      "speed_mps": -0.6,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.01607062884535987,
+        "com_vz_rms_mps": 0.013836778814503112,
+        "com_path_m": 0.02385364873186291,
+        "leg_velocity_rms_radps": 0.14941815977914805,
+        "leg_action_difference_rms": 0.03362618759274483,
+        "velocity_mean_mps": -0.5420613538518215,
+        "velocity_rmse_mps": 0.05795952819538209
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.021306291782714204,
+        "com_vz_rms_mps": 0.015946777087746545,
+        "com_path_m": 0.023751265544777078,
+        "leg_velocity_rms_radps": 0.14038772851970907,
+        "leg_action_difference_rms": 0.02155064046382904,
+        "velocity_mean_mps": -0.5551865893361205,
+        "velocity_rmse_mps": 0.04484583516303067
+      }
+    },
+    {
+      "speed_mps": 0.6,
+      "seed": 99141,
+      "before": {
+        "completed": true,
+        "com_range_m": 0.08584549247525491,
+        "com_vz_rms_mps": 0.07627661845252919,
+        "com_path_m": 0.29514025985235104,
+        "leg_velocity_rms_radps": 0.31912877470576984,
+        "leg_action_difference_rms": 0.06756673008203506,
+        "velocity_mean_mps": 0.5967592033414282,
+        "velocity_rmse_mps": 0.039838305869192535
+      },
+      "after": {
+        "completed": true,
+        "com_range_m": 0.05780324825533101,
+        "com_vz_rms_mps": 0.022505766454124297,
+        "com_path_m": 0.06464033294187349,
+        "leg_velocity_rms_radps": 0.10478178606187874,
+        "leg_action_difference_rms": 0.02292006090283394,
+        "velocity_mean_mps": 0.598854266394525,
+        "velocity_rmse_mps": 0.007624031008022731
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,182 @@
+{
+  "checkpoint": "m1-universal-3a27ea5132a1.onnx",
+  "sha256": "3a27ea5132a1be524a1aa5d89f95f098a681c1df1ad64c00a5fcc8795a2da02a",
+  "name": "M1 平地与楼梯通用策略",
+  "passed": true,
+  "training": "terrain_training/run-2418/training.json",
+  "validation": "standing/k110-validation/final.json",
+  "teacher_policies": {
+    "classic": "29d6582cd8febc7dbd1d9bfdabb4023677300d8b7d5a08685809ab43fb489cfb",
+    "stairs": "d7c511f635d96e5f876088312a6bb9c4c0fda0f5c3924117f747611126a37685"
+  },
+  "seed": 2418,
+  "supermimic": "abc124c1bd5976341034668af3d12c087f2f1f55",
+  "metrics": {
+    "flat": {
+      "count": 64,
+      "completed": 64,
+      "success": 1.0,
+      "stop_by_1_5": 64,
+      "tasks": {
+        "diagonal_left": {
+          "vxy_rmse": 0.03689307412643931,
+          "yaw_rmse": 0.05377049254158726,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "diagonal_right": {
+          "vxy_rmse": 0.044972586378390675,
+          "yaw_rmse": 0.04453905836603756,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "forward_20": {
+          "vxy_rmse": 0.011392951595310966,
+          "yaw_rmse": 0.0003946734080016806,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "forward_30": {
+          "vxy_rmse": 0.01288836745731605,
+          "yaw_rmse": 0.0006487146055276199,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "forward_40": {
+          "vxy_rmse": 0.012866772591437538,
+          "yaw_rmse": 0.0009111109307610209,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "forward_60": {
+          "vxy_rmse": 0.008215091286808812,
+          "yaw_rmse": 0.0009432933399098947,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "left_arc": {
+          "vxy_rmse": 0.04759634183435041,
+          "yaw_rmse": 0.046720567175235594,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "left_side": {
+          "vxy_rmse": 0.042257217665551974,
+          "yaw_rmse": 0.025842557204716194,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "left_yaw": {
+          "vxy_rmse": 0.03670715410485866,
+          "yaw_rmse": 0.05070655544111424,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "reverse_20": {
+          "vxy_rmse": 0.023059146465300284,
+          "yaw_rmse": 0.0004256962806028115,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "reverse_30": {
+          "vxy_rmse": 0.011793198678274787,
+          "yaw_rmse": 0.0005042600912852262,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "reverse_40": {
+          "vxy_rmse": 0.006373157192291282,
+          "yaw_rmse": 0.0005219874249991844,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "right_arc": {
+          "vxy_rmse": 0.04618216790902216,
+          "yaw_rmse": 0.056185131395224366,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "right_side": {
+          "vxy_rmse": 0.045542053866523366,
+          "yaw_rmse": 0.027408695934282547,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "right_yaw": {
+          "vxy_rmse": 0.03376432774596805,
+          "yaw_rmse": 0.07091577275937966,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        },
+        "stand": {
+          "vxy_rmse": 0.00021930684920490256,
+          "yaw_rmse": 6.657424227540565e-05,
+          "count": 4,
+          "completed": 4,
+          "success": 1.0,
+          "stop_by_1_5": 4
+        }
+      },
+      "vxy_rmse": 0.03099339935885928,
+      "yaw_rmse": 0.034674250950442784
+    },
+    "mixed": {
+      "count": 30,
+      "completed": 30,
+      "success": 1.0,
+      "stop_by_1_5": 28
+    },
+    "stairs": {
+      "stairs_18cm": {
+        "count": 30,
+        "completed": 30,
+        "success": 1.0,
+        "stop_by_1_5": 29
+      },
+      "stairs_20cm": {
+        "count": 30,
+        "completed": 29,
+        "success": 0.9666666666666667,
+        "stop_by_1_5": 29
+      }
+    }
+  },
+  "motion_check": "standing/k110-validation/motion.json",
+  "motion_base_sha256": "40c82285ad750e0e43e0c52997be859cf901a70724b4c4b4e3c67d51ecfee49b",
+  "front_check": "standing/k110-validation/stair.json",
+  "flat_check": "standing/k110-validation/flat.json",
+  "level_check": "standing/k110-validation/level.json",
+  "descent_check": "standing/k110-validation/descent-final.json",
+  "cruise_check": "standing/k110-validation/cruise.json",
+  "stand_check": "standing/k110-validation/stand-final.json"
+}

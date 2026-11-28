@@ -1,0 +1,127 @@
+{
+  "seed": 1124,
+  "supermimic": {
+    "repo": "HybridRobotics/supermimic",
+    "commit": "abc124c1bd5976341034668af3d12c087f2f1f55",
+    "files": [
+      "src/supermimic/learners/wm_learner.py",
+      "src/supermimic/learners/policy_learner.py"
+    ]
+  },
+  "device": "NVIDIA GeForce RTX 5090",
+  "teacher_policies": {
+    "classic": "29d6582cd8febc7dbd1d9bfdabb4023677300d8b7d5a08685809ab43fb489cfb",
+    "stairs": "d7c511f635d96e5f876088312a6bb9c4c0fda0f5c3924117f747611126a37685"
+  },
+  "train": [
+    {
+      "file": "train.npz",
+      "sha256": "7ef4348580eb72e4f18893daa58c71bceb0c44cf878ba6cde7e978a379543d5e",
+      "policy": "teachers",
+      "transitions": 290368,
+      "candidate": null
+    },
+    {
+      "file": "aggregate.npz",
+      "sha256": "5dd4078a7a3d7fc75e396817d50203f422397a3df36872918647d44a5e777339",
+      "policy": "candidate",
+      "transitions": 100541,
+      "candidate": "5725e638c41b59c925027f3d3b7b86e39145e5d548079984cceac134001fb697"
+    },
+    {
+      "file": "front-replay.npz",
+      "sha256": "3ccdab1cf13919ed47ca3a926eba325e065480802aae4f90a013ac06da6bcf99",
+      "policy": "candidate",
+      "transitions": 55623,
+      "candidate": "8bb5e778016ac57aa270d4fc9a55152efc3b823b76a5c96404c03fc0d7ead5b3"
+    }
+  ],
+  "holdout": [
+    {
+      "file": "holdout.npz",
+      "sha256": "685028ee7f111ef2e0f0a89005849ea6ed5f8fa1cf9deda12dbf2b28feebad13",
+      "policy": "teachers",
+      "transitions": 44753,
+      "candidate": null
+    }
+  ],
+  "actor_observation_sizes": [
+    49,
+    245
+  ],
+  "action_size": 16,
+  "initial_drive": 0.16,
+  "phase": "complete",
+  "front_lift": {
+    "legs": [
+      "LF",
+      "RF"
+    ],
+    "reward_weight": 1.35,
+    "riser_windows": {
+      "LF": 136359,
+      "RF": 124637
+    },
+    "base_policy_sha256": "a6e1b995968130b37508b6dd8285463ad9e99d1eaa14f850f622ddba577eaa9f",
+    "imitation_updates": 480
+  },
+  "world_updates": 2600,
+  "world_validation": {
+    "flat": {
+      "h8_twist_rmse": [
+        0.011170967482030392,
+        0.01099186111241579,
+        0.018581509590148926
+      ],
+      "persistence_rmse": [
+        0.058270346373319626,
+        0.02090618573129177,
+        0.05037882924079895
+      ],
+      "h8_height_rmse": 0.000504884694237262,
+      "h8_front_wheel_z_rmse_m": [
+        0.0013440113980323076,
+        0.0012727936264127493
+      ],
+      "wheel_contact_accuracy": 0.9495113492012024
+    },
+    "stairs": {
+      "h8_twist_rmse": [
+        0.027805883437395096,
+        0.022394997999072075,
+        0.05911335349082947
+      ],
+      "persistence_rmse": [
+        0.08394846320152283,
+        0.06282905489206314,
+        0.2027173936367035
+      ],
+      "h8_height_rmse": 0.0021683245431631804,
+      "h8_front_wheel_z_rmse_m": [
+        0.006724635139107704,
+        0.008492591790854931
+      ],
+      "wheel_contact_accuracy": 0.7668113112449646
+    },
+    "mixed": {
+      "h8_twist_rmse": [
+        0.03370717167854309,
+        0.02747403271496296,
+        0.06355329602956772
+      ],
+      "persistence_rmse": [
+        0.08769749104976654,
+        0.0632481649518013,
+        0.2115541696548462
+      ],
+      "h8_height_rmse": 0.002555650193244219,
+      "h8_front_wheel_z_rmse_m": [
+        0.005537029355764389,
+        0.010585431940853596
+      ],
+      "wheel_contact_accuracy": 0.7692516446113586
+    }
+  },
+  "imitation_updates": 0,
+  "actor_updates": 512
+}

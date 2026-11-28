@@ -1,53 +1,28 @@
-# M1 测试说明
+# 平地与楼梯版测试说明
 
-从本实验目录执行。首次安装使用 [启动指南](README.md)。下面的回放使用已随分支交付的
-两份 M1 教师权重和 ASM09 场景。
-
-## 制品校验和动作等价
+在本实验目录创建 [仿真环境](README.md) 后执行。
 
 ~~~bash
-export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 sha256sum -c ASSETS.sha256
-.venv/bin/python tests/check_release.py
-~~~
-
-检查输入 obs [1, 49]、obs_history [1, 245] 和输出 actions [1, 16]。
-固定随机采样后，对比网页图和 ARM 条件图的 3,876 帧转向观测，发布记录的动作最大绝对差
-为 2.38 × 10⁻⁷。直入首阶的 50 组、550 帧动作与实机恢复版一致。
-
-## 仿真回归
-
-~~~bash
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 PY="$PWD/.venv/bin/python"
-N=.runtime/native
-R="$N/contact-turn"
-M="$R/uni-exp-contact-turn.onnx"
+MODEL=.runtime/native/m1-universal-3a27ea5132a1.onnx
 mkdir -p results
-"$PY" native_turn_replay.py "$N/hardware/uni-exp/classic-reference.onnx" \
-  --candidate "$M" --suite final --out results/turns
-"$PY" native_rollout.py --candidate "$M" --suite final --out results/terrain
-"$PY" native_rollout.py --candidate "$M" --suite descent-final --out results/descent
+"$PY" native_rollout.py --candidate "$MODEL" --suite final --out results/terrain
+"$PY" native_rollout.py --candidate "$MODEL" --suite descent-final --out results/descent
 ~~~
 
-用 [发布摘要](.runtime/native/contact-turn/preview-validation.json) 和逐场景日志对照。
-在默认键盘速度用 W+Q、W+E 分别持续转弯，随后只松开转向键。观察左前轮接地、实际角速度
-和松键过渡。反向重复，再确认空格停车、R 复位和方向键相机控制。
+| 测试 | 完成数 |
+| --- | ---: |
+| 平地 | 64/64 |
+| 平地接楼梯混合场景 | 30/30 |
+| 18 厘米上行 | 30/30 |
+| 20 厘米上行 | 29/30 |
+| 18 厘米下行 | 23/24 |
+| 20 厘米下行 | 24/24 |
 
-| 统计 | 旧网页预览 | 当前 |
-| --- | ---: | ---: |
-| W+Q 左前轮离地至少 1 厘米的次数 | 7 | 0 |
-| W+E 左前轮离地至少 1 厘米的次数 | 7 | 3 |
-| 168 个转向场景的左前轮抬起次数 | 361 | 13 |
-| 倒车转弯平均角速度绝对误差 | 0.030 rad/s | 0.059 rad/s |
-| 84 个松转向场景中任一轮离地超过 3 厘米 | 17 | 1 |
+对照 [平地及上行回归](.runtime/native/standing/k110-validation/final.json) 与 [下行回归](.runtime/native/standing/k110-validation/descent-final.json)。两份报告应使用同一个候选 SHA-256，验收字段均为 passed=true。
 
-当前 180 个平地回归场景均完成。18 厘米上行 29/30，20 厘米上行 27/30，
-与实机恢复版的同组回归一致。下行 0/48，其中 38 次越出测试车道，10 次跌倒。
-下行以结果报告的 passed 字段作为验收依据。
+网页手动复测时，选择上行场景后按 W 直入楼梯。下行从场景下拉框选择对应高度，等待复位完成后按 W。最后回到平地复测 W/S、Q/E、空格及方向键。访问 /state 检查 ready、camera 及模型 SHA-256。
 
-## 板端和现场
-
-2026 年 11 月 27 日的 [板端记录](hardware/board-validation.json) 包含 7,481 帧
-离线回放和标准站立切换。切换首帧力矩跳变为 0，平滑交接为 800 ms。
-需要现场复测时，先在平地验证站立、前后低速和停车，再检查左右组合转向及松键。
-记录指令、关节、IMU、轮速、实际速度和角速度。实机与日志入口见 [实机交接](hardware/README.md)。
+本版使用 MuJoCo 计算的地形输入，以上结论适用于仿真。平地转向问题的 180 场专门回归属于前一个分支提交。

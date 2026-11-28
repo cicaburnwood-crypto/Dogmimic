@@ -7,9 +7,8 @@ B2+A3 V24 是本项目的独立任务适配，使用自己的仿真和奖励，�
 
 ## Lightyear Dogmimic
 
-M1 轮足项目的 [启动指南](experiments/m1_locomotion/README.md)、[测试说明](experiments/m1_locomotion/TESTING.md)
-和 [训练复现](experiments/m1_locomotion/TRAINING.md) 位于同一目录。随分支交付的 Uni Exp
-包含平地转向重训权重、ASM09 仿真制品、板端导出、回放数据和部署记录。
+M1 分支当前交付带地形输入的平地与楼梯策略。参见 [启动指南](experiments/m1_locomotion/README.md)、
+[测试说明](experiments/m1_locomotion/TESTING.md) 和 [训练复现](experiments/m1_locomotion/TRAINING.md)。
 
 ## 安装
 

@@ -1,0 +1,578 @@
+{
+  "baseline_sha256": "564816f8ab6819cd8f5c9a9611736b6518a293baf509465f74adc0335edeb7b4",
+  "candidate_sha256": "3a27ea5132a1be524a1aa5d89f95f098a681c1df1ad64c00a5fcc8795a2da02a",
+  "measured_window_s": [
+    6.0,
+    90.0
+  ],
+  "passed": true,
+  "records": [
+    {
+      "route": "flat",
+      "rise_m": 0.0,
+      "seed": 88100,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20479293821946368,
+        "max_height_m": 0.20586024687117543,
+        "settled_drift_m": 0.0002277632635262498,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4171029732224895,
+        "max_height_m": 0.42295898986519753,
+        "settled_drift_m": 0.010457147152489158,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "flat",
+      "rise_m": 0.0,
+      "seed": 88101,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20479071341676092,
+        "max_height_m": 0.20585852518514616,
+        "settled_drift_m": 0.00022774500191107436,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4171028528244297,
+        "max_height_m": 0.4229598325562044,
+        "settled_drift_m": 0.010515796672244462,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "flat",
+      "rise_m": 0.0,
+      "seed": 88102,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20476160312486658,
+        "max_height_m": 0.2057931850395596,
+        "settled_drift_m": 0.00025909306197504115,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4171034970502805,
+        "max_height_m": 0.42295970947864275,
+        "settled_drift_m": 0.010504178738516714,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "forward",
+      "rise_m": 0.0,
+      "seed": 88110,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.2053733196058414,
+        "max_height_m": 0.20640826923204472,
+        "settled_drift_m": 0.00044050537090022346,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4173281352512189,
+        "max_height_m": 0.41989548615703987,
+        "settled_drift_m": 0.014683687034842827,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "forward",
+      "rise_m": 0.0,
+      "seed": 88111,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20537494511230403,
+        "max_height_m": 0.20641039867424335,
+        "settled_drift_m": 0.00043815827173880693,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4173304781216917,
+        "max_height_m": 0.4198984403594314,
+        "settled_drift_m": 0.014718972452416584,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "forward",
+      "rise_m": 0.0,
+      "seed": 88112,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20531318535260995,
+        "max_height_m": 0.20634468211157048,
+        "settled_drift_m": 0.0004226783530737399,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.41737266772344683,
+        "max_height_m": 0.41995536825840907,
+        "settled_drift_m": 0.014765161802537785,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "reverse",
+      "rise_m": 0.0,
+      "seed": 88120,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.2046902113938646,
+        "max_height_m": 0.20579268674197368,
+        "settled_drift_m": 0.00018250085273177364,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.41784391088414913,
+        "max_height_m": 0.42179789960799374,
+        "settled_drift_m": 0.00889085898055092,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "reverse",
+      "rise_m": 0.0,
+      "seed": 88121,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20468715856972786,
+        "max_height_m": 0.20579022073854047,
+        "settled_drift_m": 0.0001831831872709055,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.41783893535472155,
+        "max_height_m": 0.4217826386819353,
+        "settled_drift_m": 0.008615034408213044,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "reverse",
+      "rise_m": 0.0,
+      "seed": 88122,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.2046523878822086,
+        "max_height_m": 0.20572505590877366,
+        "settled_drift_m": 0.00017842476448683283,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.41783890994803935,
+        "max_height_m": 0.42178396848778343,
+        "settled_drift_m": 0.00862518835805566,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "turn",
+      "rise_m": 0.0,
+      "seed": 88130,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.4421400192289027,
+        "max_height_m": 0.4472072599266825,
+        "settled_drift_m": 0.14027741949466346,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4468258971577676,
+        "max_height_m": 0.45492564509273375,
+        "settled_drift_m": 0.013660694960271386,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "turn",
+      "rise_m": 0.0,
+      "seed": 88131,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.4421100501324129,
+        "max_height_m": 0.44718306011528014,
+        "settled_drift_m": 0.14049699558778853,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4468381952121343,
+        "max_height_m": 0.45493935880036857,
+        "settled_drift_m": 0.013628111763946954,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "turn",
+      "rise_m": 0.0,
+      "seed": 88132,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.44208032071789183,
+        "max_height_m": 0.4471644216775699,
+        "settled_drift_m": 0.14287024948795918,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4468103992089205,
+        "max_height_m": 0.45488657582366887,
+        "settled_drift_m": 0.01365814092865487,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "reverse_turn",
+      "rise_m": 0.0,
+      "seed": 88140,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.22362268412173972,
+        "max_height_m": 0.3044372854890547,
+        "settled_drift_m": 0.02867090295110255,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.43075187057554154,
+        "max_height_m": 0.4397131660658656,
+        "settled_drift_m": 0.0002774419097951531,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "reverse_turn",
+      "rise_m": 0.0,
+      "seed": 88141,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.223654645054657,
+        "max_height_m": 0.30467552291073124,
+        "settled_drift_m": 0.02873578318390979,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4307519052794149,
+        "max_height_m": 0.43971318125119463,
+        "settled_drift_m": 0.0002778006839595691,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "reverse_turn",
+      "rise_m": 0.0,
+      "seed": 88142,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.22410571468990156,
+        "max_height_m": 0.30418507312619325,
+        "settled_drift_m": 0.028633917961585223,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4307599035712217,
+        "max_height_m": 0.439711888989936,
+        "settled_drift_m": 0.00028930528457445353,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "upper",
+      "rise_m": 0.18,
+      "seed": 88150,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20479027542548067,
+        "max_height_m": 0.20583892023589145,
+        "settled_drift_m": 0.0002120865288300404,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4164895556115007,
+        "max_height_m": 0.4230025881168964,
+        "settled_drift_m": 0.014626007022776366,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "upper",
+      "rise_m": 0.18,
+      "seed": 88151,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.2048158658618684,
+        "max_height_m": 0.2058467477543351,
+        "settled_drift_m": 0.00012112293162890488,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4164758953736998,
+        "max_height_m": 0.4229948987458263,
+        "settled_drift_m": 0.012215223311118888,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "upper",
+      "rise_m": 0.18,
+      "seed": 88152,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20472133531971526,
+        "max_height_m": 0.20579168214438726,
+        "settled_drift_m": 0.000267506562220081,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.41647605479957006,
+        "max_height_m": 0.4229469438146882,
+        "settled_drift_m": 0.010950014197114975,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "upper",
+      "rise_m": 0.2,
+      "seed": 88160,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.20479787348797496,
+        "max_height_m": 0.20583156245874612,
+        "settled_drift_m": 0.00011938503815151875,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4164811541860902,
+        "max_height_m": 0.42298591175175293,
+        "settled_drift_m": 0.014291992538403821,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "upper",
+      "rise_m": 0.2,
+      "seed": 88161,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.2048152911016352,
+        "max_height_m": 0.2058331899523047,
+        "settled_drift_m": 9.361493872949403e-05,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.41647846212381445,
+        "max_height_m": 0.42299594515415384,
+        "settled_drift_m": 0.012138459583667952,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "upper",
+      "rise_m": 0.2,
+      "seed": 88162,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.2047188116364662,
+        "max_height_m": 0.20577663749095176,
+        "settled_drift_m": 0.00013459328735036623,
+        "trunk_contact": false,
+        "passed": false
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4164775186973033,
+        "max_height_m": 0.4229470117651939,
+        "settled_drift_m": 0.010748393971315303,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "descent",
+      "rise_m": 0.18,
+      "seed": 88170,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.4618005668491494,
+        "max_height_m": 0.46390631524962045,
+        "settled_drift_m": 0.6415521975750809,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4613273164033988,
+        "max_height_m": 0.46615834096750214,
+        "settled_drift_m": 0.1634081304267459,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "descent",
+      "rise_m": 0.18,
+      "seed": 88171,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.45183397973951567,
+        "max_height_m": 0.45393957997578893,
+        "settled_drift_m": 0.7888626441319019,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4503037933071647,
+        "max_height_m": 0.4541477184927892,
+        "settled_drift_m": 0.05178568929908126,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "descent",
+      "rise_m": 0.18,
+      "seed": 88172,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.4523247385383294,
+        "max_height_m": 0.45473480231436975,
+        "settled_drift_m": 0.7880360305594744,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4500197037224432,
+        "max_height_m": 0.45393936095790205,
+        "settled_drift_m": 0.05234235128304038,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "descent",
+      "rise_m": 0.2,
+      "seed": 88180,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.4523098801019967,
+        "max_height_m": 0.45570372894630234,
+        "settled_drift_m": 0.2972506454835105,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.44893947278782614,
+        "max_height_m": 0.45321375486779236,
+        "settled_drift_m": 0.057163052898246254,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "descent",
+      "rise_m": 0.2,
+      "seed": 88181,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.4520822501380156,
+        "max_height_m": 0.45416973839804065,
+        "settled_drift_m": 0.7917887081128946,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.45034277215058455,
+        "max_height_m": 0.45417731006271267,
+        "settled_drift_m": 0.04841851207023235,
+        "trunk_contact": false,
+        "passed": true
+      }
+    },
+    {
+      "route": "descent",
+      "rise_m": 0.2,
+      "seed": 88182,
+      "before": {
+        "completed": true,
+        "min_height_m": 0.45223793841622917,
+        "max_height_m": 0.45442439913415245,
+        "settled_drift_m": 0.7881500315826551,
+        "trunk_contact": false,
+        "passed": true
+      },
+      "after": {
+        "completed": true,
+        "min_height_m": 0.4504129393905136,
+        "max_height_m": 0.45427186061598035,
+        "settled_drift_m": 0.05119893065545274,
+        "trunk_contact": false,
+        "passed": true
+      }
+    }
+  ]
+}

@@ -1,6 +1,4 @@
 /.runtime/deps/
-/.runtime/m20s-min/
 /.runtime/native/view/
-/.runtime/native/contact-turn/repro-*/
 /results/
 /training-runs/

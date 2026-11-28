@@ -1,0 +1,1033 @@
+{
+  "baseline_sha256": "7392d8efd26f530d01fd961a0592f2306ea7864f4d9e0432f30d4f6d05bb60fb",
+  "candidate_sha256": "3a27ea5132a1be524a1aa5d89f95f098a681c1df1ad64c00a5fcc8795a2da02a",
+  "steady_window_s": [
+    4.8,
+    15.8
+  ],
+  "summary": {
+    "level": {
+      "before": {
+        "count": 12,
+        "completed": 12,
+        "height_range_m": {
+          "median": 0.00039317145801312514,
+          "p90": 0.000551844221240666
+        },
+        "speed_std_mps": {
+          "median": 0.0009163971535387436,
+          "p90": 0.001112956915291164
+        },
+        "speed_90_span_mps": {
+          "median": 0.0030357458091701123,
+          "p90": 0.0036703835376297846
+        },
+        "speed_mean_error_mps": {
+          "median": 0.005264775687676915,
+          "p90": 0.040071661229903625
+        }
+      },
+      "after": {
+        "count": 12,
+        "completed": 12,
+        "height_range_m": {
+          "median": 0.00036871076347849696,
+          "p90": 0.0005270897071288583
+        },
+        "speed_std_mps": {
+          "median": 0.0009090072775360722,
+          "p90": 0.0010857771813127764
+        },
+        "speed_90_span_mps": {
+          "median": 0.00303527516259397,
+          "p90": 0.003658127697897773
+        },
+        "speed_mean_error_mps": {
+          "median": 0.006060821207866801,
+          "p90": 0.04199471447780001
+        }
+      }
+    },
+    "down_to_level": {
+      "before": {
+        "count": 24,
+        "completed": 24,
+        "height_range_m": {
+          "median": 0.0225051528537126,
+          "p90": 0.02421377695301547
+        },
+        "speed_std_mps": {
+          "median": 0.03468186341077606,
+          "p90": 0.0471357982356031
+        },
+        "speed_90_span_mps": {
+          "median": 0.10839263966927076,
+          "p90": 0.1400610014163546
+        },
+        "speed_mean_error_mps": {
+          "median": 0.007569990506925528,
+          "p90": 0.008531945800013036
+        }
+      },
+      "after": {
+        "count": 24,
+        "completed": 24,
+        "height_range_m": {
+          "median": 0.001709496866552862,
+          "p90": 0.004813696194149147
+        },
+        "speed_std_mps": {
+          "median": 0.001183133794142516,
+          "p90": 0.0019887646759345814
+        },
+        "speed_90_span_mps": {
+          "median": 0.003972065056988994,
+          "p90": 0.006320154009292182
+        },
+        "speed_mean_error_mps": {
+          "median": 0.007840285562881383,
+          "p90": 0.008415277984752573
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80401,
+      "target_mps": 0.2,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0003668080553356212,
+        "speed_std_mps": 0.0008470085603463008,
+        "speed_mean_mps": 0.19714658388471276,
+        "speed_90_span_mps": 0.0027484692658181487,
+        "speed_mean_error_mps": 0.0028534161152872495
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0006197346609101984,
+        "speed_std_mps": 0.0008357537839767232,
+        "speed_mean_mps": 0.19685479318476923,
+        "speed_90_span_mps": 0.0027264383076871512,
+        "speed_mean_error_mps": 0.0031452068152307833
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80401,
+      "target_mps": 0.4,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0004314498837637015,
+        "speed_std_mps": 0.0008918125471389949,
+        "speed_mean_mps": 0.3961840335219158,
+        "speed_90_span_mps": 0.002893428362392758,
+        "speed_mean_error_mps": 0.003815966478084243
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0003356859646435617,
+        "speed_std_mps": 0.0008872323758219938,
+        "speed_mean_mps": 0.39573120873403284,
+        "speed_90_span_mps": 0.0029694028346736734,
+        "speed_mean_error_mps": 0.004268791265967187
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80401,
+      "target_mps": 0.6,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0005903378584992125,
+        "speed_std_mps": 0.0012656962030820349,
+        "speed_mean_mps": 0.5944618799410333,
+        "speed_90_span_mps": 0.004021028059003395,
+        "speed_mean_error_mps": 0.0055381200589667
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.00045326009115798094,
+        "speed_std_mps": 0.001094140823307982,
+        "speed_mean_mps": 0.5941470685580651,
+        "speed_90_span_mps": 0.003696139695991141,
+        "speed_mean_error_mps": 0.005852931441934883
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80401,
+      "target_mps": -0.2,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.00035899233628300387,
+        "speed_std_mps": 0.0008803903437971785,
+        "speed_mean_mps": -0.22181493752806658,
+        "speed_90_span_mps": 0.0029920047290640517,
+        "speed_mean_error_mps": 0.02181493752806657
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.00028741876658960885,
+        "speed_std_mps": 0.0008661944744170497,
+        "speed_mean_mps": -0.22261349643258418,
+        "speed_90_span_mps": 0.0028869890542483345,
+        "speed_mean_error_mps": 0.022613496432584174
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80401,
+      "target_mps": -0.4,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.00041953486069062906,
+        "speed_std_mps": 0.0009456493606670287,
+        "speed_mean_mps": -0.3950085686836129,
+        "speed_90_span_mps": 0.003103759963894115,
+        "speed_mean_error_mps": 0.004991431316387129
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0003740643957951262,
+        "speed_std_mps": 0.0011726739235055734,
+        "speed_mean_mps": -0.3938344883468407,
+        "speed_90_span_mps": 0.003752312488298881,
+        "speed_mean_error_mps": 0.006165511653159317
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80401,
+      "target_mps": -0.6,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0003512233235120066,
+        "speed_std_mps": 0.0010177797865365717,
+        "speed_mean_mps": -0.5579223190029209,
+        "speed_90_span_mps": 0.0033350747467593145,
+        "speed_mean_error_mps": 0.04207768099707909
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.00036335713116186774,
+        "speed_std_mps": 0.0010105044033559254,
+        "speed_mean_mps": -0.5558518168505093,
+        "speed_90_span_mps": 0.003316019715057461,
+        "speed_mean_error_mps": 0.04414818314949065
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80407,
+      "target_mps": 0.2,
+      "yaw_rad": 3.101592653589793,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0005046986417490684,
+        "speed_std_mps": 0.0008082211461233758,
+        "speed_mean_mps": 0.19694550419887344,
+        "speed_90_span_mps": 0.0027344908838960735,
+        "speed_mean_error_mps": 0.003054495801126572
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0004934531150179167,
+        "speed_std_mps": 0.0007720188809728131,
+        "speed_mean_mps": 0.19673688122548535,
+        "speed_90_span_mps": 0.0025418642345638176,
+        "speed_mean_error_mps": 0.003263118774514656
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80407,
+      "target_mps": 0.4,
+      "yaw_rad": 3.101592653589793,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0005534132373902767,
+        "speed_std_mps": 0.0008172500270770865,
+        "speed_mean_mps": 0.3959815866928095,
+        "speed_90_span_mps": 0.0026083210454935224,
+        "speed_mean_error_mps": 0.004018413307190549
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0004671613516638029,
+        "speed_std_mps": 0.0007924805156546935,
+        "speed_mean_mps": 0.39570284359012364,
+        "speed_90_span_mps": 0.002659761836139085,
+        "speed_mean_error_mps": 0.004297156409876379
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80407,
+      "target_mps": 0.6,
+      "yaw_rad": 3.101592653589793,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0005377230758941698,
+        "speed_std_mps": 0.001123532151819452,
+        "speed_mean_mps": 0.5944244316032793,
+        "speed_90_span_mps": 0.0037076400699487255,
+        "speed_mean_error_mps": 0.005575568396720687
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0005308271062522962,
+        "speed_std_mps": 0.0009702018598858149,
+        "speed_mean_mps": 0.5940438692374257,
+        "speed_90_span_mps": 0.0031022448203490427,
+        "speed_mean_error_mps": 0.005956130762574285
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80407,
+      "target_mps": -0.2,
+      "yaw_rad": 3.101592653589793,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.00032945530326522476,
+        "speed_std_mps": 0.0008686621019007817,
+        "speed_mean_mps": -0.22241557429027997,
+        "speed_90_span_mps": 0.0028120141884592775,
+        "speed_mean_error_mps": 0.02241557429027996
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0002658831143469431,
+        "speed_std_mps": 0.000847874209961561,
+        "speed_mean_mps": -0.22197579899539144,
+        "speed_90_span_mps": 0.002761442785953222,
+        "speed_mean_error_mps": 0.021975798995391427
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80407,
+      "target_mps": -0.4,
+      "yaw_rad": 3.101592653589793,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0003435901336574232,
+        "speed_std_mps": 0.0009409817599384921,
+        "speed_mean_mps": -0.3953112892917804,
+        "speed_90_span_mps": 0.003079486889276173,
+        "speed_mean_error_mps": 0.004688710708219634
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.00028794349035043965,
+        "speed_std_mps": 0.0009307821792501506,
+        "speed_mean_mps": -0.39367590467693725,
+        "speed_90_span_mps": 0.0031011474905142666,
+        "speed_mean_error_mps": 0.006324095323062773
+      }
+    },
+    {
+      "route": "level",
+      "rise_m": 0.0,
+      "seed": 80407,
+      "target_mps": -0.6,
+      "yaw_rad": 3.101592653589793,
+      "start_lateral_m": 0.0,
+      "before": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0003381699935112725,
+        "speed_std_mps": 0.000972865295746375,
+        "speed_mean_mps": -0.5579665513323604,
+        "speed_90_span_mps": 0.003180148081372125,
+        "speed_mean_error_mps": 0.042033448667639584
+      },
+      "after": {
+        "completed": true,
+        "time_s": 17.0,
+        "height_range_m": 0.0002788249377657648,
+        "speed_std_mps": 0.0009784177608303905,
+        "speed_mean_mps": -0.5554911843752323,
+        "speed_90_span_mps": 0.003225022494063645,
+        "speed_mean_error_mps": 0.04450881562476772
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82800,
+      "target_mps": 0.36,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.075,
+      "before": {
+        "completed": true,
+        "time_s": 34.800000000000004,
+        "height_range_m": 0.019484731569362757,
+        "speed_std_mps": 0.047578406674601594,
+        "speed_mean_mps": 0.35295022745094934,
+        "speed_90_span_mps": 0.13944366672577835,
+        "speed_mean_error_mps": 0.007049772549050648
+      },
+      "after": {
+        "completed": true,
+        "time_s": 34.78,
+        "height_range_m": 0.0028161192302657567,
+        "speed_std_mps": 0.0011177984939683369,
+        "speed_mean_mps": 0.35912762497715794,
+        "speed_90_span_mps": 0.0037445471254273777,
+        "speed_mean_error_mps": 0.0008723750228420424
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82801,
+      "target_mps": 0.4,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.075,
+      "before": {
+        "completed": true,
+        "time_s": 32.28,
+        "height_range_m": 0.023211525056331506,
+        "speed_std_mps": 0.035861947919040946,
+        "speed_mean_mps": 0.39302592164271904,
+        "speed_90_span_mps": 0.11145844498323576,
+        "speed_mean_error_mps": 0.006974078357280977
+      },
+      "after": {
+        "completed": true,
+        "time_s": 32.28,
+        "height_range_m": 0.0011344435040008816,
+        "speed_std_mps": 0.0011745462913806495,
+        "speed_mean_mps": 0.3918027397839245,
+        "speed_90_span_mps": 0.0039734253375331985,
+        "speed_mean_error_mps": 0.00819726021607553
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82802,
+      "target_mps": 0.44,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.075,
+      "before": {
+        "completed": true,
+        "time_s": 30.400000000000002,
+        "height_range_m": 0.023505983795792884,
+        "speed_std_mps": 0.031201515037428393,
+        "speed_mean_mps": 0.43150207975845206,
+        "speed_90_span_mps": 0.10028747009441585,
+        "speed_mean_error_mps": 0.00849792024154794
+      },
+      "after": {
+        "completed": true,
+        "time_s": 30.400000000000002,
+        "height_range_m": 0.001478146443826045,
+        "speed_std_mps": 0.0012479482323955052,
+        "speed_mean_mps": 0.4316510732122481,
+        "speed_90_span_mps": 0.004205457706326299,
+        "speed_mean_error_mps": 0.008348926787751898
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82803,
+      "target_mps": 0.36,
+      "yaw_rad": 0.039,
+      "start_lateral_m": -0.12,
+      "before": {
+        "completed": true,
+        "time_s": 35.2,
+        "height_range_m": 0.00845543614644495,
+        "speed_std_mps": 0.004380203473239222,
+        "speed_mean_mps": 0.3523352675819387,
+        "speed_90_span_mps": 0.013301105360226106,
+        "speed_mean_error_mps": 0.00766473241806126
+      },
+      "after": {
+        "completed": true,
+        "time_s": 34.96,
+        "height_range_m": 0.0010822396998514394,
+        "speed_std_mps": 0.0013276562937249074,
+        "speed_mean_mps": 0.35885918874424677,
+        "speed_90_span_mps": 0.004362658890106563,
+        "speed_mean_error_mps": 0.0011408112557532157
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82804,
+      "target_mps": 0.4,
+      "yaw_rad": 0.039,
+      "start_lateral_m": -0.12,
+      "before": {
+        "completed": true,
+        "time_s": 32.74,
+        "height_range_m": 0.0481603233028387,
+        "speed_std_mps": 0.02560966787582124,
+        "speed_mean_mps": 0.4020929695074108,
+        "speed_90_span_mps": 0.08455864588786727,
+        "speed_mean_error_mps": 0.00209296950741078
+      },
+      "after": {
+        "completed": true,
+        "time_s": 32.74,
+        "height_range_m": 0.0049684274490707225,
+        "speed_std_mps": 0.00439170081144744,
+        "speed_mean_mps": 0.39506444376875754,
+        "speed_90_span_mps": 0.01273049989718228,
+        "speed_mean_error_mps": 0.004935556231242477
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82805,
+      "target_mps": 0.44,
+      "yaw_rad": 0.039,
+      "start_lateral_m": -0.12,
+      "before": {
+        "completed": true,
+        "time_s": 30.8,
+        "height_range_m": 0.022335870270421554,
+        "speed_std_mps": 0.03131605315490601,
+        "speed_mean_mps": 0.43292690055302585,
+        "speed_90_span_mps": 0.09646301569050775,
+        "speed_mean_error_mps": 0.0070730994469741515
+      },
+      "after": {
+        "completed": true,
+        "time_s": 30.86,
+        "height_range_m": 0.044203338739933706,
+        "speed_std_mps": 0.003812119315595801,
+        "speed_mean_mps": 0.43457633553896885,
+        "speed_90_span_mps": 0.013262346235202171,
+        "speed_mean_error_mps": 0.005423664461031152
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82806,
+      "target_mps": 0.36,
+      "yaw_rad": -0.065,
+      "start_lateral_m": 0.14,
+      "before": {
+        "completed": true,
+        "time_s": 35.160000000000004,
+        "height_range_m": 0.01751212110556627,
+        "speed_std_mps": 0.052086932008983185,
+        "speed_mean_mps": 0.3525247514042102,
+        "speed_90_span_mps": 0.1526022916007121,
+        "speed_mean_error_mps": 0.007475248595789796
+      },
+      "after": {
+        "completed": true,
+        "time_s": 35.18,
+        "height_range_m": 0.002332317132581918,
+        "speed_std_mps": 0.0012235157060777138,
+        "speed_mean_mps": 0.35867896852754855,
+        "speed_90_span_mps": 0.003993176415719002,
+        "speed_mean_error_mps": 0.0013210314724514394
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82807,
+      "target_mps": 0.4,
+      "yaw_rad": -0.065,
+      "start_lateral_m": 0.14,
+      "before": {
+        "completed": true,
+        "time_s": 32.480000000000004,
+        "height_range_m": 0.02267443543700365,
+        "speed_std_mps": 0.03426318010714632,
+        "speed_mean_mps": 0.3929940663891012,
+        "speed_90_span_mps": 0.1076387148556579,
+        "speed_mean_error_mps": 0.007005933610898796
+      },
+      "after": {
+        "completed": true,
+        "time_s": 32.52,
+        "height_range_m": 0.0011327565194300115,
+        "speed_std_mps": 0.0011822914971427,
+        "speed_mean_mps": 0.3918665230105746,
+        "speed_90_span_mps": 0.003819049864042301,
+        "speed_mean_error_mps": 0.008133476989425403
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82808,
+      "target_mps": 0.44,
+      "yaw_rad": -0.065,
+      "start_lateral_m": 0.14,
+      "before": {
+        "completed": true,
+        "time_s": 30.560000000000002,
+        "height_range_m": 0.023808905805072444,
+        "speed_std_mps": 0.026351916570519777,
+        "speed_mean_mps": 0.4316437386701515,
+        "speed_90_span_mps": 0.08869121434657512,
+        "speed_mean_error_mps": 0.008356261329848513
+      },
+      "after": {
+        "completed": true,
+        "time_s": 30.560000000000002,
+        "height_range_m": 0.0019278243135323891,
+        "speed_std_mps": 0.0009693829707837783,
+        "speed_mean_mps": 0.43173465236593733,
+        "speed_90_span_mps": 0.0030758195025663015,
+        "speed_mean_error_mps": 0.00826534763406267
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82809,
+      "target_mps": 0.36,
+      "yaw_rad": 0.083,
+      "start_lateral_m": 0.06,
+      "before": {
+        "completed": true,
+        "time_s": 34.54,
+        "height_range_m": 0.020608396111567062,
+        "speed_std_mps": 0.044569931495963264,
+        "speed_mean_mps": 0.3526035565442775,
+        "speed_90_span_mps": 0.13234978183640245,
+        "speed_mean_error_mps": 0.00739644345572249
+      },
+      "after": {
+        "completed": true,
+        "time_s": 34.58,
+        "height_range_m": 0.0030120531998837907,
+        "speed_std_mps": 0.0012418087713738232,
+        "speed_mean_mps": 0.35912885825193686,
+        "speed_90_span_mps": 0.00399499537229131,
+        "speed_mean_error_mps": 0.0008711417480631312
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82810,
+      "target_mps": 0.4,
+      "yaw_rad": 0.083,
+      "start_lateral_m": 0.06,
+      "before": {
+        "completed": true,
+        "time_s": 32.14,
+        "height_range_m": 0.022757060097293502,
+        "speed_std_mps": 0.03870336801732423,
+        "speed_mean_mps": 0.3932053126532782,
+        "speed_90_span_mps": 0.11753362816020152,
+        "speed_mean_error_mps": 0.006794687346721839
+      },
+      "after": {
+        "completed": true,
+        "time_s": 32.08,
+        "height_range_m": 0.0015424399241429354,
+        "speed_std_mps": 0.00118162017264199,
+        "speed_mean_mps": 0.39236889822958937,
+        "speed_90_span_mps": 0.0038580017993183335,
+        "speed_mean_error_mps": 0.007631101770410653
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.18,
+      "seed": 82811,
+      "target_mps": 0.44,
+      "yaw_rad": 0.083,
+      "start_lateral_m": 0.06,
+      "before": {
+        "completed": true,
+        "time_s": 30.34,
+        "height_range_m": 0.023945478907391793,
+        "speed_std_mps": 0.030903148681021054,
+        "speed_mean_mps": 0.4315047841368875,
+        "speed_90_span_mps": 0.10061336828572831,
+        "speed_mean_error_mps": 0.008495215863112526
+      },
+      "after": {
+        "completed": true,
+        "time_s": 30.36,
+        "height_range_m": 0.0010233003483507974,
+        "speed_std_mps": 0.0011393563662037282,
+        "speed_mean_mps": 0.43164669075134987,
+        "speed_90_span_mps": 0.003716895291382527,
+        "speed_mean_error_mps": 0.008353309248650131
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83000,
+      "target_mps": 0.36,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.075,
+      "before": {
+        "completed": true,
+        "time_s": 36.22,
+        "height_range_m": 0.02058280004689722,
+        "speed_std_mps": 0.04389046576038089,
+        "speed_mean_mps": 0.35211039146614637,
+        "speed_90_span_mps": 0.13243506109185288,
+        "speed_mean_error_mps": 0.00788960853385362
+      },
+      "after": {
+        "completed": true,
+        "time_s": 36.22,
+        "height_range_m": 0.005092955620572881,
+        "speed_std_mps": 0.0022519582022541996,
+        "speed_mean_mps": 0.354760643523441,
+        "speed_90_span_mps": 0.007120822954252037,
+        "speed_mean_error_mps": 0.005239356476558987
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83001,
+      "target_mps": 0.4,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.075,
+      "before": {
+        "completed": true,
+        "time_s": 33.1,
+        "height_range_m": 0.02320743996266189,
+        "speed_std_mps": 0.03510054671440581,
+        "speed_mean_mps": 0.39297239169536774,
+        "speed_90_span_mps": 0.10934948769277497,
+        "speed_mean_error_mps": 0.007027608304632282
+      },
+      "after": {
+        "completed": true,
+        "time_s": 33.160000000000004,
+        "height_range_m": 0.0013481189918187475,
+        "speed_std_mps": 0.0011530537419148531,
+        "speed_mean_mps": 0.3918045836095474,
+        "speed_90_span_mps": 0.0036591319052021176,
+        "speed_mean_error_mps": 0.008195416390452626
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83002,
+      "target_mps": 0.44,
+      "yaw_rad": 0.0,
+      "start_lateral_m": 0.075,
+      "before": {
+        "completed": true,
+        "time_s": 31.060000000000002,
+        "height_range_m": 0.024294146129609673,
+        "speed_std_mps": 0.0287405171424539,
+        "speed_mean_mps": 0.4314889615345223,
+        "speed_90_span_mps": 0.09435266122577912,
+        "speed_mean_error_mps": 0.008511038465477683
+      },
+      "after": {
+        "completed": true,
+        "time_s": 31.02,
+        "height_range_m": 0.0012632227176080923,
+        "speed_std_mps": 0.0012818655800774061,
+        "speed_mean_mps": 0.43155816398548924,
+        "speed_90_span_mps": 0.004067154606450518,
+        "speed_mean_error_mps": 0.008441836014510762
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83003,
+      "target_mps": 0.36,
+      "yaw_rad": 0.039,
+      "start_lateral_m": -0.12,
+      "before": {
+        "completed": true,
+        "time_s": 37.0,
+        "height_range_m": 0.014441837654419809,
+        "speed_std_mps": 0.018189770496916075,
+        "speed_mean_mps": 0.371226200627371,
+        "speed_90_span_mps": 0.05348937577382523,
+        "speed_mean_error_mps": 0.011226200627371008
+      },
+      "after": {
+        "completed": true,
+        "time_s": 36.5,
+        "height_range_m": 0.0037811345185361778,
+        "speed_std_mps": 0.0011774183395227584,
+        "speed_mean_mps": 0.36010274142859533,
+        "speed_90_span_mps": 0.003889221497395512,
+        "speed_mean_error_mps": 0.00010274142859534319
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83004,
+      "target_mps": 0.4,
+      "yaw_rad": 0.039,
+      "start_lateral_m": -0.12,
+      "before": {
+        "completed": true,
+        "time_s": 33.9,
+        "height_range_m": 0.021026338624543728,
+        "speed_std_mps": 0.046103045211273286,
+        "speed_mean_mps": 0.39145909391375755,
+        "speed_90_span_mps": 0.14032557342660157,
+        "speed_mean_error_mps": 0.008540906086242472
+      },
+      "after": {
+        "completed": true,
+        "time_s": 33.88,
+        "height_range_m": 0.0008680792463853781,
+        "speed_std_mps": 0.0012552081849133397,
+        "speed_mean_mps": 0.3919505306446479,
+        "speed_90_span_mps": 0.004175181684368812,
+        "speed_mean_error_mps": 0.008049469355352112
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83005,
+      "target_mps": 0.44,
+      "yaw_rad": 0.039,
+      "start_lateral_m": -0.12,
+      "before": {
+        "completed": true,
+        "time_s": 31.88,
+        "height_range_m": 0.019931504627333674,
+        "speed_std_mps": 0.006345170776466321,
+        "speed_mean_mps": 0.4310342751751916,
+        "speed_90_span_mps": 0.01609748935443478,
+        "speed_mean_error_mps": 0.008965724824808396
+      },
+      "after": {
+        "completed": true,
+        "time_s": 31.78,
+        "height_range_m": 0.001984901360809199,
+        "speed_std_mps": 0.001131536568632366,
+        "speed_mean_mps": 0.431212648612943,
+        "speed_90_span_mps": 0.003742497113702059,
+        "speed_mean_error_mps": 0.008787351387056996
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83006,
+      "target_mps": 0.36,
+      "yaw_rad": -0.065,
+      "start_lateral_m": 0.14,
+      "before": {
+        "completed": true,
+        "time_s": 36.74,
+        "height_range_m": 0.01947058153189868,
+        "speed_std_mps": 0.047613374118710396,
+        "speed_mean_mps": 0.3516308539699779,
+        "speed_90_span_mps": 0.14225564994505413,
+        "speed_mean_error_mps": 0.00836914603002209
+      },
+      "after": {
+        "completed": true,
+        "time_s": 36.800000000000004,
+        "height_range_m": 0.0012908556707471042,
+        "speed_std_mps": 0.001183976091142332,
+        "speed_mean_mps": 0.35285637266395664,
+        "speed_90_span_mps": 0.0038844151938506877,
+        "speed_mean_error_mps": 0.0071436273360433455
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83007,
+      "target_mps": 0.4,
+      "yaw_rad": -0.065,
+      "start_lateral_m": 0.14,
+      "before": {
+        "completed": true,
+        "time_s": 33.3,
+        "height_range_m": 0.02227715636530936,
+        "speed_std_mps": 0.038176682512437235,
+        "speed_mean_mps": 0.39326596910255124,
+        "speed_90_span_mps": 0.11804470702550857,
+        "speed_mean_error_mps": 0.006734030897448784
+      },
+      "after": {
+        "completed": true,
+        "time_s": 33.26,
+        "height_range_m": 0.0011887039041541536,
+        "speed_std_mps": 0.0011663504596296885,
+        "speed_mean_mps": 0.3919368254744576,
+        "speed_90_span_mps": 0.003970704776444789,
+        "speed_mean_error_mps": 0.00806317452554245
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83008,
+      "target_mps": 0.44,
+      "yaw_rad": -0.065,
+      "start_lateral_m": 0.14,
+      "before": {
+        "completed": true,
+        "time_s": 31.14,
+        "height_range_m": 0.024026248874295664,
+        "speed_std_mps": 0.024339254936285293,
+        "speed_mean_mps": 0.4317967349116193,
+        "speed_90_span_mps": 0.08214693736816292,
+        "speed_mean_error_mps": 0.008203265088380707
+      },
+      "after": {
+        "completed": true,
+        "time_s": 31.2,
+        "height_range_m": 0.0018765538089627887,
+        "speed_std_mps": 0.0011228683864594495,
+        "speed_mean_mps": 0.4317154254401807,
+        "speed_90_span_mps": 0.0036822555831417803,
+        "speed_mean_error_mps": 0.008284574559819291
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83009,
+      "target_mps": 0.36,
+      "yaw_rad": 0.083,
+      "start_lateral_m": 0.06,
+      "before": {
+        "completed": true,
+        "time_s": 35.9,
+        "height_range_m": 0.021203209993811534,
+        "speed_std_mps": 0.042897183615967796,
+        "speed_mean_mps": 0.35253791705318344,
+        "speed_90_span_mps": 0.12924271982710706,
+        "speed_mean_error_mps": 0.007462082946816551
+      },
+      "after": {
+        "completed": true,
+        "time_s": 36.0,
+        "height_range_m": 0.004452656599332139,
+        "speed_std_mps": 0.0013507573063789816,
+        "speed_mean_mps": 0.35863144345018977,
+        "speed_90_span_mps": 0.004405230882946698,
+        "speed_mean_error_mps": 0.0013685565498102181
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83010,
+      "target_mps": 0.4,
+      "yaw_rad": 0.083,
+      "start_lateral_m": 0.06,
+      "before": {
+        "completed": true,
+        "time_s": 32.92,
+        "height_range_m": 0.0239329254570122,
+        "speed_std_mps": 0.03518456780674783,
+        "speed_mean_mps": 0.3926166878197242,
+        "speed_90_span_mps": 0.10914656448288362,
+        "speed_mean_error_mps": 0.007383312180275825
+      },
+      "after": {
+        "completed": true,
+        "time_s": 32.96,
+        "height_range_m": 0.002112021447987278,
+        "speed_std_mps": 0.0013746464478554745,
+        "speed_mean_mps": 0.39237434395396703,
+        "speed_90_span_mps": 0.004451926471052525,
+        "speed_mean_error_mps": 0.007625656046032991
+      }
+    },
+    {
+      "route": "down_to_level",
+      "rise_m": 0.2,
+      "seed": 83011,
+      "target_mps": 0.44,
+      "yaw_rad": 0.083,
+      "start_lateral_m": 0.06,
+      "before": {
+        "completed": true,
+        "time_s": 31.02,
+        "height_range_m": 0.02443673594805784,
+        "speed_std_mps": 0.028758315044662464,
+        "speed_mean_mps": 0.4317432026653347,
+        "speed_90_span_mps": 0.09392992080270113,
+        "speed_mean_error_mps": 0.008256797334665278
+      },
+      "after": {
+        "completed": true,
+        "time_s": 31.060000000000002,
+        "height_range_m": 0.000849535754122499,
+        "speed_std_mps": 0.0009423408690815552,
+        "speed_mean_mps": 0.4313264006963473,
+        "speed_90_span_mps": 0.003194606666291455,
+        "speed_mean_error_mps": 0.00867359930365269
+      }
+    }
+  ],
+  "passed": true
+}

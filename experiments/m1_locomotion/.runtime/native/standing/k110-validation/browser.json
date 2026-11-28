@@ -1,0 +1,17 @@
+{
+  "page": {
+    "title": "M1 轮足仿真",
+    "camera": 768
+  },
+  "flat_after_keyup": {
+    "sim_time_s": 28.139999999984152,
+    "min_z_m": 0.41872414246934564,
+    "max_z_m": 0.41964911819977235,
+    "max_speed_mps": 0.0001260004619726237
+  },
+  "forward_mps": 0.4002155426325292,
+  "reverse_mps": -0.4263778567760549,
+  "final_scene": "descend-20",
+  "sha256": "3a27ea5132a1be524a1aa5d89f95f098a681c1df1ad64c00a5fcc8795a2da02a",
+  "camera_frame": 807
+}
