@@ -1,0 +1,27 @@
+[Unit]
+Description=M1 local controller debug recorder
+After=systemd-journald.service
+
+[Service]
+Type=simple
+User=m1
+Group=m1
+SupplementaryGroups=systemd-journal
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /usr/local/libexec/dogmimic-m1-debug-logger.py
+LogsDirectory=dogmimic-m1
+LogsDirectoryMode=0750
+UMask=0027
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=12
+Nice=10
+IOSchedulingClass=idle
+PrivateNetwork=yes
+RestrictAddressFamilies=AF_UNIX
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,65 @@
+{
+  "phase": "complete",
+  "seed": 271132,
+  "supermimic": {
+    "repo": "HybridRobotics/supermimic",
+    "commit": "abc124c1bd5976341034668af3d12c087f2f1f55",
+    "files": [
+      "src/supermimic/learners/wm_learner.py",
+      "src/supermimic/learners/policy_learner.py"
+    ]
+  },
+  "device": "NVIDIA GeForce RTX 5090",
+  "classic_initializer_sha256": "6537415051c355274722a5c86c2dc81087c7480ce766ac62510f7544ff0f3dd1",
+  "train": [
+    {
+      "file": "flat-train.npz",
+      "sha256": "fa09ac9ad077196f5cc38c470e6e81bdf54f43537fc92004ebcb5f686a3a69bf",
+      "policy": "hardware_classic",
+      "transitions": 66500,
+      "candidate": null,
+      "guidance": null
+    }
+  ],
+  "holdout": [
+    {
+      "file": "flat-holdout.npz",
+      "sha256": "597072fad77a9adfc324bea9e90a543c9f0a8573cdd353f01245e6aa7457d435",
+      "policy": "hardware_classic",
+      "transitions": 33250,
+      "candidate": null,
+      "guidance": null
+    }
+  ],
+  "objectives": [
+    "Classic trunk COM height",
+    "Classic leg pose",
+    "vertical speed",
+    "leg rate",
+    "leg action slew",
+    "command tracking"
+  ],
+  "updated_parameters": [
+    "actor_critic.actor.4.weight",
+    "actor_critic.actor.4.bias",
+    "actor_critic.actor.6.weight",
+    "actor_critic.actor.6.bias"
+  ],
+  "world_updates": 960,
+  "world_holdout": {
+    "twist_rmse": [
+      0.008882039226591587,
+      0.015058361925184727,
+      0.015407298691570759
+    ],
+    "base_height_rmse_m": 0.0005749714910052717
+  },
+  "imitation_updates": 320,
+  "actor_updates": 192,
+  "parameter_change_l2": {
+    "actor_critic.actor.4.weight": 0.36468201875686646,
+    "actor_critic.actor.4.bias": 0.012963946908712387,
+    "actor_critic.actor.6.weight": 0.07646986842155457,
+    "actor_critic.actor.6.bias": 0.001285016885958612
+  }
+}

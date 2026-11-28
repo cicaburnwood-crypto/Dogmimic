@@ -1,0 +1,39 @@
+{
+  "verified_on_hkt": "2026-11-27",
+  "arch": "aarch64",
+  "onnxruntime": "1.16.1",
+  "model_sha256": "1b1ec7244ed1e4759f1293f0066afc0884e508e824586ed5454a702586e39c75",
+  "rollback_sha256": "5fcca3909d58a0cd0223ca3e46f90d8e3fcafb73200008ef61d2d8b6fd0f3992",
+  "replay": {
+    "rolling_turns": {
+      "frames": 3876,
+      "p50_ms": 1.89554,
+      "p95_ms": 3.25471,
+      "max_ms": 3.40462,
+      "over_2ms": 1565,
+      "over_4ms": 0
+    },
+    "representative_terrain": {
+      "frames": 3605,
+      "p50_ms": 1.88358,
+      "p95_ms": 2.51242,
+      "max_ms": 3.44983,
+      "over_2ms": 290,
+      "over_4ms": 0
+    }
+  },
+  "stand_handoff": {
+    "first_torque_jump_nm": 0.0,
+    "max_neutral_wheel_target_rad_s": 0.0,
+    "blend_ms": 800.0
+  },
+  "startup": {
+    "unit": "dg_fsm.service",
+    "new_policy_loaded": true,
+    "automatic_restarts": 0,
+    "valid_joints": 16,
+    "imu_valid": true,
+    "logger_recorded_new_process": true
+  },
+  "new_policy_motion_acceptance": "pending"
+}

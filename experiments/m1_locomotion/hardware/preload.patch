@@ -1,0 +1,85 @@
+--- a/robot_ctrl/rl_controller/RL_Loco_Classic.cpp
++++ b/robot_ctrl/rl_controller/RL_Loco_Classic.cpp
+@@ -1,4 +1,26 @@
+ #include "RL_Loco_Classic.h"
++
++#include <stdexcept>
++
++Ort::Session& RL_Loco_Classic::uniExpSession() {
++    static Ort::Env environment(ORT_LOGGING_LEVEL_WARNING, "Uni Exp");
++    static Ort::Session policy = [] {
++        Ort::SessionOptions options;
++        options.SetIntraOpNumThreads(1);
++        Ort::Session result(environment, "../models/uni_exp.onnx", options);
++        const auto type = result.GetOutputTypeInfo(0);
++        const auto shape = type.GetTensorTypeAndShapeInfo();
++        if (shape.GetElementType() != ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT ||
++            shape.GetShape() != std::vector<int64_t>{1, 16})
++            throw std::runtime_error("Uni Exp policy must return 16 float actions");
++        return result;
++    }();
++    return policy;
++}
++
++void RL_Loco_Classic::preloadUniExp() {
++    (void)uniExpSession();
++}
+ 
+ bool RL_Loco_Classic::init() {
+     // Initialize default joint positions
+@@ -19,7 +41,7 @@
+         observation_history.setZero();
+         trot_flag = 0;
+         stand_time = 0.0;
+-        if (!session_ && !loadPolicy("../models/uni_exp.onnx")) return false;
++        preloadUniExp();
+         std::cout << "Entered Uni Exp locomotion" << std::endl;
+     } else if (!session_) {
+         loadPolicy("../models/model_15000_06_16_15_23_34.onnx");
+@@ -224,7 +246,8 @@
+         const char* output_names[] = {"actions"};
+ 
+         // Run inference
+-        auto output_tensors = session_->Run(
++        auto& policy = uni_exp ? uniExpSession() : *session_;
++        auto output_tensors = policy.Run(
+             Ort::RunOptions{nullptr}, 
+             input_names, 
+             input_tensors.data(), 
+--- a/robot_ctrl/rl_controller/RL_Loco_Classic.h
++++ b/robot_ctrl/rl_controller/RL_Loco_Classic.h
+@@ -12,6 +12,7 @@
+ 
+     explicit RL_Loco_Classic(Profile profile = Profile::Classic) : profile_(profile) {}
+     ~RL_Loco_Classic() = default;
++    static void preloadUniExp();
+ 
+     /**
+      * Initialize the RL controller
+@@ -38,6 +39,7 @@
+     bool loadPolicy(const std::string& policy_path);
+     Vec16<double> desired_positions;
+ private:
++    static Ort::Session& uniExpSession();
+     void rememberObservation(bool fill_history);
+ 
+     Profile profile_;
+--- a/test_repo/run_robot_runtime.cpp
++++ b/test_repo/run_robot_runtime.cpp
+@@ -1,6 +1,7 @@
+ #include "../robot/hardwares/RobotHardware.h"
+ #include "../robot/RobotRuntime.h"
+ #include "../robot/ControlPath/include/HighLevelPath.h"
++#include "../robot_ctrl/rl_controller/RL_Loco_Classic.h"
+ #include "../robot/dds_comm/ltr_m1/include/dds_subscriber.hpp"
+ #include "../robot/hardwares/IMU/include/IM948.h"
+ #include "../robot/hardwares/Remote/include/G20Remote.h"
+@@ -44,6 +45,8 @@
+     std::signal(SIGTERM, requestStop);
+ 
+     try {
++        RL_Loco_Classic::preloadUniExp();
++        fmt_print::log("Uni Exp policy ready");
+         iox::runtime::PoshRuntime::initRuntime("Robot_Runtime_HW");
+ 
+         // Remote adapters borrow these receiver objects. Declare them before

@@ -1,0 +1,71 @@
+{
+  "phase": "complete",
+  "seed": 74231,
+  "supermimic": {
+    "repo": "HybridRobotics/supermimic",
+    "commit": "abc124c1bd5976341034668af3d12c087f2f1f55",
+    "files": [
+      "src/supermimic/learners/wm_learner.py",
+      "src/supermimic/learners/policy_learner.py"
+    ]
+  },
+  "device": "NVIDIA GeForce RTX 5090",
+  "train": [
+    {
+      "file": "turn-train.npz",
+      "sha256": "2fc2683c9aa6fbbcebf1c38d58a735295bbbdc6d850f76fb50ace83ffbfcc864",
+      "policy": "hardware_classic",
+      "transitions": 79800,
+      "candidate": null,
+      "guidance": null
+    },
+    {
+      "file": "flat-train.npz",
+      "sha256": "fa09ac9ad077196f5cc38c470e6e81bdf54f43537fc92004ebcb5f686a3a69bf",
+      "policy": "hardware_classic",
+      "transitions": 66500,
+      "candidate": null,
+      "guidance": null
+    }
+  ],
+  "holdout": [
+    {
+      "file": "turn-holdout.npz",
+      "sha256": "b97cdb01e97d5ad00941df3e963f6080d80d0f135aa020944955a18b7940a336",
+      "policy": "hardware_classic",
+      "transitions": 30400,
+      "candidate": null,
+      "guidance": null
+    }
+  ],
+  "initial_sha256": "358b0b7df3cd1889476c86c2bc3358afe5ee1d0268e8ed8707541902649c50fe",
+  "objectives": [
+    "all-wheel support",
+    "per-wheel vertical rate",
+    "trunk height and vertical rate",
+    "forward and yaw tracking",
+    "leg action slew"
+  ],
+  "world_updates": 760,
+  "world_holdout": {
+    "twist_rmse": [
+      0.01242434699088335,
+      0.0056109256111085415,
+      0.01816939003765583
+    ],
+    "base_height_rmse_m": 0.00043676194036379457,
+    "wheel_height_rmse_m": [
+      0.0008094822405837476,
+      0.0005136517575010657,
+      0.0004987138090655208,
+      0.0005261917831376195
+    ]
+  },
+  "actor_updates": 360,
+  "parameter_change_l2": {
+    "actor_critic.actor.4.weight": 1.1113531589508057,
+    "actor_critic.actor.4.bias": 0.04174720495939255,
+    "actor_critic.actor.6.weight": 0.2957060933113098,
+    "actor_critic.actor.6.bias": 0.005422527436167002
+  }
+}

@@ -14,6 +14,7 @@ third-party code or endorsement by the original projects.
 | Unitree MuJoCo robot descriptions | https://github.com/unitreerobotics/unitree_mujoco | `experiments/three_skills/vendor/unitree_mujoco/`; BSD 3-Clause. |
 | Walk These Ways | https://github.com/Improbable-AI/walk-these-ways | `experiments/b2_locomotion_wtw/vendor/` and `experiments/b2_locomotion_wtw_repair/vendor/`; MIT with additional bundled notices. |
 
-Training datasets, downloaded motion CSVs, learned checkpoint weights, videos, raw robot
-telemetry, and local authentication data are not redistributed in this code snapshot.
-No repository-wide open-source license is added by this upload.
+The B2/V24 code snapshot excludes training datasets, downloaded motion CSVs, learned
+checkpoint weights, videos, raw robot telemetry, and local authentication data.
+See the [Lightyear M1 asset inventory](experiments/m1_locomotion/ASSETS.md) for the origins
+and scope of the M1-specific payload. No repository-wide open-source license is added.

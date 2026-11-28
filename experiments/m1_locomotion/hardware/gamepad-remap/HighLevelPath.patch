@@ -1,0 +1,47 @@
+--- a/robot/ControlPath/src/HighLevelPath.cpp
++++ b/robot/ControlPath/src/HighLevelPath.cpp
+@@ -1,4 +1,5 @@
+ #include "../include/HighLevelPath.h"
++#include "../../hardwares/sbus/include/G20Types.h"
+ #include "../../../config/Config.h"
+ #include "../../../robot_ctrl/controller/include/StandUpController.h"
+ 
+@@ -7,6 +8,21 @@
+ #include <stdexcept>
+ 
+ namespace {
++std::array<float, 3> remapUniExpGamepad(const std::array<float, 3>& axes) noexcept {
++    const auto bounded = [](float axis) {
++        return std::isfinite(axis) ? std::clamp(static_cast<double>(axis), -1., 1.) : 0.;
++    };
++    const double forward = bounded(axes[0]);
++    const double lateral = bounded(axes[1]);
++    const double yaw = bounded(axes[2]);
++    // The convex limit also bounds the command after the controller's low-pass filter.
++    const double budget = std::max(1., std::abs(forward) + std::abs(lateral) + std::abs(yaw));
++    // ClassicController still applies the 1.4 m/s, 0.5 m/s and 0.8 rad/s axis gains.
++    return {static_cast<float>(forward / budget),
++            static_cast<float>(lateral * (0.22 / 0.5) / budget),
++            static_cast<float>(yaw * (0.35 / 0.8) / budget)};
++}
++
+ StateVoicePlayer::Cue cueFor(FsmState state) noexcept {
+     switch (state) {
+         case FsmState::Passive: return StateVoicePlayer::PASSIVE;
+@@ -45,8 +61,14 @@
+                     [](float value) { return std::isfinite(value) && std::abs(value) <= .05F; }) &&
+         StandUpController::isSettled(state);
+     const FsmState selected = fsm_.update(requested.requested_mode, ready_for_uni_exp);
+-    const JointCmd output = controller_.compute(
+-        state, selected, command, fsm_.standUpFromFold());
++    const JointCmd output = [&] {
++        if (selected == FsmState::LocoUniExp && requested.control_device == g20_controller::GAMEPAD) {
++            auto remapped = command;
++            remapped.high().v_des = remapUniExpGamepad(requested.v_des);
++            return controller_.compute(state, selected, remapped, fsm_.standUpFromFold());
++        }
++        return controller_.compute(state, selected, command, fsm_.standUpFromFold());
++    }();
+     if (selected != previous) voice_.request(cueFor(selected));
+     return output;
+ }

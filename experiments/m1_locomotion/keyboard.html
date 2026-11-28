@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hans" data-camera-orbit>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+  <style>
+    .scene-choice { display:block; margin-top:1rem; color:#a3b2c4; font-size:.8rem }
+    #scene { width:100%; margin:.4rem 0 .6rem; padding:.5rem; border:1px solid #344553;
+             border-radius:.4rem; color:inherit; background:#202c37 }
+  </style>
+  <title>M1 轮足仿真</title>
+</head>
+<body>
+  <main>
+    <header class="heading">
+      <h1>M1 <span>轮足仿真</span></h1>
+      <div id="connection" class="status" role="status">连接仿真中</div>
+    </header>
+    <div class="workspace">
+      <section class="viewport" aria-label="机器人实时画面">
+        <img id="camera" alt="M1 在 MuJoCo 测试场中的实时跟随画面" hidden>
+        <div class="view-top"><span>第三人称 · 方向键旋转</span><span>MuJoCo</span></div>
+        <div class="loading" id="camera-status" role="status">等待仿真相机</div>
+        <div class="view-bottom"><span id="scene-status">平地测试场</span><span><b id="sim-time">—</b> s</span></div>
+      </section>
+      <aside class="controls" aria-label="键盘控制">
+        <div class="control-heading">
+          <h2>键盘控制</h2>
+          <p>按住移动，松开停止</p>
+        </div>
+        <div class="keymap" aria-label="移动方向">
+          <button data-key="KeyQ" aria-label="左转"><kbd>Q</kbd><span>左转</span></button>
+          <button data-key="KeyW" aria-label="前进"><kbd>W</kbd><span>前进</span></button>
+          <button data-key="KeyE" aria-label="右转"><kbd>E</kbd><span>右转</span></button>
+          <button data-key="KeyA" aria-label="左移"><kbd>A</kbd><span>左移</span></button>
+          <button data-key="KeyS" aria-label="后退"><kbd>S</kbd><span>后退</span></button>
+          <button data-key="KeyD" aria-label="右移"><kbd>D</kbd><span>右移</span></button>
+        </div>
+        <button id="stop" class="stop"><kbd>SPACE</kbd><span>停车</span></button>
+        <button id="reset" class="stop" style="color:inherit;border-color:#394656;background:#252f3c"><kbd>R</kbd><span>复位</span></button>
+        {{SCENES}}
+        <label class="speed-setting" for="speed"><span>前后速度上限</span><output id="speed-value" for="speed">0.40 m/s</output></label>
+        <input id="speed" type="range" min="0.15" max="0.60" value="0.40" step="0.05">
+        <div class="controller"><span>控制器</span><strong>{{POLICY}}</strong></div>
+      </aside>
+    </div>
+    <dl class="telemetry" aria-label="仿真遥测">
+      <div><dt>实际速度</dt><dd><b id="velocity">—</b><span>m/s</span></dd></div>
+      <div><dt>实际角速度</dt><dd><b id="yaw-rate">—</b><span>rad/s</span></dd></div>
+      <div><dt>平面位置 X / Y</dt><dd><b id="position">—</b><span>m</span></dd></div>
+      <div><dt>航向</dt><dd><b id="heading">—</b><span>°</span></dd></div>
+    </dl>
+  </main>
+  <script>
+    function resetRobot(scene) {
+      window.dispatchEvent(new Event("blur"));
+      fetch("/reset", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(scene ? {scene} : {})}).catch(() => {});
+    }
+    document.getElementById("reset").addEventListener("click", () => resetRobot());
+    window.addEventListener("keydown", event => {
+      if (event.code === "KeyR" && !event.repeat && !event.ctrlKey && !event.altKey && !event.metaKey) resetRobot();
+    });
+    const scene = document.getElementById("scene");
+    if (scene) {
+      scene.addEventListener("change", () => resetRobot(scene.value));
+      const speed = document.getElementById("speed");
+      setInterval(async () => {
+        try {
+          const data = await fetch("/state").then(response => response.json());
+          const label = data.fault || data.scene_name;
+          document.getElementById("scene-status").textContent = data.pose ? `${label} · Z ${data.pose.z.toFixed(2)} m` : label;
+          if (document.activeElement !== scene) scene.value = data.scene;
+          speed.max = data.scene === "flat" ? "0.60" : "0.45";
+          document.getElementById("speed-value").textContent = `${Number(speed.value).toFixed(2)} m/s`;
+        } catch (error) { /* The main telemetry loop reports an offline simulator. */ }
+      }, 300);
+    }
+  </script>
+</body>
+</html>
